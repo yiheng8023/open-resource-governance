@@ -71,6 +71,7 @@ Key docs:
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — public/private safety boundary.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates that must pass before public release.
 - [`docs/pre-public-safety-audit.md`](docs/pre-public-safety-audit.md) — concrete safety audit before changing visibility.
+- [`docs/pre-public-readiness-2026-06-26.md`](docs/pre-public-readiness-2026-06-26.md) — latest pre-public readiness evidence for the hub.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — free-channel launch and promotion runbook.
 - [`docs/closeout-audit-2026-06-26.md`](docs/closeout-audit-2026-06-26.md) — latest staged closeout audit.
 - [`docs/promotion-kit.md`](docs/promotion-kit.md) — free-channel promotion draft material.
