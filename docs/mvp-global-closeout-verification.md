@@ -8,6 +8,12 @@ The current evidence ledger is
 [`mvp-closeout-evidence-ledger.md`](mvp-closeout-evidence-ledger.md). Treat it
 as an in-progress evidence snapshot, not as a completion claim.
 
+Owner-local ledger freshness can be checked with
+`scripts/verify_local_evidence_freshness.py`. This read-only check compares
+ledger repository heads with local checkouts when those checkouts are
+available. It is intentionally separate from public CI because private
+repositories and owner-local paths are not public validation inputs.
+
 The current artifact hygiene review is
 [`mvp-artifact-hygiene-review.md`](mvp-artifact-hygiene-review.md). Treat it as
 Gate 08 in-progress evidence, not as final residue cleanup.
@@ -77,6 +83,8 @@ global closeout passes.
 - [ ] Important automation, routing, scoring, promotion, rejection, cleanup, and
       release decisions are observable and explainable through public-safe
       evidence.
+- [ ] Owner-local evidence freshness check has compared ledger heads against
+      available local repository checkouts before closeout.
 - [ ] The closeout report decides whether to iterate Skills again, pause, or
       incubate another terminal consumer.
 

@@ -23,6 +23,7 @@ REQUIRED_FILES = [
     ".github/ISSUE_TEMPLATE/name-suggestion.yml",
     ".github/pull_request_template.md",
     ".github/workflows/validate.yml",
+    "scripts/verify_local_evidence_freshness.py",
     "data/repositories.json",
     "docs/license-policy.md",
     "docs/project-design.md",
@@ -462,6 +463,8 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         "Workstream status",
         "Gate status",
         "Next evidence required",
+        "Owner-local evidence freshness check",
+        "verify_local_evidence_freshness.py",
     ]:
         if phrase not in doc:
             fail(f"MVP closeout evidence ledger doc missing phrase: {phrase}")
@@ -471,6 +474,8 @@ def verify_mvp_closeout_evidence_ledger() -> None:
     closeout_doc = (ROOT / "docs" / "mvp-global-closeout-verification.md").read_text(encoding="utf-8")
     if "mvp-closeout-evidence-ledger.md" not in closeout_doc:
         fail("global closeout doc must link MVP closeout evidence ledger")
+    if "verify_local_evidence_freshness.py" not in closeout_doc:
+        fail("global closeout doc must mention owner-local evidence freshness check")
 
 
 def verify_mvp_artifact_hygiene_review() -> None:
