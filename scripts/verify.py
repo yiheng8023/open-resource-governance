@@ -38,6 +38,8 @@ REQUIRED_FILES = [
     "docs/naming-campaign.md",
     "docs/bookmark-lane-closeout-2026-06-26.md",
     "docs/contact-and-social.md",
+    "docs/future-lane-incubation.md",
+    "docs/private-project-consumption-model.md",
     "docs/assets/launch-video/github-repository-home.png",
     "docs/assets/launch-video/readme-system-map.png",
     "docs/assets/launch-video/github-actions-verify-success.png",
@@ -53,6 +55,7 @@ REQUIRED_FILES = [
     "docs/roadmap.md",
     "docs/closeout-audit-2026-06-26.md",
     "data/topology.json",
+    "data/future-lanes.json",
 ]
 
 PRIVATE_ONLY_TERMS = [
@@ -206,6 +209,59 @@ def verify_current_public_private_status() -> None:
             fail(f"project design missing relationship/maturity phrase: {phrase}")
 
 
+def verify_future_lane_incubation() -> None:
+    data = json.loads((ROOT / "data" / "future-lanes.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("future-lanes.json schema_version must be 1")
+    if data.get("status") != "candidate_only":
+        fail("future lanes must remain candidate_only")
+    lanes = data.get("lanes", [])
+    required_ids = {
+        "project-standards",
+        "knowledge-graph",
+        "benchmark-evaluation",
+        "documentation-system",
+        "software-architecture-playbooks",
+        "domain-specific-resource-packs",
+        "private-project-absorption-queue",
+        "community-curated-catalogs",
+    }
+    ids = {lane.get("id") for lane in lanes}
+    missing = required_ids - ids
+    if missing:
+        fail(f"future lanes missing ids: {', '.join(sorted(missing))}")
+    for lane in lanes:
+        if lane.get("stage") != "candidate":
+            fail(f"future lane must stay candidate: {lane.get('id')}")
+        if lane.get("implementation_status") != "not_implemented":
+            fail(f"future lane must not claim implementation: {lane.get('id')}")
+    public_docs = "\n".join(
+        (ROOT / path).read_text(encoding="utf-8")
+        for path in [
+            "docs/future-lane-incubation.md",
+            "docs/private-project-consumption-model.md",
+            "docs/project-design.md",
+            "docs/system-topology.md",
+        ]
+    )
+    required_phrases = [
+        "candidate",
+        "curated Skills lane",
+        "private/core projects",
+        "directly mutate",
+        "Human review is required",
+        "not implemented topology nodes",
+    ]
+    for phrase in required_phrases:
+        if phrase not in public_docs:
+            fail(f"future/private project docs missing phrase: {phrase}")
+    forbidden_private_project_terms = ["YIYUAN", "ASSETS"]
+    combined = public_docs + json.dumps(data, ensure_ascii=False)
+    for term in forbidden_private_project_terms:
+        if term.lower() in combined.lower():
+            fail(f"private project identifier leaked into public lane docs: {term}")
+
+
 def verify_no_obvious_private_payloads() -> None:
     for path in ROOT.rglob("*"):
         if ".git" in path.parts or not path.is_file():
@@ -228,6 +284,7 @@ def main() -> None:
     verify_language_links()
     verify_external_user_readme()
     verify_current_public_private_status()
+    verify_future_lane_incubation()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")
 

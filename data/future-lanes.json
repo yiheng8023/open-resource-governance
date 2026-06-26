@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "status": "candidate_only",
+  "current_priority": "stabilize the curated Skills lane before turning other candidate lanes into systems",
+  "rules": [
+    "Candidate lanes are planning surfaces, not implemented products.",
+    "Do not expose private/core project names, internals, or reshaping state in public lane records.",
+    "Do not directly write into private/core projects from public governance repositories.",
+    "A lane should graduate only when it has a clear owner, public/private boundary, verification path, and maintenance budget.",
+    "Prefer small reusable outputs over idealistic full systems."
+  ],
+  "lanes": [
+    {
+      "id": "project-standards",
+      "label": "Project standards",
+      "purpose": "Reusable standards, checklists, and decision rules derived from validated practice.",
+      "stage": "candidate",
+      "implementation_status": "not_implemented",
+      "admission_rule": "Only public-safe, generally reusable standards should be published.",
+      "risk": "Can become too abstract or over-prescriptive if not tied to real evidence."
+    },
+    {
+      "id": "knowledge-graph",
+      "label": "Knowledge graph",
+      "purpose": "Public-safe graph projections for resources, concepts, lanes, evidence, and lifecycle state.",
+      "stage": "candidate",
+      "implementation_status": "not_implemented",
+      "admission_rule": "Publish derived topology only; keep private/project-specific graph truth private.",
+      "risk": "Can leak relationships or become expensive to maintain if over-modeled."
+    },
+    {
+      "id": "benchmark-evaluation",
+      "label": "Benchmark and evaluation",
+      "purpose": "Evaluation recipes for resource quality, workflow usefulness, generated artifacts, and adoption decisions.",
+      "stage": "candidate",
+      "implementation_status": "not_implemented",
+      "admission_rule": "Benchmarks must define what they measure and what they do not prove.",
+      "risk": "False certainty if scores are treated as truth instead of review aids."
+    },
+    {
+      "id": "documentation-system",
+      "label": "Documentation system",
+      "purpose": "Reusable documentation structures, user journeys, diagrams, release notes, and closeout evidence.",
+      "stage": "candidate",
+      "implementation_status": "not_implemented",
+      "admission_rule": "Keep public docs focused on external users and public-safe evidence.",
+      "risk": "Can become internal-process-heavy and unreadable if not simplified."
+    },
+    {
+      "id": "software-architecture-playbooks",
+      "label": "Software architecture playbooks",
+      "purpose": "Small, reusable architecture review and evolution playbooks informed by real project work.",
+      "stage": "candidate",
+      "implementation_status": "not_implemented",
+      "admission_rule": "Publish generalized patterns only; do not expose private architecture details.",
+      "risk": "May duplicate project-native capabilities or become too idealistic for fast-moving teams."
+    },
+    {
+      "id": "domain-specific-resource-packs",
+      "label": "Domain-specific resource packs",
+      "purpose": "Focused public-safe resource bundles for a domain, workflow, or learning path.",
+      "stage": "candidate",
+      "implementation_status": "not_implemented",
+      "admission_rule": "Resource packs should be generated from reviewed public-safe records, not hand-curated link dumps.",
+      "risk": "Can decay quickly without lifecycle checks."
+    },
+    {
+      "id": "private-project-absorption-queue",
+      "label": "Private project absorption queue",
+      "purpose": "A generic model for preparing public-safe evidence that private/core projects may choose to review.",
+      "stage": "candidate",
+      "implementation_status": "not_implemented",
+      "admission_rule": "The queue can prepare evidence, but private/core projects decide whether to absorb it.",
+      "risk": "Must not expose private project identity, internal stage, or project-specific authority."
+    },
+    {
+      "id": "community-curated-catalogs",
+      "label": "Community-curated catalogs",
+      "purpose": "Community-maintained catalogs of public-safe resources, templates, workflows, and review notes.",
+      "stage": "candidate",
+      "implementation_status": "not_implemented",
+      "admission_rule": "Community suggestions require moderation, provenance, source policy, and lifecycle state.",
+      "risk": "Can become noisy or unsafe without strong intake and rejection rules."
+    }
+  ]
+}

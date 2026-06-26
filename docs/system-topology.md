@@ -121,3 +121,17 @@ rules.
 
 These public projections are meant to be reusable even when the private source
 repositories are not visible.
+
+## Candidate future lanes
+
+Future terminal lanes are tracked separately from the current repository graph.
+They are not implemented topology nodes until they pass a graduation rule.
+
+See [`docs/future-lane-incubation.md`](future-lane-incubation.md) and
+[`data/future-lanes.json`](../data/future-lanes.json).
+
+This keeps the public map honest: the hub can acknowledge directions such as
+project standards, knowledge graph projections, benchmark/evaluation,
+documentation systems, architecture playbooks, domain resource packs, private
+project absorption queues, and community-curated catalogs without pretending
+they are already built.

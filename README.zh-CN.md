@@ -237,6 +237,8 @@ python -B scripts/verify.py
 3. 自动化要有闸门：生成产物应确定、可验证；高影响公开仍需人工审查。
 4. 追求有用，不追求吞噬一切：目标是提高覆盖、发现和判断质量，不是收集所有东西。
 5. 证据优先：重要结论应有脚本、报告或审查记录支撑。
+6. 候选 lane 先保持轻量：未来方向应先作为 candidate lane 跟踪，不要在缺少证据、
+   维护能力和真实用户价值之前做成系统。
 
 ## 本仓库不做什么
 
@@ -289,6 +291,10 @@ python -B scripts/verify.py
 - [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — 公开安全首发图片素材。
 - [`docs/bookmark-lane-closeout-2026-06-26.md`](docs/bookmark-lane-closeout-2026-06-26.md)
   — 书签 lane 拆分、验证和公开/私有收官证据。
+- [`docs/future-lane-incubation.md`](docs/future-lane-incubation.md) — 候选未来
+  lane 与晋级规则。
+- [`docs/private-project-consumption-model.md`](docs/private-project-consumption-model.md)
+  — 公开安全产物如何服务私有/核心项目，同时不暴露、不直接改写它们。
 - [`docs/contact-and-social.md`](docs/contact-and-social.md) — 公开安全联系路径与未来社媒链接策略。
 
 ## 安全边界

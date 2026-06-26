@@ -206,6 +206,10 @@ This project should not become:
 - a single monorepo that hides trust boundaries;
 - a popularity-only ranking system;
 - a place where automation publishes without human gates.
+- a system that exposes or mutates private/core projects from public
+  governance repositories.
+- an idealistic collection of future lanes without evidence, maintenance
+  capacity, or user demand.
 
 ## Current maturity
 
@@ -234,6 +238,18 @@ not for the whole resource system.
 The project is useful now as a reference pattern, public bookmark projection,
 public radar template, public configuration-template family, and global
 relationship map. It is not yet a complete packaged product.
+
+Future terminal lanes are tracked as candidate-only planning surfaces. They may
+include project standards, public-safe knowledge graph projections,
+benchmark/evaluation recipes, documentation systems, software architecture
+playbooks, domain-specific resource packs, private project absorption queues,
+or community-curated catalogs. These directions should not become maintained
+systems until the Skills lane and other existing loops provide enough evidence
+about what is actually useful.
+
+Public outputs may serve private or core projects, but they must remain
+neutral, public-safe, and review-gated. They should prepare evidence, not expose
+private project identity, internal stage, roadmap, architecture, or authority.
 
 ## 中文摘要
 

@@ -29,6 +29,18 @@
 - Accept issues and PRs for public-safe rules, taxonomy, source policy, validation, and documentation.
 - Keep subjective preferences and private data out of the public core.
 
+## Stage 5: Candidate lane incubation
+
+- Keep future directions as candidate lanes until they prove value.
+- Prioritize the curated Skills lane before building additional terminal lanes.
+- Track possible lanes such as project standards, public-safe knowledge graph
+  projections, benchmark/evaluation recipes, documentation systems, software
+  architecture playbooks, domain-specific resource packs, private project
+  absorption queues, and community-curated catalogs.
+- Do not expose or mutate private/core projects from public repositories.
+- Promote a candidate lane only after it has a public/private boundary,
+  verification path, owner, lifecycle rule, and maintenance budget.
+
 ## Current staged status
 
 As of 2026-06-26, the public/private split is no longer a single hub-only

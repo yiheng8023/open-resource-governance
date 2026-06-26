@@ -273,6 +273,9 @@ public-safe templates and automation that other people can actually run.
    not collecting everything.
 5. Evidence over vibes: important claims should have scripts, reports, or
    review records behind them.
+6. Candidate lanes stay lightweight: future directions should be tracked as
+   candidate lanes first, not built into systems before there is evidence,
+   maintenance capacity, and real user value.
 
 ## What this repository does not do
 
@@ -335,6 +338,11 @@ Funding channels may be added later after the public model is clearer.
   public-safe launch image assets.
 - [`docs/bookmark-lane-closeout-2026-06-26.md`](docs/bookmark-lane-closeout-2026-06-26.md)
   — bookmark lane split, verification, and public/private closeout evidence.
+- [`docs/future-lane-incubation.md`](docs/future-lane-incubation.md) —
+  candidate future lanes and graduation rules.
+- [`docs/private-project-consumption-model.md`](docs/private-project-consumption-model.md)
+  — how public-safe outputs can support private/core projects without exposing
+  or mutating them.
 - [`docs/contact-and-social.md`](docs/contact-and-social.md) — public-safe
   contact routes and future social-link policy.
 
