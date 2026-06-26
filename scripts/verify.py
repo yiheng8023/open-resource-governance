@@ -30,6 +30,7 @@ REQUIRED_FILES = [
     "docs/community-feedback-model.md",
     "docs/public-private-boundary.md",
     "docs/shared-governance-baseline.md",
+    "docs/mvp-plan-and-acceptance.md",
     "docs/system-topology.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
@@ -60,6 +61,7 @@ REQUIRED_FILES = [
     "data/topology.json",
     "data/future-lanes.json",
     "data/shared-governance-baseline.json",
+    "data/mvp-acceptance-map.json",
 ]
 
 PRIVATE_ONLY_TERMS = [
@@ -320,6 +322,45 @@ def verify_shared_governance_baseline() -> None:
         fail("README.md must link shared governance baseline")
 
 
+def verify_mvp_acceptance_map() -> None:
+    data = json.loads((ROOT / "data" / "mvp-acceptance-map.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("mvp-acceptance-map.json schema_version must be 1")
+    if data.get("status") != "planned_not_started":
+        fail("MVP plan should remain planned_not_started until execution begins")
+    if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
+        fail("unexpected MVP name")
+    workstreams = data.get("workstreams", [])
+    if len(workstreams) != 6:
+        fail("MVP must define six workstreams")
+    required_workstream_ids = {f"mvp-0{index}" for index in range(1, 7)}
+    actual_ids = {item.get("id")[:6] for item in workstreams}
+    if actual_ids != required_workstream_ids:
+        fail("MVP workstream IDs must be mvp-01 through mvp-06")
+    for item in workstreams:
+        if not item.get("acceptance"):
+            fail(f"MVP workstream missing acceptance criteria: {item.get('id')}")
+        if not item.get("human_gate"):
+            fail(f"MVP workstream missing human gate: {item.get('id')}")
+    gates = data.get("closeout_gates", [])
+    if len(gates) != 5:
+        fail("MVP must define five closeout gates")
+    doc = (ROOT / "docs" / "mvp-plan-and-acceptance.md").read_text(encoding="utf-8")
+    required_doc_phrases = [
+        "curated Skills lane",
+        "Non-goals",
+        "Acceptance criteria",
+        "Closeout gates",
+        "Stage exit",
+        "small batch",
+    ]
+    for phrase in required_doc_phrases:
+        if phrase not in doc:
+            fail(f"MVP plan doc missing phrase: {phrase}")
+    if "docs/mvp-plan-and-acceptance.md" not in (ROOT / "README.md").read_text(encoding="utf-8"):
+        fail("README.md must link MVP plan")
+
+
 def verify_support_entry() -> None:
     funding = (ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8")
     support = (ROOT / "docs" / "support-and-sponsorship.md").read_text(encoding="utf-8")
@@ -379,6 +420,7 @@ def main() -> None:
     verify_current_public_private_status()
     verify_future_lane_incubation()
     verify_shared_governance_baseline()
+    verify_mvp_acceptance_map()
     verify_support_entry()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")

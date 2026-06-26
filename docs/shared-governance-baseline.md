@@ -122,6 +122,9 @@ governance system. If that lane can prove the full loop from discovery to
 review, release, install, routing, runtime use, feedback, and retirement, then
 other terminal consumers can be added with much less guesswork.
 
+See [`mvp-plan-and-acceptance.md`](mvp-plan-and-acceptance.md) for the execution
+map and acceptance criteria.
+
 Until then, keep future lanes lightweight and candidate-only.
 
 ## Practical rule

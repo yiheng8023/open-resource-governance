@@ -340,6 +340,8 @@ international, fiscal-host, and domestic-support considerations.
   public/private safety boundary.
 - [`docs/shared-governance-baseline.md`](docs/shared-governance-baseline.md) —
   common governance expectations shared across the repository family.
+- [`docs/mvp-plan-and-acceptance.md`](docs/mvp-plan-and-acceptance.md) — curated
+  Skills terminal-consumer MVP plan and acceptance criteria.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates before
   public release.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) —

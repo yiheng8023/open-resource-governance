@@ -35,6 +35,7 @@
 
 - Keep future directions as candidate lanes until they prove value.
 - Prioritize the curated Skills lane before building additional terminal lanes.
+- Use the curated Skills terminal-consumer MVP plan as the next execution map.
 - Track possible lanes such as project standards, public-safe knowledge graph
   projections, benchmark/evaluation recipes, documentation systems, software
   architecture playbooks, domain-specific resource packs, private project

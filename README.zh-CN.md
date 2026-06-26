@@ -293,6 +293,8 @@ owner 可控且验证通过后加入。
 - [`docs/system-topology.md`](docs/system-topology.md) — 全局图、拓扑和仓库关系索引。
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 公开/私有安全边界。
 - [`docs/shared-governance-baseline.md`](docs/shared-governance-baseline.md) — 仓库家族共享的治理底座。
+- [`docs/mvp-plan-and-acceptance.md`](docs/mvp-plan-and-acceptance.md) — curated
+  Skills 末端消费者 MVP 计划与验收标准。
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前闸门。
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道发布和推广 runbook。
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词。

@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "mvp_name": "curated-skills-terminal-consumer-mvp",
+  "status": "planned_not_started",
+  "purpose": "Prove the governance loop with the curated Skills lane before expanding to more terminal consumers.",
+  "scope": {
+    "primary_terminal_consumer": "agent-skills-curated",
+    "primary_runtime_consumer": "private user configuration repositories",
+    "public_hub": "open-resource-governance",
+    "not_in_scope": [
+      "implementing future terminal lanes",
+      "writing into private/core projects",
+      "publishing private project internals",
+      "blindly importing all candidate resources",
+      "claiming monetization readiness"
+    ]
+  },
+  "workstreams": [
+    {
+      "id": "mvp-01-source-candidate",
+      "title": "Source candidate selection",
+      "goal": "Select a small, high-value Skill candidate set from reviewed discovery inputs.",
+      "acceptance": [
+        "candidate source is pinned",
+        "candidate reason is recorded",
+        "license/provenance state is recorded",
+        "candidate remains non-executable before approval"
+      ],
+      "human_gate": "approve candidate batch before adaptation"
+    },
+    {
+      "id": "mvp-02-review-adapt",
+      "title": "Review, neutralize, and adapt",
+      "goal": "Turn selected candidates into public-safe, agent-neutral, portable Skill material.",
+      "acceptance": [
+        "security review evidence exists",
+        "private or vendor-specific assumptions are removed or bounded",
+        "overlap and conflict review is recorded",
+        "adaptation keeps source attribution and license boundaries"
+      ],
+      "human_gate": "approve adapted Skill for curated release"
+    },
+    {
+      "id": "mvp-03-release-manifest",
+      "title": "Deterministic release manifest",
+      "goal": "Publish only approved Skill payloads through deterministic manifest evidence.",
+      "acceptance": [
+        "manifest schema remains declared",
+        "manifest includes only approved payload files",
+        "hash and size verification pass",
+        "extra, missing, symlink, traversal, and boundary violations fail closed"
+      ],
+      "human_gate": "approve release candidate before consumer install"
+    },
+    {
+      "id": "mvp-04-consumer-install",
+      "title": "Private consumer install and verification",
+      "goal": "Have a private configuration repository consume the curated release safely.",
+      "acceptance": [
+        "consumer pin is explicit",
+        "install plan is reviewable",
+        "backup or rollback path exists",
+        "installed files match manifest",
+        "private runtime state is not published"
+      ],
+      "human_gate": "authorize install or restore in the private runtime context"
+    },
+    {
+      "id": "mvp-05-routing-runtime",
+      "title": "Routing and runtime use",
+      "goal": "Verify that curated Skills can be selected through capability routing without becoming mandatory for every task.",
+      "acceptance": [
+        "capability-router remains capability decision router",
+        "simple tasks can use native or no-skill path",
+        "approved Skill triggers work in representative scenarios",
+        "candidate or unapproved Skills do not enter execution path",
+        "fallback behavior is documented"
+      ],
+      "human_gate": "confirm high-risk, ambiguous, or side-effecting routes"
+    },
+    {
+      "id": "mvp-06-feedback-retirement",
+      "title": "Feedback, lifecycle, and retirement",
+      "goal": "Feed runtime evidence back into governance without mutating private projects directly.",
+      "acceptance": [
+        "runtime result is summarized as public-safe evidence or kept private",
+        "accepted, rejected, deprecated, or retired state is recorded",
+        "resource radar can consume safe decision metadata for dedupe",
+        "lessons update shared governance only when generalizable"
+      ],
+      "human_gate": "approve promotion of lessons into public governance"
+    }
+  ],
+  "closeout_gates": [
+    {
+      "id": "gate-01-chain-complete",
+      "description": "The chain is proven from candidate selection to private runtime consumption.",
+      "mapped_workstreams": [
+        "mvp-01-source-candidate",
+        "mvp-02-review-adapt",
+        "mvp-03-release-manifest",
+        "mvp-04-consumer-install",
+        "mvp-05-routing-runtime"
+      ]
+    },
+    {
+      "id": "gate-02-boundaries-held",
+      "description": "Public/private, candidate/approved, and automation/human-gate boundaries are preserved.",
+      "mapped_workstreams": [
+        "mvp-01-source-candidate",
+        "mvp-03-release-manifest",
+        "mvp-04-consumer-install",
+        "mvp-06-feedback-retirement"
+      ]
+    },
+    {
+      "id": "gate-03-runtime-useful",
+      "description": "The Skill lane improves real work without over-triggering or replacing native capability unnecessarily.",
+      "mapped_workstreams": [
+        "mvp-05-routing-runtime"
+      ]
+    },
+    {
+      "id": "gate-04-feedback-loop",
+      "description": "Operational evidence can update discovery, governance, or lifecycle state without direct private-project mutation.",
+      "mapped_workstreams": [
+        "mvp-06-feedback-retirement"
+      ]
+    },
+    {
+      "id": "gate-05-next-lane-ready",
+      "description": "The team can decide whether another terminal consumer is worth incubating.",
+      "mapped_workstreams": [
+        "mvp-06-feedback-retirement"
+      ]
+    }
+  ]
+}
