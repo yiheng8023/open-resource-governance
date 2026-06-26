@@ -1,7 +1,9 @@
 # Launch Video Asset Pack
 
 Prepared public-safe image assets for the first
-`open-resource-governance` launch video.
+`open-resource-governance` launch video. The repository slug and displayed
+project name are provisional; assets should not imply that the current name is
+final.
 
 ## Asset list
 
@@ -42,6 +44,7 @@ Suggested call-to-action:
 
 ```text
 GitHub: github.com/yiheng8023/open-resource-governance
+Name note: temporary project name
 ```
 
 ## Music guidance
@@ -63,15 +66,16 @@ without music.
 
 ## Logo and trademark guidance
 
-The current assets use a text wordmark only. Do not use `®` or imply registered
-trademark status unless registration is complete. If the owner later provides a
-project logo, add it only after confirming it is intended for public project
-use.
+The current assets use a text wordmark only and label the name as temporary. Do
+not use `®` or imply registered trademark status unless registration is
+complete. If the owner later provides a project logo, add it only after
+confirming it is intended for public project use.
 
 Safe wording:
 
 ```text
 Open Resource Governance
+Open Resource Governance (temporary name)
 ```
 
 Avoid:

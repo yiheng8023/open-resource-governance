@@ -4,6 +4,8 @@
 
 这是一个公开安全的模块化资源治理体系总入口：发现有价值的公开资源、治理 agent skills、保留可迁移 AI 协作配置、维护书签分类，同时不暴露私有状态。
 
+命名状态：`open-resource-governance` 是暂定仓库 slug 和临时项目名，未来可能根据公开命名反馈变更。
+
 ## 仓库职责
 
 本仓库负责解释体系、映射关联仓库，并提供公开侧文档与推广素材。
@@ -77,6 +79,7 @@ GitHub Actions 会在 pull request 和推送到 `main` 时运行同样的验证�
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道首发与推广 runbook。
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词。
 - [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — 公开安全首发视频图片素材与使用说明。
+- [`docs/naming-campaign.md`](docs/naming-campaign.md) — 针对临时项目名的公开征名反馈流程。
 - [`docs/contact-and-social.md`](docs/contact-and-social.md) — 公开安全联系路径与未来社媒链接策略。
 - [`docs/community-feedback-model.md`](docs/community-feedback-model.md) — 未来公开协作的安全 issue/PR 反馈模型。
 - [`GOVERNANCE.md`](GOVERNANCE.md) — 轻量维护者与 owner gate 模型。

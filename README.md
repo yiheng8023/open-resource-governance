@@ -4,6 +4,9 @@ English | [简体中文](README.zh-CN.md)
 
 Public-safe hub for a modular resource governance system: discover useful public resources, curate agent skills, preserve portable AI-collaboration configuration, and maintain bookmark taxonomies without exposing private state.
 
+Name status: `open-resource-governance` is a provisional repository slug and
+temporary project name. It may change after public naming feedback.
+
 ## Repository Role
 
 This hub explains the system, maps the related repositories, and provides public-facing documentation and promotion material.
@@ -77,6 +80,7 @@ Key docs:
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — free-channel launch and promotion runbook.
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — short launch video script, storyboard, and AI video prompt.
 - [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — prepared public-safe launch video image assets and usage notes.
+- [`docs/naming-campaign.md`](docs/naming-campaign.md) — public naming feedback process for the temporary project name.
 - [`docs/contact-and-social.md`](docs/contact-and-social.md) — public-safe contact routes and future social-link policy.
 - [`docs/community-feedback-model.md`](docs/community-feedback-model.md) — safe issue/PR feedback model for future public collaboration.
 - [`GOVERNANCE.md`](GOVERNANCE.md) — lightweight maintainer and owner-gate model.
