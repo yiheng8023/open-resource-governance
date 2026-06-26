@@ -1,8 +1,9 @@
 # Launch Video Brief
 
 This brief supports a lightweight first announcement video for
-`open-resource-governance`. It is intentionally simple, public-safe, and usable
-with video-generation tools, manual screen recording, or a basic slide editor.
+`open-resource-governance`, which is a provisional repository slug and
+temporary project name. It is intentionally simple, public-safe, and usable with
+video-generation tools, manual screen recording, or a basic slide editor.
 
 ## Goal
 
@@ -21,7 +22,8 @@ lead with a plain subtitle before the formal name:
 > configuration, and bookmark taxonomies.
 
 Then name the repository as `open-resource-governance` for people who want to
-find or star it on GitHub.
+find or star it on GitHub. State clearly that the name is temporary and may
+change after public naming feedback.
 
 ## Recommended format
 
@@ -71,10 +73,10 @@ Music is optional. If used, prefer low-volume royalty-free ambient, soft lo-fi,
 or light documentary synth with no vocals. Avoid copyrighted tracks and keep
 the license/source note with the final export.
 
-Use the project name as a text wordmark. Do not use `®` or imply registered
-trademark status unless registration is complete. If a project logo is added
-later, confirm it is intended for public project use before including it in
-generated assets.
+Use the temporary project name as a text wordmark. Do not use `®` or imply
+registered trademark status unless registration is complete. If a project logo
+is added later, confirm it is intended for public project use before including
+it in generated assets.
 
 ## 30-second storyboard
 
@@ -99,7 +101,7 @@ generated assets.
 ## Voiceover draft
 
 ```text
-Open Resource Governance is a small public-safe hub for a bigger idea:
+Open Resource Governance is the temporary name for a small public-safe hub for a bigger idea:
 useful resources, agent skills, AI collaboration configuration, and bookmark
 taxonomies should be reusable without leaking private state.
 
@@ -107,26 +109,28 @@ The model is simple: public core, private overlays, clear release gates, and
 verifiable automation.
 
 This repository maps the lanes, explains the boundaries, and gives contributors
-a safe place to improve the system.
+a safe place to improve the system. The name may change after public naming
+feedback.
 ```
 
 ## Chinese voiceover draft
 
 ```text
-Open Resource Governance 是一个公开安全的总入口，用来承载一个更大的想法：
+Open Resource Governance 是这个项目的暂定名。它是一个公开安全的总入口，用来承载一个更大的想法：
 有价值的资源、agent skills、AI 协作配置和书签分类，应该可以复用，
 但不能泄露私人状态。
 
 核心模型很简单：公开核心，私有 overlay，清晰发布闸门，可验证自动化。
 
-这个仓库负责解释各条链路、边界和贡献方式，让后续协作更安全。
+这个仓库负责解释各条链路、边界和贡献方式，让后续协作更安全。名称未来可能根据公开征名反馈变更。
 ```
 
 ## Video AI prompt
 
 ```text
 Create a clean 30-second technical launch video for an open-source GitHub
-project called "Open Resource Governance".
+project currently using the temporary name "Open Resource Governance". Make it
+clear that the name is provisional and may change after public naming feedback.
 
 Use case: public launch announcement for GitHub, X, Weibo, and YouTube Shorts.
 Scene/background: minimal dark-mode developer workspace with abstract repository
@@ -151,9 +155,10 @@ Text:
 "Private overlays"
 "Release gates"
 "Verifiable automation"
-"Open Resource Governance"
+"Open Resource Governance (temporary name)"
 Constraints: no real people, no private data, no credentials, no account pages,
-no browser history, no exaggerated claims, no security certification claims.
+no browser history, no exaggerated claims, no security certification claims, no
+claim that the temporary name is final.
 Avoid: hype, fake dashboards, noisy cyber visuals, corporate stock footage.
 ```
 
@@ -162,11 +167,12 @@ Avoid: hype, fake dashboards, noisy cyber visuals, corporate stock footage.
 English:
 
 ```text
-I just opened Open Resource Governance:
+I just opened Open Resource Governance (temporary name):
 a public-safe hub for resource discovery, curated agent skills, portable AI
 collaboration configuration, and bookmark taxonomy.
 
 Principle: public core, private overlays, release gates, verifiable automation.
+The name may change after public naming feedback.
 ```
 
 Optional link line:
@@ -184,10 +190,11 @@ Contact: https://github.com/yiheng8023/open-resource-governance/blob/main/docs/c
 Chinese:
 
 ```text
-我刚公开了 Open Resource Governance：
+我刚公开了 Open Resource Governance（暂定名）：
 一个公开安全的总入口，用来治理资源发现、精选 agent skills、AI 协作配置模板和书签分类。
 
 原则：公开核心，私有 overlay，发布闸门，可验证自动化。
+名称未来可能根据公开征名反馈变更。
 ```
 
 可选链接行：

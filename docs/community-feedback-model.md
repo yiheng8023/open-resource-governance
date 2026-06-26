@@ -14,6 +14,8 @@ Useful feedback should improve:
 - launch gates;
 - validation;
 - promotion material;
+- naming clarity while `open-resource-governance` remains a temporary project
+  name;
 - contribution safety.
 
 ## Feedback channels
@@ -23,6 +25,7 @@ Use issue templates for:
 - boundary questions;
 - public-safe resource lane suggestions;
 - documentation improvements.
+- name suggestions.
 
 Use pull requests for:
 
@@ -50,6 +53,7 @@ Recommended labels:
 - `resource-lane`
 - `suggestion`
 - `documentation`
+- `naming`
 - `safety`
 - `needs-owner-decision`
 - `private-overlay`

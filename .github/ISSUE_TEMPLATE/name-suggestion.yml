@@ -1,0 +1,50 @@
+name: Name suggestion
+description: Suggest a clearer public name for the project
+title: "[Name suggestion]: "
+labels: ["naming", "suggestion", "needs-owner-decision"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `open-resource-governance` is a provisional repository slug and temporary project name. Suggest names that are public-safe, broad enough for the project scope, and not tied to one agent or vendor.
+  - type: input
+    id: name
+    attributes:
+      label: Suggested name
+      description: The proposed public project name.
+      placeholder: "Example: Open Resource Map"
+    validations:
+      required: true
+  - type: input
+    id: slug
+    attributes:
+      label: Suggested GitHub slug
+      description: Optional repository slug if different from the display name.
+      placeholder: "example: open-resource-map"
+  - type: textarea
+    id: explanation
+    attributes:
+      label: One-line explanation
+      description: Explain the name in one sentence.
+    validations:
+      required: true
+  - type: textarea
+    id: fit
+    attributes:
+      label: Why it fits
+      description: Explain why the name fits resource discovery, Skills governance, AI-collaboration configuration, bookmark taxonomy, and public/private boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: downside
+    attributes:
+      label: Possible downside
+      description: What could be confusing, too narrow, too broad, hard to search, or risky about this name?
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Basic checks
+      options:
+        - label: I did a quick GitHub/search check for obvious conflicts.
+        - label: The name is not tied to one agent, vendor, or private workflow.
+        - label: The name does not imply production maturity, certification, legal advice, or complete coverage.

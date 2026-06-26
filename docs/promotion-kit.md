@@ -4,11 +4,11 @@ Use free channels first: GitHub profile, pinned repositories, repository topics,
 
 ## One-line pitch
 
-Open Resource Governance is a modular, public-safe system for discovering useful resources, curating agent skills, maintaining portable AI-collaboration configuration, and managing bookmark taxonomies without leaking private state.
+Open Resource Governance (temporary name) is a modular, public-safe system for discovering useful resources, curating agent skills, maintaining portable AI-collaboration configuration, and managing bookmark taxonomies without leaking private state.
 
 ## Short GitHub profile blurb
 
-Building a modular open-resource governance stack: resource radar, curated agent skills, public/private configuration templates, and official-source bookmark taxonomies. Public core, private overlays, verifiable automation.
+Building a modular open-resource governance stack, currently under the temporary name Open Resource Governance: resource radar, curated agent skills, public/private configuration templates, and official-source bookmark taxonomies. Public core, private overlays, verifiable automation.
 
 ## Repository topics
 
@@ -34,6 +34,8 @@ I am building an open, modular resource-governance stack:
 
 The principle is simple: public core, private overlay, verifiable automation.
 
+Name note: Open Resource Governance is a temporary name and may change after public naming feedback.
+
 GitHub: https://github.com/yiheng8023/open-resource-governance
 
 ## Chinese social post draft
@@ -46,6 +48,8 @@ GitHub: https://github.com/yiheng8023/open-resource-governance
 - 用公开安全的官方来源目录管理书签分类。
 
 核心原则：公开核心，私有 overlay，可验证自动化。
+
+命名说明：Open Resource Governance 是暂定名，未来可能根据公开征名反馈变更。
 
 GitHub: https://github.com/yiheng8023/open-resource-governance
 
@@ -104,3 +108,5 @@ For prepared launch video images, use
 
 For public-safe contact routes and future social-link policy, use
 [`contact-and-social.md`](contact-and-social.md).
+
+For public naming feedback, use [`naming-campaign.md`](naming-campaign.md).
