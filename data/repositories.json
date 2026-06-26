@@ -11,7 +11,7 @@
     {
       "name": "resource-radar",
       "role": "resource-discovery",
-      "visibility_stage": "private-pre-public",
+      "visibility_stage": "private-source",
       "public_safe": "repo-dependent",
       "owns": ["discovery", "normalization", "scoring", "lifecycle", "reports"]
     },
@@ -25,9 +25,30 @@
     {
       "name": "codex-user-config-template",
       "role": "configuration-template",
-      "visibility_stage": "private-pre-public",
+      "visibility_stage": "public",
       "public_safe": true,
-      "owns": ["public-safe configuration template", "placeholder examples", "private setup guidance"]
+      "owns": ["public-safe Codex configuration template", "placeholder examples", "private setup guidance"]
+    },
+    {
+      "name": "codex-user-config",
+      "role": "private-configuration-source",
+      "visibility_stage": "private",
+      "public_safe": false,
+      "owns": ["real Codex configuration", "memory snapshots", "preferences", "local restore policy"]
+    },
+    {
+      "name": "claude-user-config-template",
+      "role": "configuration-template",
+      "visibility_stage": "public",
+      "public_safe": true,
+      "owns": ["public-safe Claude Code configuration template", "placeholder examples", "private setup guidance"]
+    },
+    {
+      "name": "claude-user-config",
+      "role": "private-configuration-source",
+      "visibility_stage": "private",
+      "public_safe": false,
+      "owns": ["real Claude Code configuration", "curated memory", "commands", "hooks", "local restore policy"]
     },
     {
       "name": "research-bookmarks-public",

@@ -103,7 +103,12 @@ public template
 ```
 
 This keeps reusable configuration ideas separate from personal preferences,
-account state, credentials, local paths, and memory.
+account state, credentials, local paths, and memory. The loop applies per agent:
+
+| Agent | Private source | Public template |
+| --- | --- | --- |
+| Codex | `codex-user-config` | `codex-user-config-template` |
+| Claude Code | `claude-user-config` | `claude-user-config-template` |
 
 ## Why separate repositories?
 
@@ -115,7 +120,7 @@ The system is split because each lane has different trust and release rules:
 | Bookmarks | Public-safe catalog and browser HTML | Raw browser export may reveal personal behavior |
 | Resource radar | Discovery and scoring patterns | Candidate data may include noisy or unreviewed sources |
 | Curated skills | Reusable reviewed agent workflows | Skill content can affect execution behavior |
-| Config template | Portable setup pattern | Real user config and memory are private |
+| Config templates | Portable setup pattern for Codex and Claude | Real user config and memory are private |
 
 One giant repository would make these boundaries harder to review. Modular
 repositories make the trust boundary visible.
@@ -197,8 +202,9 @@ As of the current public launch stage:
 - the hub is public;
 - the bookmark public projection is public;
 - the full private bookmark source remains private;
-- resource-radar, curated skills, and configuration-template lanes are still
-  staged and should pass their own public-safety gates before broader release.
+- resource-radar and curated skills remain staged/private-source lanes;
+- Codex and Claude configuration templates are the public-safe way to share
+  portable setup patterns without exposing private configuration sources.
 
 The project is useful now as a reference pattern and public bookmark lane. It is
 not yet a complete packaged product.

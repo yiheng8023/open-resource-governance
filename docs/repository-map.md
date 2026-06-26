@@ -7,6 +7,7 @@
 ## Discovery lane
 
 - `resource-radar`: broad public resource discovery, quality signals, lifecycle state, deduplication, and reports.
+- planned public projection/template: a future `resource-radar-public` or equivalent public-safe package should expose reusable schema, demo fixtures, scoring/lifecycle examples, and validation without the private candidate pool.
 
 ## Curated Skills lane
 
@@ -14,8 +15,14 @@
 
 ## Configuration lane
 
-- `codex-user-config-template`: public-safe template for users to create private AI-collaboration configuration repositories.
-- private `codex-user-config`: real user preferences, memory snapshots, local install policy, verification, backup, rollback, and runtime integration.
+Configuration follows the same private-source / public-template rule as bookmarks:
+
+| Agent | Private source | Public template | Boundary |
+| --- | --- | --- | --- |
+| Codex | `codex-user-config` | `codex-user-config-template` | private memory, preferences, live install state, credentials, local paths stay private |
+| Claude Code | `claude-user-config` | `claude-user-config-template` | private memory, commands, hooks, account state, credentials, local paths stay private |
+
+Public templates provide structure, placeholder examples, docs, and validation. Private sources own the real user environment.
 
 ## Bookmark lane
 

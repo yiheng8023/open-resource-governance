@@ -106,6 +106,9 @@ Current usable pieces:
 - A public-safe system map for related repositories and lanes.
 - A public/private boundary model for keeping personal data out of public
   artifacts.
+- Public configuration templates for portable AI-collaboration setup:
+  [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template)
+  and [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template).
 - A launch and contribution scaffold: license, conduct, support, security,
   feedback templates, and verification.
 - Public launch assets and copy for explaining the project.
@@ -127,7 +130,7 @@ You can use this project as a reference implementation for:
 | Turn browser bookmarks into a maintainable catalog | Structured source records plus generated importable HTML |
 | Keep GitHub discovery from becoming noise | A planned resource-radar lane with scoring, lifecycle, deduplication, and human gates |
 | Share AI/agent skills across environments safely | A curated-skills lane with provenance, safety review, topology, conflict handling, and release manifests |
-| Make AI collaboration portable | A configuration-template lane that separates reusable structure from private preferences |
+| Make AI collaboration portable | Codex and Claude configuration-template lanes that separate reusable structure from private preferences |
 | Let other people improve the system | Contribution, issue, security, conduct, naming, and launch docs |
 
 The important idea is not any single script. The value is the closed loop:
@@ -161,7 +164,16 @@ agent-skills-curated
   reviewed third-party Skill content, provenance, topology, conflicts, releases
 
 codex-user-config-template
-  public-safe template ideas for portable AI-collaboration configuration
+  public-safe Codex configuration template
+
+codex-user-config
+  private Codex configuration source and memory carrier
+
+claude-user-config-template
+  public-safe Claude Code configuration template
+
+claude-user-config
+  private Claude Code configuration source, memory, commands, and hooks
 ```
 
 The core rule is:

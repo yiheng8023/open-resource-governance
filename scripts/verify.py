@@ -93,6 +93,9 @@ def verify_repository_map() -> None:
         "resource-radar",
         "agent-skills-curated",
         "codex-user-config-template",
+        "codex-user-config",
+        "claude-user-config-template",
+        "claude-user-config",
         "research-bookmarks-public",
         "research-bookmarks",
     }
@@ -123,6 +126,8 @@ def verify_external_user_readme() -> None:
         "Example user journeys",
         "Sustainability",
         "research-bookmarks-public",
+        "codex-user-config-template",
+        "claude-user-config-template",
         "389 private bookmark entries",
         "328 public-safe sources",
     ]
@@ -136,6 +141,8 @@ def verify_external_user_readme() -> None:
         "示例用户路径",
         "可持续性",
         "research-bookmarks-public",
+        "codex-user-config-template",
+        "claude-user-config-template",
         "389 条私有书签记录",
         "328 条公开安全来源",
     ]

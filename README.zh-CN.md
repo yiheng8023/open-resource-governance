@@ -94,6 +94,9 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 
 - 关联仓库和 lane 的公开安全体系地图。
 - 用于防止个人数据进入公开产物的公开/私有边界模型。
+- 可迁移 AI 协作配置的公开模板：
+  [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template)
+  和 [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template)。
 - 开源项目的基础脚手架：许可证、行为准则、支持、安全、反馈模板和验证。
 - 用来解释项目的公开发布素材和文案。
 - 配套公开书签投影仓
@@ -112,7 +115,7 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 | 把浏览器书签变成可维护目录 | 结构化来源记录 + 生成的可导入 HTML |
 | 避免 GitHub 资源发现变成噪音 | 规划中的 resource-radar lane：评分、生命周期、去重、人工闸门 |
 | 在不同环境安全共享 AI/Agent skills | curated skills lane：来源、安全审查、拓扑、冲突、发布清单 |
-| 让 AI 协作配置可迁移 | 配置模板 lane：把可复用结构和私人偏好分开 |
+| 让 AI 协作配置可迁移 | Codex 与 Claude 配置模板 lane：把可复用结构和私人偏好分开 |
 | 让别人参与共建 | 贡献、issue、安全、行为准则、命名和发布文档 |
 
 关键不在某个单独脚本，而在这个闭环：
@@ -144,7 +147,16 @@ agent-skills-curated
   已审查第三方 Skill 正文、来源、拓扑、冲突和发布清单
 
 codex-user-config-template
-  可迁移 AI 协作配置的公开安全模板思路
+  公开安全 Codex 配置模板
+
+codex-user-config
+  私有 Codex 配置真源与记忆载体
+
+claude-user-config-template
+  公开安全 Claude Code 配置模板
+
+claude-user-config
+  私有 Claude Code 配置真源、记忆、commands 与 hooks
 ```
 
 核心规则是：
