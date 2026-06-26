@@ -57,6 +57,7 @@ The following public access checks passed after changing visibility:
 | Unauthenticated issue-template raw request | HTTP 200 |
 | Latest GitHub Actions run | success |
 | Repository topics | present |
+| GitHub profile pin | present |
 
 Configured topics at verification time:
 
@@ -75,18 +76,26 @@ resource-discovery
 These actions were intentionally not performed during this launch step:
 
 - no downstream repository was made public;
-- no GitHub profile pinning was performed;
 - no funding link was enabled as a launch side effect;
 - no social-media post was published;
 - no private overlay, private bookmark export, private configuration, memory,
   credential, local path, or runtime state was published.
+
+## GitHub profile pin verification
+
+After explicit owner authorization, `yiheng8023/open-resource-governance` was
+pinned on the GitHub profile. Independent GraphQL verification returned:
+
+```text
+pinnedItems:
+- yiheng8023/open-resource-governance
+```
 
 ## Next owner decisions
 
 The hub is now public. The remaining optional promotion decisions are separate
 owner-controlled actions:
 
-1. pin the hub repository on the GitHub profile;
-2. publish the first GitHub profile or social-media announcement;
-3. decide which downstream repository should be prepared for public release
+1. publish the first GitHub profile or social-media announcement;
+2. decide which downstream repository should be prepared for public release
    next.
