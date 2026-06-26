@@ -24,6 +24,7 @@ copying private content into this hub.
 
 Use GitHub security advisories when available. If advisories are unavailable,
 contact the repository owner privately through an owner-controlled channel.
+Public-safe contact routes are listed in `docs/contact-and-social.md`.
 
 When reporting:
 
