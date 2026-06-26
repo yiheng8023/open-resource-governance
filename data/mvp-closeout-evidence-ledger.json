@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "mvp_name": "curated-skills-terminal-consumer-mvp",
+  "status": "active_in_progress",
+  "not_completion_claim": true,
+  "evidence_snapshot_date": "2026-06-27",
+  "purpose": "Track current evidence against the MVP workstreams and closeout gates without claiming the MVP is complete.",
+  "verified_surfaces": [
+    {
+      "repository": "open-resource-governance",
+      "visibility": "public",
+      "head": "15712f62a59a421703a500e9f69390757d9c31ef",
+      "local_verification": "python -B scripts/verify.py -> open-resource-governance verification passed",
+      "remote_ci": "validate success, run 28253644750"
+    },
+    {
+      "repository": "agent-skills-curated",
+      "visibility": "public",
+      "head": "1fb70c32de418de772bcf37c3451250f82a9c5c8",
+      "local_verification": "python -B scripts/verify.py and scripts/build_topology.py --check -> passed",
+      "remote_ci": "validate success, run 28221935915"
+    },
+    {
+      "repository": "codex-user-config",
+      "visibility": "private",
+      "head": "4c887aeb77108f20acf4ff551be844b3cdbc1824",
+      "local_verification": "scripts/verify.py, verify_capability_router.py, and verify_skills_install.py -> passed",
+      "remote_ci": "Validate success, run 28253330174"
+    },
+    {
+      "repository": "resource-radar",
+      "visibility": "private",
+      "head": "f5a36fda3ac44c141d9afb6ef70374bd3147581e",
+      "local_verification": "python -B scripts/verify.py -> verify passed",
+      "remote_ci": "validate success, run 28241470146"
+    },
+    {
+      "repository": "resource-radar-public",
+      "visibility": "public",
+      "head": "a6adf587380d29d2dc7b9480a42c9b2baa3c42f7",
+      "local_verification": "python -B scripts/verify.py -> resource-radar-public verification passed",
+      "remote_ci": "Validate success, run 28247154942"
+    },
+    {
+      "repository": "research-bookmarks",
+      "visibility": "private",
+      "head": "1f71fcb7f58e0c9ee7f442c8839d65d1b6439c2a",
+      "local_verification": "python -B scripts/verify.py -> private bookmark baseline verified",
+      "remote_ci": "validate success, run 28236107811"
+    },
+    {
+      "repository": "research-bookmarks-public",
+      "visibility": "public",
+      "head": "1ed429106b37535a1c0b708cab8ebaf57e486e97",
+      "local_verification": "python -B scripts/verify.py -> research-bookmarks-public verification passed",
+      "remote_ci": "validate success, run 28248727829"
+    },
+    {
+      "repository": "codex-user-config-template",
+      "visibility": "public",
+      "head": "f1c3e7f989fe3d3ae0f037ee86e39e679343b12b",
+      "local_verification": "python -B scripts/verify.py -> codex-user-config-template verification passed",
+      "remote_ci": "validate success, run 28221183576"
+    },
+    {
+      "repository": "claude-user-config-template",
+      "visibility": "public",
+      "head": "bcf2778ba0dd030b8c131a0613cdecfde314d13e",
+      "local_verification": "not re-run in this snapshot",
+      "remote_ci": "validate success, run 28243639711"
+    },
+    {
+      "repository": "claude-user-config",
+      "visibility": "private",
+      "head": "9dd7d66800352bd081e71a262c28e23fda15d1a8",
+      "local_verification": "not re-run in this snapshot",
+      "remote_ci": "validate success, run 28213497826"
+    }
+  ],
+  "workstream_status": [
+    {
+      "id": "mvp-01-source-candidate",
+      "status": "pending",
+      "evidence": "Candidate intake policy exists, but the next small candidate batch has not been selected in this MVP run.",
+      "next_required_evidence": "Pinned candidate batch, recorded selection rationale, license/provenance state, and non-executable candidate boundary."
+    },
+    {
+      "id": "mvp-02-review-adapt",
+      "status": "pending",
+      "evidence": "Review/adaptation standards exist in the curated Skills lane, but no new candidate batch has been adapted in this MVP run.",
+      "next_required_evidence": "Security, portability, overlap, neutralization, attribution, and approval evidence for the selected batch."
+    },
+    {
+      "id": "mvp-03-release-manifest",
+      "status": "baseline_ready",
+      "evidence": "agent-skills-curated validation and topology checks pass at head 1fb70c32de418de772bcf37c3451250f82a9c5c8.",
+      "next_required_evidence": "Release-candidate manifest evidence for the selected batch, including fail-closed payload checks."
+    },
+    {
+      "id": "mvp-04-consumer-install",
+      "status": "baseline_ready",
+      "evidence": "codex-user-config verification and curated Skills installer verification pass at head 4c887aeb77108f20acf4ff551be844b3cdbc1824.",
+      "next_required_evidence": "Pinned consumer install or dry-run evidence for the selected curated release plus backup/rollback proof."
+    },
+    {
+      "id": "mvp-05-routing-runtime",
+      "status": "baseline_ready",
+      "evidence": "capability-router and skills installer verification pass in codex-user-config.",
+      "next_required_evidence": "Representative runtime routing scenarios for the selected batch, including no-skill/native fallback and high-risk confirmation behavior."
+    },
+    {
+      "id": "mvp-06-feedback-retirement",
+      "status": "pending",
+      "evidence": "Resource radar and public radar validation pass, but no runtime feedback from the next Skill batch has been fed back yet.",
+      "next_required_evidence": "Accepted/rejected/deprecated/retired lifecycle decision records and safe dedupe feedback metadata."
+    },
+    {
+      "id": "mvp-07-global-closeout",
+      "status": "in_progress",
+      "evidence": "This ledger records the first cross-repository evidence snapshot and keeps completion explicitly unclaimed.",
+      "next_required_evidence": "All closeout gates have evidence, residue review is complete, public docs are updated only where proven, and the next-step decision is recorded."
+    }
+  ],
+  "closeout_gate_status": [
+    {
+      "id": "gate-01-chain-complete",
+      "status": "partial",
+      "evidence": "Base chain is verified, but the next candidate batch has not yet traversed candidate to private runtime consumption."
+    },
+    {
+      "id": "gate-02-boundaries-held",
+      "status": "partial",
+      "evidence": "Current repositories validate public/private and candidate/approved boundaries; batch-specific evidence still pending."
+    },
+    {
+      "id": "gate-03-runtime-useful",
+      "status": "partial",
+      "evidence": "Routing and installer verification pass; representative runtime use for the next batch is pending."
+    },
+    {
+      "id": "gate-04-feedback-loop",
+      "status": "pending",
+      "evidence": "No new batch runtime feedback has been recorded yet."
+    },
+    {
+      "id": "gate-05-next-lane-ready",
+      "status": "pending",
+      "evidence": "No closeout decision exists yet for iterating Skills, pausing, or incubating another terminal consumer."
+    },
+    {
+      "id": "gate-06-global-verification",
+      "status": "in_progress",
+      "evidence": "Current cross-repository validation status is captured in verified_surfaces."
+    },
+    {
+      "id": "gate-07-public-refresh",
+      "status": "pending",
+      "evidence": "Public refresh is intentionally postponed until closeout evidence proves what should be claimed."
+    },
+    {
+      "id": "gate-08-artifact-hygiene",
+      "status": "in_progress",
+      "evidence": "The ledger creates an authority surface for process evidence; a residue review still needs to classify or remove obsolete artifacts."
+    },
+    {
+      "id": "gate-09-continuous-assurance",
+      "status": "in_progress",
+      "evidence": "Current validation covers repository health at the snapshot point; recurring assurance posture still needs lifecycle scheduling."
+    },
+    {
+      "id": "gate-10-persistence-continuity",
+      "status": "in_progress",
+      "evidence": "This ledger adds a durable continuity anchor for the MVP run."
+    },
+    {
+      "id": "gate-11-observability-explainability",
+      "status": "in_progress",
+      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate."
+    }
+  ],
+  "next_actions": [
+    "select a small high-value Skill candidate batch",
+    "run curated Skills review/adaptation for that batch",
+    "produce release-candidate manifest evidence",
+    "consume the release from the private configuration workflow or an authorized dry run",
+    "run representative routing/runtime scenarios",
+    "feed lifecycle outcomes back into the governance loop",
+    "perform artifact hygiene and final global closeout review"
+  ]
+}

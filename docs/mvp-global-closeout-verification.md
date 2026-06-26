@@ -4,6 +4,10 @@ MVP closeout is not a single-repository pass. The curated Skills lane may be
 the terminal-consumer MVP, but its closeout must verify the whole governance
 loop.
 
+The current evidence ledger is
+[`mvp-closeout-evidence-ledger.md`](mvp-closeout-evidence-ledger.md). Treat it
+as an in-progress evidence snapshot, not as a completion claim.
+
 ## Closeout principle
 
 ```text

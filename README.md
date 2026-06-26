@@ -344,6 +344,8 @@ international, fiscal-host, and domestic-support considerations.
   Skills terminal-consumer MVP plan and acceptance criteria.
 - [`docs/mvp-global-closeout-verification.md`](docs/mvp-global-closeout-verification.md)
   — cross-repository MVP closeout and public-refresh checklist.
+- [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)
+  — current MVP evidence snapshot; explicitly not a completion claim.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates before
   public release.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) —

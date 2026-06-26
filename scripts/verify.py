@@ -32,6 +32,7 @@ REQUIRED_FILES = [
     "docs/shared-governance-baseline.md",
     "docs/mvp-plan-and-acceptance.md",
     "docs/mvp-global-closeout-verification.md",
+    "docs/mvp-closeout-evidence-ledger.md",
     "docs/system-topology.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
@@ -63,6 +64,7 @@ REQUIRED_FILES = [
     "data/future-lanes.json",
     "data/shared-governance-baseline.json",
     "data/mvp-acceptance-map.json",
+    "data/mvp-closeout-evidence-ledger.json",
 ]
 
 PRIVATE_ONLY_TERMS = [
@@ -409,6 +411,60 @@ def verify_mvp_acceptance_map() -> None:
         fail("README.md must link MVP global closeout verification")
 
 
+def verify_mvp_closeout_evidence_ledger() -> None:
+    acceptance = json.loads((ROOT / "data" / "mvp-acceptance-map.json").read_text(encoding="utf-8"))
+    ledger = json.loads((ROOT / "data" / "mvp-closeout-evidence-ledger.json").read_text(encoding="utf-8"))
+    if ledger.get("schema_version") != 1:
+        fail("mvp-closeout-evidence-ledger.json schema_version must be 1")
+    if ledger.get("mvp_name") != acceptance.get("mvp_name"):
+        fail("MVP closeout ledger must reference the active MVP")
+    if ledger.get("status") != "active_in_progress":
+        fail("MVP closeout ledger should remain active_in_progress until closeout")
+    if ledger.get("not_completion_claim") is not True:
+        fail("MVP closeout ledger must explicitly avoid completion claims")
+    surfaces = ledger.get("verified_surfaces", [])
+    if len(surfaces) < 8:
+        fail("MVP closeout ledger must record enough verified surfaces")
+    for surface in surfaces:
+        for key in ("repository", "visibility", "head", "local_verification", "remote_ci"):
+            if key not in surface:
+                fail(f"MVP closeout ledger surface missing {key}: {surface}")
+    expected_workstreams = {item["id"] for item in acceptance.get("workstreams", [])}
+    actual_workstreams = {item.get("id") for item in ledger.get("workstream_status", [])}
+    if actual_workstreams != expected_workstreams:
+        fail("MVP closeout ledger workstreams must match acceptance map")
+    expected_gates = {item["id"] for item in acceptance.get("closeout_gates", [])}
+    actual_gates = {item.get("id") for item in ledger.get("closeout_gate_status", [])}
+    if actual_gates != expected_gates:
+        fail("MVP closeout ledger gates must match acceptance map")
+    allowed_statuses = {"pending", "partial", "baseline_ready", "in_progress"}
+    for section_name in ("workstream_status", "closeout_gate_status"):
+        for item in ledger.get(section_name, []):
+            if item.get("status") not in allowed_statuses:
+                fail(f"MVP closeout ledger has unexpected status in {section_name}: {item}")
+            if not item.get("evidence"):
+                fail(f"MVP closeout ledger item missing evidence: {item}")
+    if not ledger.get("next_actions"):
+        fail("MVP closeout ledger must record next actions")
+    doc = (ROOT / "docs" / "mvp-closeout-evidence-ledger.md").read_text(encoding="utf-8")
+    for phrase in [
+        "not a completion claim",
+        "baseline-ready",
+        "Verified surfaces",
+        "Workstream status",
+        "Gate status",
+        "Next evidence required",
+    ]:
+        if phrase not in doc:
+            fail(f"MVP closeout evidence ledger doc missing phrase: {phrase}")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    if "docs/mvp-closeout-evidence-ledger.md" not in readme:
+        fail("README.md must link MVP closeout evidence ledger")
+    closeout_doc = (ROOT / "docs" / "mvp-global-closeout-verification.md").read_text(encoding="utf-8")
+    if "mvp-closeout-evidence-ledger.md" not in closeout_doc:
+        fail("global closeout doc must link MVP closeout evidence ledger")
+
+
 def verify_support_entry() -> None:
     funding = (ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8")
     support = (ROOT / "docs" / "support-and-sponsorship.md").read_text(encoding="utf-8")
@@ -469,6 +525,7 @@ def main() -> None:
     verify_future_lane_incubation()
     verify_shared_governance_baseline()
     verify_mvp_acceptance_map()
+    verify_mvp_closeout_evidence_ledger()
     verify_support_entry()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")
