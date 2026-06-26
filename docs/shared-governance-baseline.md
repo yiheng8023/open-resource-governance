@@ -125,6 +125,9 @@ other terminal consumers can be added with much less guesswork.
 See [`mvp-plan-and-acceptance.md`](mvp-plan-and-acceptance.md) for the execution
 map and acceptance criteria.
 
+See [`mvp-global-closeout-verification.md`](mvp-global-closeout-verification.md)
+for the cross-repository closeout and public-refresh gate.
+
 Until then, keep future lanes lightweight and candidate-only.
 
 ## Practical rule

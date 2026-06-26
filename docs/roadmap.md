@@ -36,6 +36,9 @@
 - Keep future directions as candidate lanes until they prove value.
 - Prioritize the curated Skills lane before building additional terminal lanes.
 - Use the curated Skills terminal-consumer MVP plan as the next execution map.
+- Treat MVP closeout as a cross-repository evidence gate, not a single
+  repository pass. README, topology, index, and promotion updates should happen
+  only where the closeout evidence supports them.
 - Track possible lanes such as project standards, public-safe knowledge graph
   projections, benchmark/evaluation recipes, documentation systems, software
   architecture playbooks, domain-specific resource packs, private project
@@ -46,7 +49,7 @@
 
 ## Current staged status
 
-As of 2026-06-26, the public/private split is no longer a single hub-only
+As of 2026-06-27, the public/private split is no longer a single hub-only
 launch. The current visible map is:
 
 - `open-resource-governance` is public and pinned on the owner's GitHub profile.

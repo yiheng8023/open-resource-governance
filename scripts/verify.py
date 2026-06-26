@@ -31,6 +31,7 @@ REQUIRED_FILES = [
     "docs/public-private-boundary.md",
     "docs/shared-governance-baseline.md",
     "docs/mvp-plan-and-acceptance.md",
+    "docs/mvp-global-closeout-verification.md",
     "docs/system-topology.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
@@ -331,20 +332,20 @@ def verify_mvp_acceptance_map() -> None:
     if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
         fail("unexpected MVP name")
     workstreams = data.get("workstreams", [])
-    if len(workstreams) != 6:
-        fail("MVP must define six workstreams")
-    required_workstream_ids = {f"mvp-0{index}" for index in range(1, 7)}
+    if len(workstreams) != 7:
+        fail("MVP must define seven workstreams")
+    required_workstream_ids = {f"mvp-0{index}" for index in range(1, 8)}
     actual_ids = {item.get("id")[:6] for item in workstreams}
     if actual_ids != required_workstream_ids:
-        fail("MVP workstream IDs must be mvp-01 through mvp-06")
+        fail("MVP workstream IDs must be mvp-01 through mvp-07")
     for item in workstreams:
         if not item.get("acceptance"):
             fail(f"MVP workstream missing acceptance criteria: {item.get('id')}")
         if not item.get("human_gate"):
             fail(f"MVP workstream missing human gate: {item.get('id')}")
     gates = data.get("closeout_gates", [])
-    if len(gates) != 5:
-        fail("MVP must define five closeout gates")
+    if len(gates) != 7:
+        fail("MVP must define seven closeout gates")
     doc = (ROOT / "docs" / "mvp-plan-and-acceptance.md").read_text(encoding="utf-8")
     required_doc_phrases = [
         "curated Skills lane",
@@ -353,12 +354,27 @@ def verify_mvp_acceptance_map() -> None:
         "Closeout gates",
         "Stage exit",
         "small batch",
+        "Global closeout",
     ]
     for phrase in required_doc_phrases:
         if phrase not in doc:
             fail(f"MVP plan doc missing phrase: {phrase}")
     if "docs/mvp-plan-and-acceptance.md" not in (ROOT / "README.md").read_text(encoding="utf-8"):
         fail("README.md must link MVP plan")
+    closeout_doc = (ROOT / "docs" / "mvp-global-closeout-verification.md").read_text(encoding="utf-8")
+    required_closeout_phrases = [
+        "cross-repository verification",
+        "Promotion is downstream of proof",
+        "video",
+        "topology",
+        "README",
+        "Evidence rule",
+    ]
+    for phrase in required_closeout_phrases:
+        if phrase not in closeout_doc:
+            fail(f"MVP global closeout doc missing phrase: {phrase}")
+    if "docs/mvp-global-closeout-verification.md" not in (ROOT / "README.md").read_text(encoding="utf-8"):
+        fail("README.md must link MVP global closeout verification")
 
 
 def verify_support_entry() -> None:

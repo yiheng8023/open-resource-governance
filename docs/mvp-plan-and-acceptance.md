@@ -47,6 +47,7 @@ This MVP does not:
 | MVP-04 | Private consumer install and verification | Consume the curated release from a private configuration repository | Authorize install or restore in private runtime context |
 | MVP-05 | Routing and runtime use | Verify routed use without forcing Skills for every task | Confirm high-risk or ambiguous routes |
 | MVP-06 | Feedback, lifecycle, and retirement | Feed evidence back without direct private-project mutation | Approve public promotion of generalizable lessons |
+| MVP-07 | Global closeout and public refresh | Verify the MVP across the repository family and update public surfaces only where evidence supports it | Approve public closeout claims and any promotion refresh |
 
 ## Acceptance criteria
 
@@ -94,6 +95,15 @@ This MVP does not:
 - Resource radar can consume safe decision metadata for dedupe.
 - Lessons update shared governance only when generalizable.
 
+### MVP-07: Global closeout and public refresh
+
+- Per-repository verification status is recorded.
+- Topology, repository map, shared baseline, and indexes are reviewed.
+- README and public docs distinguish planned, proven, and deferred claims.
+- Promotion and video material remain postponed until evidence-backed refresh.
+- Next-step decision is recorded: iterate Skills, pause, or incubate another
+  terminal consumer.
+
 ## Closeout gates
 
 | Gate | Meaning | Required evidence |
@@ -103,6 +113,8 @@ This MVP does not:
 | Gate 03: runtime useful | Skills improve real work without over-triggering | Routing and runtime evidence from MVP-05 |
 | Gate 04: feedback loop | Runtime evidence can update governance safely | Lifecycle evidence from MVP-06 |
 | Gate 05: next lane ready | Another terminal consumer can be evaluated | Closeout summary explains whether to incubate another lane |
+| Gate 06: global verification | Hub, Skills lane, private consumer, discovery feedback, and affected templates/projections are verified | Evidence from MVP-07 |
+| Gate 07: public refresh | README, docs, topology, indexes, and promotion material are updated only for evidence-backed claims | Evidence from MVP-07 |
 
 ## Execution discipline
 
@@ -130,5 +142,10 @@ This MVP is complete only when:
 3. no public document exposes private/core project identity or internals;
 4. no candidate or unapproved Skill is treated as executable;
 5. install, rollback, routing, and feedback behavior are verified;
-6. the closeout report says whether to iterate Skills again or incubate another
-   terminal consumer.
+6. global closeout verifies the affected repository family, not only the Skills
+   repository;
+7. topology, indexes, README, and promotion material are updated only where the
+   evidence supports an update;
+8. video and broader promotion remain optional and post-closeout;
+9. the closeout report says whether to iterate Skills again, pause, or incubate
+   another terminal consumer.

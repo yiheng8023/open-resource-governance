@@ -342,6 +342,8 @@ international, fiscal-host, and domestic-support considerations.
   common governance expectations shared across the repository family.
 - [`docs/mvp-plan-and-acceptance.md`](docs/mvp-plan-and-acceptance.md) — curated
   Skills terminal-consumer MVP plan and acceptance criteria.
+- [`docs/mvp-global-closeout-verification.md`](docs/mvp-global-closeout-verification.md)
+  — cross-repository MVP closeout and public-refresh checklist.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates before
   public release.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) —

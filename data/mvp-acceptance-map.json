@@ -89,6 +89,19 @@
         "lessons update shared governance only when generalizable"
       ],
       "human_gate": "approve promotion of lessons into public governance"
+    },
+    {
+      "id": "mvp-07-global-closeout",
+      "title": "Global closeout and public refresh",
+      "goal": "Verify the MVP across the repository family and update public docs, topology, indexes, and promotion material only where evidence supports it.",
+      "acceptance": [
+        "per-repository verification status is recorded",
+        "topology, repository map, shared baseline, and indexes are reviewed",
+        "README and public docs distinguish planned, proven, and deferred claims",
+        "promotion and video material remain postponed until evidence-backed refresh",
+        "next-step decision is recorded: iterate Skills, pause, or incubate another terminal consumer"
+      ],
+      "human_gate": "approve public closeout claims and any promotion refresh"
     }
   ],
   "closeout_gates": [
@@ -132,6 +145,20 @@
       "description": "The team can decide whether another terminal consumer is worth incubating.",
       "mapped_workstreams": [
         "mvp-06-feedback-retirement"
+      ]
+    },
+    {
+      "id": "gate-06-global-verification",
+      "description": "The MVP is verified across the hub, curated Skills lane, private consumer, discovery feedback, and affected templates or projections.",
+      "mapped_workstreams": [
+        "mvp-07-global-closeout"
+      ]
+    },
+    {
+      "id": "gate-07-public-refresh",
+      "description": "README, docs, topology, indexes, and promotion material are updated only for evidence-backed claims; video remains optional and post-closeout.",
+      "mapped_workstreams": [
+        "mvp-07-global-closeout"
       ]
     }
   ]
