@@ -5,6 +5,8 @@ Use it only after the target repository passes `public-launch-gates.md`.
 
 ## Launch order
 
+Current hub status as of 2026-06-26: the hub is already public and pinned on the owner's GitHub profile. The sequence below remains the reusable playbook for future public launches, downstream repositories, and optional social announcements.
+
 1. Publish the hub first.
 2. Confirm the hub README renders correctly.
 3. Pin the hub on the GitHub profile.

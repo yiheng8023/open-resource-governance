@@ -92,4 +92,4 @@ Key docs:
 
 ## Safety Boundaries
 
-This repository can be made public when ready. Before publication, verify that it contains no private configuration, private bookmarks, memory, credentials, local paths, account state, personal preference data, or third-party restricted content.
+This repository is public. Every future update must remain public-safe: do not add private configuration, private bookmarks, memory, credentials, local paths, account state, personal preference data, or third-party restricted content.
