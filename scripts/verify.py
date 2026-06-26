@@ -25,6 +25,8 @@ REQUIRED_FILES = [
     ".github/workflows/validate.yml",
     "data/repositories.json",
     "docs/license-policy.md",
+    "docs/project-design.md",
+    "docs/public-project-positioning-benchmark.md",
     "docs/community-feedback-model.md",
     "docs/public-private-boundary.md",
     "docs/repository-map.md",
@@ -108,6 +110,43 @@ def verify_language_links() -> None:
         fail("README.zh-CN.md language switch is missing or inconsistent")
 
 
+def verify_external_user_readme() -> None:
+    english = (ROOT / "README.md").read_text(encoding="utf-8")
+    chinese = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+    required_english = [
+        "temporary project name",
+        "docs/assets/launch-video/title-card-16x9.png",
+        "What problem does this solve?",
+        "Proof, not just plans",
+        "What can you use today?",
+        "What value can you reproduce?",
+        "Example user journeys",
+        "Sustainability",
+        "research-bookmarks-public",
+        "389 private bookmark entries",
+        "328 public-safe sources",
+    ]
+    required_chinese = [
+        "临时项目名",
+        "docs/assets/launch-video/title-card-16x9.png",
+        "它解决什么问题？",
+        "不是只画饼，已有跑通证据",
+        "现在能用什么？",
+        "你能复刻什么价值？",
+        "示例用户路径",
+        "可持续性",
+        "research-bookmarks-public",
+        "389 条私有书签记录",
+        "328 条公开安全来源",
+    ]
+    for phrase in required_english:
+        if phrase not in english:
+            fail(f"README.md missing external-user phrase: {phrase}")
+    for phrase in required_chinese:
+        if phrase not in chinese:
+            fail(f"README.zh-CN.md missing external-user phrase: {phrase}")
+
+
 def verify_no_obvious_private_payloads() -> None:
     for path in ROOT.rglob("*"):
         if ".git" in path.parts or not path.is_file():
@@ -127,6 +166,7 @@ def main() -> None:
     verify_required_files()
     verify_repository_map()
     verify_language_links()
+    verify_external_user_readme()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")
 
