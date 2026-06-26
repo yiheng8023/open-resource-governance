@@ -29,6 +29,7 @@ REQUIRED_FILES = [
     "docs/repository-map.md",
     "docs/promotion-kit.md",
     "docs/free-promotion-playbook.md",
+    "docs/owner-launch-decision.md",
     "docs/pre-public-safety-audit.md",
     "docs/pre-public-readiness-2026-06-26.md",
     "docs/public-launch-gates.md",
