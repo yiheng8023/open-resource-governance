@@ -16,6 +16,13 @@
       "owns": ["discovery", "normalization", "scoring", "lifecycle", "reports"]
     },
     {
+      "name": "resource-radar-public",
+      "role": "public-resource-radar-template",
+      "visibility_stage": "public",
+      "public_safe": true,
+      "owns": ["public-safe schema", "demo fixtures", "scoring policy examples", "lifecycle examples", "deterministic demo reports", "validation"]
+    },
+    {
       "name": "agent-skills-curated",
       "role": "curated-skills-governance",
       "visibility_stage": "private-pre-public",

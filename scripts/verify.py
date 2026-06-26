@@ -29,6 +29,7 @@ REQUIRED_FILES = [
     "docs/public-project-positioning-benchmark.md",
     "docs/community-feedback-model.md",
     "docs/public-private-boundary.md",
+    "docs/system-topology.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
     "docs/free-promotion-playbook.md",
@@ -51,6 +52,7 @@ REQUIRED_FILES = [
     "docs/public-launch-gates.md",
     "docs/roadmap.md",
     "docs/closeout-audit-2026-06-26.md",
+    "data/topology.json",
 ]
 
 PRIVATE_ONLY_TERMS = [
@@ -91,6 +93,7 @@ def verify_repository_map() -> None:
     required = {
         "open-resource-governance",
         "resource-radar",
+        "resource-radar-public",
         "agent-skills-curated",
         "codex-user-config-template",
         "codex-user-config",
@@ -102,6 +105,25 @@ def verify_repository_map() -> None:
     missing = required - names
     if missing:
         fail(f"repository map missing: {', '.join(sorted(missing))}")
+
+
+def verify_topology() -> None:
+    data = json.loads((ROOT / "data" / "topology.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("topology.json schema_version must be 1")
+    repo_data = json.loads((ROOT / "data" / "repositories.json").read_text(encoding="utf-8"))
+    repo_names = {repo["name"] for repo in repo_data.get("repositories", [])}
+    node_ids = {node.get("id") for node in data.get("nodes", [])}
+    if not repo_names <= node_ids:
+        fail(f"topology missing nodes: {', '.join(sorted(repo_names - node_ids))}")
+    for edge in data.get("edges", []):
+        if edge.get("from") not in node_ids or edge.get("to") not in node_ids:
+            fail(f"topology edge references unknown node: {edge}")
+        if "write_permission" not in edge:
+            fail(f"topology edge missing write_permission: {edge}")
+    principles = "\n".join(data.get("principles", []))
+    if "All non-user-configuration lanes should remain agent-neutral" not in principles:
+        fail("topology must state non-user-configuration neutrality")
 
 
 def verify_language_links() -> None:
@@ -126,6 +148,7 @@ def verify_external_user_readme() -> None:
         "Example user journeys",
         "Sustainability",
         "research-bookmarks-public",
+        "resource-radar-public",
         "codex-user-config-template",
         "claude-user-config-template",
         "389 private bookmark entries",
@@ -141,6 +164,7 @@ def verify_external_user_readme() -> None:
         "示例用户路径",
         "可持续性",
         "research-bookmarks-public",
+        "resource-radar-public",
         "codex-user-config-template",
         "claude-user-config-template",
         "389 条私有书签记录",
@@ -172,6 +196,7 @@ def verify_no_obvious_private_payloads() -> None:
 def main() -> None:
     verify_required_files()
     verify_repository_map()
+    verify_topology()
     verify_language_links()
     verify_external_user_readme()
     verify_no_obvious_private_payloads()

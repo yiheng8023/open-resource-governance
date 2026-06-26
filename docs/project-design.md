@@ -76,6 +76,10 @@ source discovery
 This is the planned `resource-radar` role. It should not blindly collect
 everything. It should help humans see better candidates with evidence.
 
+The public template for this lane is now `resource-radar-public`: it exposes a
+public-safe schema, demo fixtures, scoring/lifecycle examples, deterministic
+demo reports, and validation without publishing the private candidate pool.
+
 ### 3. Curated skill loop
 
 ```text
@@ -150,6 +154,8 @@ Users can copy the pattern and build:
 - a public-safe bookmark catalog generated from private browser exports;
 - a personal research resource map with public and private layers;
 - a curated GitHub discovery pipeline with human review gates;
+- a public-safe resource-radar template for broad resource discovery, scoring,
+  lifecycle tracking, and downstream projections;
 - a reusable agent-skill intake and release workflow;
 - a portable AI-collaboration configuration template;
 - a small-team knowledge governance system with automation but without
@@ -202,9 +208,17 @@ As of the current public launch stage:
 - the hub is public;
 - the bookmark public projection is public;
 - the full private bookmark source remains private;
-- resource-radar and curated skills remain staged/private-source lanes;
+- `resource-radar-public` is public as the reusable resource-radar template;
+- `resource-radar` remains the private-source lane for real candidate pools and
+  account-coupled automation;
+- curated skills remain a staged/private-pre-public lane;
 - Codex and Claude configuration templates are the public-safe way to share
   portable setup patterns without exposing private configuration sources.
+
+Outside the user-configuration lane, the system should remain agent-neutral and
+tool-neutral. Resource discovery, bookmarks, curated skills, schemas,
+validation, and topology should be reusable beyond Codex, Claude, or any single
+runtime.
 
 The project is useful now as a reference pattern and public bookmark lane. It is
 not yet a complete packaged product.
