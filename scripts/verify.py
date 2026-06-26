@@ -21,6 +21,7 @@ REQUIRED_FILES = [
     "docs/promotion-kit.md",
     "docs/free-promotion-playbook.md",
     "docs/pre-public-safety-audit.md",
+    "docs/pre-public-readiness-2026-06-26.md",
     "docs/public-launch-gates.md",
     "docs/roadmap.md",
     "docs/closeout-audit-2026-06-26.md",
