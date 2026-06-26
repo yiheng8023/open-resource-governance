@@ -182,6 +182,30 @@ def verify_external_user_readme() -> None:
             fail(f"README.zh-CN.md missing external-user phrase: {phrase}")
 
 
+def verify_current_public_private_status() -> None:
+    roadmap = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")
+    project_design = (ROOT / "docs" / "project-design.md").read_text(encoding="utf-8")
+    required_roadmap_phrases = [
+        "resource-radar` is private",
+        "resource-radar-public` is public",
+        "codex-user-config` and `claude-user-config` are private",
+        "codex-user-config-template` and `claude-user-config-template` are public",
+        "does not make the paired private source",
+    ]
+    for phrase in required_roadmap_phrases:
+        if phrase not in roadmap:
+            fail(f"roadmap missing current public/private status phrase: {phrase}")
+    required_design_phrases = [
+        "not a simple upstream/downstream hierarchy",
+        "public radar template",
+        "public configuration-template family",
+        "not yet a complete packaged product",
+    ]
+    for phrase in required_design_phrases:
+        if phrase not in project_design:
+            fail(f"project design missing relationship/maturity phrase: {phrase}")
+
+
 def verify_no_obvious_private_payloads() -> None:
     for path in ROOT.rglob("*"):
         if ".git" in path.parts or not path.is_file():
@@ -203,6 +227,7 @@ def main() -> None:
     verify_topology()
     verify_language_links()
     verify_external_user_readme()
+    verify_current_public_private_status()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")
 

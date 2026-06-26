@@ -31,4 +31,26 @@
 
 ## Current staged status
 
-As of 2026-06-26, the hub repository `open-resource-governance` is public and pinned on the owner's GitHub profile. The bookmark lane has been split: `research-bookmarks` is private and owns complete imports, while `research-bookmarks-public` is public and owns the generated public-safe bookmark projection. Other downstream repositories remain gated by their own release decisions: configuration templates, resource radar outputs, and curated Skills governance must each pass their own public/private boundary review before any visibility change.
+As of 2026-06-26, the public/private split is no longer a single hub-only
+launch. The current visible map is:
+
+- `open-resource-governance` is public and pinned on the owner's GitHub profile.
+- `research-bookmarks` is private and owns complete bookmark imports, private
+  overlays, audits, and declassification inputs.
+- `research-bookmarks-public` is public and owns the generated public-safe
+  bookmark projection.
+- `resource-radar` is private and owns the real candidate pool, review notes,
+  account-coupled automation, snapshots, and lifecycle reports.
+- `resource-radar-public` is public and owns the reusable radar schema, demo
+  fixtures, scoring/lifecycle examples, generated demo reports, and validation.
+- `codex-user-config` and `claude-user-config` are private user-environment
+  sources.
+- `codex-user-config-template` and `claude-user-config-template` are public
+  templates for reusable configuration structure.
+- `agent-skills-curated` remains gated by its own release decision because it
+  may govern executable Skill content, provenance, topology, conflicts, and
+  release manifests.
+
+Future releases should still pass per-repository public/private boundary
+review. A public template or projection does not make the paired private source
+public, and a private source does not make the public projection incomplete.

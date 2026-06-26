@@ -73,8 +73,8 @@ source discovery
 -> downstream lane decision
 ```
 
-This is the planned `resource-radar` role. It should not blindly collect
-everything. It should help humans see better candidates with evidence.
+This is the `resource-radar` lane. It should not blindly collect everything.
+It should help humans see better candidates with evidence.
 
 The public template for this lane is now `resource-radar-public`: it exposes a
 public-safe schema, demo fixtures, scoring/lifecycle examples, deterministic
@@ -92,8 +92,8 @@ candidate skill source
 -> consumer install path
 ```
 
-This is the planned `agent-skills-curated` role. It is intentionally slower
-than raw discovery because executable agent behavior needs stronger gates.
+This is the `agent-skills-curated` lane. It is intentionally slower than raw
+discovery because executable agent behavior needs stronger gates.
 
 ### 4. Portable configuration loop
 
@@ -231,8 +231,9 @@ runtime.
 Skills are still the terminal downstream for executable Skill artifacts, but
 not for the whole resource system.
 
-The project is useful now as a reference pattern and public bookmark lane. It is
-not yet a complete packaged product.
+The project is useful now as a reference pattern, public bookmark projection,
+public radar template, public configuration-template family, and global
+relationship map. It is not yet a complete packaged product.
 
 ## 中文摘要
 
