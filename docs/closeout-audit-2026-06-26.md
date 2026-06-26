@@ -19,12 +19,16 @@ Prepare a rigorous, globally verified, public-safe repository family for:
 
 | Repository | Role | Main revision | Visibility | Current status |
 | --- | --- | --- | --- | --- |
-| `open-resource-governance` | Hub, repository map, promotion kit | `fcb87cf9b8b72dd9b0f9c2ea57e83689537303ec` | private | Public-safe pre-public baseline created |
+| `open-resource-governance` | Hub, repository map, promotion kit | current `main` containing this audit | private | Public-safe pre-public baseline created |
 | `resource-radar` | Resource discovery, scoring, lifecycle, reports | `a7635911416e5e014a02ae800f28929cc3901344` | private | Linked to hub, template, and bookmark-public lanes |
 | `agent-skills-curated` | Reviewed Skill governance and release manifests | `1fb70c32de418de772bcf37c3451250f82a9c5c8` | private | Linked to hub and config-template lanes |
 | `codex-user-config-template` | Public-safe configuration template | `f1c3e7f989fe3d3ae0f037ee86e39e679343b12b` | private | Template baseline created |
 | `research-bookmarks-public` | Official-source bookmark taxonomy seed | `835aa9a539e6bd6e38f63759f1cbb2f0d943ccfa` | private | Public bookmark baseline created |
 | private `codex-user-config` | Real private user configuration | `6830d8bcb9c003122c64c8750579e279f34d71fe` | private | Verified separately; not copied into public templates |
+
+The hub row is intentionally self-referential: every edit to this audit changes
+the hub repository revision, so the current `main` branch containing this file
+is the authoritative hub evidence.
 
 ## Completed work
 
