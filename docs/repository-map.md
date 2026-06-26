@@ -19,8 +19,9 @@
 
 ## Bookmark lane
 
-- `research-bookmarks-public`: official-source taxonomy and bookmark portability conventions.
-- private bookmarks repository: full personal bookmarks, notes, non-official resources, browser exports, and preferences.
+- `research-bookmarks`: private source of truth for complete bookmark imports, private overlays, audits, and declassification inputs.
+- `research-bookmarks-public`: public-safe structured source catalog and generated browser-importable bookmark HTML.
+- `resource-radar`: can consume filtered bookmark sources for wider discovery, lifecycle, scoring, and projections, but does not own raw private bookmark truth.
 
 ## Relationship rule
 

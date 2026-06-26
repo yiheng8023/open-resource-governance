@@ -46,10 +46,13 @@ codex-user-config-template
   -> public-safe template for private AI-collaboration configuration repositories
 
 research-bookmarks-public
-  -> public-safe official-source bookmark taxonomy and source directory
+  -> public-safe source taxonomy, structured public catalog, and generated browser-importable bookmark HTML
 
-private overlays
-  -> real user configuration, memory, bookmarks, preferences, and runtime state
+research-bookmarks
+  -> private full bookmark imports, overlays, audits, and declassification inputs
+
+private configuration overlays
+  -> real user configuration, memory, preferences, account state, and runtime state
 ```
 
 ## Relationship To Private Repositories
@@ -81,12 +84,13 @@ Key docs:
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — short launch video script, storyboard, and AI video prompt.
 - [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — prepared public-safe launch video image assets and usage notes.
 - [`docs/naming-campaign.md`](docs/naming-campaign.md) — public naming feedback process for the temporary project name.
+- [`docs/bookmark-lane-closeout-2026-06-26.md`](docs/bookmark-lane-closeout-2026-06-26.md) — bookmark lane split, verification, and public/private closeout evidence.
 - [`docs/contact-and-social.md`](docs/contact-and-social.md) — public-safe contact routes and future social-link policy.
 - [`docs/community-feedback-model.md`](docs/community-feedback-model.md) — safe issue/PR feedback model for future public collaboration.
 - [`GOVERNANCE.md`](GOVERNANCE.md) — lightweight maintainer and owner-gate model.
 - [`SUPPORT.md`](SUPPORT.md) — support boundaries and safe contact paths.
 - [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — public-safe collaboration expectations.
-- [`docs/closeout-audit-2026-06-26.md`](docs/closeout-audit-2026-06-26.md) — latest staged closeout audit.
+- [`docs/closeout-audit-2026-06-26.md`](docs/closeout-audit-2026-06-26.md) — earlier staged closeout audit retained for history.
 - [`docs/promotion-kit.md`](docs/promotion-kit.md) — free-channel promotion draft material.
 
 ## Update Rules

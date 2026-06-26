@@ -31,4 +31,4 @@
 
 ## Current staged status
 
-As of 2026-06-26, the hub repository `open-resource-governance` is public and pinned on the owner's GitHub profile. Downstream repositories remain gated by their own release decisions: configuration templates, public bookmark taxonomies, resource radar outputs, and curated Skills governance must each pass their own public/private boundary review before any visibility change.
+As of 2026-06-26, the hub repository `open-resource-governance` is public and pinned on the owner's GitHub profile. The bookmark lane has been split: `research-bookmarks` is private and owns complete imports, while `research-bookmarks-public` is public and owns the generated public-safe bookmark projection. Other downstream repositories remain gated by their own release decisions: configuration templates, resource radar outputs, and curated Skills governance must each pass their own public/private boundary review before any visibility change.

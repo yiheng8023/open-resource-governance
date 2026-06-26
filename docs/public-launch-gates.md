@@ -62,10 +62,13 @@ Minimum relationship rules:
 - `agent-skills-curated` owns reviewed Skill intake, adaptation, topology,
   conflicts, and release manifests.
 - `codex-user-config-template` is a template, not a live configuration.
-- `research-bookmarks-public` is a public-safe official-source directory, not a
-  full personal bookmark export.
-- private overlays own real personal configuration, memory, bookmarks,
-  preferences, and runtime state.
+- `research-bookmarks` is the private source for complete bookmark imports,
+  overlays, audits, and declassification inputs.
+- `research-bookmarks-public` is a public-safe structured source catalog and
+  generated browser-importable HTML projection, not a full personal bookmark
+  export.
+- private configuration overlays own real personal configuration, memory,
+  preferences, account state, and runtime state.
 
 ## Gate 6: Promotion readiness
 
@@ -82,7 +85,9 @@ Before promotion:
 ## Current release boundary
 
 As of 2026-06-26, `open-resource-governance` has passed its owner-controlled
-launch gate and is public. Downstream repositories and private overlays remain
-separate owner-controlled release decisions. Changing any additional
-repository visibility must not be performed as a side effect of documentation,
-validation, promotion, or local closeout.
+launch gate and is public. The bookmark lane has passed its split release:
+`research-bookmarks` remains private, while `research-bookmarks-public` is
+public after generated-output validation. Other downstream repositories and
+private overlays remain separate owner-controlled release decisions. Changing
+any additional repository visibility must not be performed as a side effect of
+documentation, validation, promotion, or local closeout.

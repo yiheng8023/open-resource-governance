@@ -4,7 +4,7 @@
     {
       "name": "open-resource-governance",
       "role": "hub",
-      "visibility_stage": "private-pre-public",
+      "visibility_stage": "public",
       "public_safe": true,
       "owns": ["system map", "public docs", "promotion kit"]
     },
@@ -31,10 +31,17 @@
     },
     {
       "name": "research-bookmarks-public",
-      "role": "public-bookmark-taxonomy",
-      "visibility_stage": "private-pre-public",
+      "role": "public-bookmark-projection",
+      "visibility_stage": "public",
       "public_safe": true,
-      "owns": ["official-source taxonomy", "bookmark import/export conventions"]
+      "owns": ["public-safe source taxonomy", "structured public source catalog", "generated browser-importable HTML"]
+    },
+    {
+      "name": "research-bookmarks",
+      "role": "private-bookmark-source",
+      "visibility_stage": "private",
+      "public_safe": false,
+      "owns": ["complete bookmark imports", "private overlays", "audit evidence", "declassification inputs"]
     }
   ]
 }
