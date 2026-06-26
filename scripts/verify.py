@@ -33,6 +33,7 @@ REQUIRED_FILES = [
     "docs/mvp-plan-and-acceptance.md",
     "docs/mvp-global-closeout-verification.md",
     "docs/mvp-closeout-evidence-ledger.md",
+    "docs/mvp-artifact-hygiene-review.md",
     "docs/system-topology.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
@@ -65,6 +66,7 @@ REQUIRED_FILES = [
     "data/shared-governance-baseline.json",
     "data/mvp-acceptance-map.json",
     "data/mvp-closeout-evidence-ledger.json",
+    "data/mvp-artifact-hygiene-review.json",
 ]
 
 PRIVATE_ONLY_TERMS = [
@@ -465,6 +467,84 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         fail("global closeout doc must link MVP closeout evidence ledger")
 
 
+def verify_mvp_artifact_hygiene_review() -> None:
+    data = json.loads((ROOT / "data" / "mvp-artifact-hygiene-review.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("mvp-artifact-hygiene-review.json schema_version must be 1")
+    if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
+        fail("artifact hygiene review must reference the active MVP")
+    if data.get("status") != "active_in_progress":
+        fail("artifact hygiene review must remain active_in_progress until Gate 08 passes")
+    if data.get("not_completion_claim") is not True:
+        fail("artifact hygiene review must explicitly avoid completion claims")
+    required_principles = [
+        "No process artifact is authority by accident.",
+        "Generated artifacts are derived projections, not hand-maintained truth.",
+        "Promotion material is downstream of proof.",
+        "The MVP-02 approval request is not approval.",
+    ]
+    for phrase in required_principles:
+        if phrase not in data.get("principles", []):
+            fail(f"artifact hygiene review missing principle: {phrase}")
+    required_classes = {
+        "promoted_evidence",
+        "archived_context",
+        "deleted_residue",
+        "ignored_non_authority",
+        "generated_derived",
+        "private_source",
+    }
+    actual_classes = {item.get("id") for item in data.get("artifact_classes", [])}
+    if not required_classes <= actual_classes:
+        fail(f"artifact hygiene review missing classes: {', '.join(sorted(required_classes - actual_classes))}")
+    repo_data = json.loads((ROOT / "data" / "repositories.json").read_text(encoding="utf-8"))
+    repo_names = {repo["name"] for repo in repo_data.get("repositories", [])}
+    postures = data.get("repository_posture", [])
+    posture_repos = {item.get("repository") for item in postures}
+    if repo_names - posture_repos:
+        fail(f"artifact hygiene review missing repository posture: {', '.join(sorted(repo_names - posture_repos))}")
+    for posture in postures:
+        for key in (
+            "repository",
+            "visibility",
+            "authority_surfaces",
+            "promoted_evidence",
+            "archived_context",
+            "generated_derived",
+            "deleted_residue",
+            "ignored_non_authority",
+            "next_review",
+        ):
+            if key not in posture:
+                fail(f"artifact hygiene posture missing {key}: {posture}")
+        if posture["repository"] not in repo_names:
+            fail(f"artifact hygiene posture references unknown repository: {posture['repository']}")
+    result = data.get("current_result", {})
+    if result.get("gate_08_status") != "in_progress_with_review_surface":
+        fail("artifact hygiene review must keep Gate 08 in progress")
+    if not result.get("remaining_before_gate_pass"):
+        fail("artifact hygiene review must record remaining work before Gate 08 can pass")
+    doc = (ROOT / "docs" / "mvp-artifact-hygiene-review.md").read_text(encoding="utf-8")
+    for phrase in [
+        "No process artifact is authority by accident",
+        "promoted evidence",
+        "archived context",
+        "deleted residue",
+        "ignored non-authority",
+        "Generated artifacts are derived",
+        "MVP-02 approval request is not approval",
+        "Gate 08 still cannot pass",
+    ]:
+        if phrase not in doc:
+            fail(f"artifact hygiene review doc missing phrase: {phrase}")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    if "docs/mvp-artifact-hygiene-review.md" not in readme:
+        fail("README.md must link MVP artifact hygiene review")
+    closeout_doc = (ROOT / "docs" / "mvp-global-closeout-verification.md").read_text(encoding="utf-8")
+    if "mvp-artifact-hygiene-review.md" not in closeout_doc:
+        fail("global closeout doc must link MVP artifact hygiene review")
+
+
 def verify_support_entry() -> None:
     funding = (ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8")
     support = (ROOT / "docs" / "support-and-sponsorship.md").read_text(encoding="utf-8")
@@ -526,6 +606,7 @@ def main() -> None:
     verify_shared_governance_baseline()
     verify_mvp_acceptance_map()
     verify_mvp_closeout_evidence_ledger()
+    verify_mvp_artifact_hygiene_review()
     verify_support_entry()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")

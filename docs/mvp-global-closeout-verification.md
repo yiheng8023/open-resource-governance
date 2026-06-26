@@ -8,6 +8,10 @@ The current evidence ledger is
 [`mvp-closeout-evidence-ledger.md`](mvp-closeout-evidence-ledger.md). Treat it
 as an in-progress evidence snapshot, not as a completion claim.
 
+The current artifact hygiene review is
+[`mvp-artifact-hygiene-review.md`](mvp-artifact-hygiene-review.md). Treat it as
+Gate 08 in-progress evidence, not as final residue cleanup.
+
 ## Closeout principle
 
 ```text

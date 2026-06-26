@@ -160,7 +160,7 @@
     {
       "id": "gate-08-artifact-hygiene",
       "status": "in_progress",
-      "evidence": "The ledger creates an authority surface for process evidence; a residue review still needs to classify or remove obsolete artifacts."
+      "evidence": "The ledger creates an authority surface for process evidence, and mvp-artifact-hygiene-review-2026-06-27 records classification vocabulary plus repository-level posture. Final residue sweep still needs to happen after later MVP evidence exists."
     },
     {
       "id": "gate-09-continuous-assurance",
@@ -185,6 +185,6 @@
     "consume the release from the private configuration workflow or an authorized dry run",
     "run representative routing/runtime scenarios",
     "feed lifecycle outcomes back into the governance loop",
-    "perform artifact hygiene and final global closeout review"
+    "complete the final residue sweep after later MVP evidence exists, using the artifact hygiene review as the Gate 08 control surface"
   ]
 }

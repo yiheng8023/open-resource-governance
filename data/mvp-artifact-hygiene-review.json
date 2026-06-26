@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "review_id": "mvp-artifact-hygiene-review-2026-06-27",
+  "mvp_name": "curated-skills-terminal-consumer-mvp",
+  "status": "active_in_progress",
+  "not_completion_claim": true,
+  "purpose": "Record the current process-artifact hygiene posture for MVP Gate 08 without pretending final global closeout is complete.",
+  "review_date": "2026-06-27",
+  "principles": [
+    "No process artifact is authority by accident.",
+    "Generated artifacts are derived projections, not hand-maintained truth.",
+    "Promotion material is downstream of proof.",
+    "Private-source repositories remain private source truth; public repositories expose only public-safe projections, templates, or evidence.",
+    "The MVP-02 approval request is not approval."
+  ],
+  "artifact_classes": [
+    {
+      "id": "promoted_evidence",
+      "meaning": "Retain because the artifact proves a gate, decision, release, verification result, or public/private boundary.",
+      "handling": "Keep linked from the appropriate README, topology, ledger, or verification surface."
+    },
+    {
+      "id": "archived_context",
+      "meaning": "Retain because it explains history or launch context, but it must not be treated as current authority.",
+      "handling": "Keep only with clear dated/contextual wording and avoid using it as completion proof."
+    },
+    {
+      "id": "deleted_residue",
+      "meaning": "Remove when an artifact is stale, duplicated, misleading, reproducible from stronger sources, or no longer useful.",
+      "handling": "Delete in a focused cleanup commit after confirming it is not referenced by current evidence."
+    },
+    {
+      "id": "ignored_non_authority",
+      "meaning": "Leave only when harmless, clearly outside the truth path, and not likely to confuse users or maintainers.",
+      "handling": "Do not cite as proof and do not let it block closeout."
+    },
+    {
+      "id": "generated_derived",
+      "meaning": "Retain as reproducible output generated from a declared source of truth.",
+      "handling": "Verify determinism and link back to the source data or generating script."
+    },
+    {
+      "id": "private_source",
+      "meaning": "Keep in private repositories only; expose public-safe summaries or projections when useful.",
+      "handling": "Do not copy raw private state into public repositories."
+    }
+  ],
+  "repository_posture": [
+    {
+      "repository": "open-resource-governance",
+      "visibility": "public",
+      "authority_surfaces": [
+        "data/repositories.json",
+        "data/topology.json",
+        "data/shared-governance-baseline.json",
+        "data/mvp-acceptance-map.json",
+        "data/mvp-closeout-evidence-ledger.json",
+        "data/mvp-artifact-hygiene-review.json"
+      ],
+      "promoted_evidence": [
+        "docs/repository-map.md",
+        "docs/system-topology.md",
+        "docs/shared-governance-baseline.md",
+        "docs/mvp-plan-and-acceptance.md",
+        "docs/mvp-global-closeout-verification.md",
+        "docs/mvp-closeout-evidence-ledger.md",
+        "docs/mvp-artifact-hygiene-review.md"
+      ],
+      "archived_context": [
+        "dated public launch readiness, launch decision, and promotion notes remain historical launch context"
+      ],
+      "generated_derived": [
+        "launch image assets are explanatory media, not proof of system completion"
+      ],
+      "deleted_residue": [],
+      "ignored_non_authority": [
+        "promotion drafts are non-authority until refreshed after evidence-backed closeout"
+      ],
+      "next_review": "Final residue sweep before public closeout claim."
+    },
+    {
+      "repository": "agent-skills-curated",
+      "visibility": "public",
+      "authority_surfaces": [
+        "registry/*.json",
+        "release-manifest.json",
+        "docs/mvp02-*.md"
+      ],
+      "promoted_evidence": [
+        "candidate batch selection",
+        "pre-adaptation review",
+        "MVP-02 transition gate",
+        "adaptation review checklist",
+        "bounded owner approval request"
+      ],
+      "archived_context": [],
+      "generated_derived": [
+        "generated topology and routing projections remain derived from registry truth"
+      ],
+      "deleted_residue": [],
+      "ignored_non_authority": [
+        "candidate Skills remain review material until approved"
+      ],
+      "next_review": "After explicit MVP-02 approval, classify adapted draft evidence separately from approved release payload."
+    },
+    {
+      "repository": "codex-user-config",
+      "visibility": "private",
+      "authority_surfaces": [
+        "private runtime configuration",
+        "reviewed memory snapshots",
+        "install and rollback scripts"
+      ],
+      "promoted_evidence": [
+        "public-safe verification summaries may be referenced by the hub ledger"
+      ],
+      "archived_context": [],
+      "generated_derived": [
+        "live routing index is derived runtime policy input, not public truth"
+      ],
+      "deleted_residue": [],
+      "ignored_non_authority": [
+        "local app/plugin/account state remains outside public evidence"
+      ],
+      "next_review": "Before MVP-04, verify the selected curated release pin, install plan, backup, rollback, and private runtime boundary."
+    },
+    {
+      "repository": "claude-user-config",
+      "visibility": "private",
+      "authority_surfaces": [
+        "private Claude Code configuration",
+        "commands",
+        "hooks",
+        "curated memory"
+      ],
+      "promoted_evidence": [
+        "public-safe reusable patterns may flow to the template after review"
+      ],
+      "archived_context": [],
+      "generated_derived": [],
+      "deleted_residue": [],
+      "ignored_non_authority": [
+        "agent-specific private behavior is not generalized without declassification"
+      ],
+      "next_review": "Keep separate from Codex-specific runtime proof unless a public-safe pattern is generalized."
+    },
+    {
+      "repository": "resource-radar",
+      "visibility": "private",
+      "authority_surfaces": [
+        "private candidate pool",
+        "normalization records",
+        "scoring and lifecycle reports"
+      ],
+      "promoted_evidence": [
+        "safe decision metadata can support dedupe and future candidate proposals"
+      ],
+      "archived_context": [],
+      "generated_derived": [
+        "reports are derived from private source records"
+      ],
+      "deleted_residue": [],
+      "ignored_non_authority": [
+        "raw candidate volume is not quality proof"
+      ],
+      "next_review": "After MVP-06, confirm reviewed Skills decisions can suppress duplicate candidate resurfacing."
+    },
+    {
+      "repository": "resource-radar-public",
+      "visibility": "public",
+      "authority_surfaces": [
+        "public-safe schema",
+        "demo fixtures",
+        "validation scripts"
+      ],
+      "promoted_evidence": [
+        "public template and deterministic demo report"
+      ],
+      "archived_context": [],
+      "generated_derived": [
+        "demo reports are reproducible examples, not private candidate truth"
+      ],
+      "deleted_residue": [],
+      "ignored_non_authority": [],
+      "next_review": "Keep demo claims separate from private radar production evidence."
+    },
+    {
+      "repository": "research-bookmarks",
+      "visibility": "private",
+      "authority_surfaces": [
+        "complete bookmark imports",
+        "private overlays",
+        "audit evidence",
+        "declassification inputs"
+      ],
+      "promoted_evidence": [
+        "public-safe aggregate counts may be referenced by the hub"
+      ],
+      "archived_context": [],
+      "generated_derived": [
+        "private exports are source input, not public artifact"
+      ],
+      "deleted_residue": [],
+      "ignored_non_authority": [
+        "personal browsing preferences remain private"
+      ],
+      "next_review": "Before broad public promotion, re-check public projection against latest private baseline."
+    },
+    {
+      "repository": "research-bookmarks-public",
+      "visibility": "public",
+      "authority_surfaces": [
+        "structured public-safe source catalog",
+        "taxonomy",
+        "exporter",
+        "generated browser-importable HTML"
+      ],
+      "promoted_evidence": [
+        "public source catalog",
+        "projection report",
+        "generated HTML"
+      ],
+      "archived_context": [],
+      "generated_derived": [
+        "browser HTML is generated from public-safe source records"
+      ],
+      "deleted_residue": [],
+      "ignored_non_authority": [],
+      "next_review": "Keep the public catalog aligned with the private baseline without exposing private overlay data."
+    },
+    {
+      "repository": "codex-user-config-template",
+      "visibility": "public",
+      "authority_surfaces": [
+        "public-safe template structure",
+        "placeholder examples",
+        "validation scripts"
+      ],
+      "promoted_evidence": [
+        "reusable Codex configuration-template pattern"
+      ],
+      "archived_context": [],
+      "generated_derived": [],
+      "deleted_residue": [],
+      "ignored_non_authority": [
+        "template placeholders are not real user configuration"
+      ],
+      "next_review": "Only absorb private configuration patterns after declassification."
+    },
+    {
+      "repository": "claude-user-config-template",
+      "visibility": "public",
+      "authority_surfaces": [
+        "public-safe template structure",
+        "placeholder examples",
+        "validation scripts"
+      ],
+      "promoted_evidence": [
+        "reusable Claude Code configuration-template pattern"
+      ],
+      "archived_context": [],
+      "generated_derived": [],
+      "deleted_residue": [],
+      "ignored_non_authority": [
+        "template placeholders are not real user configuration"
+      ],
+      "next_review": "Only absorb private Claude configuration patterns after declassification."
+    }
+  ],
+  "current_result": {
+    "gate_08_status": "in_progress_with_review_surface",
+    "completed_this_review": [
+      "classification vocabulary is explicit",
+      "repository-level process-artifact posture is recorded",
+      "promotion material is kept non-authoritative before proof",
+      "generated artifacts are explicitly derived",
+      "private-source repositories are not treated as public truth"
+    ],
+    "remaining_before_gate_pass": [
+      "run final residue sweep after MVP-02 adapted output exists",
+      "delete or archive any stale draft that conflicts with current evidence",
+      "refresh public docs only where the final evidence supports new claims"
+    ]
+  }
+}
