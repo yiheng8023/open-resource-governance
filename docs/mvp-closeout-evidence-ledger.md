@@ -36,7 +36,7 @@ candidate batch
 | Repository | Visibility | Current evidence |
 | --- | --- | --- |
 | `open-resource-governance` | public | self-referential ledger: local verification passed; check the latest `validate` workflow for the current repository head |
-| `agent-skills-curated` | public | MVP candidate batch recorded at `a6e194c4...`; validation, topology, and 182-test suite passed; remote `validate` success at `a6e194c4...` |
+| `agent-skills-curated` | public | MVP candidate batch and pre-adaptation review recorded at `3b022342...`; validation, topology, and 182-test suite passed; remote `validate` success at `3b022342...` |
 | `codex-user-config` | private | validation, capability-router, and curated Skills installer checks passed; remote `Validate` success at `4c887aeb...` |
 | `resource-radar` | private | local verification passed; remote `validate` success at `f5a36fda...` |
 | `resource-radar-public` | public | local verification passed; remote `Validate` success at `a6adf587...` |
@@ -51,7 +51,7 @@ candidate batch
 | Workstream | Status | Meaning |
 | --- | --- | --- |
 | MVP-01 source candidate selection | partial | first candidate batch selected, pinned, rationalized, and kept non-executable; human approval is still needed before MVP-02 adaptation |
-| MVP-02 review, neutralize, and adapt | pending | selected batch still needs safety, portability, overlap, and attribution evidence |
+| MVP-02 review, neutralize, and adapt | partial | pre-adaptation candidate-specific review evidence exists; adapted output, approval, and final disposition are still pending |
 | MVP-03 deterministic release manifest | baseline-ready | curated manifest/topology validation passes; batch-specific release evidence is pending |
 | MVP-04 private consumer install | baseline-ready | consumer installer verification passes; batch-specific install or dry-run evidence is pending |
 | MVP-05 routing and runtime use | baseline-ready | capability-router verification passes; representative batch routing scenarios are pending |
@@ -62,8 +62,8 @@ candidate batch
 
 | Gate | Status | Current interpretation |
 | --- | --- | --- |
-| Gate 01 chain complete | partial | base chain is verified and the next candidate batch is selected; it has not traversed review, release, private consumption, and runtime use |
-| Gate 02 boundaries held | partial | current validators pass; selected candidate batch is explicitly not approved, not releasable, not routable, and not installable |
+| Gate 01 chain complete | partial | base chain is verified and the next candidate batch is selected and pre-reviewed; it has not traversed adaptation, release, private consumption, and runtime use |
+| Gate 02 boundaries held | partial | current validators pass; selected candidate batch and pre-adaptation review are explicitly not approved, not releasable, not routable, not installable, and not source-redistributed |
 | Gate 03 runtime useful | partial | router/installer verification passes; representative runtime proof is pending |
 | Gate 04 feedback loop | pending | no new batch feedback has been recorded |
 | Gate 05 next lane ready | pending | no final closeout decision exists |
@@ -76,8 +76,10 @@ candidate batch
 
 ## Next evidence required
 
-1. Confirm whether the selected Skill candidate batch may advance into MVP-02.
-2. Run curated Skills review/adaptation for that batch if approved.
+1. Confirm whether the selected Skill candidate batch may advance from
+   pre-adaptation review into adapted output.
+2. Run focused adapted-output review for security, portability, overlap,
+   attribution, validation, and final disposition if approved.
 3. Produce release-candidate manifest evidence.
 4. Consume the release from the private configuration workflow or an authorized
    dry run.
