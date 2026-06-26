@@ -15,6 +15,7 @@
 - Add repository topics and profile pins.
 - Open Discussions only when moderation capacity exists.
 - Run the public-launch gates for each repository before changing visibility.
+- Use the free-promotion playbook for launch sequencing.
 
 ## Stage 3: Automation hardening
 

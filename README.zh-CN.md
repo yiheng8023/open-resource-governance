@@ -70,6 +70,8 @@ GitHub Actions 会在 pull request 和推送到 `main` 时运行同样的验证�
 - [`docs/repository-map.md`](docs/repository-map.md) — 仓库角色与关系。
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 公开/私有安全边界。
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前必须通过的闸门。
+- [`docs/pre-public-safety-audit.md`](docs/pre-public-safety-audit.md) — 改可见性前的具体安全审计。
+- [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道首发与推广 runbook。
 - [`docs/closeout-audit-2026-06-26.md`](docs/closeout-audit-2026-06-26.md) — 最新分阶段收官审计。
 - [`docs/promotion-kit.md`](docs/promotion-kit.md) — 免费渠道推广文案草案。
 
