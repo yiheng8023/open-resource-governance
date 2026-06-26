@@ -21,6 +21,10 @@ The current persistence and continuity review is
 [`mvp-persistence-continuity-review.md`](mvp-persistence-continuity-review.md).
 Treat it as Gate 10 in-progress evidence, not as a final recovery drill.
 
+The current observability and explainability review is
+[`mvp-observability-explainability-review.md`](mvp-observability-explainability-review.md).
+Treat it as Gate 11 in-progress evidence, not as a final explainability pass.
+
 ## Closeout principle
 
 ```text

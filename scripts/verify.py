@@ -36,6 +36,7 @@ REQUIRED_FILES = [
     "docs/mvp-artifact-hygiene-review.md",
     "docs/mvp-continuous-assurance-review.md",
     "docs/mvp-persistence-continuity-review.md",
+    "docs/mvp-observability-explainability-review.md",
     "docs/system-topology.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
@@ -71,6 +72,7 @@ REQUIRED_FILES = [
     "data/mvp-artifact-hygiene-review.json",
     "data/mvp-continuous-assurance-review.json",
     "data/mvp-persistence-continuity-review.json",
+    "data/mvp-observability-explainability-review.json",
 ]
 
 PRIVATE_ONLY_TERMS = [
@@ -716,6 +718,105 @@ def verify_mvp_persistence_continuity_review() -> None:
         fail("global closeout doc must link MVP persistence continuity review")
 
 
+def verify_mvp_observability_explainability_review() -> None:
+    data = json.loads((ROOT / "data" / "mvp-observability-explainability-review.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("mvp-observability-explainability-review.json schema_version must be 1")
+    if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
+        fail("observability explainability review must reference the active MVP")
+    if data.get("status") != "active_in_progress":
+        fail("observability explainability review must remain active_in_progress until Gate 11 passes")
+    if data.get("not_completion_claim") is not True:
+        fail("observability explainability review must explicitly avoid completion claims")
+    required_principles = [
+        "Important decisions should be explainable from public-safe evidence.",
+        "Automation output is not self-explanatory unless it records inputs, rules, outcome, verification, and next state.",
+        "Private evidence can be summarized, but private payloads must not be exposed to make a decision explainable.",
+        "Observability should be proportional: lightweight for routine checks and structured for trust-boundary decisions.",
+    ]
+    for phrase in required_principles:
+        if phrase not in data.get("principles", []):
+            fail(f"observability explainability review missing principle: {phrase}")
+    required_contract = {
+        "what_changed",
+        "input_evidence",
+        "rule_or_gate_applied",
+        "decision_owner_or_trigger",
+        "chosen_outcome",
+        "rejected_or_deferred_alternatives",
+        "verification_result",
+        "next_state",
+        "public_private_boundary",
+    }
+    actual_contract = set(data.get("explanation_contract", []))
+    if not required_contract <= actual_contract:
+        fail(f"observability explainability review missing contract fields: {', '.join(sorted(required_contract - actual_contract))}")
+    required_events = {
+        "source_selection",
+        "candidate_review",
+        "release_manifest",
+        "install_or_rollback",
+        "runtime_routing",
+        "feedback_lifecycle",
+        "artifact_cleanup",
+        "public_refresh",
+    }
+    actual_events = {item.get("id") for item in data.get("decision_events", [])}
+    if not required_events <= actual_events:
+        fail(f"observability explainability review missing events: {', '.join(sorted(required_events - actual_events))}")
+    repo_data = json.loads((ROOT / "data" / "repositories.json").read_text(encoding="utf-8"))
+    repo_names = {repo["name"] for repo in repo_data.get("repositories", [])}
+    observable_items = data.get("repository_observability", [])
+    observable_repos = {item.get("repository") for item in observable_items}
+    if repo_names - observable_repos:
+        fail(f"observability explainability review missing repository observability: {', '.join(sorted(repo_names - observable_repos))}")
+    for item in observable_items:
+        for key in (
+            "repository",
+            "visibility",
+            "observable_surfaces",
+            "covered_events",
+            "known_gap",
+        ):
+            if key not in item:
+                fail(f"observability explainability item missing {key}: {item}")
+        if item["repository"] not in repo_names:
+            fail(f"observability explainability item references unknown repository: {item['repository']}")
+        unknown_events = set(item["covered_events"]) - required_events
+        if unknown_events:
+            fail(f"observability explainability item has unknown events: {item['repository']}")
+        if not item["observable_surfaces"]:
+            fail(f"observability explainability item must list observable surfaces: {item['repository']}")
+    result = data.get("current_result", {})
+    if result.get("gate_11_status") != "in_progress_with_review_surface":
+        fail("observability explainability review must keep Gate 11 in progress")
+    if not result.get("remaining_before_gate_pass"):
+        fail("observability explainability review must record remaining work before Gate 11 can pass")
+    doc = (ROOT / "docs" / "mvp-observability-explainability-review.md").read_text(encoding="utf-8")
+    for phrase in [
+        "Important decisions should be explainable",
+        "Explanation contract",
+        "what changed",
+        "input evidence",
+        "rule, gate, or policy",
+        "Decision events",
+        "runtime routing",
+        "artifact cleanup",
+        "public refresh",
+        "Current observable surfaces",
+        "Public/private explainability boundary",
+        "Gate 11 still cannot pass",
+    ]:
+        if phrase not in doc:
+            fail(f"observability explainability review doc missing phrase: {phrase}")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    if "docs/mvp-observability-explainability-review.md" not in readme:
+        fail("README.md must link MVP observability explainability review")
+    closeout_doc = (ROOT / "docs" / "mvp-global-closeout-verification.md").read_text(encoding="utf-8")
+    if "mvp-observability-explainability-review.md" not in closeout_doc:
+        fail("global closeout doc must link MVP observability explainability review")
+
+
 def verify_support_entry() -> None:
     funding = (ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8")
     support = (ROOT / "docs" / "support-and-sponsorship.md").read_text(encoding="utf-8")
@@ -780,6 +881,7 @@ def main() -> None:
     verify_mvp_artifact_hygiene_review()
     verify_mvp_continuous_assurance_review()
     verify_mvp_persistence_continuity_review()
+    verify_mvp_observability_explainability_review()
     verify_support_entry()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")

@@ -355,6 +355,10 @@ international, fiscal-host, and domestic-support considerations.
 - [`docs/mvp-persistence-continuity-review.md`](docs/mvp-persistence-continuity-review.md)
   — Gate 10 persistence and continuity review; records recovery anchors for
   context loss, environment changes, agent switches, and interrupted work.
+- [`docs/mvp-observability-explainability-review.md`](docs/mvp-observability-explainability-review.md)
+  — Gate 11 observability and explainability review; records the evidence
+  contract for automation, routing, cleanup, lifecycle, release, and public
+  claims.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates before
   public release.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) —

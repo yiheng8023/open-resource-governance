@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "review_id": "mvp-observability-explainability-review-2026-06-27",
+  "mvp_name": "curated-skills-terminal-consumer-mvp",
+  "status": "active_in_progress",
+  "not_completion_claim": true,
+  "purpose": "Record the current observability and explainability posture for MVP Gate 11 without pretending every future decision is already fully instrumented.",
+  "review_date": "2026-06-27",
+  "principles": [
+    "Important decisions should be explainable from public-safe evidence.",
+    "Automation output is not self-explanatory unless it records inputs, rules, outcome, verification, and next state.",
+    "Private evidence can be summarized, but private payloads must not be exposed to make a decision explainable.",
+    "A decision that cannot be challenged, reproduced, or bounded is not ready for release authority.",
+    "Observability should be proportional: lightweight for routine checks and structured for trust-boundary decisions."
+  ],
+  "explanation_contract": [
+    "what_changed",
+    "input_evidence",
+    "rule_or_gate_applied",
+    "decision_owner_or_trigger",
+    "chosen_outcome",
+    "rejected_or_deferred_alternatives",
+    "verification_result",
+    "next_state",
+    "public_private_boundary"
+  ],
+  "decision_events": [
+    {
+      "id": "source_selection",
+      "meaning": "Why a source, bookmark, repository, or Skill candidate entered a review path.",
+      "minimum_evidence": [
+        "source identity",
+        "selection reason",
+        "license/provenance posture",
+        "candidate status"
+      ]
+    },
+    {
+      "id": "candidate_review",
+      "meaning": "Why a candidate remains pending, rejected, adapted, reference-only, approved, deprecated, or retired.",
+      "minimum_evidence": [
+        "review checklist",
+        "risk and overlap assessment",
+        "attribution boundary",
+        "final disposition"
+      ]
+    },
+    {
+      "id": "release_manifest",
+      "meaning": "Why a payload is included or excluded from a deterministic release.",
+      "minimum_evidence": [
+        "approved inventory",
+        "manifest schema",
+        "hash and size checks",
+        "fail-closed boundary tests"
+      ]
+    },
+    {
+      "id": "install_or_rollback",
+      "meaning": "Why a private consumer install, dry run, restore, or rollback is safe.",
+      "minimum_evidence": [
+        "pinned release",
+        "backup path",
+        "install verification",
+        "private runtime boundary"
+      ]
+    },
+    {
+      "id": "runtime_routing",
+      "meaning": "Why a task used native capability, a curated Skill, a recipe, confirmation, fallback, or no skill.",
+      "minimum_evidence": [
+        "scenario",
+        "risk and authorization boundary",
+        "selected route",
+        "fallback or confirmation behavior"
+      ]
+    },
+    {
+      "id": "feedback_lifecycle",
+      "meaning": "Why runtime evidence updates accepted, rejected, deprecated, retired, or dedupe state.",
+      "minimum_evidence": [
+        "runtime summary",
+        "public-safe decision metadata",
+        "lifecycle state",
+        "dedupe implication"
+      ]
+    },
+    {
+      "id": "artifact_cleanup",
+      "meaning": "Why a process artifact is promoted, archived, deleted, or ignored as non-authority.",
+      "minimum_evidence": [
+        "artifact class",
+        "authority boundary",
+        "cleanup decision",
+        "remaining gap"
+      ]
+    },
+    {
+      "id": "public_refresh",
+      "meaning": "Why README, docs, topology, promotion material, support wording, or launch assets changed.",
+      "minimum_evidence": [
+        "claim being changed",
+        "evidence supporting the claim",
+        "public/private safety review",
+        "post-refresh verification"
+      ]
+    }
+  ],
+  "repository_observability": [
+    {
+      "repository": "open-resource-governance",
+      "visibility": "public",
+      "observable_surfaces": [
+        "data/mvp-closeout-evidence-ledger.json",
+        "data/mvp-artifact-hygiene-review.json",
+        "data/mvp-continuous-assurance-review.json",
+        "data/mvp-persistence-continuity-review.json",
+        "data/mvp-observability-explainability-review.json",
+        "docs/mvp-*.md",
+        "scripts/verify.py",
+        "GitHub Actions validate workflow"
+      ],
+      "covered_events": [
+        "artifact_cleanup",
+        "public_refresh"
+      ],
+      "known_gap": "Final closeout decisions cannot be fully explained until MVP-02 through MVP-06 produce release, runtime, feedback, and lifecycle evidence."
+    },
+    {
+      "repository": "agent-skills-curated",
+      "visibility": "public",
+      "observable_surfaces": [
+        "registry/mvp-candidate-batches.json",
+        "registry/mvp-candidate-reviews.json",
+        "registry/mvp-transition-gates.json",
+        "registry/mvp-adaptation-review-checklist.json",
+        "registry/mvp-approval-requests.json",
+        "release-manifest.json",
+        "tests",
+        "scripts/verify.py"
+      ],
+      "covered_events": [
+        "source_selection",
+        "candidate_review",
+        "release_manifest"
+      ],
+      "known_gap": "Actual adapted output, release-candidate manifest, and lifecycle disposition are intentionally absent until the human gate advances."
+    },
+    {
+      "repository": "codex-user-config",
+      "visibility": "private",
+      "observable_surfaces": [
+        "scripts/verify.py",
+        "scripts/verify_capability_router.py",
+        "scripts/verify_skills_install.py",
+        "private install and memory workflow evidence"
+      ],
+      "covered_events": [
+        "install_or_rollback",
+        "runtime_routing"
+      ],
+      "known_gap": "Private runtime details are summarized publicly only after declassification; live account/plugin state is not public evidence."
+    },
+    {
+      "repository": "claude-user-config",
+      "visibility": "private",
+      "observable_surfaces": [
+        "scripts/verify.py",
+        "private hook and command validation"
+      ],
+      "covered_events": [
+        "install_or_rollback",
+        "runtime_routing"
+      ],
+      "known_gap": "Claude-specific private behavior is not generalized until reviewed through the public template lane."
+    },
+    {
+      "repository": "resource-radar",
+      "visibility": "private",
+      "observable_surfaces": [
+        "candidate records",
+        "quality scoring",
+        "lifecycle reports",
+        "scripts/verify.py"
+      ],
+      "covered_events": [
+        "source_selection",
+        "feedback_lifecycle"
+      ],
+      "known_gap": "Private candidate pool is not public; public reports must summarize without leaking subjective or private review state."
+    },
+    {
+      "repository": "resource-radar-public",
+      "visibility": "public",
+      "observable_surfaces": [
+        "demo fixtures",
+        "generated demo reports",
+        "scripts/verify.py"
+      ],
+      "covered_events": [
+        "source_selection",
+        "feedback_lifecycle"
+      ],
+      "known_gap": "Public demo scoring explains the template, not the private production candidate pool."
+    },
+    {
+      "repository": "research-bookmarks",
+      "visibility": "private",
+      "observable_surfaces": [
+        "private bookmark audit",
+        "declassification inputs",
+        "scripts/verify.py"
+      ],
+      "covered_events": [
+        "source_selection",
+        "public_refresh"
+      ],
+      "known_gap": "Complete private bookmark imports and personal overlays remain private."
+    },
+    {
+      "repository": "research-bookmarks-public",
+      "visibility": "public",
+      "observable_surfaces": [
+        "data/public-sources.json",
+        "projection report",
+        "exports/research-engineering-bookmarks-public.html",
+        "scripts/verify.py"
+      ],
+      "covered_events": [
+        "source_selection",
+        "public_refresh"
+      ],
+      "known_gap": "Public HTML explains the public projection, not the private overlay decisions."
+    },
+    {
+      "repository": "codex-user-config-template",
+      "visibility": "public",
+      "observable_surfaces": [
+        "README.md",
+        "template docs",
+        "scripts/verify.py"
+      ],
+      "covered_events": [
+        "public_refresh"
+      ],
+      "known_gap": "Template docs explain reusable structure, not real private Codex configuration."
+    },
+    {
+      "repository": "claude-user-config-template",
+      "visibility": "public",
+      "observable_surfaces": [
+        "README.md",
+        "template docs",
+        "scripts/verify.py"
+      ],
+      "covered_events": [
+        "public_refresh"
+      ],
+      "known_gap": "Template docs explain reusable structure, not real private Claude configuration."
+    }
+  ],
+  "current_result": {
+    "gate_11_status": "in_progress_with_review_surface",
+    "completed_this_review": [
+      "explanation contract is explicit",
+      "decision event classes are explicit",
+      "repository-level observable surfaces are recorded",
+      "public/private limits on explainability are explicit",
+      "known explanation gaps are recorded instead of hidden"
+    ],
+    "remaining_before_gate_pass": [
+      "record release, install, routing, feedback, and lifecycle decisions after MVP-02 through MVP-06 exist",
+      "run final explainability review against actual terminal-consumer evidence",
+      "ensure public closeout claims point to evidence instead of prose-only assertions"
+    ]
+  }
+}

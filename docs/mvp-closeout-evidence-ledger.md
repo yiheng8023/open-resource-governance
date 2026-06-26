@@ -23,6 +23,11 @@ Gate 10 persistence and continuity review:
 and
 [`data/mvp-persistence-continuity-review.json`](../data/mvp-persistence-continuity-review.json).
 
+Gate 11 observability and explainability review:
+[`docs/mvp-observability-explainability-review.md`](mvp-observability-explainability-review.md)
+and
+[`data/mvp-observability-explainability-review.json`](../data/mvp-observability-explainability-review.json).
+
 ## Current status
 
 ```text
@@ -86,7 +91,7 @@ candidate batch
 | Gate 08 artifact hygiene | in progress | artifact hygiene review now records classification vocabulary and repository-level posture; final residue sweep still needs to happen after later MVP evidence exists |
 | Gate 09 continuous assurance | in progress | continuous assurance review now records dimensions and repository-level stale-risk posture; final cross-repository assurance still needs later MVP evidence |
 | Gate 10 persistence and continuity | in progress | persistence and continuity review now records continuity scenarios, recovery anchors, verification commands, and known gaps; final recovery drill still needs later MVP evidence |
-| Gate 11 observability and explainability | in progress | each workstream/gate now has public-safe status and next evidence; the MVP-02 checklist defines the future adapted-output evidence shape and the approval request defines the exact owner decision needed before adaptation |
+| Gate 11 observability and explainability | in progress | observability and explainability review now records explanation contract, decision event classes, observable surfaces, and known gaps; final explainability pass still needs later MVP evidence |
 
 ## Next evidence required
 
@@ -106,5 +111,7 @@ candidate batch
    using the continuous assurance review as the Gate 09 control surface.
 9. Complete final continuity drill after later MVP evidence exists, using the
    persistence and continuity review as the Gate 10 control surface.
+10. Complete final explainability review after later MVP evidence exists, using
+    the observability and explainability review as the Gate 11 control surface.
 
 Until those steps are complete, the MVP remains active and in progress.

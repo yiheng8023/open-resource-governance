@@ -305,6 +305,8 @@ owner 可控且验证通过后加入。
   — Gate 09 持续保障审查；把绿色检查视为当前快照证据，而不是永久健康证书。
 - [`docs/mvp-persistence-continuity-review.md`](docs/mvp-persistence-continuity-review.md)
   — Gate 10 持久化与连续性审查；记录上下文丢失、环境变化、Agent 切换和中断恢复锚点。
+- [`docs/mvp-observability-explainability-review.md`](docs/mvp-observability-explainability-review.md)
+  — Gate 11 可观测与可解释审查；记录自动化、路由、清理、生命周期、发布和公开声明的证据契约。
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前闸门。
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道发布和推广 runbook。
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词。

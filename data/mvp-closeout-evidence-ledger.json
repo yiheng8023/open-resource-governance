@@ -175,7 +175,7 @@
     {
       "id": "gate-11-observability-explainability",
       "status": "in_progress",
-      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate; the MVP-02 checklist defines future adapted-output evidence shape, and the approval request defines the exact owner decision needed before adaptation."
+      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate; the MVP-02 checklist defines future adapted-output evidence shape; the approval request defines the exact owner decision needed before adaptation; and mvp-observability-explainability-review-2026-06-27 records explanation contract, decision event classes, observable surfaces, and known gaps. Final explainability pass still needs later MVP evidence."
     }
   ],
   "next_actions": [
@@ -187,6 +187,7 @@
     "feed lifecycle outcomes back into the governance loop",
     "complete the final residue sweep after later MVP evidence exists, using the artifact hygiene review as the Gate 08 control surface",
     "complete final cross-repository assurance after later MVP evidence exists, using the continuous assurance review as the Gate 09 control surface",
-    "complete final continuity drill after later MVP evidence exists, using the persistence and continuity review as the Gate 10 control surface"
+    "complete final continuity drill after later MVP evidence exists, using the persistence and continuity review as the Gate 10 control surface",
+    "complete final explainability review after later MVP evidence exists, using the observability and explainability review as the Gate 11 control surface"
   ]
 }
