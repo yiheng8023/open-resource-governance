@@ -35,6 +35,29 @@ find or star it on GitHub.
   bookmarks, account state, paid-feature claims, production-grade claims, or
   certification claims.
 
+## Recommended source assets
+
+Text-only prompts are enough for a first generated clip, but a small controlled
+asset pack will make the result more accurate and less generic.
+
+Prepare only public-safe assets:
+
+- screenshot of the public GitHub repository landing page;
+- screenshot of the README section that explains the repository map;
+- screenshot or simple slide for `Public core -> Private overlays`;
+- screenshot of the GitHub Actions verification success, with no private tabs,
+  tokens, local paths, or account-sensitive browser state visible;
+- optional square project card with the title `Open Resource Governance` and
+  the subtitle `Public core. Private overlays. Verifiable automation.`;
+- optional 16:9 and 9:16 title cards for social reposting.
+
+Do not use screenshots that reveal private browser bookmarks, logged-in account
+menus, local machine paths, private repositories, private issues, tokens,
+emails outside the intentional public contact email, or personal messages.
+
+If no source assets are available, use the text prompt below and keep the video
+abstract: repository cards, lanes, boundary lines, and verification accents.
+
 ## 30-second storyboard
 
 1. **Problem, 0-5s**  
@@ -134,6 +157,12 @@ Optional link line:
 GitHub: https://github.com/yiheng8023/open-resource-governance
 ```
 
+Optional contact line:
+
+```text
+Contact: https://github.com/yiheng8023/open-resource-governance/blob/main/docs/contact-and-social.md
+```
+
 Chinese:
 
 ```text
@@ -147,4 +176,10 @@ Chinese:
 
 ```text
 GitHub: https://github.com/yiheng8023/open-resource-governance
+```
+
+可选联系入口：
+
+```text
+联系方式: https://github.com/yiheng8023/open-resource-governance/blob/main/docs/contact-and-social.md
 ```

@@ -7,6 +7,7 @@ This page provides public-safe contact routes for
 
 - GitHub: [@yiheng8023](https://github.com/yiheng8023)
 - Repository: <https://github.com/yiheng8023/open-resource-governance>
+- Email: <yiheng8023@gmail.com>
 
 ## Project questions
 
@@ -34,17 +35,40 @@ format.
 
 ## Social links
 
-No public social accounts are listed here yet.
+These are maintainer-owned public social profiles. They are useful for project
+discovery and lightweight contact, but they are not guaranteed support channels.
+Use GitHub issues for project questions and GitHub security advisories for
+sensitive reports.
 
-Add social links only after the owner confirms the account is intended to be
-publicly associated with this project. Recommended future link types:
+- X / Twitter: <https://x.com/Yiheng_8023>
+- YouTube: <https://www.youtube.com/@huasong184>
+- Weibo: <https://weibo.com/u/1650503130>
+- Facebook: <https://www.facebook.com/profile.php?id=61590938026193&mibextid=ZbWKwL>
 
-- project or maintainer website;
-- X / Twitter;
-- YouTube;
-- GitHub Sponsors or funding page, if enabled;
-- Weibo;
-- other public, owner-controlled project channels.
+Additional public links may be added after the owner confirms the account is
+intended to be publicly associated with this project.
+
+## Cross-linking guidance
+
+It is useful, but not required, to add a short link back to the project from
+each public social profile that supports profile links or pinned posts.
+
+Recommended link target:
+
+```text
+https://github.com/yiheng8023/open-resource-governance
+```
+
+Recommended profile wording:
+
+```text
+Building Open Resource Governance: public core, private overlays,
+release gates, verifiable automation.
+```
+
+For platforms with limited profile space, prefer the GitHub repository link over
+listing every social account. Avoid creating a dense link farm before there is a
+real audience or a dedicated project landing page.
 
 Avoid adding:
 
