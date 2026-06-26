@@ -14,6 +14,8 @@ Prepare a rigorous, globally verified, public-safe repository family for:
 - official-source bookmark taxonomy;
 - free-channel promotion through GitHub and social media;
 - future public release without exposing private state.
+- owner-controlled public launch without accidental visibility, funding, or
+  social-post side effects.
 
 ## Repository state snapshot
 
@@ -44,6 +46,13 @@ is the authoritative hub evidence.
   template while preserving its Skill-release authority.
 - Added GitHub topics to the repository family for future free-channel
   discoverability.
+- Added a concrete public-launch gate policy in
+  `docs/public-launch-gates.md`.
+- Added a pre-public safety audit checklist in
+  `docs/pre-public-safety-audit.md`.
+- Added a free-channel promotion playbook in
+  `docs/free-promotion-playbook.md`, including GitHub profile copy, repository
+  pin order, social-post drafts, cadence, and messaging boundaries.
 
 ## Validation evidence
 
@@ -73,6 +82,14 @@ python -B scripts/simulate_routing.py --all
 GitHub Actions checks passed for the PRs and post-merge main revisions created
 for this closeout cycle.
 
+Hub documentation now explicitly separates:
+
+- readiness evidence;
+- owner approval to change visibility;
+- optional funding links;
+- optional GitHub profile pinning;
+- optional social-media publication.
+
 ## Boundaries confirmed
 
 - No private configuration repository was copied into a public template.
@@ -81,6 +98,7 @@ for this closeout cycle.
 - No repository visibility was changed to public.
 - No GitHub Sponsors or external funding endpoint was enabled.
 - No social-media post was published.
+- No GitHub profile pinning or public announcement was performed.
 - No live Agent environment, local runtime state, OAuth state, or browser
   profile was mutated.
 
@@ -95,6 +113,19 @@ These are intentional gates, not incomplete implementation:
    posts.
 5. Decide whether to create a private full bookmark overlay repository or keep
    the current bookmark source outside GitHub for now.
+
+## Public launch handoff
+
+When the owner decides to publish, use this order:
+
+1. Run `docs/pre-public-safety-audit.md` for `open-resource-governance`.
+2. Confirm `python -B scripts/verify.py` and GitHub Actions are green on the
+   exact target revision.
+3. Change only `open-resource-governance` visibility first.
+4. Open the public URL in a logged-out or private browser context.
+5. Confirm README rendering, topics, Actions, and absence of private files.
+6. Pin the hub or publish social copy only after the public page is verified.
+7. Publish downstream repositories one at a time, each through its own gate.
 
 ## Closeout conclusion
 
