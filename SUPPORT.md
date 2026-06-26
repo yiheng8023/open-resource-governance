@@ -25,6 +25,11 @@ Use GitHub security advisories when available, or contact the repository owner
 privately. Do not post sensitive material in public issues or pull requests.
 See `SECURITY.md` for the reporting scope and safe report format.
 
+## Contact and social links
+
+See `docs/contact-and-social.md` for public-safe contact routes and the policy
+for adding future social links.
+
 ## Scope boundaries
 
 This repository does not provide:

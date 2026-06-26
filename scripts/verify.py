@@ -30,6 +30,7 @@ REQUIRED_FILES = [
     "docs/promotion-kit.md",
     "docs/free-promotion-playbook.md",
     "docs/launch-video-brief.md",
+    "docs/contact-and-social.md",
     "docs/owner-launch-decision.md",
     "docs/post-public-launch-verification-2026-06-26.md",
     "docs/pre-public-safety-audit.md",

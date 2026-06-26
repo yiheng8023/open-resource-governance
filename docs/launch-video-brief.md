@@ -128,6 +128,12 @@ collaboration configuration, and bookmark taxonomy.
 Principle: public core, private overlays, release gates, verifiable automation.
 ```
 
+Optional link line:
+
+```text
+GitHub: https://github.com/yiheng8023/open-resource-governance
+```
+
 Chinese:
 
 ```text
@@ -135,4 +141,10 @@ Chinese:
 一个公开安全的总入口，用来治理资源发现、精选 agent skills、AI 协作配置模板和书签分类。
 
 原则：公开核心，私有 overlay，发布闸门，可验证自动化。
+```
+
+可选链接行：
+
+```text
+GitHub: https://github.com/yiheng8023/open-resource-governance
 ```
