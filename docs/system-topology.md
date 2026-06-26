@@ -21,6 +21,17 @@ public template / projection
   owns reusable public-safe schema, docs, examples, generated outputs, validation
 ```
 
+## Shared governance baseline
+
+The repository family shares a governance baseline for public/private
+boundaries, verification, update rules, review gates, and lifecycle discipline.
+That baseline is documented in
+[`docs/shared-governance-baseline.md`](shared-governance-baseline.md) and
+[`data/shared-governance-baseline.json`](../data/shared-governance-baseline.json).
+
+The baseline is intentionally not a universal repo template. It standardizes
+the rules, not the lane-specific payloads.
+
 ## Neutrality rule
 
 User-configuration lanes may be agent-specific because they represent real

@@ -23,6 +23,8 @@
 - Add public-safe release gates.
 - Improve declassification workflows.
 - Keep private overlays private.
+- Maintain a shared governance baseline so repeated automation logic can be
+  reused without flattening lane-specific differences.
 
 ## Stage 4: Community contribution
 

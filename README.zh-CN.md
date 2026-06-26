@@ -239,6 +239,8 @@ python -B scripts/verify.py
 5. 证据优先：重要结论应有脚本、报告或审查记录支撑。
 6. 候选 lane 先保持轻量：未来方向应先作为 candidate lane 跟踪，不要在缺少证据、
    维护能力和真实用户价值之前做成系统。
+7. 共享底座，差异化 lane：各仓库应尽量复用同一套治理逻辑，但保留各自内容、
+   权威边界和验证方式。
 
 ## 本仓库不做什么
 
@@ -290,6 +292,7 @@ owner 可控且验证通过后加入。
 - [`docs/repository-map.md`](docs/repository-map.md) — 仓库角色与关系。
 - [`docs/system-topology.md`](docs/system-topology.md) — 全局图、拓扑和仓库关系索引。
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 公开/私有安全边界。
+- [`docs/shared-governance-baseline.md`](docs/shared-governance-baseline.md) — 仓库家族共享的治理底座。
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前闸门。
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道发布和推广 runbook。
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词。

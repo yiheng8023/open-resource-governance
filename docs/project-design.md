@@ -45,6 +45,11 @@ enough modularity to avoid a giant fragile system
 
 ## Core value loops
 
+All loops should reuse the shared governance baseline where possible: clear
+role boundaries, public/private separation, deterministic or reviewable
+outputs, verification, human gates for high-impact promotion, and lifecycle
+renewal. The implementation remains lane-specific.
+
 ### 1. Public/private resource loop
 
 ```text

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "status": "active_baseline",
+  "purpose": "Define common governance expectations shared across the repository family while preserving lane-specific differences.",
+  "principles": [
+    "shared baseline, lane-specific implementation",
+    "public-safe by default",
+    "private overlays stay private",
+    "generated artifacts are reproducible outputs, not unmanaged truth",
+    "automation prepares and verifies; human gates decide high-impact promotion",
+    "candidate is not approved",
+    "funding does not buy approval",
+    "public repositories must not expose or mutate private/core projects"
+  ],
+  "public_repository_expectations": [
+    "clear README with language switch",
+    "repository role and non-role",
+    "public/private boundary",
+    "layout or artifact map",
+    "verification command",
+    "update rules",
+    "safety boundary",
+    "license and notice",
+    "contribution guidance",
+    "security reporting path",
+    "support or contact path",
+    "GitHub Actions validation when practical"
+  ],
+  "private_repository_expectations": [
+    "private source truth is explicit",
+    "public projection or template path is explicit when applicable",
+    "secrets and local state stay private",
+    "declassification requires review",
+    "verification exists for the private workflow",
+    "no blind bidirectional sync with public repositories",
+    "backup, restore, and rollback are explicit when runtime state is managed"
+  ],
+  "automation_loop": [
+    "discover_or_import",
+    "normalize",
+    "classify",
+    "generate",
+    "verify",
+    "review_gate",
+    "publish_or_keep_private",
+    "lifecycle_check",
+    "update_or_retire"
+  ],
+  "shared_checks": [
+    "language switch is present where bilingual docs exist",
+    "public/private boundary is stated",
+    "role and does-not-own scope are stated",
+    "verification command is documented",
+    "candidate and approved states are not confused",
+    "private project names and internals are not exposed",
+    "generated artifacts are not treated as hand-edited truth",
+    "support or funding does not bypass review",
+    "high-impact promotion requires human review"
+  ],
+  "lane_specific_examples": {
+    "bookmarks": [
+      "taxonomy",
+      "public source catalog",
+      "browser-importable HTML exporter"
+    ],
+    "resource_radar": [
+      "resource schema",
+      "quality scoring",
+      "lifecycle state",
+      "candidate reports"
+    ],
+    "curated_skills": [
+      "source pinning",
+      "license and provenance review",
+      "safety review",
+      "release manifest"
+    ],
+    "user_configuration": [
+      "runtime install policy",
+      "memory boundary",
+      "backup and restore",
+      "local verification"
+    ],
+    "future_lanes": [
+      "candidate-only incubation",
+      "graduation rule",
+      "small-output-first proof"
+    ]
+  }
+}

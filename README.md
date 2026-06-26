@@ -276,6 +276,9 @@ public-safe templates and automation that other people can actually run.
 6. Candidate lanes stay lightweight: future directions should be tracked as
    candidate lanes first, not built into systems before there is evidence,
    maintenance capacity, and real user value.
+7. Shared baseline, differentiated lanes: repositories should reuse the same
+   governance logic where possible while preserving lane-specific content,
+   authority, and verification.
 
 ## What this repository does not do
 
@@ -335,6 +338,8 @@ international, fiscal-host, and domestic-support considerations.
   topology, and repository relationship index.
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) —
   public/private safety boundary.
+- [`docs/shared-governance-baseline.md`](docs/shared-governance-baseline.md) —
+  common governance expectations shared across the repository family.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates before
   public release.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) —

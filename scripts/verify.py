@@ -29,6 +29,7 @@ REQUIRED_FILES = [
     "docs/public-project-positioning-benchmark.md",
     "docs/community-feedback-model.md",
     "docs/public-private-boundary.md",
+    "docs/shared-governance-baseline.md",
     "docs/system-topology.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
@@ -58,6 +59,7 @@ REQUIRED_FILES = [
     "docs/closeout-audit-2026-06-26.md",
     "data/topology.json",
     "data/future-lanes.json",
+    "data/shared-governance-baseline.json",
 ]
 
 PRIVATE_ONLY_TERMS = [
@@ -268,6 +270,56 @@ def verify_future_lane_incubation() -> None:
             fail(f"private project identifier leaked into public lane docs: {term}")
 
 
+def verify_shared_governance_baseline() -> None:
+    data = json.loads((ROOT / "data" / "shared-governance-baseline.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("shared-governance-baseline.json schema_version must be 1")
+    if data.get("status") != "active_baseline":
+        fail("shared governance baseline must be active_baseline")
+    required_principles = [
+        "shared baseline, lane-specific implementation",
+        "public-safe by default",
+        "private overlays stay private",
+        "automation prepares and verifies; human gates decide high-impact promotion",
+        "funding does not buy approval",
+    ]
+    principles = data.get("principles", [])
+    for phrase in required_principles:
+        if phrase not in principles:
+            fail(f"shared governance baseline missing principle: {phrase}")
+    required_loop = [
+        "discover_or_import",
+        "normalize",
+        "classify",
+        "generate",
+        "verify",
+        "review_gate",
+        "publish_or_keep_private",
+        "lifecycle_check",
+        "update_or_retire",
+    ]
+    if data.get("automation_loop") != required_loop:
+        fail("shared governance automation loop changed unexpectedly")
+    lane_examples = data.get("lane_specific_examples", {})
+    for lane in ["bookmarks", "resource_radar", "curated_skills", "user_configuration", "future_lanes"]:
+        if lane not in lane_examples:
+            fail(f"shared governance baseline missing lane examples: {lane}")
+    doc = (ROOT / "docs" / "shared-governance-baseline.md").read_text(encoding="utf-8")
+    required_doc_phrases = [
+        "Consistency does not mean sameness",
+        "Shared automation loop",
+        "Review gates",
+        "Skills MVP",
+        "standardize the rules",
+    ]
+    for phrase in required_doc_phrases:
+        if phrase not in doc:
+            fail(f"shared governance doc missing phrase: {phrase}")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    if "docs/shared-governance-baseline.md" not in readme:
+        fail("README.md must link shared governance baseline")
+
+
 def verify_support_entry() -> None:
     funding = (ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8")
     support = (ROOT / "docs" / "support-and-sponsorship.md").read_text(encoding="utf-8")
@@ -326,6 +378,7 @@ def main() -> None:
     verify_external_user_readme()
     verify_current_public_private_status()
     verify_future_lane_incubation()
+    verify_shared_governance_baseline()
     verify_support_entry()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")
