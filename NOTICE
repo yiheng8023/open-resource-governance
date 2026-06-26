@@ -1,0 +1,8 @@
+open-resource-governance
+
+This repository contains public-safe coordination, documentation, repository maps, and promotion material for a modular resource governance system.
+
+Repository-owned code, scripts, schemas, workflows, and tests are licensed under Apache-2.0.
+Repository-owned documentation and taxonomy-style prose may also be used under CC BY 4.0 where explicitly stated.
+
+Private configuration, memory, bookmarks, preferences, credentials, account state, runtime logs, local paths, and third-party restricted content are excluded from this hub and from any public license grant.
