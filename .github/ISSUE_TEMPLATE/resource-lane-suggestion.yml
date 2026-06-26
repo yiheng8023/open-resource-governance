@@ -1,0 +1,45 @@
+name: Resource lane suggestion
+description: Suggest a public-safe lane, repository relationship, or resource-governance improvement.
+title: "[lane]: "
+labels: ["resource-lane", "suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is for public-safe structure and governance suggestions. Do not paste private bookmarks, raw browser exports, private notes, credentials, or third-party content bodies.
+  - type: dropdown
+    id: lane
+    attributes:
+      label: Lane
+      options:
+        - Hub / repository map
+        - Resource radar
+        - Curated Skills
+        - Configuration template
+        - Bookmark taxonomy
+        - Public/private sync
+        - Promotion / community
+        - Other public-safe lane
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggestion
+      description: Describe the proposed improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence or rationale
+      description: Link public references only. Summaries are preferred over copied content.
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: This suggestion is public-safe and does not include private state or restricted third-party content.
+          required: true

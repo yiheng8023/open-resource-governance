@@ -1,0 +1,30 @@
+name: Boundary question
+description: Ask about repository roles, public/private boundaries, or launch gates.
+title: "[boundary]: "
+labels: ["boundary", "question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include secrets, private configuration, private bookmarks, personal memory, local paths, account state, or browser/session data.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What boundary, repository role, or launch gate is unclear?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Public-safe context
+      description: Add only public-safe context or links.
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I have not included private configuration, private bookmarks, credentials, personal memory, local paths, or account state.
+          required: true

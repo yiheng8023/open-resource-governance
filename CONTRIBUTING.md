@@ -11,3 +11,5 @@ Do not contribute private configuration, memory, bookmarks, browsing history, ac
 - [ ] Private-to-public promotion rules are not weakened.
 - [ ] License and provenance are clear.
 - [ ] `python -B scripts/verify.py` passes.
+
+For issue and pull request routing, see `docs/community-feedback-model.md`.
