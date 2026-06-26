@@ -17,6 +17,7 @@
 - 共享的公开/私有边界规则。
 - 许可证与贡献约定。
 - 可用于 GitHub profile、仓库简介和社媒的免费推广文案。
+- 分阶段公开发布所需的收官审计与发布闸门证据。
 
 ## 本仓库不负责什么
 
@@ -63,6 +64,14 @@ python -B scripts/verify.py
 ```
 
 GitHub Actions 会在 pull request 和推送到 `main` 时运行同样的验证。
+
+关键文档：
+
+- [`docs/repository-map.md`](docs/repository-map.md) — 仓库角色与关系。
+- [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 公开/私有安全边界。
+- [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前必须通过的闸门。
+- [`docs/closeout-audit-2026-06-26.md`](docs/closeout-audit-2026-06-26.md) — 最新分阶段收官审计。
+- [`docs/promotion-kit.md`](docs/promotion-kit.md) — 免费渠道推广文案草案。
 
 ## 更新规则
 

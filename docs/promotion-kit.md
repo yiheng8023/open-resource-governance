@@ -42,3 +42,5 @@ The principle is simple: public core, private overlay, verifiable automation.
 - [ ] Make the hub public first.
 - [ ] Pin the hub on GitHub profile.
 - [ ] Link downstream repositories only after each one passes its own public-release gate.
+
+See [`public-launch-gates.md`](public-launch-gates.md) for the non-negotiable release gates. Do not publish repository visibility changes or social posts until those gates pass for the specific repository being released.
