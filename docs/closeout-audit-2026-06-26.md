@@ -16,12 +16,13 @@ Prepare a rigorous, globally verified, public-safe repository family for:
 - future public release without exposing private state.
 - owner-controlled public launch without accidental visibility, funding, or
   social-post side effects.
+- post-public evidence recording after the hub launch.
 
 ## Repository state snapshot
 
 | Repository | Role | Main revision | Visibility | Current status |
 | --- | --- | --- | --- | --- |
-| `open-resource-governance` | Hub, repository map, promotion kit | current `main` containing this audit | private | Public-safe pre-public baseline created |
+| `open-resource-governance` | Hub, repository map, promotion kit | current `main` containing this audit | public | Hub launched publicly and post-public verification recorded |
 | `resource-radar` | Resource discovery, scoring, lifecycle, reports | `a7635911416e5e014a02ae800f28929cc3901344` | private | Linked to hub, template, and bookmark-public lanes |
 | `agent-skills-curated` | Reviewed Skill governance and release manifests | `1fb70c32de418de772bcf37c3451250f82a9c5c8` | private | Linked to hub and config-template lanes |
 | `codex-user-config-template` | Public-safe configuration template | `f1c3e7f989fe3d3ae0f037ee86e39e679343b12b` | private | Template baseline created |
@@ -59,6 +60,9 @@ is the authoritative hub evidence.
   `SUPPORT.md`.
 - Added `docs/owner-launch-decision.md` as the final explicit owner gate before
   visibility changes, profile pinning, funding links, or social posts.
+- Made only `open-resource-governance` public after explicit owner
+  confirmation and recorded post-public evidence in
+  `docs/post-public-launch-verification-2026-06-26.md`.
 
 ## Validation evidence
 
@@ -102,7 +106,9 @@ Hub documentation now explicitly separates:
 - No private configuration repository was copied into a public template.
 - No private bookmarks or browser exports were copied into
   `research-bookmarks-public`.
-- No repository visibility was changed to public.
+- Only `open-resource-governance` visibility was changed to public after
+  explicit owner confirmation.
+- Downstream repository visibility was not changed.
 - No GitHub Sponsors or external funding endpoint was enabled.
 - No social-media post was published.
 - No GitHub profile pinning or public announcement was performed.
@@ -113,29 +119,31 @@ Hub documentation now explicitly separates:
 
 These are intentional gates, not incomplete implementation:
 
-1. Decide when to make `open-resource-governance` public.
-2. Decide which downstream repositories are ready for public visibility.
-3. Decide whether to enable GitHub Sponsors or another funding link.
-4. Decide whether to pin the hub on the GitHub profile and publish social
+1. Decide which downstream repositories are ready for public visibility.
+2. Decide whether to enable GitHub Sponsors or another funding link.
+3. Decide whether to pin the hub on the GitHub profile and publish social
    posts.
-5. Decide whether to create a private full bookmark overlay repository or keep
+4. Decide whether to create a private full bookmark overlay repository or keep
    the current bookmark source outside GitHub for now.
 
-## Public launch handoff
+## Future public launch handoff
 
-When the owner decides to publish, use this order:
+The hub launch has been executed and recorded in
+`docs/post-public-launch-verification-2026-06-26.md`.
 
-1. Run `docs/pre-public-safety-audit.md` for `open-resource-governance`.
+For any downstream repository publication, use the same staged order:
+
+1. Run that repository's pre-public safety audit.
 2. Confirm `python -B scripts/verify.py` and GitHub Actions are green on the
    exact target revision.
-3. Change only `open-resource-governance` visibility first.
+3. Change only the approved repository's visibility.
 4. Open the public URL in a logged-out or private browser context.
 5. Confirm README rendering, topics, Actions, and absence of private files.
-6. Pin the hub or publish social copy only after the public page is verified.
-7. Publish downstream repositories one at a time, each through its own gate.
+6. Pin or publish social copy only after the public page is verified.
+7. Publish additional repositories one at a time, each through its own gate.
 
 ## Closeout conclusion
 
-The private pre-public baseline is structurally closed and verified. The system
-is ready for an owner-controlled public-launch gate, but not yet publicly
-released.
+The hub is public and post-public verification has been recorded. The broader
+repository family remains staged: downstream public release, profile pinning,
+funding, and social promotion are separate owner-controlled decisions.
