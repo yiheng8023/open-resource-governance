@@ -9,12 +9,14 @@
   "current_workstream": "mvp-02-review-adapt",
   "current_gate": "mvp02-adaptation-draft-approval-request-2026-06-27",
   "source_repository": "agent-skills-curated",
-  "source_head": "d941c4a3e348fd16cb99cf4f43abd8771ec62041",
+  "source_head": "4d37eb11461d394377a5373d728c753cc2f3df6d",
   "source_records": [
     "registry/mvp-approval-requests.json",
     "registry/mvp02-preflight-readiness.json",
     "docs/mvp02-adaptation-approval-request.md",
-    "docs/mvp02-preflight-readiness.md"
+    "docs/mvp02-preflight-readiness.md",
+    "registry/mvp02-post-approval-execution-plan.json",
+    "docs/mvp02-post-approval-execution-plan.md"
   ],
   "candidate_ids": [
     "spec-driven-development",
@@ -30,7 +32,8 @@
     "run read-only verification",
     "refresh evidence ledgers and public-safe explanations",
     "check repository freshness and CI status",
-    "prepare review scaffolding that does not create adapted candidate output"
+    "prepare review scaffolding that does not create adapted candidate output",
+    "record a non-executable post-approval execution plan"
   ],
   "current_permissions": {
     "adapted_output_allowed": false,

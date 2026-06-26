@@ -16,9 +16,9 @@
     {
       "repository": "agent-skills-curated",
       "visibility": "private-pre-public",
-      "head": "d941c4a3e348fd16cb99cf4f43abd8771ec62041",
+      "head": "4d37eb11461d394377a5373d728c753cc2f3df6d",
       "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, and python -B -m unittest discover -s tests -v -> passed; 182 tests OK",
-      "remote_ci": "validate success, run 28259370737"
+      "remote_ci": "validate success, run 28261127411"
     },
     {
       "repository": "codex-user-config",
@@ -87,13 +87,13 @@
     {
       "id": "mvp-02-review-adapt",
       "status": "partial",
-      "evidence": "Pre-adaptation candidate-specific review evidence, a non-executable MVP-02 adaptation transition gate, a template-only adapted-output review checklist, a bounded owner approval request, and an MVP-02 preflight readiness record are recorded in agent-skills-curated at d941c4a3e348fd16cb99cf4f43abd8771ec62041. The approval request and preflight record are explicitly pending, record no approval, create no adapted output, and narrow the possible next authorization to non-runtime adapted draft creation plus checklist-based review only. They continue to disallow approval, release manifest changes, routing projection changes, runtime installation, live sync, and source redistribution.",
+      "evidence": "Pre-adaptation candidate-specific review evidence, a non-executable MVP-02 adaptation transition gate, a template-only adapted-output review checklist, a bounded owner approval request, an MVP-02 preflight readiness record, and a non-executable post-approval execution plan are recorded in agent-skills-curated at 4d37eb11461d394377a5373d728c753cc2f3df6d. The approval request, preflight record, and post-approval execution plan are explicitly pending, record no approval, create no adapted output, and narrow the possible next authorization to non-runtime adapted draft creation plus checklist-based review only. They continue to disallow approval, release manifest changes, routing projection changes, runtime installation, live sync, and source redistribution.",
       "next_required_evidence": "Explicit owner approval using the bounded approval request, followed by actual adapted draft material in the checklist-defined non-runtime review surface plus focused security, portability, overlap, attribution, validation, and final disposition evidence."
     },
     {
       "id": "mvp-03-release-manifest",
       "status": "baseline_ready",
-      "evidence": "agent-skills-curated validation, topology checks, and the 182-test suite pass at head d941c4a3e348fd16cb99cf4f43abd8771ec62041.",
+      "evidence": "agent-skills-curated validation, topology checks, and the 182-test suite pass at head 4d37eb11461d394377a5373d728c753cc2f3df6d.",
       "next_required_evidence": "Release-candidate manifest evidence for the selected batch, including fail-closed payload checks."
     },
     {
@@ -130,7 +130,7 @@
     {
       "id": "gate-02-boundaries-held",
       "status": "partial",
-      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, and preflight readiness record are recorded as pending owner decision, not adapted, not approved, not releasable, not routable, not installable, and not source-redistributed."
+      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, preflight readiness record, and post-approval execution plan are recorded as pending owner decision, not adapted, not approved, not releasable, not routable, not installable, and not source-redistributed."
     },
     {
       "id": "gate-03-runtime-useful",

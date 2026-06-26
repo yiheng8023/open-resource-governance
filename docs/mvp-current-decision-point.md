@@ -56,6 +56,7 @@ The following work can continue safely before approval:
 - refresh evidence ledgers and public-safe explanations;
 - check repository freshness and CI status;
 - prepare review scaffolding that does not create adapted candidate output.
+- record a non-executable post-approval execution plan.
 
 ## Still disallowed
 
