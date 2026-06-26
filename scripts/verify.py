@@ -19,7 +19,9 @@ REQUIRED_FILES = [
     "docs/public-private-boundary.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
+    "docs/public-launch-gates.md",
     "docs/roadmap.md",
+    "docs/closeout-audit-2026-06-26.md",
 ]
 
 PRIVATE_ONLY_TERMS = [

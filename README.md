@@ -17,6 +17,7 @@ It is a coordination and communication layer, not a runtime authority, private c
 - Shared public/private boundary rules.
 - License and contribution expectations.
 - Free-channel promotion material for GitHub profiles, repository descriptions, and social posts.
+- Closeout and launch-gate evidence for staged public release.
 
 ## What This Repository Does Not Own
 
@@ -63,6 +64,14 @@ python -B scripts/verify.py
 ```
 
 GitHub Actions runs the same verification on pull requests and pushes to `main`.
+
+Key docs:
+
+- [`docs/repository-map.md`](docs/repository-map.md) — repository roles and relationships.
+- [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — public/private safety boundary.
+- [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates that must pass before public release.
+- [`docs/closeout-audit-2026-06-26.md`](docs/closeout-audit-2026-06-26.md) — latest staged closeout audit.
+- [`docs/promotion-kit.md`](docs/promotion-kit.md) — free-channel promotion draft material.
 
 ## Update Rules
 
