@@ -34,6 +34,8 @@ I am building an open, modular resource-governance stack:
 
 The principle is simple: public core, private overlay, verifiable automation.
 
+GitHub: https://github.com/yiheng8023/open-resource-governance
+
 ## Chinese social post draft
 
 我在搭一套模块化的开放资源治理体系：
@@ -44,6 +46,24 @@ The principle is simple: public core, private overlay, verifiable automation.
 - 用公开安全的官方来源目录管理书签分类。
 
 核心原则：公开核心，私有 overlay，可验证自动化。
+
+GitHub: https://github.com/yiheng8023/open-resource-governance
+
+## Profile cross-linking
+
+Where a social platform supports a profile link, pinned post, or channel
+description, point back to the GitHub repository first:
+
+```text
+https://github.com/yiheng8023/open-resource-governance
+```
+
+Do not try to list every social account everywhere. Prefer one stable project
+link, plus the contact page when more routes are needed:
+
+```text
+https://github.com/yiheng8023/open-resource-governance/blob/main/docs/contact-and-social.md
+```
 
 ## What not to claim yet
 
