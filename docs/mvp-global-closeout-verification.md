@@ -12,6 +12,11 @@ The current artifact hygiene review is
 [`mvp-artifact-hygiene-review.md`](mvp-artifact-hygiene-review.md). Treat it as
 Gate 08 in-progress evidence, not as final residue cleanup.
 
+The current continuous assurance review is
+[`mvp-continuous-assurance-review.md`](mvp-continuous-assurance-review.md).
+Treat it as Gate 09 in-progress evidence, not as a permanent health
+certificate.
+
 ## Closeout principle
 
 ```text

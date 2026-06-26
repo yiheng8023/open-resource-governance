@@ -349,6 +349,9 @@ international, fiscal-host, and domestic-support considerations.
 - [`docs/mvp-artifact-hygiene-review.md`](docs/mvp-artifact-hygiene-review.md)
   — Gate 08 process-artifact hygiene review; explicitly keeps drafts,
   generated outputs, and promotion material from becoming accidental truth.
+- [`docs/mvp-continuous-assurance-review.md`](docs/mvp-continuous-assurance-review.md)
+  — Gate 09 continuous-assurance review; treats green checks as snapshot
+  evidence, not permanent health certificates.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates before
   public release.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) —

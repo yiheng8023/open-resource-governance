@@ -301,6 +301,8 @@ owner 可控且验证通过后加入。
   — 当前 MVP 证据快照；明确不是完成声明。
 - [`docs/mvp-artifact-hygiene-review.md`](docs/mvp-artifact-hygiene-review.md)
   — Gate 08 过程产物卫生审查；防止草稿、生成产物和宣传材料意外变成真相源。
+- [`docs/mvp-continuous-assurance-review.md`](docs/mvp-continuous-assurance-review.md)
+  — Gate 09 持续保障审查；把绿色检查视为当前快照证据，而不是永久健康证书。
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前闸门。
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道发布和推广 runbook。
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词。

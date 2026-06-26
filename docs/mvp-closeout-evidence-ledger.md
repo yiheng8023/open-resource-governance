@@ -13,6 +13,11 @@ Gate 08 artifact hygiene review:
 [`docs/mvp-artifact-hygiene-review.md`](mvp-artifact-hygiene-review.md) and
 [`data/mvp-artifact-hygiene-review.json`](../data/mvp-artifact-hygiene-review.json).
 
+Gate 09 continuous assurance review:
+[`docs/mvp-continuous-assurance-review.md`](mvp-continuous-assurance-review.md)
+and
+[`data/mvp-continuous-assurance-review.json`](../data/mvp-continuous-assurance-review.json).
+
 ## Current status
 
 ```text
@@ -74,7 +79,7 @@ candidate batch
 | Gate 06 global verification | in progress | verified surfaces are captured above |
 | Gate 07 public refresh | pending | intentionally postponed until evidence supports new claims |
 | Gate 08 artifact hygiene | in progress | artifact hygiene review now records classification vocabulary and repository-level posture; final residue sweep still needs to happen after later MVP evidence exists |
-| Gate 09 continuous assurance | in progress | current validation exists; recurring posture still needs scheduling |
+| Gate 09 continuous assurance | in progress | continuous assurance review now records dimensions and repository-level stale-risk posture; final cross-repository assurance still needs later MVP evidence |
 | Gate 10 persistence and continuity | in progress | this ledger is a durable continuity anchor |
 | Gate 11 observability and explainability | in progress | each workstream/gate now has public-safe status and next evidence; the MVP-02 checklist defines the future adapted-output evidence shape and the approval request defines the exact owner decision needed before adaptation |
 
@@ -92,5 +97,7 @@ candidate batch
 6. Feed lifecycle outcomes back into the governance loop.
 7. Complete the final residue sweep after later MVP evidence exists, using the
    artifact hygiene review as the Gate 08 control surface.
+8. Complete final cross-repository assurance after later MVP evidence exists,
+   using the continuous assurance review as the Gate 09 control surface.
 
 Until those steps are complete, the MVP remains active and in progress.

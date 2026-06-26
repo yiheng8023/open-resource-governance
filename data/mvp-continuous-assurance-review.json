@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "review_id": "mvp-continuous-assurance-review-2026-06-27",
+  "mvp_name": "curated-skills-terminal-consumer-mvp",
+  "status": "active_in_progress",
+  "not_completion_claim": true,
+  "purpose": "Record the current continuous-assurance posture for MVP Gate 09 without treating a green validation run as permanent health.",
+  "review_date": "2026-06-27",
+  "principles": [
+    "A green CI run is snapshot evidence, not a permanent certificate.",
+    "Code, schemas, docs, generated artifacts, images, workflows, and governance records can all decay.",
+    "Quality, health, security, compliance, freshness, reproducibility, and boundary integrity require recurring review.",
+    "Assurance depth should be proportional to risk, public visibility, automation impact, and release authority.",
+    "Funding, promotion, or repository visibility must not bypass assurance gates."
+  ],
+  "assurance_dimensions": [
+    {
+      "id": "quality",
+      "meaning": "The artifact remains understandable, maintainable, coherent, and useful for its intended audience.",
+      "evidence_examples": [
+        "lint or verifier pass",
+        "README/user-flow review",
+        "schema consistency checks",
+        "reviewed issue or PR feedback"
+      ]
+    },
+    {
+      "id": "health",
+      "meaning": "The repository or lane can still run its declared checks and has no obvious broken generated outputs.",
+      "evidence_examples": [
+        "local verify command",
+        "GitHub Actions success",
+        "generated output freshness check",
+        "clean git status"
+      ]
+    },
+    {
+      "id": "security",
+      "meaning": "The lane does not expose secrets, expand permissions silently, or introduce unsafe supply-chain behavior.",
+      "evidence_examples": [
+        "sensitive-term scan",
+        "public/private boundary check",
+        "dependency or script review",
+        "least-privilege workflow review"
+      ]
+    },
+    {
+      "id": "compliance",
+      "meaning": "License, provenance, attribution, payment, privacy, and public-safe boundaries remain reviewable.",
+      "evidence_examples": [
+        "license/provenance record",
+        "source policy check",
+        "funding boundary review",
+        "public-safe declassification review"
+      ]
+    },
+    {
+      "id": "freshness",
+      "meaning": "Claims, links, counts, screenshots, generated reports, and external references have not gone stale.",
+      "evidence_examples": [
+        "dated evidence ledger",
+        "link or source refresh",
+        "public claim review",
+        "outdated report classification"
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "meaning": "Generated outputs can be reproduced from declared source data and scripts.",
+      "evidence_examples": [
+        "deterministic exporter check",
+        "manifest hash or size verification",
+        "topology build check",
+        "report up-to-date check"
+      ]
+    },
+    {
+      "id": "public_private_boundary",
+      "meaning": "Private overlays, local paths, account state, memory, credentials, and personal preferences remain out of public artifacts.",
+      "evidence_examples": [
+        "private-payload scan",
+        "declassification checklist",
+        "template placeholder review",
+        "public projection verification"
+      ]
+    },
+    {
+      "id": "runtime_authority",
+      "meaning": "Runtime, install, routing, release, and rollback authority remains in the correct repository and approval boundary.",
+      "evidence_examples": [
+        "release manifest verification",
+        "installer dry-run or backup proof",
+        "routing scenario report",
+        "human approval record"
+      ]
+    }
+  ],
+  "repository_assurance": [
+    {
+      "repository": "open-resource-governance",
+      "visibility": "public",
+      "current_evidence": [
+        "scripts/verify.py",
+        ".github/workflows/validate.yml",
+        "data/mvp-closeout-evidence-ledger.json",
+        "data/mvp-artifact-hygiene-review.json",
+        "data/mvp-continuous-assurance-review.json"
+      ],
+      "required_dimensions": [
+        "quality",
+        "health",
+        "security",
+        "compliance",
+        "freshness",
+        "public_private_boundary"
+      ],
+      "risk_if_stale": "Public hub claims, maps, support wording, and promotion material can mislead users if not refreshed.",
+      "cadence_hint": "on every public claim change, before promotion refresh, and at MVP closeout."
+    },
+    {
+      "repository": "agent-skills-curated",
+      "visibility": "public",
+      "current_evidence": [
+        "scripts/verify.py",
+        "scripts/build_topology.py --check",
+        "tests",
+        "release-manifest.json",
+        "registry/*.json"
+      ],
+      "required_dimensions": [
+        "quality",
+        "health",
+        "security",
+        "compliance",
+        "reproducibility",
+        "runtime_authority"
+      ],
+      "risk_if_stale": "A stale candidate, manifest, or routing projection can make an unapproved Skill look executable.",
+      "cadence_hint": "before candidate adaptation, before release-candidate manifest, and before consumer install."
+    },
+    {
+      "repository": "codex-user-config",
+      "visibility": "private",
+      "current_evidence": [
+        "scripts/verify.py",
+        "scripts/verify_capability_router.py",
+        "scripts/verify_skills_install.py"
+      ],
+      "required_dimensions": [
+        "health",
+        "security",
+        "public_private_boundary",
+        "runtime_authority"
+      ],
+      "risk_if_stale": "Private runtime state, memory snapshots, local paths, and install plans can drift from public-safe templates.",
+      "cadence_hint": "before memory sync, before curated Skill install, before rollback, and before public-safe pattern extraction."
+    },
+    {
+      "repository": "claude-user-config",
+      "visibility": "private",
+      "current_evidence": [
+        "scripts/verify.py",
+        "private hook and command validation"
+      ],
+      "required_dimensions": [
+        "health",
+        "security",
+        "public_private_boundary",
+        "runtime_authority"
+      ],
+      "risk_if_stale": "Private agent-specific commands, hooks, and memory can drift from the public template or leak subjective/private state.",
+      "cadence_hint": "before template extraction, hook changes, or public-safe memory/configuration claims."
+    },
+    {
+      "repository": "resource-radar",
+      "visibility": "private",
+      "current_evidence": [
+        "scripts/verify.py",
+        "private candidate reports",
+        "lifecycle state"
+      ],
+      "required_dimensions": [
+        "quality",
+        "health",
+        "security",
+        "compliance",
+        "freshness",
+        "reproducibility"
+      ],
+      "risk_if_stale": "Candidate scoring, source metadata, and lifecycle state can become noisy or legally unsafe if not refreshed.",
+      "cadence_hint": "before publishing public-safe patterns, before proposing candidates to Skills, and after source policy changes."
+    },
+    {
+      "repository": "resource-radar-public",
+      "visibility": "public",
+      "current_evidence": [
+        "scripts/verify.py",
+        "demo fixtures",
+        "deterministic demo report"
+      ],
+      "required_dimensions": [
+        "quality",
+        "health",
+        "security",
+        "compliance",
+        "reproducibility"
+      ],
+      "risk_if_stale": "Demo claims may be mistaken for production discovery quality or private candidate truth.",
+      "cadence_hint": "before public README or demo-report changes."
+    },
+    {
+      "repository": "research-bookmarks",
+      "visibility": "private",
+      "current_evidence": [
+        "scripts/verify.py",
+        "private bookmark baseline",
+        "declassification inputs"
+      ],
+      "required_dimensions": [
+        "quality",
+        "health",
+        "security",
+        "compliance",
+        "freshness",
+        "public_private_boundary"
+      ],
+      "risk_if_stale": "Private bookmark imports can contain personal behavior, local-only entries, duplicates, or outdated sources.",
+      "cadence_hint": "before public projection refresh and after browser import changes."
+    },
+    {
+      "repository": "research-bookmarks-public",
+      "visibility": "public",
+      "current_evidence": [
+        "scripts/verify.py",
+        "data/public-sources.json",
+        "exports/research-engineering-bookmarks-public.html",
+        "projection report"
+      ],
+      "required_dimensions": [
+        "quality",
+        "health",
+        "security",
+        "compliance",
+        "freshness",
+        "reproducibility",
+        "public_private_boundary"
+      ],
+      "risk_if_stale": "Public browser-importable HTML and source taxonomy can become outdated or accidentally overclaim coverage.",
+      "cadence_hint": "before regenerated HTML import/export and before public promotion."
+    },
+    {
+      "repository": "codex-user-config-template",
+      "visibility": "public",
+      "current_evidence": [
+        "scripts/verify.py",
+        "placeholder examples",
+        "template docs"
+      ],
+      "required_dimensions": [
+        "quality",
+        "health",
+        "security",
+        "public_private_boundary"
+      ],
+      "risk_if_stale": "Template placeholders can accidentally look like recommended personal settings or real private configuration.",
+      "cadence_hint": "before absorbing private configuration patterns."
+    },
+    {
+      "repository": "claude-user-config-template",
+      "visibility": "public",
+      "current_evidence": [
+        "scripts/verify.py",
+        "placeholder examples",
+        "template docs"
+      ],
+      "required_dimensions": [
+        "quality",
+        "health",
+        "security",
+        "public_private_boundary"
+      ],
+      "risk_if_stale": "Template commands or hooks can become unsafe or misleading as Claude Code behavior changes.",
+      "cadence_hint": "before absorbing private command, hook, or memory patterns."
+    }
+  ],
+  "current_result": {
+    "gate_09_status": "in_progress_with_review_surface",
+    "completed_this_review": [
+      "continuous-assurance dimensions are explicit",
+      "repository-level assurance posture is recorded",
+      "green CI is explicitly downgraded from permanent proof to snapshot evidence",
+      "public/private boundary drift is treated as an assurance dimension",
+      "runtime authority drift is treated as an assurance dimension"
+    ],
+    "remaining_before_gate_pass": [
+      "turn cadence hints into per-lane recurring or event-driven check records where needed",
+      "run final cross-repository assurance review after MVP-02 through MVP-06 evidence exists",
+      "record any accepted stale-risk exceptions or retire stale artifacts before global closeout"
+    ]
+  }
+}

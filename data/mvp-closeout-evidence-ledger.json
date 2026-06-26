@@ -165,7 +165,7 @@
     {
       "id": "gate-09-continuous-assurance",
       "status": "in_progress",
-      "evidence": "Current validation covers repository health at the snapshot point; recurring assurance posture still needs lifecycle scheduling."
+      "evidence": "Current validation covers repository health at the snapshot point, and mvp-continuous-assurance-review-2026-06-27 records assurance dimensions plus repository-level stale-risk posture. Final cross-repository assurance still needs later MVP evidence."
     },
     {
       "id": "gate-10-persistence-continuity",
@@ -185,6 +185,7 @@
     "consume the release from the private configuration workflow or an authorized dry run",
     "run representative routing/runtime scenarios",
     "feed lifecycle outcomes back into the governance loop",
-    "complete the final residue sweep after later MVP evidence exists, using the artifact hygiene review as the Gate 08 control surface"
+    "complete the final residue sweep after later MVP evidence exists, using the artifact hygiene review as the Gate 08 control surface",
+    "complete final cross-repository assurance after later MVP evidence exists, using the continuous assurance review as the Gate 09 control surface"
   ]
 }

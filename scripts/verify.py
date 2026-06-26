@@ -34,6 +34,7 @@ REQUIRED_FILES = [
     "docs/mvp-global-closeout-verification.md",
     "docs/mvp-closeout-evidence-ledger.md",
     "docs/mvp-artifact-hygiene-review.md",
+    "docs/mvp-continuous-assurance-review.md",
     "docs/system-topology.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
@@ -67,6 +68,7 @@ REQUIRED_FILES = [
     "data/mvp-acceptance-map.json",
     "data/mvp-closeout-evidence-ledger.json",
     "data/mvp-artifact-hygiene-review.json",
+    "data/mvp-continuous-assurance-review.json",
 ]
 
 PRIVATE_ONLY_TERMS = [
@@ -545,6 +547,90 @@ def verify_mvp_artifact_hygiene_review() -> None:
         fail("global closeout doc must link MVP artifact hygiene review")
 
 
+def verify_mvp_continuous_assurance_review() -> None:
+    data = json.loads((ROOT / "data" / "mvp-continuous-assurance-review.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("mvp-continuous-assurance-review.json schema_version must be 1")
+    if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
+        fail("continuous assurance review must reference the active MVP")
+    if data.get("status") != "active_in_progress":
+        fail("continuous assurance review must remain active_in_progress until Gate 09 passes")
+    if data.get("not_completion_claim") is not True:
+        fail("continuous assurance review must explicitly avoid completion claims")
+    required_principles = [
+        "A green CI run is snapshot evidence, not a permanent certificate.",
+        "Code, schemas, docs, generated artifacts, images, workflows, and governance records can all decay.",
+        "Quality, health, security, compliance, freshness, reproducibility, and boundary integrity require recurring review.",
+        "Funding, promotion, or repository visibility must not bypass assurance gates.",
+    ]
+    for phrase in required_principles:
+        if phrase not in data.get("principles", []):
+            fail(f"continuous assurance review missing principle: {phrase}")
+    required_dimensions = {
+        "quality",
+        "health",
+        "security",
+        "compliance",
+        "freshness",
+        "reproducibility",
+        "public_private_boundary",
+        "runtime_authority",
+    }
+    actual_dimensions = {item.get("id") for item in data.get("assurance_dimensions", [])}
+    if not required_dimensions <= actual_dimensions:
+        fail(f"continuous assurance review missing dimensions: {', '.join(sorted(required_dimensions - actual_dimensions))}")
+    repo_data = json.loads((ROOT / "data" / "repositories.json").read_text(encoding="utf-8"))
+    repo_names = {repo["name"] for repo in repo_data.get("repositories", [])}
+    assurance_items = data.get("repository_assurance", [])
+    assurance_repos = {item.get("repository") for item in assurance_items}
+    if repo_names - assurance_repos:
+        fail(f"continuous assurance review missing repository assurance: {', '.join(sorted(repo_names - assurance_repos))}")
+    for item in assurance_items:
+        for key in (
+            "repository",
+            "visibility",
+            "current_evidence",
+            "required_dimensions",
+            "risk_if_stale",
+            "cadence_hint",
+        ):
+            if key not in item:
+                fail(f"continuous assurance item missing {key}: {item}")
+        if item["repository"] not in repo_names:
+            fail(f"continuous assurance item references unknown repository: {item['repository']}")
+        unknown_dimensions = set(item["required_dimensions"]) - required_dimensions
+        if unknown_dimensions:
+            fail(f"continuous assurance item has unknown dimensions: {item['repository']}")
+    result = data.get("current_result", {})
+    if result.get("gate_09_status") != "in_progress_with_review_surface":
+        fail("continuous assurance review must keep Gate 09 in progress")
+    if not result.get("remaining_before_gate_pass"):
+        fail("continuous assurance review must record remaining work before Gate 09 can pass")
+    doc = (ROOT / "docs" / "mvp-continuous-assurance-review.md").read_text(encoding="utf-8")
+    for phrase in [
+        "A green CI run is snapshot evidence",
+        "Assurance dimensions",
+        "quality",
+        "health",
+        "security",
+        "compliance",
+        "freshness",
+        "reproducibility",
+        "public/private boundary",
+        "runtime authority",
+        "Event-driven cadence",
+        "Gate 09 still cannot pass",
+    ]:
+        if phrase not in doc:
+            fail(f"continuous assurance review doc missing phrase: {phrase}")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    if "docs/mvp-continuous-assurance-review.md" not in readme:
+        fail("README.md must link MVP continuous assurance review")
+    closeout_doc = (ROOT / "docs" / "mvp-global-closeout-verification.md").read_text(encoding="utf-8")
+    if "mvp-continuous-assurance-review.md" not in closeout_doc:
+        fail("global closeout doc must link MVP continuous assurance review")
+
+
 def verify_support_entry() -> None:
     funding = (ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8")
     support = (ROOT / "docs" / "support-and-sponsorship.md").read_text(encoding="utf-8")
@@ -607,6 +693,7 @@ def main() -> None:
     verify_mvp_acceptance_map()
     verify_mvp_closeout_evidence_ledger()
     verify_mvp_artifact_hygiene_review()
+    verify_mvp_continuous_assurance_review()
     verify_support_entry()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")
