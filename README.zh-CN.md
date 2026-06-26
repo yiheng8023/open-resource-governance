@@ -104,7 +104,7 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 - 用来解释项目的公开发布素材和文案。
 - 配套公开书签投影仓
   [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public)，
-  包含结构化公开来源和生成的可导入浏览器 HTML。
+  包含结构化公开来源、聚合投影报告和生成的可导入浏览器 HTML。
 
 有些 lane 暂时保持私有，是因为它们还包含个人导入、审查证据、本地状态或公开前自动化工作。
 

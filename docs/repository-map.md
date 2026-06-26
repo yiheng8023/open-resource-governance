@@ -19,6 +19,11 @@ limited to software engineering, skills, Codex, or Claude.
 
 - `agent-skills-curated`: reviewed Skill content, source pinning, license/provenance review, safety review, adaptation, topology, conflict handling, and release manifests.
 
+This is the downstream terminal for reviewed executable Skill artifacts only.
+It should receive skill/MCP/agent-runtime candidates from discovery, but broad
+references, bookmarks, tools, datasets, and learning resources should remain in
+their own lanes unless explicitly reviewed as Skill material.
+
 ## Configuration lane
 
 Configuration follows the same private-source / public-template rule as bookmarks:
@@ -39,6 +44,10 @@ Public templates provide structure, placeholder examples, docs, and validation. 
 ## Relationship rule
 
 No repository should silently mutate another repository's private state. Cross-repo automation should consume public-safe contracts, generate reviewable outputs, and stop at promotion or permission gates.
+
+The system is a graph of lanes and projections, not a single linear hierarchy.
+Read edges as allowed knowledge flow, candidate proposals, public-safe
+projections, or review-gated promotion paths, not as ownership transfer.
 
 For the full graph, see [`docs/system-topology.md`](system-topology.md) and the
 machine-readable index at [`data/topology.json`](../data/topology.json).

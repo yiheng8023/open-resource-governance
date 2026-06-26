@@ -124,6 +124,10 @@ def verify_topology() -> None:
     principles = "\n".join(data.get("principles", []))
     if "All non-user-configuration lanes should remain agent-neutral" not in principles:
         fail("topology must state non-user-configuration neutrality")
+    if "graph of lanes" not in principles:
+        fail("topology must state graph-not-linear relationship model")
+    if "terminal reviewed consumer for executable Skill artifacts" not in principles:
+        fail("topology must state curated Skills terminal-consumer boundary")
 
 
 def verify_language_links() -> None:

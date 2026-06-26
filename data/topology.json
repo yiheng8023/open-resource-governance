@@ -2,8 +2,10 @@
   "schema_version": 1,
   "principles": [
     "open-resource-governance is the public entry and global index, not a giant monorepo.",
+    "The ecosystem is a graph of lanes, projections, review gates, and feedback loops, not a simple upstream/downstream chain.",
     "User-configuration lanes may be agent-specific because they model real private user environments.",
     "All non-user-configuration lanes should remain agent-neutral, tool-neutral, reusable, and broadly applicable.",
+    "agent-skills-curated is the terminal reviewed consumer for executable Skill artifacts, not the destination for every useful resource.",
     "Private sources own real private state; public projections and templates own reusable public-safe structure.",
     "Edges describe allowed knowledge flow and governance relationships, not automatic write permission."
   ],
@@ -132,6 +134,12 @@
       "from": "resource-radar",
       "to": "agent-skills-curated",
       "relation": "can-propose-reviewed-candidates-to",
+      "write_permission": false
+    },
+    {
+      "from": "agent-skills-curated",
+      "to": "resource-radar",
+      "relation": "may-expose-reviewed-decisions-for-deduplication",
       "write_permission": false
     },
     {

@@ -129,6 +129,12 @@ The system is split because each lane has different trust and release rules:
 One giant repository would make these boundaries harder to review. Modular
 repositories make the trust boundary visible.
 
+The relationship is not a simple upstream/downstream hierarchy. It is a graph:
+bookmarks can seed discovery, discovery can propose candidates to curated
+skills, curated skills can expose safe decision metadata back to discovery for
+deduplication, and public templates can guide private overlays without owning
+them.
+
 ## What makes this different from a list of links?
 
 A plain list answers: "What links did someone collect?"
@@ -211,6 +217,8 @@ As of the current public launch stage:
 - `resource-radar-public` is public as the reusable resource-radar template;
 - `resource-radar` remains the private-source lane for real candidate pools and
   account-coupled automation;
+- `research-bookmarks-public` includes a public aggregate projection report in
+  addition to structured sources and generated HTML;
 - curated skills remain a staged/private-pre-public lane;
 - Codex and Claude configuration templates are the public-safe way to share
   portable setup patterns without exposing private configuration sources.
@@ -219,6 +227,9 @@ Outside the user-configuration lane, the system should remain agent-neutral and
 tool-neutral. Resource discovery, bookmarks, curated skills, schemas,
 validation, and topology should be reusable beyond Codex, Claude, or any single
 runtime.
+
+Skills are still the terminal downstream for executable Skill artifacts, but
+not for the whole resource system.
 
 The project is useful now as a reference pattern and public bookmark lane. It is
 not yet a complete packaged product.

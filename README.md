@@ -118,7 +118,8 @@ Current usable pieces:
 - Public launch assets and copy for explaining the project.
 - A companion public bookmark projection in
   [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public),
-  including structured public sources and generated browser-importable HTML.
+  including structured public sources, an aggregate projection report, and
+  generated browser-importable HTML.
 
 Some lanes are intentionally private until they are ready to be released or
 generalized. Private lanes may contain personal imports, review evidence, local

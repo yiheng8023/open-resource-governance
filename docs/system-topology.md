@@ -6,6 +6,11 @@ turning every lane into one monolithic repository.
 
 The machine-readable graph lives in [`data/topology.json`](../data/topology.json).
 
+This is a graph, not a simple upstream/downstream chain. Some repositories
+publish public-safe projections, some hold private state, some consume
+candidates, and some can feed back review decisions so future discovery becomes
+less noisy.
+
 ## Core distinction
 
 ```text
@@ -28,6 +33,11 @@ All other lanes should remain agent-neutral, tool-neutral, reusable, and
 portable. Resource discovery, bookmarks, curated skills, public templates,
 validation policies, topology, and launch governance should not be framed as
 Codex-only or Claude-only.
+
+`agent-skills-curated` is downstream only for executable Skill artifacts. It is
+not the destination for every useful resource. A resource may be a bookmark
+seed, reference, dataset, tool, learning source, workflow, standard, or skill
+candidate; only reviewed skill candidates should enter the curated Skills lane.
 
 ## Current graph
 
@@ -60,6 +70,7 @@ flowchart TD
   bookmarksPublic -. "can seed discovery" .-> radarPrivate
 
   radarPrivate -. "candidate proposals only" .-> skills
+  skills -. "review decisions for dedupe" .-> radarPrivate
   skills -. "release manifest consumed by" .-> codexPrivate
 
   codexTemplate -. "guides private overlay" .-> codexPrivate
@@ -81,6 +92,9 @@ Edges in the graph are governance relationships, not automatic write access.
   input evidence for discovery.
 - `can-propose-reviewed-candidates-to`: a discovery lane can propose candidates
   but cannot bypass downstream admission.
+- `may-expose-reviewed-decisions-for-deduplication`: a reviewed downstream lane
+  can publish safe decision metadata so discovery does not keep resurfacing
+  already accepted or rejected candidates.
 - `may-contribute-public-safe-patterns-to`: private practice can improve a
   public template only after review and declassification.
 
@@ -97,3 +111,13 @@ Without a graph, users see many repositories and cannot tell:
 The hub graph makes those boundaries explicit. It is not release authority for
 the other repositories; each lane still owns its own validation and release
 rules.
+
+## Current public runnable projections
+
+- `research-bookmarks-public`: public-safe bookmark taxonomy, public source
+  records, projection report, and generated browser-importable HTML.
+- `resource-radar-public`: public-safe radar schema, universal domain taxonomy,
+  demo resources, scoring/lifecycle examples, generated reports, and validation.
+
+These public projections are meant to be reusable even when the private source
+repositories are not visible.
