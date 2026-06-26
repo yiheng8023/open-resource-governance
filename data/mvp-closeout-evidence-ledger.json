@@ -16,9 +16,9 @@
     {
       "repository": "agent-skills-curated",
       "visibility": "public",
-      "head": "3b022342b3654caeba6cd8ed0486b37b204e2d73",
+      "head": "bdb83300f335a54eae9af208be9abf903bf1c39a",
       "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, and python -B -m unittest discover -s tests -v -> passed; 182 tests OK",
-      "remote_ci": "validate success, run 28255980698"
+      "remote_ci": "validate success, run 28256748738"
     },
     {
       "repository": "codex-user-config",
@@ -87,8 +87,8 @@
     {
       "id": "mvp-02-review-adapt",
       "status": "partial",
-      "evidence": "Pre-adaptation candidate-specific review evidence is recorded in agent-skills-curated at 3b022342b3654caeba6cd8ed0486b37b204e2d73. The review records pinned upstream hashes, candidate-specific risks, neutralization needs, likely merge targets, and remaining work for spec-driven-development, documentation-and-adrs, and code-review-and-quality. It explicitly does not approve adaptation, release, routing projection, runtime installation, or source redistribution.",
-      "next_required_evidence": "Human approval to create adapted output, followed by focused security, portability, overlap, attribution, validation, and final disposition evidence for the actual adapted material."
+      "evidence": "Pre-adaptation candidate-specific review evidence and a non-executable MVP-02 adaptation transition gate are recorded in agent-skills-curated at bdb83300f335a54eae9af208be9abf903bf1c39a. The review records pinned upstream hashes, candidate-specific risks, neutralization needs, likely merge targets, and remaining work for spec-driven-development, documentation-and-adrs, and code-review-and-quality. The transition gate explicitly records that human approval is still required before adapted output creation and that adaptation, approval, release manifest changes, routing projection changes, runtime installation, live sync, and source redistribution remain disallowed.",
+      "next_required_evidence": "Human approval to create adapted output, followed by actual adapted draft material in a non-runtime review surface plus focused security, portability, overlap, attribution, validation, and final disposition evidence."
     },
     {
       "id": "mvp-03-release-manifest",
@@ -130,7 +130,7 @@
     {
       "id": "gate-02-boundaries-held",
       "status": "partial",
-      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch and pre-adaptation review are recorded as not approved, not releasable, not routable, not installable, and not source-redistributed."
+      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, and MVP-02 transition gate are recorded as awaiting human approval, not adapted, not approved, not releasable, not routable, not installable, and not source-redistributed."
     },
     {
       "id": "gate-03-runtime-useful",
@@ -179,7 +179,7 @@
     }
   ],
   "next_actions": [
-    "obtain human approval to create adapted output for the selected Skill candidate batch",
+    "obtain explicit human approval to leave the MVP-02 transition gate and create adapted output for the selected Skill candidate batch",
     "run focused adapted-output review for security, portability, overlap, attribution, and validation",
     "produce release-candidate manifest evidence",
     "consume the release from the private configuration workflow or an authorized dry run",
