@@ -319,6 +319,10 @@ current support entry, sponsorship-interest contact path, and future funding
 activation gate. Formal payment channels will be listed only after they are
 owner-controlled and verified.
 
+Funding-channel tradeoffs are tracked in
+[`docs/funding-options-matrix.md`](docs/funding-options-matrix.md), including
+international, fiscal-host, and domestic-support considerations.
+
 ## Documentation index
 
 - [`docs/project-design.md`](docs/project-design.md) — external-user design
@@ -344,6 +348,8 @@ owner-controlled and verified.
 - [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md) —
   support entry, sponsorship-interest contact path, and funding activation
   gate.
+- [`docs/funding-options-matrix.md`](docs/funding-options-matrix.md) — funding
+  channel evaluation matrix and activation checklist.
 - [`docs/future-lane-incubation.md`](docs/future-lane-incubation.md) —
   candidate future lanes and graduation rules.
 - [`docs/private-project-consumption-model.md`](docs/private-project-consumption-model.md)

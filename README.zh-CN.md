@@ -279,6 +279,9 @@ python -B scripts/verify.py
 当前支持入口、赞助意向联系路径和未来正式收款渠道的启用闸门。正式付款渠道只会在
 owner 可控且验证通过后加入。
 
+收款渠道取舍记录在 [`docs/funding-options-matrix.md`](docs/funding-options-matrix.md)，
+其中包含国际渠道、fiscal host 和国内支持方式的评估边界。
+
 ## 文档索引
 
 - [`docs/project-design.md`](docs/project-design.md) — 面向外部用户的设计依据、价值闭环、用户路径和共建入口。
@@ -295,6 +298,8 @@ owner 可控且验证通过后加入。
   — 书签 lane 拆分、验证和公开/私有收官证据。
 - [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md) — 支持入口、
   赞助意向联系路径和资金渠道启用闸门。
+- [`docs/funding-options-matrix.md`](docs/funding-options-matrix.md) — 收款渠道
+  评估矩阵与启用检查表。
 - [`docs/future-lane-incubation.md`](docs/future-lane-incubation.md) — 候选未来
   lane 与晋级规则。
 - [`docs/private-project-consumption-model.md`](docs/private-project-consumption-model.md)

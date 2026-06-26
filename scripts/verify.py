@@ -39,6 +39,7 @@ REQUIRED_FILES = [
     "docs/bookmark-lane-closeout-2026-06-26.md",
     "docs/contact-and-social.md",
     "docs/support-and-sponsorship.md",
+    "docs/funding-options-matrix.md",
     "docs/future-lane-incubation.md",
     "docs/private-project-consumption-model.md",
     "docs/assets/launch-video/github-repository-home.png",
@@ -160,6 +161,7 @@ def verify_external_user_readme() -> None:
         "codex-user-config-template",
         "claude-user-config-template",
         "support-and-sponsorship",
+        "funding-options-matrix",
         "389 private bookmark entries",
         "328 public-safe sources",
     ]
@@ -177,6 +179,7 @@ def verify_external_user_readme() -> None:
         "codex-user-config-template",
         "claude-user-config-template",
         "support-and-sponsorship",
+        "funding-options-matrix",
         "389 条私有书签记录",
         "328 条公开安全来源",
     ]
@@ -268,6 +271,7 @@ def verify_future_lane_incubation() -> None:
 def verify_support_entry() -> None:
     funding = (ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8")
     support = (ROOT / "docs" / "support-and-sponsorship.md").read_text(encoding="utf-8")
+    matrix = (ROOT / "docs" / "funding-options-matrix.md").read_text(encoding="utf-8")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     if "docs/support-and-sponsorship.md" not in funding:
         fail("FUNDING.yml must point to the support and sponsorship page")
@@ -280,8 +284,23 @@ def verify_support_entry() -> None:
     for phrase in required_support_phrases:
         if phrase not in support:
             fail(f"support page missing required phrase: {phrase}")
+    required_matrix_phrases = [
+        "GitHub Sponsors + fiscal host",
+        "Open Collective / fiscal host",
+        "Ko-fi",
+        "Buy Me a Coffee",
+        "Afdian",
+        "Alipay / WeChat",
+        "No-pay-to-approve policy",
+        "payout path",
+    ]
+    for phrase in required_matrix_phrases:
+        if phrase not in matrix:
+            fail(f"funding matrix missing required phrase: {phrase}")
     if "docs/support-and-sponsorship.md" not in readme:
         fail("README.md must link the support and sponsorship page")
+    if "docs/funding-options-matrix.md" not in readme:
+        fail("README.md must link the funding options matrix")
 
 
 def verify_no_obvious_private_payloads() -> None:

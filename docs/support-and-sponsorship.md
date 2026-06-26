@@ -14,6 +14,8 @@ owner enables and verifies an account-controlled funding path.
   stable support entry without being sent to an unverified payment surface.
 - Sponsorship does not buy approval, ranking, inclusion, or exemption from
   license, provenance, safety, privacy, or review gates.
+- Funding-channel evaluation is tracked in
+  [`funding-options-matrix.md`](funding-options-matrix.md).
 
 ## Useful support right now
 
@@ -32,6 +34,10 @@ If this project is useful, the best low-friction support is:
 For sponsorship, funding, partnership, or long-form collaboration interest,
 contact the maintainer through the public-safe contact routes in
 [`docs/contact-and-social.md`](contact-and-social.md).
+
+If you need a payment link now, please contact first. The maintainer may choose
+an appropriate domestic or international channel after verifying ownership,
+payout, privacy, and compliance boundaries.
 
 Do not send secrets, private configuration, private bookmarks, credentials,
 local paths, account state, browser/session data, or private project material
@@ -55,11 +61,12 @@ Funding would help with:
 Before adding a direct donation or sponsorship link, the repository should:
 
 1. choose an owner-controlled funding platform;
-2. verify the public URL works while logged out;
-3. update `.github/FUNDING.yml`;
-4. update README sustainability copy;
-5. keep the no-pay-to-approve policy visible;
-6. run repository verification;
-7. record the change in a normal commit.
+2. verify the payout path, not only the public profile URL;
+3. verify the public URL works while logged out;
+4. update `.github/FUNDING.yml`;
+5. update README sustainability copy;
+6. keep the no-pay-to-approve policy visible;
+7. run repository verification;
+8. record the change in a normal commit.
 
 This keeps support useful without turning funding into a trust-boundary bypass.
