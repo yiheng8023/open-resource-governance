@@ -19,6 +19,8 @@ REQUIRED_FILES = [
     "docs/public-private-boundary.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
+    "docs/free-promotion-playbook.md",
+    "docs/pre-public-safety-audit.md",
     "docs/public-launch-gates.md",
     "docs/roadmap.md",
     "docs/closeout-audit-2026-06-26.md",
