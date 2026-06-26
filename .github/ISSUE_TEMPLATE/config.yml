@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security or private-data concern
+    url: https://github.com/yiheng8023/open-resource-governance/security/advisories
+    about: Please do not disclose secrets, private configuration, private bookmarks, memory, account state, or local paths in public issues.
