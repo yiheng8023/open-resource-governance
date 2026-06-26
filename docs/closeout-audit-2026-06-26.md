@@ -17,6 +17,7 @@ Prepare a rigorous, globally verified, public-safe repository family for:
 - owner-controlled public launch without accidental visibility, funding, or
   social-post side effects.
 - post-public evidence recording after the hub launch.
+- GitHub profile pinning through an explicit owner-controlled promotion step.
 
 ## Repository state snapshot
 
@@ -63,6 +64,8 @@ is the authoritative hub evidence.
 - Made only `open-resource-governance` public after explicit owner
   confirmation and recorded post-public evidence in
   `docs/post-public-launch-verification-2026-06-26.md`.
+- Pinned `open-resource-governance` on the GitHub profile after explicit owner
+  authorization and recorded the verification evidence.
 
 ## Validation evidence
 
@@ -111,7 +114,9 @@ Hub documentation now explicitly separates:
 - Downstream repository visibility was not changed.
 - No GitHub Sponsors or external funding endpoint was enabled.
 - No social-media post was published.
-- No GitHub profile pinning or public announcement was performed.
+- GitHub profile pinning was performed only for `open-resource-governance`
+  after explicit owner authorization.
+- No public social announcement was performed.
 - No live Agent environment, local runtime state, OAuth state, or browser
   profile was mutated.
 
@@ -121,8 +126,7 @@ These are intentional gates, not incomplete implementation:
 
 1. Decide which downstream repositories are ready for public visibility.
 2. Decide whether to enable GitHub Sponsors or another funding link.
-3. Decide whether to pin the hub on the GitHub profile and publish social
-   posts.
+3. Decide whether to publish social posts.
 4. Decide whether to create a private full bookmark overlay repository or keep
    the current bookmark source outside GitHub for now.
 
@@ -144,6 +148,7 @@ For any downstream repository publication, use the same staged order:
 
 ## Closeout conclusion
 
-The hub is public and post-public verification has been recorded. The broader
-repository family remains staged: downstream public release, profile pinning,
-funding, and social promotion are separate owner-controlled decisions.
+The hub is public, post-public verification has been recorded, and the hub has
+been pinned on the GitHub profile. The broader repository family remains
+staged: downstream public release, funding, and social promotion are separate
+owner-controlled decisions.
