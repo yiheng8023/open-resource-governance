@@ -20,6 +20,11 @@ Use public GitHub issues for public-safe questions about:
 - validation or launch-gate clarification;
 - contribution flow.
 
+For support or sponsorship interest, see
+[`support-and-sponsorship.md`](support-and-sponsorship.md). Use private contact
+for funding conversations that include billing, identity, or non-public
+coordination details.
+
 Do not post private configuration, memory, private bookmarks, credentials,
 tokens, cookies, OAuth material, local paths, account state, browser/session
 data, or personal preference data in public issues.

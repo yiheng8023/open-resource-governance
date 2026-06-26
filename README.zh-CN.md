@@ -275,7 +275,9 @@ python -B scripts/verify.py
 - 建议一个更好的名字；
 - 贡献文档、分类、验证或示例。
 
-等公开模型更清楚后，未来可能再添加赞助渠道。
+见 [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md)，其中记录了
+当前支持入口、赞助意向联系路径和未来正式收款渠道的启用闸门。正式付款渠道只会在
+owner 可控且验证通过后加入。
 
 ## 文档索引
 
@@ -291,6 +293,8 @@ python -B scripts/verify.py
 - [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — 公开安全首发图片素材。
 - [`docs/bookmark-lane-closeout-2026-06-26.md`](docs/bookmark-lane-closeout-2026-06-26.md)
   — 书签 lane 拆分、验证和公开/私有收官证据。
+- [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md) — 支持入口、
+  赞助意向联系路径和资金渠道启用闸门。
 - [`docs/future-lane-incubation.md`](docs/future-lane-incubation.md) — 候选未来
   lane 与晋级规则。
 - [`docs/private-project-consumption-model.md`](docs/private-project-consumption-model.md)

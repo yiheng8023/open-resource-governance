@@ -38,6 +38,7 @@ REQUIRED_FILES = [
     "docs/naming-campaign.md",
     "docs/bookmark-lane-closeout-2026-06-26.md",
     "docs/contact-and-social.md",
+    "docs/support-and-sponsorship.md",
     "docs/future-lane-incubation.md",
     "docs/private-project-consumption-model.md",
     "docs/assets/launch-video/github-repository-home.png",
@@ -158,6 +159,7 @@ def verify_external_user_readme() -> None:
         "resource-radar-public",
         "codex-user-config-template",
         "claude-user-config-template",
+        "support-and-sponsorship",
         "389 private bookmark entries",
         "328 public-safe sources",
     ]
@@ -174,6 +176,7 @@ def verify_external_user_readme() -> None:
         "resource-radar-public",
         "codex-user-config-template",
         "claude-user-config-template",
+        "support-and-sponsorship",
         "389 条私有书签记录",
         "328 条公开安全来源",
     ]
@@ -262,6 +265,25 @@ def verify_future_lane_incubation() -> None:
             fail(f"private project identifier leaked into public lane docs: {term}")
 
 
+def verify_support_entry() -> None:
+    funding = (ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8")
+    support = (ROOT / "docs" / "support-and-sponsorship.md").read_text(encoding="utf-8")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    if "docs/support-and-sponsorship.md" not in funding:
+        fail("FUNDING.yml must point to the support and sponsorship page")
+    required_support_phrases = [
+        "formal payment channels",
+        "not claimed as active",
+        "does not buy approval",
+        "Future funding activation gate",
+    ]
+    for phrase in required_support_phrases:
+        if phrase not in support:
+            fail(f"support page missing required phrase: {phrase}")
+    if "docs/support-and-sponsorship.md" not in readme:
+        fail("README.md must link the support and sponsorship page")
+
+
 def verify_no_obvious_private_payloads() -> None:
     for path in ROOT.rglob("*"):
         if ".git" in path.parts or not path.is_file():
@@ -285,6 +307,7 @@ def main() -> None:
     verify_external_user_readme()
     verify_current_public_private_status()
     verify_future_lane_incubation()
+    verify_support_entry()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")
 

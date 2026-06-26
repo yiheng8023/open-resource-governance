@@ -314,7 +314,10 @@ If it helps you, the most useful support right now is:
 - suggest a better name;
 - contribute docs, taxonomy, validation, or examples.
 
-Funding channels may be added later after the public model is clearer.
+See [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md) for the
+current support entry, sponsorship-interest contact path, and future funding
+activation gate. Formal payment channels will be listed only after they are
+owner-controlled and verified.
 
 ## Documentation index
 
@@ -338,6 +341,9 @@ Funding channels may be added later after the public model is clearer.
   public-safe launch image assets.
 - [`docs/bookmark-lane-closeout-2026-06-26.md`](docs/bookmark-lane-closeout-2026-06-26.md)
   — bookmark lane split, verification, and public/private closeout evidence.
+- [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md) —
+  support entry, sponsorship-interest contact path, and funding activation
+  gate.
 - [`docs/future-lane-incubation.md`](docs/future-lane-incubation.md) —
   candidate future lanes and graduation rules.
 - [`docs/private-project-consumption-model.md`](docs/private-project-consumption-model.md)

@@ -1,3 +1,5 @@
-# Free-channel sustainability hook. Fill in only if/when public funding is enabled.
+# Public-safe support entry. Replace or extend after a real owner-controlled
+# funding channel is enabled and verified.
 github: []
-custom: []
+custom:
+  - "https://github.com/yiheng8023/open-resource-governance/blob/main/docs/support-and-sponsorship.md"
