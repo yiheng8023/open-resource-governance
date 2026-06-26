@@ -36,7 +36,7 @@ candidate batch
 | Repository | Visibility | Current evidence |
 | --- | --- | --- |
 | `open-resource-governance` | public | self-referential ledger: local verification passed; check the latest `validate` workflow for the current repository head |
-| `agent-skills-curated` | public | MVP candidate batch, pre-adaptation review, and non-executable MVP-02 transition gate recorded at `bdb8330...`; validation, topology, and 182-test suite passed; remote `validate` success at `bdb8330...` |
+| `agent-skills-curated` | public | MVP candidate batch, pre-adaptation review, non-executable MVP-02 transition gate, and template-only adapted-output review checklist recorded at `cee9961...`; validation, topology, and 182-test suite passed; remote `validate` success at `cee9961...` |
 | `codex-user-config` | private | validation, capability-router, and curated Skills installer checks passed; remote `Validate` success at `4c887aeb...` |
 | `resource-radar` | private | local verification passed; remote `validate` success at `f5a36fda...` |
 | `resource-radar-public` | public | local verification passed; remote `Validate` success at `a6adf587...` |
@@ -51,7 +51,7 @@ candidate batch
 | Workstream | Status | Meaning |
 | --- | --- | --- |
 | MVP-01 source candidate selection | partial | first candidate batch selected, pinned, rationalized, and kept non-executable; human approval is still needed before MVP-02 adaptation |
-| MVP-02 review, neutralize, and adapt | partial | pre-adaptation candidate-specific review evidence and a non-executable adaptation transition gate exist; explicit human approval, adapted output, review of actual adapted material, and final disposition are still pending |
+| MVP-02 review, neutralize, and adapt | partial | pre-adaptation candidate-specific review evidence, a non-executable adaptation transition gate, and a template-only adapted-output review checklist exist; explicit human approval, adapted output, review of actual adapted material, and final disposition are still pending |
 | MVP-03 deterministic release manifest | baseline-ready | curated manifest/topology validation passes; batch-specific release evidence is pending |
 | MVP-04 private consumer install | baseline-ready | consumer installer verification passes; batch-specific install or dry-run evidence is pending |
 | MVP-05 routing and runtime use | baseline-ready | capability-router verification passes; representative batch routing scenarios are pending |
@@ -72,7 +72,7 @@ candidate batch
 | Gate 08 artifact hygiene | in progress | this ledger reduces ambiguity; residue review still needs to happen |
 | Gate 09 continuous assurance | in progress | current validation exists; recurring posture still needs scheduling |
 | Gate 10 persistence and continuity | in progress | this ledger is a durable continuity anchor |
-| Gate 11 observability and explainability | in progress | each workstream/gate now has public-safe status and next evidence |
+| Gate 11 observability and explainability | in progress | each workstream/gate now has public-safe status and next evidence; the MVP-02 checklist defines the future adapted-output evidence shape |
 
 ## Next evidence required
 

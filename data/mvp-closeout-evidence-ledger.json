@@ -16,9 +16,9 @@
     {
       "repository": "agent-skills-curated",
       "visibility": "public",
-      "head": "bdb83300f335a54eae9af208be9abf903bf1c39a",
+      "head": "cee996104aa6bf845c8cd28b1c2c9f5864d6808b",
       "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, and python -B -m unittest discover -s tests -v -> passed; 182 tests OK",
-      "remote_ci": "validate success, run 28256748738"
+      "remote_ci": "validate success, run 28257126306"
     },
     {
       "repository": "codex-user-config",
@@ -87,8 +87,8 @@
     {
       "id": "mvp-02-review-adapt",
       "status": "partial",
-      "evidence": "Pre-adaptation candidate-specific review evidence and a non-executable MVP-02 adaptation transition gate are recorded in agent-skills-curated at bdb83300f335a54eae9af208be9abf903bf1c39a. The review records pinned upstream hashes, candidate-specific risks, neutralization needs, likely merge targets, and remaining work for spec-driven-development, documentation-and-adrs, and code-review-and-quality. The transition gate explicitly records that human approval is still required before adapted output creation and that adaptation, approval, release manifest changes, routing projection changes, runtime installation, live sync, and source redistribution remain disallowed.",
-      "next_required_evidence": "Human approval to create adapted output, followed by actual adapted draft material in a non-runtime review surface plus focused security, portability, overlap, attribution, validation, and final disposition evidence."
+      "evidence": "Pre-adaptation candidate-specific review evidence, a non-executable MVP-02 adaptation transition gate, and a template-only adapted-output review checklist are recorded in agent-skills-curated at cee996104aa6bf845c8cd28b1c2c9f5864d6808b. The review records pinned upstream hashes, candidate-specific risks, neutralization needs, likely merge targets, and remaining work for spec-driven-development, documentation-and-adrs, and code-review-and-quality. The transition gate and checklist explicitly record that human approval is still required before adapted output creation and that adaptation, approval, release manifest changes, routing projection changes, runtime installation, live sync, and source redistribution remain disallowed.",
+      "next_required_evidence": "Human approval to create adapted output, followed by actual adapted draft material in the checklist-defined non-runtime review surface plus focused security, portability, overlap, attribution, validation, and final disposition evidence."
     },
     {
       "id": "mvp-03-release-manifest",
@@ -175,7 +175,7 @@
     {
       "id": "gate-11-observability-explainability",
       "status": "in_progress",
-      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate."
+      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate; the MVP-02 checklist now defines what future adapted-output evidence must record."
     }
   ],
   "next_actions": [
