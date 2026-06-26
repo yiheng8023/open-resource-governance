@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "repositories": [
+    {
+      "name": "open-resource-governance",
+      "role": "hub",
+      "visibility_stage": "private-pre-public",
+      "public_safe": true,
+      "owns": ["system map", "public docs", "promotion kit"]
+    },
+    {
+      "name": "resource-radar",
+      "role": "resource-discovery",
+      "visibility_stage": "private-pre-public",
+      "public_safe": "repo-dependent",
+      "owns": ["discovery", "normalization", "scoring", "lifecycle", "reports"]
+    },
+    {
+      "name": "agent-skills-curated",
+      "role": "curated-skills-governance",
+      "visibility_stage": "private-pre-public",
+      "public_safe": "repo-dependent",
+      "owns": ["reviewed Skill content", "provenance", "topology", "conflicts", "release manifests"]
+    },
+    {
+      "name": "codex-user-config-template",
+      "role": "configuration-template",
+      "visibility_stage": "private-pre-public",
+      "public_safe": true,
+      "owns": ["public-safe configuration template", "placeholder examples", "private setup guidance"]
+    },
+    {
+      "name": "research-bookmarks-public",
+      "role": "public-bookmark-taxonomy",
+      "visibility_stage": "private-pre-public",
+      "public_safe": true,
+      "owns": ["official-source taxonomy", "bookmark import/export conventions"]
+    }
+  ]
+}
