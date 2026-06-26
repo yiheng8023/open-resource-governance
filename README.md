@@ -109,6 +109,10 @@ Current usable pieces:
 - Public configuration templates for portable AI-collaboration setup:
   [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template)
   and [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template).
+- A public-safe resource-radar template:
+  [`resource-radar-public`](https://github.com/yiheng8023/resource-radar-public),
+  with schema, demo resources, scoring/lifecycle policy examples, generated
+  reports, and validation.
 - A launch and contribution scaffold: license, conduct, support, security,
   feedback templates, and verification.
 - Public launch assets and copy for explaining the project.
@@ -128,7 +132,7 @@ You can use this project as a reference implementation for:
 | --- | --- |
 | Publish useful resources without leaking private state | Public/private boundary rules and validation checks |
 | Turn browser bookmarks into a maintainable catalog | Structured source records plus generated importable HTML |
-| Keep GitHub discovery from becoming noise | A planned resource-radar lane with scoring, lifecycle, deduplication, and human gates |
+| Keep broad resource discovery from becoming noise | A public resource-radar template plus a private radar lane for scoring, lifecycle, deduplication, and human gates |
 | Share AI/agent skills across environments safely | A curated-skills lane with provenance, safety review, topology, conflict handling, and release manifests |
 | Make AI collaboration portable | Codex and Claude configuration-template lanes that separate reusable structure from private preferences |
 | Let other people improve the system | Contribution, issue, security, conduct, naming, and launch docs |
@@ -152,7 +156,10 @@ open-resource-governance
   public hub, docs, repository map, launch materials, shared safety rules
 
 resource-radar
-  discovery, normalization, scoring, deduplication, lifecycle reports
+  private discovery source, normalization, scoring, deduplication, lifecycle reports
+
+resource-radar-public
+  public-safe resource radar schema, demo fixtures, scoring/lifecycle examples, reports, validation
 
 research-bookmarks
   private complete bookmark source, overlays, audits, declassification inputs
@@ -188,6 +195,11 @@ artifacts that have passed checks. Private repositories can keep personal
 bookmarks, configuration, memory, preferences, account state, local paths, and
 work-in-progress decisions.
 
+The exception is the user-configuration lane: configuration repositories can be
+Codex-specific or Claude-specific because they model real private user
+environments. The other lanes should stay agent-neutral, tool-neutral, and
+generically reusable.
+
 ## Quick start
 
 Clone the hub and run the verification check:
@@ -202,10 +214,12 @@ Then read these in order:
 
 1. [`docs/repository-map.md`](docs/repository-map.md) — what each repository
    owns.
-2. [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — what
+2. [`docs/system-topology.md`](docs/system-topology.md) — the global graph,
+   topology, and public/private relationships.
+3. [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — what
    can and cannot be public.
-3. [`docs/roadmap.md`](docs/roadmap.md) — what is planned next.
-4. [`docs/naming-campaign.md`](docs/naming-campaign.md) — how the temporary
+4. [`docs/roadmap.md`](docs/roadmap.md) — what is planned next.
+5. [`docs/naming-campaign.md`](docs/naming-campaign.md) — how the temporary
    name may be changed.
 
 If you only want the bookmark output, start with
@@ -306,6 +320,8 @@ Funding channels may be added later after the public model is clearer.
   — public README and sustainability positioning benchmark.
 - [`docs/repository-map.md`](docs/repository-map.md) — repository roles and
   relationships.
+- [`docs/system-topology.md`](docs/system-topology.md) — global graph,
+  topology, and repository relationship index.
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) —
   public/private safety boundary.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates before

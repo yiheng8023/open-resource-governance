@@ -6,8 +6,14 @@
 
 ## Discovery lane
 
-- `resource-radar`: broad public resource discovery, quality signals, lifecycle state, deduplication, and reports.
-- planned public projection/template: a future `resource-radar-public` or equivalent public-safe package should expose reusable schema, demo fixtures, scoring/lifecycle examples, and validation without the private candidate pool.
+- `resource-radar`: private broad resource discovery source, candidate pool,
+  quality signals, lifecycle state, deduplication, and reports.
+- `resource-radar-public`: public-safe resource radar template/projection with
+  reusable schema, demo fixtures, scoring/lifecycle examples, deterministic
+  demo reports, and validation without the private candidate pool.
+
+The discovery lane is generic. It is not agent-specific and should not be
+limited to software engineering, skills, Codex, or Claude.
 
 ## Curated Skills lane
 
@@ -33,3 +39,6 @@ Public templates provide structure, placeholder examples, docs, and validation. 
 ## Relationship rule
 
 No repository should silently mutate another repository's private state. Cross-repo automation should consume public-safe contracts, generate reviewable outputs, and stop at promotion or permission gates.
+
+For the full graph, see [`docs/system-topology.md`](system-topology.md) and the
+machine-readable index at [`data/topology.json`](../data/topology.json).

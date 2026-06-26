@@ -97,6 +97,9 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 - 可迁移 AI 协作配置的公开模板：
   [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template)
   和 [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template)。
+- 公开安全资源雷达模板：
+  [`resource-radar-public`](https://github.com/yiheng8023/resource-radar-public)，
+  包含 schema、demo 资源、评分/生命周期策略示例、生成报告和验证。
 - 开源项目的基础脚手架：许可证、行为准则、支持、安全、反馈模板和验证。
 - 用来解释项目的公开发布素材和文案。
 - 配套公开书签投影仓
@@ -113,7 +116,7 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 | --- | --- |
 | 发布有用资源但不泄露私有状态 | 公开/私有边界规则和验证检查 |
 | 把浏览器书签变成可维护目录 | 结构化来源记录 + 生成的可导入 HTML |
-| 避免 GitHub 资源发现变成噪音 | 规划中的 resource-radar lane：评分、生命周期、去重、人工闸门 |
+| 避免广义资源发现变成噪音 | 公开 resource-radar 模板 + 私有 radar lane：评分、生命周期、去重、人工闸门 |
 | 在不同环境安全共享 AI/Agent skills | curated skills lane：来源、安全审查、拓扑、冲突、发布清单 |
 | 让 AI 协作配置可迁移 | Codex 与 Claude 配置模板 lane：把可复用结构和私人偏好分开 |
 | 让别人参与共建 | 贡献、issue、安全、行为准则、命名和发布文档 |
@@ -135,7 +138,10 @@ open-resource-governance
   公开总入口、文档、仓库地图、发布素材、共享安全规则
 
 resource-radar
-  发现、归一化、评分、去重、生命周期报告
+  私有发现来源、归一化、评分、去重、生命周期报告
+
+resource-radar-public
+  公开安全资源雷达 schema、demo fixtures、评分/生命周期示例、报告和验证
 
 research-bookmarks
   私有完整书签来源、overlay、审计、脱敏输入
@@ -168,6 +174,9 @@ claude-user-config
 公开仓承载可复用结构、规则、schema、文档、示例、官方/公开安全来源，以及通过验证的生成产物。
 私有仓保留个人书签、配置、记忆、偏好、账号状态、本机路径和未公开决策。
 
+例外是用户配置 lane：配置仓可以明确区分 Codex 或 Claude，因为它们对应真实的私有用户环境。
+其它 lane 应保持 Agent 中立、工具中立、通用和可复用。
+
 ## 快速开始
 
 克隆总入口仓并运行验证：
@@ -181,9 +190,10 @@ python -B scripts/verify.py
 然后按这个顺序看：
 
 1. [`docs/repository-map.md`](docs/repository-map.md) — 每个仓库负责什么。
-2. [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 什么可以公开，什么不能公开。
-3. [`docs/roadmap.md`](docs/roadmap.md) — 后续计划。
-4. [`docs/naming-campaign.md`](docs/naming-campaign.md) — 临时名称未来如何征集和调整。
+2. [`docs/system-topology.md`](docs/system-topology.md) — 全局图、拓扑和公开/私有关系。
+3. [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 什么可以公开，什么不能公开。
+4. [`docs/roadmap.md`](docs/roadmap.md) — 后续计划。
+5. [`docs/naming-campaign.md`](docs/naming-campaign.md) — 临时名称未来如何征集和调整。
 
 如果你只关心书签产物，可以直接看
 [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public)。
@@ -271,6 +281,7 @@ python -B scripts/verify.py
 - [`docs/public-project-positioning-benchmark.md`](docs/public-project-positioning-benchmark.md)
   — 公开 README 与可持续性表达的外部对标依据。
 - [`docs/repository-map.md`](docs/repository-map.md) — 仓库角色与关系。
+- [`docs/system-topology.md`](docs/system-topology.md) — 全局图、拓扑和仓库关系索引。
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 公开/私有安全边界。
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前闸门。
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道发布和推广 runbook。

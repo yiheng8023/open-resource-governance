@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "principles": [
+    "open-resource-governance is the public entry and global index, not a giant monorepo.",
+    "User-configuration lanes may be agent-specific because they model real private user environments.",
+    "All non-user-configuration lanes should remain agent-neutral, tool-neutral, reusable, and broadly applicable.",
+    "Private sources own real private state; public projections and templates own reusable public-safe structure.",
+    "Edges describe allowed knowledge flow and governance relationships, not automatic write permission."
+  ],
+  "nodes": [
+    {
+      "id": "open-resource-governance",
+      "kind": "public_hub",
+      "visibility": "public",
+      "lane": "governance",
+      "neutrality": "generic"
+    },
+    {
+      "id": "resource-radar",
+      "kind": "private_source",
+      "visibility": "private",
+      "lane": "resource_discovery",
+      "neutrality": "generic"
+    },
+    {
+      "id": "resource-radar-public",
+      "kind": "public_template_projection",
+      "visibility": "public",
+      "lane": "resource_discovery",
+      "neutrality": "generic"
+    },
+    {
+      "id": "research-bookmarks",
+      "kind": "private_source",
+      "visibility": "private",
+      "lane": "bookmarks",
+      "neutrality": "generic"
+    },
+    {
+      "id": "research-bookmarks-public",
+      "kind": "public_projection",
+      "visibility": "public",
+      "lane": "bookmarks",
+      "neutrality": "generic"
+    },
+    {
+      "id": "agent-skills-curated",
+      "kind": "curated_release_authority",
+      "visibility": "private-pre-public",
+      "lane": "curated_skills",
+      "neutrality": "agent-neutral"
+    },
+    {
+      "id": "codex-user-config-template",
+      "kind": "public_template",
+      "visibility": "public",
+      "lane": "user_configuration",
+      "neutrality": "agent-specific-template"
+    },
+    {
+      "id": "codex-user-config",
+      "kind": "private_source",
+      "visibility": "private",
+      "lane": "user_configuration",
+      "neutrality": "agent-specific-private"
+    },
+    {
+      "id": "claude-user-config-template",
+      "kind": "public_template",
+      "visibility": "public",
+      "lane": "user_configuration",
+      "neutrality": "agent-specific-template"
+    },
+    {
+      "id": "claude-user-config",
+      "kind": "private_source",
+      "visibility": "private",
+      "lane": "user_configuration",
+      "neutrality": "agent-specific-private"
+    }
+  ],
+  "edges": [
+    {
+      "from": "open-resource-governance",
+      "to": "resource-radar-public",
+      "relation": "indexes",
+      "write_permission": false
+    },
+    {
+      "from": "open-resource-governance",
+      "to": "research-bookmarks-public",
+      "relation": "indexes",
+      "write_permission": false
+    },
+    {
+      "from": "open-resource-governance",
+      "to": "codex-user-config-template",
+      "relation": "indexes",
+      "write_permission": false
+    },
+    {
+      "from": "open-resource-governance",
+      "to": "claude-user-config-template",
+      "relation": "indexes",
+      "write_permission": false
+    },
+    {
+      "from": "resource-radar-public",
+      "to": "resource-radar",
+      "relation": "public-template-for-private-source",
+      "write_permission": false
+    },
+    {
+      "from": "resource-radar",
+      "to": "resource-radar-public",
+      "relation": "may-publish-public-safe-patterns-to",
+      "write_permission": "review-gated"
+    },
+    {
+      "from": "research-bookmarks",
+      "to": "research-bookmarks-public",
+      "relation": "declassifies-public-safe-subset-to",
+      "write_permission": "review-gated"
+    },
+    {
+      "from": "research-bookmarks-public",
+      "to": "resource-radar",
+      "relation": "can-seed-public-resource-discovery",
+      "write_permission": false
+    },
+    {
+      "from": "resource-radar",
+      "to": "agent-skills-curated",
+      "relation": "can-propose-reviewed-candidates-to",
+      "write_permission": false
+    },
+    {
+      "from": "agent-skills-curated",
+      "to": "codex-user-config",
+      "relation": "releases-may-be-consumed-by",
+      "write_permission": false
+    },
+    {
+      "from": "codex-user-config-template",
+      "to": "codex-user-config",
+      "relation": "guides-private-overlay",
+      "write_permission": false
+    },
+    {
+      "from": "codex-user-config",
+      "to": "codex-user-config-template",
+      "relation": "may-contribute-public-safe-patterns-to",
+      "write_permission": "review-gated"
+    },
+    {
+      "from": "claude-user-config-template",
+      "to": "claude-user-config",
+      "relation": "guides-private-overlay",
+      "write_permission": false
+    },
+    {
+      "from": "claude-user-config",
+      "to": "claude-user-config-template",
+      "relation": "may-contribute-public-safe-patterns-to",
+      "write_permission": "review-gated"
+    }
+  ]
+}
