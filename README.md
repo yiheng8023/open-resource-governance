@@ -74,6 +74,9 @@ Key docs:
 - [`docs/pre-public-readiness-2026-06-26.md`](docs/pre-public-readiness-2026-06-26.md) — latest pre-public readiness evidence for the hub.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — free-channel launch and promotion runbook.
 - [`docs/community-feedback-model.md`](docs/community-feedback-model.md) — safe issue/PR feedback model for future public collaboration.
+- [`GOVERNANCE.md`](GOVERNANCE.md) — lightweight maintainer and owner-gate model.
+- [`SUPPORT.md`](SUPPORT.md) — support boundaries and safe contact paths.
+- [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — public-safe collaboration expectations.
 - [`docs/closeout-audit-2026-06-26.md`](docs/closeout-audit-2026-06-26.md) — latest staged closeout audit.
 - [`docs/promotion-kit.md`](docs/promotion-kit.md) — free-channel promotion draft material.
 
