@@ -16,9 +16,9 @@
     {
       "repository": "agent-skills-curated",
       "visibility": "public",
-      "head": "cee996104aa6bf845c8cd28b1c2c9f5864d6808b",
+      "head": "e0e7563bb8b550b2ed15d4cfefb5254402680920",
       "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, and python -B -m unittest discover -s tests -v -> passed; 182 tests OK",
-      "remote_ci": "validate success, run 28257126306"
+      "remote_ci": "validate success, run 28257495988"
     },
     {
       "repository": "codex-user-config",
@@ -87,8 +87,8 @@
     {
       "id": "mvp-02-review-adapt",
       "status": "partial",
-      "evidence": "Pre-adaptation candidate-specific review evidence, a non-executable MVP-02 adaptation transition gate, and a template-only adapted-output review checklist are recorded in agent-skills-curated at cee996104aa6bf845c8cd28b1c2c9f5864d6808b. The review records pinned upstream hashes, candidate-specific risks, neutralization needs, likely merge targets, and remaining work for spec-driven-development, documentation-and-adrs, and code-review-and-quality. The transition gate and checklist explicitly record that human approval is still required before adapted output creation and that adaptation, approval, release manifest changes, routing projection changes, runtime installation, live sync, and source redistribution remain disallowed.",
-      "next_required_evidence": "Human approval to create adapted output, followed by actual adapted draft material in the checklist-defined non-runtime review surface plus focused security, portability, overlap, attribution, validation, and final disposition evidence."
+      "evidence": "Pre-adaptation candidate-specific review evidence, a non-executable MVP-02 adaptation transition gate, a template-only adapted-output review checklist, and a bounded owner approval request are recorded in agent-skills-curated at e0e7563bb8b550b2ed15d4cfefb5254402680920. The approval request is explicitly pending, records no approval, and narrows the possible next authorization to non-runtime adapted draft creation plus checklist-based review only. It continues to disallow approval, release manifest changes, routing projection changes, runtime installation, live sync, and source redistribution.",
+      "next_required_evidence": "Explicit owner approval using the bounded approval request, followed by actual adapted draft material in the checklist-defined non-runtime review surface plus focused security, portability, overlap, attribution, validation, and final disposition evidence."
     },
     {
       "id": "mvp-03-release-manifest",
@@ -130,7 +130,7 @@
     {
       "id": "gate-02-boundaries-held",
       "status": "partial",
-      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, and MVP-02 transition gate are recorded as awaiting human approval, not adapted, not approved, not releasable, not routable, not installable, and not source-redistributed."
+      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, and approval request are recorded as pending owner decision, not adapted, not approved, not releasable, not routable, not installable, and not source-redistributed."
     },
     {
       "id": "gate-03-runtime-useful",
@@ -175,11 +175,11 @@
     {
       "id": "gate-11-observability-explainability",
       "status": "in_progress",
-      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate; the MVP-02 checklist now defines what future adapted-output evidence must record."
+      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate; the MVP-02 checklist defines future adapted-output evidence shape, and the approval request defines the exact owner decision needed before adaptation."
     }
   ],
   "next_actions": [
-    "obtain explicit human approval to leave the MVP-02 transition gate and create adapted output for the selected Skill candidate batch",
+    "obtain explicit owner approval through the bounded MVP-02 adaptation approval request",
     "run focused adapted-output review for security, portability, overlap, attribution, and validation",
     "produce release-candidate manifest evidence",
     "consume the release from the private configuration workflow or an authorized dry run",
