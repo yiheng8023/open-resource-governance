@@ -35,6 +35,7 @@ REQUIRED_FILES = [
     "docs/mvp-closeout-evidence-ledger.md",
     "docs/mvp-artifact-hygiene-review.md",
     "docs/mvp-continuous-assurance-review.md",
+    "docs/mvp-persistence-continuity-review.md",
     "docs/system-topology.md",
     "docs/repository-map.md",
     "docs/promotion-kit.md",
@@ -69,6 +70,7 @@ REQUIRED_FILES = [
     "data/mvp-closeout-evidence-ledger.json",
     "data/mvp-artifact-hygiene-review.json",
     "data/mvp-continuous-assurance-review.json",
+    "data/mvp-persistence-continuity-review.json",
 ]
 
 PRIVATE_ONLY_TERMS = [
@@ -631,6 +633,89 @@ def verify_mvp_continuous_assurance_review() -> None:
         fail("global closeout doc must link MVP continuous assurance review")
 
 
+def verify_mvp_persistence_continuity_review() -> None:
+    data = json.loads((ROOT / "data" / "mvp-persistence-continuity-review.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("mvp-persistence-continuity-review.json schema_version must be 1")
+    if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
+        fail("persistence continuity review must reference the active MVP")
+    if data.get("status") != "active_in_progress":
+        fail("persistence continuity review must remain active_in_progress until Gate 10 passes")
+    if data.get("not_completion_claim") is not True:
+        fail("persistence continuity review must explicitly avoid completion claims")
+    required_principles = [
+        "Repository truth beats chat memory for continuation.",
+        "A lane must be resumable after context loss, environment change, agent switch, or interrupted automation.",
+        "Private overlays remain private, but public-safe recovery anchors should explain how the system resumes.",
+        "No single private machine, assistant thread, or memory store should be the only way to recover the MVP state.",
+    ]
+    for phrase in required_principles:
+        if phrase not in data.get("principles", []):
+            fail(f"persistence continuity review missing principle: {phrase}")
+    required_scenarios = {
+        "context_loss",
+        "environment_change",
+        "agent_switch",
+        "interrupted_work",
+        "repository_split_or_projection",
+        "automation_failure",
+    }
+    actual_scenarios = {item.get("id") for item in data.get("continuity_scenarios", [])}
+    if not required_scenarios <= actual_scenarios:
+        fail(f"persistence continuity review missing scenarios: {', '.join(sorted(required_scenarios - actual_scenarios))}")
+    repo_data = json.loads((ROOT / "data" / "repositories.json").read_text(encoding="utf-8"))
+    repo_names = {repo["name"] for repo in repo_data.get("repositories", [])}
+    continuity_items = data.get("repository_continuity", [])
+    continuity_repos = {item.get("repository") for item in continuity_items}
+    if repo_names - continuity_repos:
+        fail(f"persistence continuity review missing repository continuity: {', '.join(sorted(repo_names - continuity_repos))}")
+    for item in continuity_items:
+        for key in (
+            "repository",
+            "visibility",
+            "anchors",
+            "recoverable_scenarios",
+            "verify_command",
+            "known_gap",
+        ):
+            if key not in item:
+                fail(f"persistence continuity item missing {key}: {item}")
+        if item["repository"] not in repo_names:
+            fail(f"persistence continuity item references unknown repository: {item['repository']}")
+        unknown_scenarios = set(item["recoverable_scenarios"]) - required_scenarios
+        if unknown_scenarios:
+            fail(f"persistence continuity item has unknown scenarios: {item['repository']}")
+        if not item["anchors"]:
+            fail(f"persistence continuity item must list recovery anchors: {item['repository']}")
+    result = data.get("current_result", {})
+    if result.get("gate_10_status") != "in_progress_with_review_surface":
+        fail("persistence continuity review must keep Gate 10 in progress")
+    if not result.get("remaining_before_gate_pass"):
+        fail("persistence continuity review must record remaining work before Gate 10 can pass")
+    doc = (ROOT / "docs" / "mvp-persistence-continuity-review.md").read_text(encoding="utf-8")
+    for phrase in [
+        "Repository truth beats chat memory",
+        "Continuity scenarios",
+        "context loss",
+        "environment change",
+        "agent switch",
+        "interrupted work",
+        "repository split",
+        "automation failure",
+        "Current recovery anchors",
+        "Public/private continuity boundary",
+        "Gate 10 still cannot pass",
+    ]:
+        if phrase not in doc:
+            fail(f"persistence continuity review doc missing phrase: {phrase}")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    if "docs/mvp-persistence-continuity-review.md" not in readme:
+        fail("README.md must link MVP persistence continuity review")
+    closeout_doc = (ROOT / "docs" / "mvp-global-closeout-verification.md").read_text(encoding="utf-8")
+    if "mvp-persistence-continuity-review.md" not in closeout_doc:
+        fail("global closeout doc must link MVP persistence continuity review")
+
+
 def verify_support_entry() -> None:
     funding = (ROOT / ".github" / "FUNDING.yml").read_text(encoding="utf-8")
     support = (ROOT / "docs" / "support-and-sponsorship.md").read_text(encoding="utf-8")
@@ -694,6 +779,7 @@ def main() -> None:
     verify_mvp_closeout_evidence_ledger()
     verify_mvp_artifact_hygiene_review()
     verify_mvp_continuous_assurance_review()
+    verify_mvp_persistence_continuity_review()
     verify_support_entry()
     verify_no_obvious_private_payloads()
     print("open-resource-governance verification passed")

@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "review_id": "mvp-persistence-continuity-review-2026-06-27",
+  "mvp_name": "curated-skills-terminal-consumer-mvp",
+  "status": "active_in_progress",
+  "not_completion_claim": true,
+  "purpose": "Record the current persistence and continuity posture for MVP Gate 10 without treating chat history, private memory, or one machine as the only recovery path.",
+  "review_date": "2026-06-27",
+  "principles": [
+    "Repository truth beats chat memory for continuation.",
+    "A lane must be resumable after context loss, environment change, agent switch, or interrupted automation.",
+    "Private overlays remain private, but public-safe recovery anchors should explain how the system resumes.",
+    "Continuation surfaces are derived anchors, not release authority.",
+    "No single private machine, assistant thread, or memory store should be the only way to recover the MVP state."
+  ],
+  "continuity_scenarios": [
+    {
+      "id": "context_loss",
+      "meaning": "A new thread or maintainer can recover current state without replaying the entire conversation."
+    },
+    {
+      "id": "environment_change",
+      "meaning": "A fresh machine or runtime can identify which repositories, scripts, and public-safe projections matter."
+    },
+    {
+      "id": "agent_switch",
+      "meaning": "Codex, Claude, another agent, or a human can understand the same repository map and authority boundaries."
+    },
+    {
+      "id": "interrupted_work",
+      "meaning": "A partially completed MVP batch can be resumed from status, evidence, and next-required-proof records."
+    },
+    {
+      "id": "repository_split_or_projection",
+      "meaning": "Private source and public projection pairs remain traceable after split, rename, or declassification updates."
+    },
+    {
+      "id": "automation_failure",
+      "meaning": "Failed validation, generation, sync, or publication can be diagnosed from declared commands and evidence surfaces."
+    }
+  ],
+  "repository_continuity": [
+    {
+      "repository": "open-resource-governance",
+      "visibility": "public",
+      "anchors": [
+        "README.md",
+        "docs/repository-map.md",
+        "docs/system-topology.md",
+        "data/repositories.json",
+        "data/topology.json",
+        "docs/mvp-plan-and-acceptance.md",
+        "data/mvp-acceptance-map.json",
+        "docs/mvp-closeout-evidence-ledger.md",
+        "data/mvp-closeout-evidence-ledger.json"
+      ],
+      "recoverable_scenarios": [
+        "context_loss",
+        "environment_change",
+        "agent_switch",
+        "interrupted_work",
+        "repository_split_or_projection"
+      ],
+      "verify_command": "python -B scripts/verify.py",
+      "known_gap": "Final MVP closeout report does not exist yet because MVP-02 through MVP-06 are not complete."
+    },
+    {
+      "repository": "agent-skills-curated",
+      "visibility": "public",
+      "anchors": [
+        "README.md",
+        "AGENTS.md",
+        "registry/*.json",
+        "release-manifest.json",
+        "docs/mvp02-*.md",
+        "scripts/verify.py",
+        "scripts/build_topology.py"
+      ],
+      "recoverable_scenarios": [
+        "context_loss",
+        "agent_switch",
+        "interrupted_work",
+        "automation_failure"
+      ],
+      "verify_command": "python -B scripts/verify.py && python -B scripts/build_topology.py --check && python -B -m unittest discover -s tests -v",
+      "known_gap": "Adapted output, release-candidate manifest, and lifecycle disposition cannot exist before MVP-02 approval and later gates."
+    },
+    {
+      "repository": "codex-user-config",
+      "visibility": "private",
+      "anchors": [
+        "AGENTS.md",
+        "README.md",
+        "config/manifest.json",
+        "config/common.toml",
+        "scripts/verify.py",
+        "scripts/verify_capability_router.py",
+        "scripts/verify_skills_install.py"
+      ],
+      "recoverable_scenarios": [
+        "environment_change",
+        "agent_switch",
+        "interrupted_work",
+        "automation_failure"
+      ],
+      "verify_command": "python -B scripts/verify.py && python -B scripts/verify_capability_router.py && python -B scripts/verify_skills_install.py",
+      "known_gap": "Private runtime state and native memory are intentionally not public recovery anchors."
+    },
+    {
+      "repository": "claude-user-config",
+      "visibility": "private",
+      "anchors": [
+        "README.md",
+        "settings",
+        "commands",
+        "hooks",
+        "scripts/verify.py"
+      ],
+      "recoverable_scenarios": [
+        "environment_change",
+        "agent_switch",
+        "interrupted_work",
+        "automation_failure"
+      ],
+      "verify_command": "python -B scripts/verify.py",
+      "known_gap": "Private Claude runtime behavior can be summarized publicly only through declassified template patterns."
+    },
+    {
+      "repository": "resource-radar",
+      "visibility": "private",
+      "anchors": [
+        "README.md",
+        "candidate data",
+        "scoring/lifecycle reports",
+        "scripts/verify.py"
+      ],
+      "recoverable_scenarios": [
+        "environment_change",
+        "interrupted_work",
+        "repository_split_or_projection",
+        "automation_failure"
+      ],
+      "verify_command": "python -B scripts/verify.py",
+      "known_gap": "Private candidate pool is not public; public recovery relies on resource-radar-public template and hub summaries."
+    },
+    {
+      "repository": "resource-radar-public",
+      "visibility": "public",
+      "anchors": [
+        "README.md",
+        "schema",
+        "demo fixtures",
+        "generated demo report",
+        "scripts/verify.py"
+      ],
+      "recoverable_scenarios": [
+        "environment_change",
+        "agent_switch",
+        "repository_split_or_projection",
+        "automation_failure"
+      ],
+      "verify_command": "python -B scripts/verify.py",
+      "known_gap": "Public demo projection does not contain the private production candidate pool."
+    },
+    {
+      "repository": "research-bookmarks",
+      "visibility": "private",
+      "anchors": [
+        "README.md",
+        "private bookmark baseline",
+        "audit evidence",
+        "scripts/verify.py"
+      ],
+      "recoverable_scenarios": [
+        "environment_change",
+        "interrupted_work",
+        "repository_split_or_projection",
+        "automation_failure"
+      ],
+      "verify_command": "python -B scripts/verify.py",
+      "known_gap": "Complete private bookmark import remains private and is not recoverable from the public projection alone."
+    },
+    {
+      "repository": "research-bookmarks-public",
+      "visibility": "public",
+      "anchors": [
+        "README.md",
+        "data/public-sources.json",
+        "taxonomy",
+        "exports/research-engineering-bookmarks-public.html",
+        "projection report",
+        "scripts/verify.py"
+      ],
+      "recoverable_scenarios": [
+        "environment_change",
+        "agent_switch",
+        "repository_split_or_projection",
+        "automation_failure"
+      ],
+      "verify_command": "python -B scripts/verify.py",
+      "known_gap": "Public projection can be imported and reused, but it does not restore private overlays."
+    },
+    {
+      "repository": "codex-user-config-template",
+      "visibility": "public",
+      "anchors": [
+        "README.md",
+        "template files",
+        "scripts/verify.py"
+      ],
+      "recoverable_scenarios": [
+        "environment_change",
+        "agent_switch",
+        "repository_split_or_projection"
+      ],
+      "verify_command": "python -B scripts/verify.py",
+      "known_gap": "Template helps create a private overlay but cannot restore the owner's private Codex state."
+    },
+    {
+      "repository": "claude-user-config-template",
+      "visibility": "public",
+      "anchors": [
+        "README.md",
+        "template files",
+        "scripts/verify.py"
+      ],
+      "recoverable_scenarios": [
+        "environment_change",
+        "agent_switch",
+        "repository_split_or_projection"
+      ],
+      "verify_command": "python -B scripts/verify.py",
+      "known_gap": "Template helps create a private overlay but cannot restore the owner's private Claude state."
+    }
+  ],
+  "current_result": {
+    "gate_10_status": "in_progress_with_review_surface",
+    "completed_this_review": [
+      "continuity scenarios are explicit",
+      "repository-level recovery anchors are recorded",
+      "public/private recovery boundaries are documented",
+      "verification commands are recorded for each lane",
+      "known recovery gaps are explicit instead of hidden"
+    ],
+    "remaining_before_gate_pass": [
+      "run final continuity drill after MVP-02 through MVP-06 evidence exists",
+      "confirm current recovery anchors still match each repository's latest README and verify commands",
+      "record final closeout continuation decision for the next Skills iteration, pause, or another terminal consumer"
+    ]
+  }
+}

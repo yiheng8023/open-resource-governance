@@ -170,7 +170,7 @@
     {
       "id": "gate-10-persistence-continuity",
       "status": "in_progress",
-      "evidence": "This ledger adds a durable continuity anchor for the MVP run."
+      "evidence": "This ledger adds a durable continuity anchor for the MVP run, and mvp-persistence-continuity-review-2026-06-27 records continuity scenarios, repository-level recovery anchors, verification commands, and known gaps. Final recovery drill still needs later MVP evidence."
     },
     {
       "id": "gate-11-observability-explainability",
@@ -186,6 +186,7 @@
     "run representative routing/runtime scenarios",
     "feed lifecycle outcomes back into the governance loop",
     "complete the final residue sweep after later MVP evidence exists, using the artifact hygiene review as the Gate 08 control surface",
-    "complete final cross-repository assurance after later MVP evidence exists, using the continuous assurance review as the Gate 09 control surface"
+    "complete final cross-repository assurance after later MVP evidence exists, using the continuous assurance review as the Gate 09 control surface",
+    "complete final continuity drill after later MVP evidence exists, using the persistence and continuity review as the Gate 10 control surface"
   ]
 }

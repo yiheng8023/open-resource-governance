@@ -352,6 +352,9 @@ international, fiscal-host, and domestic-support considerations.
 - [`docs/mvp-continuous-assurance-review.md`](docs/mvp-continuous-assurance-review.md)
   — Gate 09 continuous-assurance review; treats green checks as snapshot
   evidence, not permanent health certificates.
+- [`docs/mvp-persistence-continuity-review.md`](docs/mvp-persistence-continuity-review.md)
+  — Gate 10 persistence and continuity review; records recovery anchors for
+  context loss, environment changes, agent switches, and interrupted work.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates before
   public release.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) —

@@ -17,6 +17,10 @@ The current continuous assurance review is
 Treat it as Gate 09 in-progress evidence, not as a permanent health
 certificate.
 
+The current persistence and continuity review is
+[`mvp-persistence-continuity-review.md`](mvp-persistence-continuity-review.md).
+Treat it as Gate 10 in-progress evidence, not as a final recovery drill.
+
 ## Closeout principle
 
 ```text
