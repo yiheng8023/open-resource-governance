@@ -16,9 +16,9 @@
     {
       "repository": "agent-skills-curated",
       "visibility": "public",
-      "head": "1fb70c32de418de772bcf37c3451250f82a9c5c8",
-      "local_verification": "python -B scripts/verify.py and scripts/build_topology.py --check -> passed",
-      "remote_ci": "validate success, run 28221935915"
+      "head": "a6e194c47f0848c1665ecf81ce34cac822fb4fa9",
+      "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, and python -B -m unittest discover -s tests -v -> passed; 182 tests OK",
+      "remote_ci": "validate success, run 28255339292"
     },
     {
       "repository": "codex-user-config",
@@ -80,9 +80,9 @@
   "workstream_status": [
     {
       "id": "mvp-01-source-candidate",
-      "status": "pending",
-      "evidence": "Candidate intake policy exists, but the next small candidate batch has not been selected in this MVP run.",
-      "next_required_evidence": "Pinned candidate batch, recorded selection rationale, license/provenance state, and non-executable candidate boundary."
+      "status": "partial",
+      "evidence": "MVP candidate batch mvp-skills-batch-2026-06-27-spec-doc-review is recorded in agent-skills-curated at a6e194c47f0848c1665ecf81ce34cac822fb4fa9. It selects spec-driven-development, documentation-and-adrs, and code-review-and-quality from pinned source github:addyosmani/agent-skills at 17214a29c429a19f7a9607f2c06f9d650ea87eb0. The batch is explicitly not approved, not executable, not in the release manifest, not in routing projection, and not installed.",
+      "next_required_evidence": "Human approval to enter MVP-02, followed by candidate-specific provenance, security, portability, overlap, neutralization, and adaptation evidence."
     },
     {
       "id": "mvp-02-review-adapt",
@@ -125,12 +125,12 @@
     {
       "id": "gate-01-chain-complete",
       "status": "partial",
-      "evidence": "Base chain is verified, but the next candidate batch has not yet traversed candidate to private runtime consumption."
+      "evidence": "Base chain is verified and the next candidate batch is selected, pinned, and non-executable; it has not yet traversed review, release, private consumption, and runtime use."
     },
     {
       "id": "gate-02-boundaries-held",
       "status": "partial",
-      "evidence": "Current repositories validate public/private and candidate/approved boundaries; batch-specific evidence still pending."
+      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch is recorded as not approved, not releasable, not routable, and not installable."
     },
     {
       "id": "gate-03-runtime-useful",
@@ -179,7 +179,7 @@
     }
   ],
   "next_actions": [
-    "select a small high-value Skill candidate batch",
+    "obtain human approval to advance the selected Skill candidate batch into MVP-02 review",
     "run curated Skills review/adaptation for that batch",
     "produce release-candidate manifest evidence",
     "consume the release from the private configuration workflow or an authorized dry run",

@@ -36,7 +36,7 @@ candidate batch
 | Repository | Visibility | Current evidence |
 | --- | --- | --- |
 | `open-resource-governance` | public | local verification passed; remote `validate` success at `15712f62...` |
-| `agent-skills-curated` | public | validation and topology checks passed; remote `validate` success at `1fb70c32...` |
+| `agent-skills-curated` | public | MVP candidate batch recorded at `a6e194c4...`; validation, topology, and 182-test suite passed; remote `validate` success at `a6e194c4...` |
 | `codex-user-config` | private | validation, capability-router, and curated Skills installer checks passed; remote `Validate` success at `4c887aeb...` |
 | `resource-radar` | private | local verification passed; remote `validate` success at `f5a36fda...` |
 | `resource-radar-public` | public | local verification passed; remote `Validate` success at `a6adf587...` |
@@ -50,7 +50,7 @@ candidate batch
 
 | Workstream | Status | Meaning |
 | --- | --- | --- |
-| MVP-01 source candidate selection | pending | next small candidate batch still needs selection, pinning, and rationale |
+| MVP-01 source candidate selection | partial | first candidate batch selected, pinned, rationalized, and kept non-executable; human approval is still needed before MVP-02 adaptation |
 | MVP-02 review, neutralize, and adapt | pending | selected batch still needs safety, portability, overlap, and attribution evidence |
 | MVP-03 deterministic release manifest | baseline-ready | curated manifest/topology validation passes; batch-specific release evidence is pending |
 | MVP-04 private consumer install | baseline-ready | consumer installer verification passes; batch-specific install or dry-run evidence is pending |
@@ -62,8 +62,8 @@ candidate batch
 
 | Gate | Status | Current interpretation |
 | --- | --- | --- |
-| Gate 01 chain complete | partial | base chain is verified; next candidate batch has not traversed the full chain |
-| Gate 02 boundaries held | partial | current validators pass; batch-specific boundary evidence is pending |
+| Gate 01 chain complete | partial | base chain is verified and the next candidate batch is selected; it has not traversed review, release, private consumption, and runtime use |
+| Gate 02 boundaries held | partial | current validators pass; selected candidate batch is explicitly not approved, not releasable, not routable, and not installable |
 | Gate 03 runtime useful | partial | router/installer verification passes; representative runtime proof is pending |
 | Gate 04 feedback loop | pending | no new batch feedback has been recorded |
 | Gate 05 next lane ready | pending | no final closeout decision exists |
@@ -76,8 +76,8 @@ candidate batch
 
 ## Next evidence required
 
-1. Select a small high-value Skill candidate batch.
-2. Run curated Skills review/adaptation for that batch.
+1. Confirm whether the selected Skill candidate batch may advance into MVP-02.
+2. Run curated Skills review/adaptation for that batch if approved.
 3. Produce release-candidate manifest evidence.
 4. Consume the release from the private configuration workflow or an authorized
    dry run.

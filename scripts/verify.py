@@ -345,8 +345,8 @@ def verify_mvp_acceptance_map() -> None:
     data = json.loads((ROOT / "data" / "mvp-acceptance-map.json").read_text(encoding="utf-8"))
     if data.get("schema_version") != 1:
         fail("mvp-acceptance-map.json schema_version must be 1")
-    if data.get("status") != "planned_not_started":
-        fail("MVP plan should remain planned_not_started until execution begins")
+    if data.get("status") != "active_in_progress":
+        fail("MVP plan should remain active_in_progress while execution is underway")
     if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
         fail("unexpected MVP name")
     if data.get("known_baselines") != [
