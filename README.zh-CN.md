@@ -71,6 +71,7 @@ GitHub Actions 会在 pull request 和推送到 `main` 时运行同样的验证�
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 公开/私有安全边界。
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前必须通过的闸门。
 - [`docs/owner-launch-decision.md`](docs/owner-launch-decision.md) — 最终 owner 控制的公开发布决策包。
+- [`docs/post-public-launch-verification-2026-06-26.md`](docs/post-public-launch-verification-2026-06-26.md) — 首次公开发布后的验证证据。
 - [`docs/pre-public-safety-audit.md`](docs/pre-public-safety-audit.md) — 改可见性前的具体安全审计。
 - [`docs/pre-public-readiness-2026-06-26.md`](docs/pre-public-readiness-2026-06-26.md) — 总入口仓最新公开前 readiness 证据。
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道首发与推广 runbook。

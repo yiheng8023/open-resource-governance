@@ -79,8 +79,10 @@ Before promotion:
 5. avoid claiming production maturity, commercial backing, or complete coverage
    before evidence exists.
 
-## Current decision boundary
+## Current release boundary
 
-As of 2026-06-26, the repository family is in `private-pre-public` state.
-Changing visibility to public is a separate owner decision and must not be
-performed as a side effect of documentation, validation, or local closeout.
+As of 2026-06-26, `open-resource-governance` has passed its owner-controlled
+launch gate and is public. Downstream repositories and private overlays remain
+separate owner-controlled release decisions. Changing any additional
+repository visibility must not be performed as a side effect of documentation,
+validation, promotion, or local closeout.

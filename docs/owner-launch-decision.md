@@ -12,13 +12,15 @@ visibility, enable funding, pin repositories, or publish social posts.
 | Target branch | `main` |
 | Launch target | current `main` containing this packet |
 | Verified pre-packet baseline | `c50ac77be6c3f5d8b83d28bce526069f95706981` |
-| Current visibility | private |
-| Launch state | owner gate pending |
+| Initial packet visibility | private |
+| Launch state | executed for the hub on 2026-06-26 |
 
 The revision above was the last verified pre-public hub revision before this
 packet was added. This packet intentionally changes the next `main` revision.
-Re-run verification and re-check the exact current main revision immediately
-before changing visibility.
+The owner later confirmed the exact launch intent and the hub was made public.
+See `docs/post-public-launch-verification-2026-06-26.md` for post-public
+evidence. Re-run the same style of gate for any downstream repository before
+changing its visibility.
 
 ## Non-negotiable owner confirmation
 
@@ -26,15 +28,16 @@ Changing a repository from private to public is externally visible and cannot
 be treated as a routine documentation or validation side effect. Public
 exposure may be copied, indexed, cached, or linked by others.
 
-Before making the hub public, the owner should explicitly confirm this exact
-intent in the active execution context:
+Before making any repository public, the owner should explicitly confirm the
+exact intent in the active execution context. For the hub launch, the required
+confirmation was:
 
 ```text
 Make yiheng8023/open-resource-governance public now.
 ```
 
 Do not interpret general readiness language, closeout language, or promotion
-planning as this confirmation.
+planning as confirmation for additional repositories.
 
 ## Final pre-public checklist
 
