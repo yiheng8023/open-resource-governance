@@ -101,6 +101,18 @@ This MVP does not:
 - Topology, repository map, shared baseline, and indexes are reviewed.
 - README and public docs distinguish planned, proven, and deferred claims.
 - Promotion and video material remain postponed until evidence-backed refresh.
+- Process artifacts are classified as promoted evidence, archived context,
+  deleted residue, or explicitly ignored non-authority.
+- Temporary scaffolds, stale drafts, raw experiments, and obsolete reports do
+  not become a second truth source.
+- Retained artifacts have an ongoing quality, health, security, and compliance
+  posture instead of a one-time pass/fail label.
+- Code, schemas, reports, docs, images, automation, and governance records are
+  all treated as lifecycle artifacts that can decay and require re-checking.
+- Durable state, continuity anchors, and recovery paths are recorded so the
+  system can resume across time, environments, agents, and interrupted threads.
+- Important automation, routing, scoring, promotion, rejection, cleanup, and
+  release decisions are observable and explainable through public-safe evidence.
 - Next-step decision is recorded: iterate Skills, pause, or incubate another
   terminal consumer.
 
@@ -115,6 +127,10 @@ This MVP does not:
 | Gate 05: next lane ready | Another terminal consumer can be evaluated | Closeout summary explains whether to incubate another lane |
 | Gate 06: global verification | Hub, Skills lane, private consumer, discovery feedback, and affected templates/projections are verified | Evidence from MVP-07 |
 | Gate 07: public refresh | README, docs, topology, indexes, and promotion material are updated only for evidence-backed claims | Evidence from MVP-07 |
+| Gate 08: artifact hygiene | Temporary/process artifacts are promoted, archived, deleted, or marked non-authoritative | Cleanup and residue review from MVP-07 |
+| Gate 09: continuous assurance | Retained artifacts have ongoing quality, health, security, and compliance posture | Lifecycle assurance review from MVP-07 |
+| Gate 10: persistence and continuity | Durable state, continuity anchors, and recovery paths can resume work across time, environments, agents, and interruptions | Continuity evidence from MVP-07 |
+| Gate 11: observability and explainability | Important automation, routing, scoring, promotion, rejection, cleanup, and release decisions are inspectable and explainable | Public-safe evidence from MVP-07 |
 
 ## Execution discipline
 
@@ -147,5 +163,14 @@ This MVP is complete only when:
 7. topology, indexes, README, and promotion material are updated only where the
    evidence supports an update;
 8. video and broader promotion remain optional and post-closeout;
-9. the closeout report says whether to iterate Skills again, pause, or incubate
+9. obsolete process artifacts are removed, archived, or marked non-authoritative
+   instead of becoming repository sediment;
+10. retained artifacts are covered by ongoing quality, health, security, and
+    compliance review instead of one-time validation theater;
+11. durable state, continuity anchors, and recovery paths are sufficient to
+    resume the system after context loss, environment change, or agent switch;
+12. important automation, routing, scoring, promotion, rejection, cleanup, and
+    release decisions are observable and explainable through public-safe
+    evidence;
+13. the closeout report says whether to iterate Skills again, pause, or incubate
    another terminal consumer.

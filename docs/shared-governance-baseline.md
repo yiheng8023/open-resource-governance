@@ -29,6 +29,10 @@ Public-facing repositories should usually provide:
 - verification command;
 - update rules;
 - safety boundary;
+- process artifact hygiene;
+- ongoing quality, health, security, and compliance posture;
+- persistence and continuity anchors;
+- observable and explainable decision evidence;
 - license and notice;
 - contribution guidance;
 - security reporting path;
@@ -97,6 +101,13 @@ Cross-repository checks should look for:
 - missing verification path;
 - candidate material described as approved;
 - generated artifacts described as hand-edited truth;
+- stale drafts, raw experiments, temporary reports, or obsolete launch
+  scaffolds acting as hidden authority;
+- retained artifacts without ongoing quality, health, security, compliance, or
+  freshness posture;
+- missing continuity anchors for maintained lanes;
+- important automation, scoring, routing, release, cleanup, or promotion
+  decisions that cannot be explained from public-safe evidence;
 - support or sponsorship described as bypassing review;
 - private project names, internal stages, local paths, credentials, memory, or
   account state leaking into public repositories;
@@ -113,7 +124,29 @@ before:
 - exposing private or core project information;
 - changing a repository's role or trust boundary;
 - writing into another repository;
+- promoting temporary process artifacts into durable evidence;
+- claiming an artifact is healthy, secure, compliant, current, observable, or
+  reusable beyond the evidence available;
 - turning a candidate lane into a maintained system.
+
+## Lifecycle posture
+
+Governance is not a one-time launch checklist.
+
+Every maintained lane should preserve:
+
+- artifact hygiene: temporary/process artifacts are promoted, archived, deleted,
+  or marked non-authoritative;
+- continuous assurance: retained artifacts remain subject to proportionate
+  quality, health, security, compliance, and freshness review;
+- persistence and continuity: durable state, anchors, and recovery paths allow
+  work to resume across time, environments, agents, and interruptions;
+- observability and explainability: important decisions can be inspected,
+  explained, verified, or challenged from public-safe evidence.
+
+Apply this beyond source code. Documentation, topology, generated indexes,
+schemas, images, reports, workflows, release manifests, and governance notes can
+all decay.
 
 ## Relationship to the Skills MVP
 

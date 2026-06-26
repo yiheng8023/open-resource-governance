@@ -10,7 +10,11 @@
     "automation prepares and verifies; human gates decide high-impact promotion",
     "candidate is not approved",
     "funding does not buy approval",
-    "public repositories must not expose or mutate private/core projects"
+    "public repositories must not expose or mutate private/core projects",
+    "process artifacts must not become hidden authority",
+    "retained artifacts require ongoing quality, health, security, and compliance posture",
+    "maintained lanes need durable state, continuity anchors, and recovery paths",
+    "important decisions should be observable and explainable through public-safe evidence"
   ],
   "public_repository_expectations": [
     "clear README with language switch",
@@ -20,6 +24,10 @@
     "verification command",
     "update rules",
     "safety boundary",
+    "process artifact hygiene",
+    "ongoing quality, health, security, and compliance posture",
+    "persistence and continuity anchors",
+    "observable and explainable decision evidence",
     "license and notice",
     "contribution guidance",
     "security reporting path",
@@ -54,8 +62,18 @@
     "candidate and approved states are not confused",
     "private project names and internals are not exposed",
     "generated artifacts are not treated as hand-edited truth",
+    "stale drafts and temporary reports are not treated as authority",
+    "retained artifacts have lifecycle assurance posture",
+    "maintained lanes have continuity anchors",
+    "important automation and promotion decisions are explainable",
     "support or funding does not bypass review",
     "high-impact promotion requires human review"
+  ],
+  "lifecycle_posture": [
+    "artifact_hygiene",
+    "continuous_assurance",
+    "persistence_and_continuity",
+    "observability_and_explainability"
   ],
   "lane_specific_examples": {
     "bookmarks": [

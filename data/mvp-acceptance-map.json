@@ -99,6 +99,12 @@
         "topology, repository map, shared baseline, and indexes are reviewed",
         "README and public docs distinguish planned, proven, and deferred claims",
         "promotion and video material remain postponed until evidence-backed refresh",
+        "process artifacts are classified as promoted evidence, archived context, deleted residue, or explicitly ignored non-authority",
+        "temporary scaffolds, stale drafts, raw experiments, and obsolete reports do not become a second truth source",
+        "retained artifacts have an ongoing quality, health, security, and compliance posture instead of a one-time pass/fail label",
+        "code, schemas, reports, docs, images, automation, and governance records are treated as lifecycle artifacts that can decay and require re-checking",
+        "durable state, continuity anchors, and recovery paths are recorded so the system can resume across time, environments, agents, and interrupted threads",
+        "important automation, routing, scoring, promotion, rejection, cleanup, and release decisions are observable and explainable through public-safe evidence",
         "next-step decision is recorded: iterate Skills, pause, or incubate another terminal consumer"
       ],
       "human_gate": "approve public closeout claims and any promotion refresh"
@@ -157,6 +163,34 @@
     {
       "id": "gate-07-public-refresh",
       "description": "README, docs, topology, indexes, and promotion material are updated only for evidence-backed claims; video remains optional and post-closeout.",
+      "mapped_workstreams": [
+        "mvp-07-global-closeout"
+      ]
+    },
+    {
+      "id": "gate-08-artifact-hygiene",
+      "description": "Temporary and process artifacts are promoted, archived, deleted, or marked non-authoritative instead of becoming repository sediment.",
+      "mapped_workstreams": [
+        "mvp-07-global-closeout"
+      ]
+    },
+    {
+      "id": "gate-09-continuous-assurance",
+      "description": "Retained artifacts have ongoing quality, health, security, and compliance posture instead of one-time validation theater.",
+      "mapped_workstreams": [
+        "mvp-07-global-closeout"
+      ]
+    },
+    {
+      "id": "gate-10-persistence-continuity",
+      "description": "Durable state, continuity anchors, and recovery paths can resume work across time, environments, agents, and interruptions.",
+      "mapped_workstreams": [
+        "mvp-07-global-closeout"
+      ]
+    },
+    {
+      "id": "gate-11-observability-explainability",
+      "description": "Important automation, routing, scoring, promotion, rejection, cleanup, and release decisions are inspectable and explainable through public-safe evidence.",
       "mapped_workstreams": [
         "mvp-07-global-closeout"
       ]

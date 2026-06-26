@@ -285,6 +285,10 @@ def verify_shared_governance_baseline() -> None:
         "private overlays stay private",
         "automation prepares and verifies; human gates decide high-impact promotion",
         "funding does not buy approval",
+        "process artifacts must not become hidden authority",
+        "retained artifacts require ongoing quality, health, security, and compliance posture",
+        "maintained lanes need durable state, continuity anchors, and recovery paths",
+        "important decisions should be observable and explainable through public-safe evidence",
     ]
     principles = data.get("principles", [])
     for phrase in required_principles:
@@ -303,6 +307,13 @@ def verify_shared_governance_baseline() -> None:
     ]
     if data.get("automation_loop") != required_loop:
         fail("shared governance automation loop changed unexpectedly")
+    if data.get("lifecycle_posture") != [
+        "artifact_hygiene",
+        "continuous_assurance",
+        "persistence_and_continuity",
+        "observability_and_explainability",
+    ]:
+        fail("shared governance lifecycle posture changed unexpectedly")
     lane_examples = data.get("lane_specific_examples", {})
     for lane in ["bookmarks", "resource_radar", "curated_skills", "user_configuration", "future_lanes"]:
         if lane not in lane_examples:
@@ -312,6 +323,11 @@ def verify_shared_governance_baseline() -> None:
         "Consistency does not mean sameness",
         "Shared automation loop",
         "Review gates",
+        "Lifecycle posture",
+        "artifact hygiene",
+        "continuous assurance",
+        "persistence and continuity",
+        "observability and explainability",
         "Skills MVP",
         "standardize the rules",
     ]
@@ -344,8 +360,8 @@ def verify_mvp_acceptance_map() -> None:
         if not item.get("human_gate"):
             fail(f"MVP workstream missing human gate: {item.get('id')}")
     gates = data.get("closeout_gates", [])
-    if len(gates) != 7:
-        fail("MVP must define seven closeout gates")
+    if len(gates) != 11:
+        fail("MVP must define eleven closeout gates")
     doc = (ROOT / "docs" / "mvp-plan-and-acceptance.md").read_text(encoding="utf-8")
     required_doc_phrases = [
         "curated Skills lane",
@@ -355,6 +371,10 @@ def verify_mvp_acceptance_map() -> None:
         "Stage exit",
         "small batch",
         "Global closeout",
+        "artifact hygiene",
+        "continuous assurance",
+        "persistence and continuity",
+        "observability and explainability",
     ]
     for phrase in required_doc_phrases:
         if phrase not in doc:
@@ -369,6 +389,10 @@ def verify_mvp_acceptance_map() -> None:
         "topology",
         "README",
         "Evidence rule",
+        "Process artifact hygiene",
+        "Continuous assurance rule",
+        "Persistence and continuity rule",
+        "Observability and explainability rule",
     ]
     for phrase in required_closeout_phrases:
         if phrase not in closeout_doc:
