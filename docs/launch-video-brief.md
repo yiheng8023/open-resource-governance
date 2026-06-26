@@ -58,6 +58,24 @@ emails outside the intentional public contact email, or personal messages.
 If no source assets are available, use the text prompt below and keep the video
 abstract: repository cards, lanes, boundary lines, and verification accents.
 
+Prepared assets are listed in
+[`launch-video-assets.md`](launch-video-assets.md). Use that file as the
+handoff packet for video-generation or editing tools.
+
+## Captions, music, and marks
+
+Use captions. Short videos are often watched muted, and captions also make the
+message easier to reuse across X, Weibo, YouTube Shorts, and other feeds.
+
+Music is optional. If used, prefer low-volume royalty-free ambient, soft lo-fi,
+or light documentary synth with no vocals. Avoid copyrighted tracks and keep
+the license/source note with the final export.
+
+Use the project name as a text wordmark. Do not use `®` or imply registered
+trademark status unless registration is complete. If a project logo is added
+later, confirm it is intended for public project use before including it in
+generated assets.
+
 ## 30-second storyboard
 
 1. **Problem, 0-5s**  
