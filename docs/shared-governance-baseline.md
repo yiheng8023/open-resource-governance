@@ -151,9 +151,12 @@ all decay.
 ## Relationship to the Skills MVP
 
 The curated Skills lane is the first serious terminal-consumer MVP for this
-governance system. If that lane can prove the full loop from discovery to
-review, release, install, routing, runtime use, feedback, and retirement, then
-other terminal consumers can be added with much less guesswork.
+governance system. Its base consumption chain with private user configuration
+repositories has already been verified, so the MVP is about proving iterative
+governance over a working chain rather than proving basic connectivity from
+zero. If that lane can prove the full loop from discovery to review, release,
+install, routing, runtime use, feedback, and retirement, then other terminal
+consumers can be added with much less guesswork.
 
 See [`mvp-plan-and-acceptance.md`](mvp-plan-and-acceptance.md) for the execution
 map and acceptance criteria.

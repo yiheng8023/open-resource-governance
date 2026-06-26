@@ -347,6 +347,11 @@ def verify_mvp_acceptance_map() -> None:
         fail("MVP plan should remain planned_not_started until execution begins")
     if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
         fail("unexpected MVP name")
+    if data.get("known_baselines") != [
+        "the private user-configuration to agent-skills-curated base logic chain has already been verified",
+        "the MVP verifies iterative governance over the working chain, not basic connectivity from zero",
+    ]:
+        fail("MVP known baselines must preserve verified chain posture")
     workstreams = data.get("workstreams", [])
     if len(workstreams) != 7:
         fail("MVP must define seven workstreams")
@@ -365,6 +370,9 @@ def verify_mvp_acceptance_map() -> None:
     doc = (ROOT / "docs" / "mvp-plan-and-acceptance.md").read_text(encoding="utf-8")
     required_doc_phrases = [
         "curated Skills lane",
+        "base logic chain",
+        "has already been verified",
+        "does not restart",
         "Non-goals",
         "Acceptance criteria",
         "Closeout gates",

@@ -10,6 +10,13 @@ The machine-readable map is
 
 The curated Skills lane is the first serious terminal-consumer MVP.
 
+The base logic chain between private user configuration repositories and
+`agent-skills-curated` has already been verified. This MVP does not restart
+from zero or try to prove basic connectivity again. It uses that working chain
+as the first terminal-consumer lane for iterative governance: candidate
+selection, review, release, consumption, routing, feedback, lifecycle posture,
+and global closeout.
+
 If the system can move a small Skill candidate batch through discovery,
 review, adaptation, release manifest, private consumer install, runtime
 routing, feedback, and retirement, then the governance model has proven more
