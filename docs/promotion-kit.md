@@ -99,5 +99,8 @@ For concrete launch sequencing, use [`free-promotion-playbook.md`](free-promotio
 For a lightweight first video announcement, use
 [`launch-video-brief.md`](launch-video-brief.md).
 
+For prepared launch video images, use
+[`launch-video-assets.md`](launch-video-assets.md).
+
 For public-safe contact routes and future social-link policy, use
 [`contact-and-social.md`](contact-and-social.md).
