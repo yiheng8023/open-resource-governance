@@ -53,6 +53,12 @@ is the authoritative hub evidence.
 - Added a free-channel promotion playbook in
   `docs/free-promotion-playbook.md`, including GitHub profile copy, repository
   pin order, social-post drafts, cadence, and messaging boundaries.
+- Added public-safe issue and pull request entrypoints for early community
+  feedback after launch.
+- Added community health files: `CODE_OF_CONDUCT.md`, `GOVERNANCE.md`, and
+  `SUPPORT.md`.
+- Added `docs/owner-launch-decision.md` as the final explicit owner gate before
+  visibility changes, profile pinning, funding links, or social posts.
 
 ## Validation evidence
 
@@ -89,6 +95,7 @@ Hub documentation now explicitly separates:
 - optional funding links;
 - optional GitHub profile pinning;
 - optional social-media publication.
+- first-launch post-public verification evidence.
 
 ## Boundaries confirmed
 

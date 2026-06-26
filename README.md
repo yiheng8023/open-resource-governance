@@ -70,6 +70,7 @@ Key docs:
 - [`docs/repository-map.md`](docs/repository-map.md) — repository roles and relationships.
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — public/private safety boundary.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates that must pass before public release.
+- [`docs/owner-launch-decision.md`](docs/owner-launch-decision.md) — final owner-controlled launch decision packet.
 - [`docs/pre-public-safety-audit.md`](docs/pre-public-safety-audit.md) — concrete safety audit before changing visibility.
 - [`docs/pre-public-readiness-2026-06-26.md`](docs/pre-public-readiness-2026-06-26.md) — latest pre-public readiness evidence for the hub.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — free-channel launch and promotion runbook.
