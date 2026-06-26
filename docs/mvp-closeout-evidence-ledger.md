@@ -35,7 +35,7 @@ candidate batch
 
 | Repository | Visibility | Current evidence |
 | --- | --- | --- |
-| `open-resource-governance` | public | local verification passed; remote `validate` success at `15712f62...` |
+| `open-resource-governance` | public | self-referential ledger: local verification passed; check the latest `validate` workflow for the current repository head |
 | `agent-skills-curated` | public | MVP candidate batch recorded at `a6e194c4...`; validation, topology, and 182-test suite passed; remote `validate` success at `a6e194c4...` |
 | `codex-user-config` | private | validation, capability-router, and curated Skills installer checks passed; remote `Validate` success at `4c887aeb...` |
 | `resource-radar` | private | local verification passed; remote `validate` success at `f5a36fda...` |

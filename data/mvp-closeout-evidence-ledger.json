@@ -9,9 +9,9 @@
     {
       "repository": "open-resource-governance",
       "visibility": "public",
-      "head": "15712f62a59a421703a500e9f69390757d9c31ef",
-      "local_verification": "python -B scripts/verify.py -> open-resource-governance verification passed",
-      "remote_ci": "validate success, run 28253644750"
+      "head": "self-referential-current-head-see-git-history",
+      "local_verification": "python -B scripts/verify.py -> open-resource-governance verification passed before ledger commit",
+      "remote_ci": "self-referential ledger row: check the latest validate workflow for the current repository head; the containing commit hash cannot be embedded in its own content"
     },
     {
       "repository": "agent-skills-curated",
