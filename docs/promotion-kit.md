@@ -63,6 +63,8 @@ Safe claim:
 
 ## Public release checklist
 
+Current hub status as of 2026-06-26: `open-resource-governance` is public and pinned on the owner's GitHub profile. Social posts and downstream repository visibility changes remain separate owner-controlled gates.
+
 - [ ] Confirm all public repositories contain no private configuration, memory, bookmarks, credentials, local paths, account state, or personal preference data.
 - [ ] Verify license and third-party provenance.
 - [ ] Run repository validation.

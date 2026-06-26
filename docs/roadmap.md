@@ -31,4 +31,4 @@
 
 ## Current staged status
 
-As of 2026-06-26, the public-safe repository family has a private pre-public baseline. The hub, configuration template, public bookmark taxonomy, resource radar, and curated Skills governance repositories all remain private until the owner explicitly opens the relevant release gate.
+As of 2026-06-26, the hub repository `open-resource-governance` is public and pinned on the owner's GitHub profile. Downstream repositories remain gated by their own release decisions: configuration templates, public bookmark taxonomies, resource radar outputs, and curated Skills governance must each pass their own public/private boundary review before any visibility change.
