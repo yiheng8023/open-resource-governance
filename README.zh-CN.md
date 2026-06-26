@@ -75,6 +75,7 @@ GitHub Actions 会在 pull request 和推送到 `main` 时运行同样的验证�
 - [`docs/pre-public-safety-audit.md`](docs/pre-public-safety-audit.md) — 改可见性前的具体安全审计。
 - [`docs/pre-public-readiness-2026-06-26.md`](docs/pre-public-readiness-2026-06-26.md) — 总入口仓最新公开前 readiness 证据。
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道首发与推广 runbook。
+- [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词。
 - [`docs/community-feedback-model.md`](docs/community-feedback-model.md) — 未来公开协作的安全 issue/PR 反馈模型。
 - [`GOVERNANCE.md`](GOVERNANCE.md) — 轻量维护者与 owner gate 模型。
 - [`SUPPORT.md`](SUPPORT.md) — 支持边界与安全联系路径。

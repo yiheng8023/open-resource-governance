@@ -75,3 +75,6 @@ Current hub status as of 2026-06-26: `open-resource-governance` is public and pi
 See [`public-launch-gates.md`](public-launch-gates.md) for the non-negotiable release gates. Do not publish repository visibility changes or social posts until those gates pass for the specific repository being released.
 
 For concrete launch sequencing, use [`free-promotion-playbook.md`](free-promotion-playbook.md).
+
+For a lightweight first video announcement, use
+[`launch-video-brief.md`](launch-video-brief.md).

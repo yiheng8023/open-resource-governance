@@ -1,7 +1,7 @@
 # Support
 
 This repository is an early public-safe governance hub. Support is best-effort
-and community-facing only after public launch.
+and community-facing for public-safe questions only.
 
 ## Use public issues for
 
@@ -23,6 +23,7 @@ and community-facing only after public launch.
 
 Use GitHub security advisories when available, or contact the repository owner
 privately. Do not post sensitive material in public issues or pull requests.
+See `SECURITY.md` for the reporting scope and safe report format.
 
 ## Scope boundaries
 
