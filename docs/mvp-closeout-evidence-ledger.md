@@ -9,6 +9,10 @@ baseline-ready, what is partial, and what still needs work before MVP closeout.
 Machine-readable ledger:
 [`data/mvp-closeout-evidence-ledger.json`](../data/mvp-closeout-evidence-ledger.json).
 
+Current decision point:
+[`docs/mvp-current-decision-point.md`](mvp-current-decision-point.md) and
+[`data/mvp-current-decision-point.json`](../data/mvp-current-decision-point.json).
+
 Gate 08 artifact hygiene review:
 [`docs/mvp-artifact-hygiene-review.md`](mvp-artifact-hygiene-review.md) and
 [`data/mvp-artifact-hygiene-review.json`](../data/mvp-artifact-hygiene-review.json).

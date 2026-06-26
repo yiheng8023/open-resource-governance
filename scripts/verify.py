@@ -34,6 +34,7 @@ REQUIRED_FILES = [
     "docs/mvp-plan-and-acceptance.md",
     "docs/mvp-global-closeout-verification.md",
     "docs/mvp-closeout-evidence-ledger.md",
+    "docs/mvp-current-decision-point.md",
     "docs/mvp-artifact-hygiene-review.md",
     "docs/mvp-continuous-assurance-review.md",
     "docs/mvp-persistence-continuity-review.md",
@@ -70,6 +71,7 @@ REQUIRED_FILES = [
     "data/shared-governance-baseline.json",
     "data/mvp-acceptance-map.json",
     "data/mvp-closeout-evidence-ledger.json",
+    "data/mvp-current-decision-point.json",
     "data/mvp-artifact-hygiene-review.json",
     "data/mvp-continuous-assurance-review.json",
     "data/mvp-persistence-continuity-review.json",
@@ -478,6 +480,90 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         fail("global closeout doc must mention owner-local evidence freshness check")
 
 
+def verify_mvp_current_decision_point() -> None:
+    decision = json.loads((ROOT / "data" / "mvp-current-decision-point.json").read_text(encoding="utf-8"))
+    ledger = json.loads((ROOT / "data" / "mvp-closeout-evidence-ledger.json").read_text(encoding="utf-8"))
+    if decision.get("schema_version") != 1:
+        fail("mvp-current-decision-point.json schema_version must be 1")
+    if decision.get("mvp_name") != ledger.get("mvp_name"):
+        fail("MVP current decision point must reference the active MVP")
+    if decision.get("status") != "awaiting_owner_approval":
+        fail("MVP current decision point must remain awaiting_owner_approval")
+    if decision.get("not_completion_claim") is not True:
+        fail("MVP current decision point must explicitly avoid completion claims")
+    if decision.get("not_approval") is not True:
+        fail("MVP current decision point must explicitly avoid approval")
+    if decision.get("current_workstream") != "mvp-02-review-adapt":
+        fail("MVP current decision point must point to MVP-02")
+    if decision.get("source_repository") != "agent-skills-curated":
+        fail("MVP current decision point must source the Skills lane")
+    skills_surface = next(
+        (surface for surface in ledger.get("verified_surfaces", []) if surface.get("repository") == "agent-skills-curated"),
+        None,
+    )
+    if not skills_surface:
+        fail("MVP ledger missing agent-skills-curated surface")
+    if decision.get("source_head") != skills_surface.get("head"):
+        fail("MVP current decision point source_head must match ledger Skills head")
+    expected_candidates = [
+        "spec-driven-development",
+        "documentation-and-adrs",
+        "code-review-and-quality",
+    ]
+    if decision.get("candidate_ids") != expected_candidates:
+        fail("MVP current decision point candidate_ids changed")
+    expected_phrases = [
+        "批准进入 MVP-02 适配草案阶段",
+        "Approve MVP-02 adapted draft creation only",
+    ]
+    if decision.get("safe_approval_phrases") != expected_phrases:
+        fail("MVP current decision point safe approval phrases changed")
+    for key, value in decision.get("current_permissions", {}).items():
+        if value is not False:
+            fail(f"MVP current decision point permission must be false before approval: {key}")
+    required_disallowed = {
+        "create adapted candidate output",
+        "edit skills/",
+        "update release-manifest.json",
+        "update generated routing projections",
+        "install or sync live Agent environments",
+        "approve, release, or publish any candidate payload",
+        "redistribute upstream source text as approved curated payload",
+    }
+    if set(decision.get("still_disallowed", [])) != required_disallowed:
+        fail("MVP current decision point still_disallowed changed")
+    required_reasons = {
+        "goal continuation is not approval",
+        "candidate material remains non-executable",
+        "the next action is a human authorization gate, not an automation step",
+        "public closeout claims remain unproven until later MVP workstreams pass",
+    }
+    if set(decision.get("why_this_matters", [])) != required_reasons:
+        fail("MVP current decision point why_this_matters changed")
+    doc = (ROOT / "docs" / "mvp-current-decision-point.md").read_text(encoding="utf-8")
+    for phrase in [
+        "not a completion claim and not approval",
+        "Goal continuation is not approval",
+        "do not create adapted candidate output",
+        "Approve MVP-02 adapted draft creation only",
+        "批准进入 MVP-02 适配草案阶段",
+    ]:
+        if phrase not in doc:
+            fail(f"MVP current decision point doc missing phrase: {phrase}")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme_zh = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+    if "docs/mvp-current-decision-point.md" not in readme:
+        fail("README.md must link MVP current decision point")
+    if "docs/mvp-current-decision-point.md" not in readme_zh:
+        fail("README.zh-CN.md must link MVP current decision point")
+    closeout_doc = (ROOT / "docs" / "mvp-global-closeout-verification.md").read_text(encoding="utf-8")
+    if "mvp-current-decision-point.md" not in closeout_doc:
+        fail("global closeout doc must link MVP current decision point")
+    ledger_doc = (ROOT / "docs" / "mvp-closeout-evidence-ledger.md").read_text(encoding="utf-8")
+    if "mvp-current-decision-point.md" not in ledger_doc:
+        fail("MVP ledger doc must link MVP current decision point")
+
+
 def verify_mvp_artifact_hygiene_review() -> None:
     data = json.loads((ROOT / "data" / "mvp-artifact-hygiene-review.json").read_text(encoding="utf-8"))
     if data.get("schema_version") != 1:
@@ -883,6 +969,7 @@ def main() -> None:
     verify_shared_governance_baseline()
     verify_mvp_acceptance_map()
     verify_mvp_closeout_evidence_ledger()
+    verify_mvp_current_decision_point()
     verify_mvp_artifact_hygiene_review()
     verify_mvp_continuous_assurance_review()
     verify_mvp_persistence_continuity_review()

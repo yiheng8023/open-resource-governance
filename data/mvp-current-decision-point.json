@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "mvp_name": "curated-skills-terminal-consumer-mvp",
+  "status": "awaiting_owner_approval",
+  "not_completion_claim": true,
+  "not_approval": true,
+  "date": "2026-06-27",
+  "purpose": "Record the current MVP decision point so continuation can resume from repository truth without mistaking an active goal for owner approval.",
+  "current_workstream": "mvp-02-review-adapt",
+  "current_gate": "mvp02-adaptation-draft-approval-request-2026-06-27",
+  "source_repository": "agent-skills-curated",
+  "source_head": "d941c4a3e348fd16cb99cf4f43abd8771ec62041",
+  "source_records": [
+    "registry/mvp-approval-requests.json",
+    "registry/mvp02-preflight-readiness.json",
+    "docs/mvp02-adaptation-approval-request.md",
+    "docs/mvp02-preflight-readiness.md"
+  ],
+  "candidate_ids": [
+    "spec-driven-development",
+    "documentation-and-adrs",
+    "code-review-and-quality"
+  ],
+  "decision_needed": "Whether the selected candidate batch may enter non-runtime adapted draft creation plus checklist-based review.",
+  "safe_approval_phrases": [
+    "批准进入 MVP-02 适配草案阶段",
+    "Approve MVP-02 adapted draft creation only"
+  ],
+  "allowed_without_approval": [
+    "run read-only verification",
+    "refresh evidence ledgers and public-safe explanations",
+    "check repository freshness and CI status",
+    "prepare review scaffolding that does not create adapted candidate output"
+  ],
+  "current_permissions": {
+    "adapted_output_allowed": false,
+    "approved_payload_allowed": false,
+    "release_manifest_allowed": false,
+    "routing_projection_allowed": false,
+    "live_install_allowed": false,
+    "source_text_redistribution_allowed": false
+  },
+  "still_disallowed": [
+    "create adapted candidate output",
+    "edit skills/",
+    "update release-manifest.json",
+    "update generated routing projections",
+    "install or sync live Agent environments",
+    "approve, release, or publish any candidate payload",
+    "redistribute upstream source text as approved curated payload"
+  ],
+  "why_this_matters": [
+    "goal continuation is not approval",
+    "candidate material remains non-executable",
+    "the next action is a human authorization gate, not an automation step",
+    "public closeout claims remain unproven until later MVP workstreams pass"
+  ],
+  "next_state_if_approved": "adapted_output_drafting_in_non_runtime_review_surface",
+  "next_required_evidence_if_approved": [
+    "adapted draft location",
+    "completed checklist sections",
+    "candidate-specific disposition",
+    "verification command results",
+    "explicit record that manifest, routing projection, and live install remain unchanged"
+  ]
+}

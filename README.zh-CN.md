@@ -299,6 +299,8 @@ owner 可控且验证通过后加入。
   — MVP 跨仓收官验收与公开文档/宣传刷新检查表。
 - [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)
   — 当前 MVP 证据快照；明确不是完成声明。
+- [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)
+  — 当前 MVP 人工闸门；记录“目标继续”不等于“批准执行”。
 - [`docs/mvp-artifact-hygiene-review.md`](docs/mvp-artifact-hygiene-review.md)
   — Gate 08 过程产物卫生审查；防止草稿、生成产物和宣传材料意外变成真相源。
 - [`docs/mvp-continuous-assurance-review.md`](docs/mvp-continuous-assurance-review.md)

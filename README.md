@@ -346,6 +346,8 @@ international, fiscal-host, and domestic-support considerations.
   — cross-repository MVP closeout and public-refresh checklist.
 - [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)
   — current MVP evidence snapshot; explicitly not a completion claim.
+- [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)
+  — current MVP human gate; records that goal continuation is not approval.
 - [`docs/mvp-artifact-hygiene-review.md`](docs/mvp-artifact-hygiene-review.md)
   — Gate 08 process-artifact hygiene review; explicitly keeps drafts,
   generated outputs, and promotion material from becoming accidental truth.

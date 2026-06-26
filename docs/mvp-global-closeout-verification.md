@@ -8,6 +8,10 @@ The current evidence ledger is
 [`mvp-closeout-evidence-ledger.md`](mvp-closeout-evidence-ledger.md). Treat it
 as an in-progress evidence snapshot, not as a completion claim.
 
+The current human decision gate is
+[`mvp-current-decision-point.md`](mvp-current-decision-point.md). Treat it as
+the active owner authorization boundary, not as approval.
+
 Owner-local ledger freshness can be checked with
 `scripts/verify_local_evidence_freshness.py`. This read-only check compares
 ledger repository heads with local checkouts when those checkouts are
