@@ -1,7 +1,8 @@
 # Community Feedback Model
 
-This repository is designed for public-safe collaboration after the owner opens
-the public launch gate.
+This repository is designed for public-safe collaboration. Feedback should
+improve reusable structure without exposing private overlays or weakening
+owner-controlled release gates.
 
 ## Feedback goals
 
@@ -54,8 +55,8 @@ Recommended labels:
 - `private-overlay`
 - `not-public-safe`
 
-These labels are intended to exist as repository metadata before public launch
-so issue templates can route feedback cleanly.
+These labels are intended to exist as repository metadata so issue templates can
+route feedback cleanly during early community participation.
 
 ## Response policy
 

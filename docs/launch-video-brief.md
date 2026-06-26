@@ -1,0 +1,138 @@
+# Launch Video Brief
+
+This brief supports a lightweight first announcement video for
+`open-resource-governance`. It is intentionally simple, public-safe, and usable
+with video-generation tools, manual screen recording, or a basic slide editor.
+
+## Goal
+
+Explain the project in plain language:
+
+> A public-safe map and governance hub for reusable resource discovery, curated
+> agent skills, portable AI-collaboration configuration, and bookmark
+> taxonomies, while keeping private state private.
+
+## Naming note
+
+The repository slug is governance-accurate but abstract. For public messaging,
+lead with a plain subtitle before the formal name:
+
+> A public-safe map for useful resources, agent skills, AI collaboration
+> configuration, and bookmark taxonomies.
+
+Then name the repository as `open-resource-governance` for people who want to
+find or star it on GitHub.
+
+## Recommended format
+
+- Length: 15-45 seconds.
+- Shape: 16:9 for YouTube or GitHub demos; 9:16 for Shorts, X, Weibo, and
+  mobile-first reposts.
+- Style: calm technical walkthrough, not hype.
+- Visual source: GitHub repository page, README sections, repository map, and
+  public/private boundary diagrams.
+- Avoid: real people, private paths, credentials, browser history, private
+  bookmarks, account state, paid-feature claims, production-grade claims, or
+  certification claims.
+
+## 30-second storyboard
+
+1. **Problem, 0-5s**  
+   Useful resources, agent skills, bookmarks, and AI configuration become messy
+   when public structure and private state mix together.
+
+2. **Principle, 5-10s**  
+   Keep a public core and private overlays.
+
+3. **System map, 10-20s**  
+   Show the hub, resource radar, curated skills governance, configuration
+   template, bookmark taxonomy, and private overlays as separate lanes.
+
+4. **Safety, 20-25s**  
+   Release gates, validation, security policy, contribution rules, and
+   public/private boundaries protect the system.
+
+5. **Call to action, 25-30s**  
+   Visit the repository, read the map, and suggest public-safe improvements.
+
+## Voiceover draft
+
+```text
+Open Resource Governance is a small public-safe hub for a bigger idea:
+useful resources, agent skills, AI collaboration configuration, and bookmark
+taxonomies should be reusable without leaking private state.
+
+The model is simple: public core, private overlays, clear release gates, and
+verifiable automation.
+
+This repository maps the lanes, explains the boundaries, and gives contributors
+a safe place to improve the system.
+```
+
+## Chinese voiceover draft
+
+```text
+Open Resource Governance 是一个公开安全的总入口，用来承载一个更大的想法：
+有价值的资源、agent skills、AI 协作配置和书签分类，应该可以复用，
+但不能泄露私人状态。
+
+核心模型很简单：公开核心，私有 overlay，清晰发布闸门，可验证自动化。
+
+这个仓库负责解释各条链路、边界和贡献方式，让后续协作更安全。
+```
+
+## Video AI prompt
+
+```text
+Create a clean 30-second technical launch video for an open-source GitHub
+project called "Open Resource Governance".
+
+Use case: public launch announcement for GitHub, X, Weibo, and YouTube Shorts.
+Scene/background: minimal dark-mode developer workspace with abstract repository
+cards, diagrams, and public/private boundary lines. No real people.
+Subject: a modular open-source governance hub that connects resource discovery,
+curated agent skills, portable AI collaboration configuration, and bookmark
+taxonomy.
+Action: show messy resources becoming organized into separate public-safe lanes:
+hub, resource radar, curated skills governance, config template, bookmark
+taxonomy, and private overlays.
+Camera: smooth screen-recording inspired motion, slow zooms, simple diagram
+transitions.
+Lighting/mood: calm, trustworthy, technical, low-hype.
+Color palette: dark background, soft blue, green verification accents, warm
+white text.
+Style/format: modern GitHub/open-source explainer, clean typography, no brand
+logos except generic repository-card shapes.
+Timing/beats: problem 0-5s, principle 5-10s, system map 10-20s, safety gates
+20-25s, call to action 25-30s.
+Text:
+"Public core"
+"Private overlays"
+"Release gates"
+"Verifiable automation"
+"Open Resource Governance"
+Constraints: no real people, no private data, no credentials, no account pages,
+no browser history, no exaggerated claims, no security certification claims.
+Avoid: hype, fake dashboards, noisy cyber visuals, corporate stock footage.
+```
+
+## Short launch captions
+
+English:
+
+```text
+I just opened Open Resource Governance:
+a public-safe hub for resource discovery, curated agent skills, portable AI
+collaboration configuration, and bookmark taxonomy.
+
+Principle: public core, private overlays, release gates, verifiable automation.
+```
+
+Chinese:
+
+```text
+我刚公开了 Open Resource Governance：
+一个公开安全的总入口，用来治理资源发现、精选 agent skills、AI 协作配置模板和书签分类。
+
+原则：公开核心，私有 overlay，发布闸门，可验证自动化。
+```

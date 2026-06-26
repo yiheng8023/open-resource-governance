@@ -1,13 +1,14 @@
 # Governance
 
-This repository is currently maintained by the owner as a private pre-public
-hub. Governance is intentionally lightweight until public launch and community
-participation justify more structure.
+This repository is maintained by the owner as a public-safe hub. Governance is
+intentionally lightweight until community participation justifies more
+structure.
 
 ## Authority model
 
-- The owner controls repository visibility, funding links, profile pinning,
-  social posts, maintainer access, and public launch timing.
+- The owner controls funding links, profile pinning, social posts, maintainer
+  access, downstream repository visibility, and public launch timing for each
+  related repository.
 - This hub explains the repository family but does not own downstream runtime
   state, private overlays, resource-radar scoring, or curated Skill release
   decisions.
@@ -22,7 +23,7 @@ participation justify more structure.
 | Public/private boundary change | Owner review |
 | Launch gate change | Owner review |
 | Funding or promotion change | Owner review |
-| Repository visibility change | Owner only |
+| Downstream repository visibility change | Owner only |
 | Maintainer access | Owner only |
 
 ## Contribution flow
