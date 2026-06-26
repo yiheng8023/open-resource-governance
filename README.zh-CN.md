@@ -45,10 +45,13 @@ codex-user-config-template
   -> 私有 AI 协作配置仓的公开安全模板
 
 research-bookmarks-public
-  -> 公开安全官方来源书签分类与来源目录
+  -> public-safe 来源分类、结构化公开目录和生成的可导入浏览器书签 HTML
 
-private overlays
-  -> 真实用户配置、记忆、书签、偏好和运行时状态
+research-bookmarks
+  -> 私有完整书签导入、overlay、审计和脱敏输入
+
+private configuration overlays
+  -> 真实用户配置、记忆、偏好、账号状态和运行时状态
 ```
 
 ## 与私有仓库的关系
@@ -80,12 +83,13 @@ GitHub Actions 会在 pull request 和推送到 `main` 时运行同样的验证�
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词。
 - [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — 公开安全首发视频图片素材与使用说明。
 - [`docs/naming-campaign.md`](docs/naming-campaign.md) — 针对临时项目名的公开征名反馈流程。
+- [`docs/bookmark-lane-closeout-2026-06-26.md`](docs/bookmark-lane-closeout-2026-06-26.md) — 书签 lane 拆分、验证与公开/私有收官证据。
 - [`docs/contact-and-social.md`](docs/contact-and-social.md) — 公开安全联系路径与未来社媒链接策略。
 - [`docs/community-feedback-model.md`](docs/community-feedback-model.md) — 未来公开协作的安全 issue/PR 反馈模型。
 - [`GOVERNANCE.md`](GOVERNANCE.md) — 轻量维护者与 owner gate 模型。
 - [`SUPPORT.md`](SUPPORT.md) — 支持边界与安全联系路径。
 - [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — 公开安全协作期望。
-- [`docs/closeout-audit-2026-06-26.md`](docs/closeout-audit-2026-06-26.md) — 最新分阶段收官审计。
+- [`docs/closeout-audit-2026-06-26.md`](docs/closeout-audit-2026-06-26.md) — 早期分阶段收官审计，作为历史证据保留。
 - [`docs/promotion-kit.md`](docs/promotion-kit.md) — 免费渠道推广文案草案。
 
 ## 更新规则

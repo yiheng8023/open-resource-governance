@@ -33,6 +33,7 @@ REQUIRED_FILES = [
     "docs/launch-video-brief.md",
     "docs/launch-video-assets.md",
     "docs/naming-campaign.md",
+    "docs/bookmark-lane-closeout-2026-06-26.md",
     "docs/contact-and-social.md",
     "docs/assets/launch-video/github-repository-home.png",
     "docs/assets/launch-video/readme-system-map.png",
@@ -91,6 +92,7 @@ def verify_repository_map() -> None:
         "agent-skills-curated",
         "codex-user-config-template",
         "research-bookmarks-public",
+        "research-bookmarks",
     }
     missing = required - names
     if missing:
