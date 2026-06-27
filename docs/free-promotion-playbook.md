@@ -5,11 +5,15 @@ Use it only after the target repository passes `public-launch-gates.md`.
 
 ## Launch order
 
-Current hub status as of 2026-06-26: the hub is already public and pinned on the owner's GitHub profile. The sequence below remains the reusable playbook for future public launches, downstream repositories, and optional social announcements.
+Current hub status: the hub is public, pinned on the owner's GitHub profile,
+and the selected-MVP global closeout has passed. The sequence below remains the
+reusable playbook for future public launches, downstream repositories, and
+optional social announcements.
 
-For the current MVP, broad social or video refresh should wait for MVP global
-closeout and evidence-backed public refresh, unless the owner explicitly
-approves a low-claim update.
+For the current MVP, broad social or video refresh no longer waits on selected
+MVP closeout evidence, but it still requires an owner-approved publication gate
+and a final claim review. Any claim that goes beyond the selected Skills MVP
+requires a fresh public-refresh gate.
 
 1. Publish the hub first.
 2. Confirm the hub README renders correctly.

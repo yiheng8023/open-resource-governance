@@ -87,7 +87,10 @@ Safe claim:
 
 ## Public release checklist
 
-Current hub status as of 2026-06-26: `open-resource-governance` is public and pinned on the owner's GitHub profile. Social posts and downstream repository visibility changes remain separate owner-controlled gates.
+Current hub status: `open-resource-governance` is public, pinned on the owner's
+GitHub profile, and the selected-MVP global closeout has passed. Social posts
+and downstream repository visibility changes remain separate owner-controlled
+gates.
 
 - [ ] Confirm all public repositories contain no private configuration, memory, bookmarks, credentials, local paths, account state, or personal preference data.
 - [ ] Verify license and third-party provenance.
@@ -99,10 +102,10 @@ Current hub status as of 2026-06-26: `open-resource-governance` is public and pi
 See [`public-launch-gates.md`](public-launch-gates.md) for the non-negotiable release gates. Do not publish repository visibility changes or social posts until those gates pass for the specific repository being released.
 
 These linked promotion and video materials are planning references and asset
-preparation only. They are not proof of MVP completion and not an instruction
-to publish. Broad social/video publication remains an owner-controlled gate
-after MVP global closeout, unless the owner separately approves a low-claim
-update.
+preparation only. They are not proof of universal completion and not an
+instruction to publish. Broad social/video publication remains an
+owner-controlled gate after selected-MVP closeout and still requires final
+claim review. Any claim beyond the selected Skills MVP requires a fresh public-refresh gate.
 
 For concrete launch sequencing, use [`free-promotion-playbook.md`](free-promotion-playbook.md).
 

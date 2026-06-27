@@ -8,10 +8,10 @@ video-generation tools, manual screen recording, or a basic slide editor.
 ## Current use boundary
 
 This is a prepared draft, not a release approval and not a publication
-instruction. Before MVP global closeout, use it only for internal planning,
-prompt refinement, or an owner-approved low-claim preview. Broad social/video
-publication remains a separate owner-controlled gate after evidence-backed
-public refresh.
+instruction. The selected-MVP global closeout has passed, so the brief can now
+support an owner-approved publication draft. Broad social/video publication
+still remains a separate owner-controlled gate with final claim review. Any
+claim beyond the selected Skills MVP requires a fresh public-refresh gate.
 
 Do not use this brief to claim that the Skills MVP is complete, that
 release/routing is approved, or that downstream repositories are generally

@@ -1160,16 +1160,20 @@ def verify_promotion_publication_boundary() -> None:
             [
                 "planning references",
                 "preparation only",
-                "not proof of MVP completion",
+                "not proof of universal completion",
                 "owner-controlled gate",
+                "selected-MVP closeout",
+                "fresh public-refresh gate",
             ],
         ),
         "launch-video-brief.md": (
             brief,
             [
                 "prepared draft, not a release approval",
-                "MVP global closeout",
+                "selected-MVP global closeout has passed",
                 "owner-controlled gate",
+                "final claim review",
+                "fresh public-refresh gate",
                 "Do not use this brief to claim that the Skills MVP is complete",
             ],
         ),
@@ -1186,9 +1190,9 @@ def verify_promotion_publication_boundary() -> None:
             [
                 "broad social or video refresh",
                 "current MVP",
-                "MVP global",
-                "closeout",
-                "low-claim update",
+                "selected-MVP global closeout has passed",
+                "owner-approved publication gate",
+                "fresh public-refresh gate",
             ],
         ),
         "README.md": (
@@ -1208,6 +1212,21 @@ def verify_promotion_publication_boundary() -> None:
         for phrase in phrases:
             if phrase not in text:
                 fail(f"{name} missing promotion publication boundary phrase: {phrase}")
+    stale_status_phrases = [
+        "Before MVP global closeout",
+        "wait for MVP global closeout",
+        "should wait for MVP global",
+        "after MVP global closeout, unless",
+        "MVP global closeout and evidence-backed public refresh",
+    ]
+    for name, text in {
+        "promotion-kit.md": promotion,
+        "launch-video-brief.md": brief,
+        "free-promotion-playbook.md": playbook,
+    }.items():
+        for phrase in stale_status_phrases:
+            if phrase in text:
+                fail(f"{name} contains stale pre-closeout promotion status phrase: {phrase}")
 
 
 def verify_no_obvious_private_payloads() -> None:
