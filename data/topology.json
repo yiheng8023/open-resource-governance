@@ -48,7 +48,7 @@
     {
       "id": "agent-skills-curated",
       "kind": "curated_release_authority",
-      "visibility": "private-pre-public",
+      "visibility": "public",
       "lane": "curated_skills",
       "neutrality": "agent-neutral"
     },
@@ -120,6 +120,12 @@
       "from": "open-resource-governance",
       "to": "mvp-current-decision-point",
       "relation": "indexes-current-mvp-gate",
+      "write_permission": false
+    },
+    {
+      "from": "open-resource-governance",
+      "to": "agent-skills-curated",
+      "relation": "indexes",
       "write_permission": false
     },
     {

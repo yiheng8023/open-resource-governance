@@ -76,7 +76,7 @@ public repository explains its own role; this hub keeps the global map.
 | `codex-user-config-template` | public-safe Codex configuration template | public |
 | `claude-user-config-template` | public-safe Claude Code configuration template | public |
 | `resource-radar`, `research-bookmarks`, user config repos | real imports, review pools, private state, memory, preferences, account state | private |
-| `agent-skills-curated` | reviewed Skill governance and release evidence | staged/private until separately released |
+| `agent-skills-curated` | reviewed Skill governance and release evidence | public |
 
 <details>
 <summary>Topology snapshot</summary>
@@ -216,6 +216,8 @@ Current evidence:
   `codex-user-config` at `a89b617...`.
 - MVP-06 lifecycle feedback and radar dedupe metadata: passed in
   `agent-skills-curated` at `74c8c17...`.
+- Public release posture update: `agent-skills-curated` is public at
+  `73ce81b...` with public-safe README, security, and community boundaries.
 - MVP-07 selected-MVP global closeout: passed; this is not a universal
   completion claim.
 

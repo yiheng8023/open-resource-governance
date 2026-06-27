@@ -71,7 +71,7 @@ AI 协作配置整理成可复用的公共产物，同时把个人记忆、账�
 | `codex-user-config-template` | Codex 配置的公开安全模板 | 公开 |
 | `claude-user-config-template` | Claude Code 配置的公开安全模板 | 公开 |
 | `resource-radar`、`research-bookmarks`、用户配置仓 | 真实导入、审查池、私有层、记忆、偏好、账号状态 | 私有 |
-| `agent-skills-curated` | 已审查技能的治理和发布证据 | 分阶段处理，未单独发布前保持私有 |
+| `agent-skills-curated` | 已审查技能的治理和发布证据 | 公开 |
 
 <details>
 <summary>拓扑快照</summary>
@@ -193,6 +193,8 @@ flowchart LR
   发布版本已由 `codex-user-config` 在 `a89b617...` 消费并验证。
 - MVP-06 生命周期反馈与资源雷达去重元数据：已在 `agent-skills-curated`
   `74c8c17...` 记录并验证。
+- 公开发布状态更新：`agent-skills-curated` 已在 `73ce81b...` 公开，并补齐
+  公开安全 README、安全政策和社区协作边界。
 - MVP-07 已选 MVP 全局收官：已通过；这不是所有未来工作的终局完成声明。
 
 这意味着选定批次不再只是候选证据：`spec-driven-development` 进入

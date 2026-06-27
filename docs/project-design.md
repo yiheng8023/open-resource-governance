@@ -303,7 +303,8 @@ As of the current public launch stage:
   account-coupled automation;
 - `research-bookmarks-public` includes a public aggregate projection report in
   addition to structured sources and generated HTML;
-- curated skills remain a staged/private-pre-public lane;
+- curated skills are public as the reviewed Skill governance and release
+  evidence lane;
 - Codex and Claude configuration templates are the public-safe way to share
   portable setup patterns without exposing private configuration sources.
 
