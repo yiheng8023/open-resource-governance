@@ -7,131 +7,126 @@
 
 ![Open Resource Governance launch card](docs/assets/launch-video/title-card-16x9.png)
 
-这是一个公开安全的起步系统，用来组织有价值的资源、研究书签、AI /
-Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到公开仓库。
+这是一个公开安全的起步系统，用来把分散的链接、工具、Agent 技能、书签和
+AI 协作配置整理成可复用的公共产物，同时把个人记忆、账号状态、本机路径和
+私人偏好留在私有仓库里。
 
-如果你也把链接、工具、提示词、agent skills、模板、自动化想法分散放在
-浏览器书签、GitHub stars、笔记、聊天记录和本地文件夹里，这个项目要解决
-的就是：把这些东西变成可治理、可复现、可公开协作、又不泄露隐私的系统。
+一句话：完整工作集留在私有层，公开仓只发布经过筛选、生成和验证的公共结果。
+普通用户可以直接在 GitHub 上查看这些结果，不需要先搭建本地环境。
 
-## 一分钟看懂
+## 从这里开始
 
-这不是书签 dump、提示词包，也不是私人配置备份。它是一套用来搭建小型
-资源治理生态的模式：
+| 你想做什么 | 入口 | 能看到什么 |
+| --- | --- | --- |
+| 直接使用公开书签目录 | [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public) | 328 条公开安全来源，以及可导入浏览器的 HTML |
+| 了解资源雷达怎么做 | [`resource-radar-public`](https://github.com/yiheng8023/resource-radar-public) | 资源记录结构、评分/生命周期示例、demo 数据和 [`outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) |
+| 搭建自己的私有 AI 配置仓 | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) 或 [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | 不含真实记忆、凭据和偏好的公开安全模板 |
+| 理解整套仓库关系 | [`docs/system-topology.md`](docs/system-topology.md) 和 [`docs/repository-map.md`](docs/repository-map.md) | 仓库地图、公开/私有边界和关系规则 |
+| 参与共建 | [`CONTRIBUTING.md`](CONTRIBUTING.md) 和 [`docs/user-developer-compact.md`](docs/user-developer-compact.md) | 贡献范围、用户权益、安全要求和反馈方式 |
+
+## 这是什么？
+
+这不是书签导出、提示词合集，也不是私人配置备份。它更像一套轻量的治理流程：
 
 ```text
 私有收集
 -> 结构化记录
--> 公开安全投影
--> 确定性生成
+-> 公开安全结果
+-> 生成产物
 -> 验证
--> 社区反馈
--> 周期性更新
+-> 反馈
+-> 更新
 ```
 
-第一条已经跑通的 lane 是书签：
+第一条已经跑通的是书签链路：
 
-- 私有来源仓保存完整浏览器导入；
-- 公开仓发布经过过滤的结构化目录和可导入浏览器 HTML；
-- 验证脚本检查公开产物不会误带私有数据；
-- 同样的模式后续可以服务资源发现、curated skills 和可迁移 AI 协作配置。
+```text
+389 条私有书签记录
+-> 筛选成公开安全结果
+-> 328 条公开安全来源
+-> 生成可导入浏览器的 HTML
+-> 验证和用户流程模拟
+```
 
-## 全局关系速览
+对应的公开产物在
+[`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public)：
 
-这个项目是一组 lane 组成的图，不是一个巨型单仓。每个公开子仓都应该能
-自我解释；总仓负责保存全局关系地图。
+- [`data/public-sources.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/public-sources.json)
+  是结构化来源目录。
+- [`exports/research-engineering-bookmarks-public.html`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/exports/research-engineering-bookmarks-public.html)
+  是生成后的浏览器书签 HTML。
+- [`data/projection-report.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/projection-report.json)
+  记录公开结果的数量和证据。
+
+## 仓库导航
+
+这个项目由多条相互连接的链路组成，不是一个巨型单仓。每个公开仓库都应该
+能说明自己的作用；本仓库负责保存全局地图。
+
+| 仓库 | 作用 | 可见性 |
+| --- | --- | --- |
+| `open-resource-governance` | 公开总入口、导航、共享规则、发布准备文档 | 公开 |
+| `research-bookmarks-public` | 公开书签目录和生成 HTML | 公开 |
+| `resource-radar-public` | 资源雷达模板和示例报告 | 公开 |
+| `codex-user-config-template` | Codex 配置的公开安全模板 | 公开 |
+| `claude-user-config-template` | Claude Code 配置的公开安全模板 | 公开 |
+| `resource-radar`、`research-bookmarks`、用户配置仓 | 真实导入、审查池、私有层、记忆、偏好、账号状态 | 私有 |
+| `agent-skills-curated` | 已审查技能的治理和发布证据 | 分阶段处理，未单独发布前保持私有 |
+
+<details>
+<summary>拓扑快照</summary>
 
 ```mermaid
 flowchart LR
-  hub["open-resource-governance<br/>公开总入口、拓扑、闸门"]
+  hub["open-resource-governance<br/>公开总入口 + 导航"]
   bookmarks["research-bookmarks-public<br/>公开书签目录 + HTML"]
-  radar["resource-radar-public<br/>资源 schema、评分、生命周期 demo"]
+  radar["resource-radar-public<br/>资源结构 + 生命周期示例"]
   templates["配置模板<br/>可迁移 AI 协作基线"]
-  private["私有 overlay<br/>真实导入、偏好、账号状态"]
-  skills["agent-skills-curated<br/>已审查 Skill release"]
+  private["私有仓库<br/>导入、偏好、账号状态"]
+  skills["agent-skills-curated<br/>已审查技能发布"]
 
   hub --> bookmarks
   hub --> radar
   hub --> templates
   hub --> skills
-  private -. "过滤后的公开安全投影" .-> bookmarks
-  bookmarks -. "可作为发现种子" .-> radar
+  private -. "筛选后的公开结果" .-> bookmarks
+  bookmarks -. "来源种子" .-> radar
   radar -. "候选提案" .-> skills
-  skills -. "已审查 release manifest" .-> private
+  skills -. "已审查发布清单" .-> private
   templates -. "安全起点" .-> private
 ```
 
-完整拓扑和边含义见
-[`docs/system-topology.md`](docs/system-topology.md)。如果你是从某个子仓
-进入，请先看它的 “System context / 系统位置” 小节，了解它在整套系统中
-承担哪一段。
+</details>
 
-## 不是只画饼，已有跑通证据
+完整拓扑和关系说明见
+[`docs/system-topology.md`](docs/system-topology.md)。如果你是从某个子仓进入，
+可以先看它的 “System context / 系统位置” 小节。
 
-截至 2026-06-26，第一条 lane 已经端到端跑通：
+## 云端自动化和持续更新
 
-```text
-389 条私有书签记录
--> 过滤成公开安全投影
--> 328 条公开安全来源
--> 生成可导入浏览器 HTML
--> 验证和用户流程模拟
-```
+公开工作流优先依赖 GitHub：
 
-公开产物在
-[`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public)：
+- 公开仓库保存源数据、生成产物、规则和验证脚本；
+- GitHub Actions 在 pull request 和 push 时运行检查；
+- 生成结果会提交成可审查的文件，而不是藏在某台本地机器里；
+- 私有层继续保留在私有仓，不影响用户查看公开结果。
 
-- 结构化来源目录：
-  [`data/public-sources.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/public-sources.json)
-- 生成的可导入浏览器 HTML：
-  [`exports/research-engineering-bookmarks-public.html`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/exports/research-engineering-bookmarks-public.html)
-
-这很关键：项目不是让用户相信一张架构图，而是已经展示了一个有生成产物、
-有公开/私有拆分、有验证检查的工作闭环。
-
-## 产出在哪里？
-
-这个项目优先面向 GitHub 直接消费。普通用户只是查看公开产物，不应该需要
-先搭建本地环境。
-
-当前公开产出：
-
-| 产出 | 位置 | 用途 |
-| --- | --- | --- |
-| 总仓地图与治理文档 | 本仓 README 和 [`docs/`](docs) | 理解仓库家族、公开/私有边界、MVP 状态和共建路径 |
-| 公开书签目录 | [`research-bookmarks-public/data/public-sources.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/public-sources.json) | 结构化公开安全来源记录 |
-| 可导入浏览器的书签 HTML | [`research-bookmarks-public/exports/research-engineering-bookmarks-public.html`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/exports/research-engineering-bookmarks-public.html) | 导入或检查生成后的公开书签投影 |
-| 书签投影证据 | [`research-bookmarks-public/data/projection-report.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/projection-report.json) | 查看数量、过滤状态和投影证据 |
-| 资源雷达 demo 报告 | [`resource-radar-public/outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) | 查看公开安全评分/生命周期报告形态 |
-| 公开配置模板 | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) 和 [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | 复用公开安全的 AI 协作配置模式 |
-| 发布与共建材料 | [`docs/promotion-kit.md`](docs/promotion-kit.md)、[`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md)、[`docs/user-developer-compact.md`](docs/user-developer-compact.md) | 理解如何安全解释、支持或参与共建 |
-
-## 云端优先自动化与新陈代谢
-
-公开工作流是 GitHub 原生、云端优先的：
-
-- 公开仓库保存自己的源数据、生成产物、策略和验证脚本；
-- GitHub Actions 在 pull request 和 push 时运行验证；
-- 生成产物会作为可审查 artifact 提交，而不是藏在本地状态里；
-- 本地 checkout 只是贡献者提交前自测的可选路径，普通用户消费公开产物不依赖本地环境；
-- 私有 overlay 留在私有仓，查看公开投影不需要访问私有内容。
-
-这套系统不是一次性发布，而是有受控新陈代谢和自我迭代能力：
+这套系统不是一次性资源堆砌，而是会持续更新：
 
 ```text
 发现或导入
--> 归一化
+-> 规范化
 -> 评分和分类
--> 生成公开安全产物
+-> 生成公开安全结果
 -> 验证
--> 审查闸门
+-> 审查
 -> 发布
--> 观察过期、重复、坏链和更优来源
+-> 观察坏链、重复、许可变化和更好的来源
 -> 更新、合并、退役或拒绝
 ```
 
-这个自我迭代链路是有闸门的。自动化负责准备证据和发现漂移；可见性、
-收款、推广、私有 overlay 和高影响准入决策仍由人类 owner 控制。
+自动化负责准备证据和发现问题；发布、可见性、收款、推广、私有内容和高影响
+准入仍然需要人工确认。
 
 ## 它解决什么问题？
 
@@ -147,8 +142,8 @@ flowchart LR
 ```text
 广泛收集
 -> 分类和评分
--> 私有 overlay 留在私有仓
--> 只发布公开安全投影
+-> 私有内容留在私有仓
+-> 只发布公开安全结果
 -> 验证生成产物
 -> 高影响变更经过人工闸门
 ```
@@ -156,9 +151,9 @@ flowchart LR
 ## 适合谁？
 
 - 希望把资源、书签、AI/Agent 工具链整理成可迁移系统的开发者和 AI 工具用户。
-- 想公开共享规则、schema、示例，但不想暴露个人配置的维护者。
+- 想公开共享规则、结构说明和示例，但不想暴露个人配置的维护者。
 - 希望用自动化发现优质资源，但又不想把仓库变成无审查内容堆的研究者、构建者和小团队。
-- 想参与改进分类、验证、资源发现、书签投影、curated skills 治理链路的贡献者。
+- 想参与改进分类、验证、资源发现、书签结果和精选技能治理链路的贡献者。
 
 ## 现在能用什么？
 
@@ -166,57 +161,57 @@ flowchart LR
 
 当前已经可用的部分：
 
-- 关联仓库和 lane 的公开安全体系地图。
+- 关联仓库和链路的公开安全体系地图。
 - 用于防止个人数据进入公开产物的公开/私有边界模型。
 - 可迁移 AI 协作配置的公开模板：
   [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template)
   和 [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template)。
 - 公开安全资源雷达模板：
   [`resource-radar-public`](https://github.com/yiheng8023/resource-radar-public)，
-  包含 schema、demo 资源、评分/生命周期策略示例、生成报告和验证。
+  包含结构说明、示例资源、评分/生命周期策略示例、生成报告和验证。
 - 开源项目的基础脚手架：许可证、行为准则、支持、安全、反馈模板和验证。
 - 用来解释项目的公开发布素材和文案。
-- 配套公开书签投影仓
+- 配套公开书签仓
   [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public)，
-  包含结构化公开来源、聚合投影报告和生成的可导入浏览器 HTML。
+  包含结构化公开来源、汇总报告和生成的可导入浏览器 HTML。
 
-有些 lane 暂时保持私有，是因为它们还包含个人导入、审查证据、本地状态或公开前自动化工作。
+有些链路暂时保持私有，是因为它们还包含个人导入、审查证据、本地状态或公开前自动化工作。
 
 ## 当前 MVP 状态
 
-当前 MVP 是 curated Skills 末端消费者闭环。第一批小样本已经跑通
-release/routing/install/lifecycle/global-closeout 路径；这是本次 MVP 范围内的
+当前 MVP 是精选技能到真实配置仓的末端消费闭环。第一批小样本已经跑通
+发布、路由、安装、生命周期反馈和全局收官路径；这是本次 MVP 范围内的
 阶段性收官。下一状态是暂停观察，之后若开启新批次、新末端消费者或大范围公开宣传刷新，
-都需要新的 gate。
+都需要新的确认闸门。
 
 当前证据：
 
 - MVP-01 来源候选选择：已通过。
 - MVP-02 审查、中立化和非运行时适配草案创建：已通过。
-- MVP-03 release/routing 后续执行：已在 owner 明确授权后对选定小批次通过。
+- MVP-03 发布/路由后续执行：已在维护者明确授权后对选定小批次通过。
 - 私有消费者安装与路由验证：`agent-skills-curated` 的 `e80d497...`
-  release 已由 `codex-user-config` 在 `a89b617...` 消费并验证。
+  发布版本已由 `codex-user-config` 在 `a89b617...` 消费并验证。
 - MVP-06 生命周期反馈与资源雷达去重元数据：已在 `agent-skills-curated`
   `74c8c17...` 记录并验证。
-- MVP-07 selected-MVP 全局收官：已通过；这不是所有未来工作的终局完成声明。
+- MVP-07 已选 MVP 全局收官：已通过；这不是所有未来工作的终局完成声明。
 
 这意味着选定批次不再只是候选证据：`spec-driven-development` 进入
-recipe/routing projection，`documentation-and-adrs` 与
-`code-review-and-quality` 已合并进现有 approved Skills。release manifest
-仍保持 schema 1，包含 19 个 curated Skills 和 41 个文件；只有已批准的
-`grill-with-docs` 与 `review` payload 文件发生变化。
+配方/路由方案，`documentation-and-adrs` 与
+`code-review-and-quality` 已合并进现有已批准技能。发布清单
+仍保持 schema 1，包含 19 个精选技能和 41 个文件；只有已批准的
+`grill-with-docs` 与 `review` 内容文件发生变化。
 
-这并不授权广泛新来源发现、官方 / runtime Skill 正文 vendoring、公开宣传、
+这并不授权广泛新来源发现、官方 / 运行时 Skill 正文复制、公开宣传、
 视频发布宣称或无关私有运行时变更。
 
 当前决策点记录在
 [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)。
 证据账本记录在
 [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)。
-已执行的 release/routing proof 记录在
+已执行的发布/路由证明记录在
 [`docs/mvp03-release-routing-closeout-2026-06-27.md`](docs/mvp03-release-routing-closeout-2026-06-27.md)。
 
-## 你能复刻什么价值？
+## 你可以复用什么？
 
 你可以把这个项目当成以下能力的参考实现：
 
@@ -224,9 +219,9 @@ recipe/routing projection，`documentation-and-adrs` 与
 | --- | --- |
 | 发布有用资源但不泄露私有状态 | 公开/私有边界规则和验证检查 |
 | 把浏览器书签变成可维护目录 | 结构化来源记录 + 生成的可导入 HTML |
-| 避免广义资源发现变成噪音 | 公开 resource-radar 模板 + 私有 radar lane：评分、生命周期、去重、人工闸门 |
-| 在不同环境安全共享 AI/Agent skills | curated skills lane：来源、安全审查、拓扑、冲突、发布清单 |
-| 让 AI 协作配置可迁移 | Codex 与 Claude 配置模板 lane：把可复用结构和私人偏好分开 |
+| 避免广义资源发现变成噪音 | 公开资源雷达模板 + 私有雷达链路：评分、生命周期、去重、人工闸门 |
+| 在不同环境安全共享 AI/Agent skills | 精选技能链路：来源、安全审查、拓扑、冲突、发布清单 |
+| 让 AI 协作配置可迁移 | Codex 与 Claude 配置模板：把可复用结构和私人偏好分开 |
 | 让别人参与共建 | 贡献、issue、安全、行为准则、命名和发布文档 |
 
 关键不在某个单独脚本，而在这个闭环：
@@ -239,7 +234,7 @@ recipe/routing projection，`documentation-and-adrs` 与
 
 ## 它如何工作？
 
-设计上采用模块化，而不是把所有东西塞进一个巨型仓库。每条 lane 只负责一件相对清晰的事：
+设计上采用模块化，而不是把所有东西塞进一个巨型仓库。每条链路只负责一件相对清晰的事：
 
 ```text
 open-resource-governance
@@ -249,10 +244,10 @@ resource-radar
   私有发现来源、归一化、评分、去重、生命周期报告
 
 resource-radar-public
-  公开安全资源雷达 schema、demo fixtures、评分/生命周期示例、报告和验证
+  公开安全资源雷达结构、示例数据、评分/生命周期示例、报告和验证
 
 research-bookmarks
-  私有完整书签来源、overlay、审计、脱敏输入
+  私有完整书签来源、私有层、审计、脱敏输入
 
 research-bookmarks-public
   公开安全书签目录和生成的可导入浏览器 HTML
@@ -276,14 +271,14 @@ claude-user-config
 核心规则是：
 
 ```text
-公开核心 + 私有 overlay
+公开核心 + 私有层
 ```
 
-公开仓承载可复用结构、规则、schema、文档、示例、官方/公开安全来源，以及通过验证的生成产物。
+公开仓承载可复用结构、规则、数据格式、文档、示例、官方/公开安全来源，以及通过验证的生成产物。
 私有仓保留个人书签、配置、记忆、偏好、账号状态、本机路径和未公开决策。
 
-例外是用户配置 lane：配置仓可以明确区分 Codex 或 Claude，因为它们对应真实的私有用户环境。
-其它 lane 应保持 Agent 中立、工具中立、通用和可复用。
+例外是用户配置链路：配置仓可以明确区分 Codex 或 Claude，因为它们对应真实的私有用户环境。
+其它链路应保持 Agent 中立、工具中立、通用和可复用。
 
 ## 快速开始
 
@@ -315,7 +310,7 @@ python -B scripts/verify.py
 
 ### 我想搭自己的公开/私有书签系统
 
-参考书签 lane：
+参考书签链路：
 
 1. 完整浏览器导出留在私有仓；
 2. 把适合公开的来源转成结构化记录；
@@ -341,13 +336,13 @@ python -B scripts/verify.py
 ## 设计依据
 
 1. 默认公开安全：不要发布私有配置、私有书签、记忆、凭据、本机路径、账号状态或个人偏好。
-2. 模块化 lane，而不是巨型一体化系统：每个仓库只拥有清晰的一段链路。
+2. 模块化链路，而不是巨型一体化系统：每个仓库只拥有清晰的一段链路。
 3. 自动化要有闸门：生成产物应确定、可验证；高影响公开仍需人工审查。
 4. 追求有用，不追求吞噬一切：目标是提高覆盖、发现和判断质量，不是收集所有东西。
 5. 证据优先：重要结论应有脚本、报告或审查记录支撑。
-6. 候选 lane 先保持轻量：未来方向应先作为 candidate lane 跟踪，不要在缺少证据、
+6. 候选链路先保持轻量：未来方向应先作为候选项跟踪，不要在缺少证据、
    维护能力和真实用户价值之前做成系统。
-7. 共享底座，差异化 lane：各仓库应尽量复用同一套治理逻辑，但保留各自内容、
+7. 共享底座，差异化链路：各仓库应尽量复用同一套治理逻辑，但保留各自内容、
    权威边界和验证方式。
 
 ## 本仓库不做什么
@@ -356,9 +351,9 @@ python -B scripts/verify.py
 
 - 保存私有用户配置或原生记忆；
 - 导入完整私有浏览器书签；
-- 发布 curated Skill payload；
+- 发布精选技能内容；
 - 安装或配置运行时工具；
-- 证明所有关联私有 lane 都已经可以公开；
+- 证明所有关联私有链路都已经可以公开；
 - 替代具体项目的许可证、安全或质量审查。
 
 ## 如何贡献？
@@ -370,7 +365,7 @@ python -B scripts/verify.py
 - 更安全的公开/私有边界示例；
 - 针对临时项目名的命名建议；
 - 防止误泄露私有数据的验证检查；
-- 对书签和资源发现 lane 的真实使用反馈。
+- 对书签和资源发现链路的真实使用反馈。
 
 请参考 [`CONTRIBUTING.md`](CONTRIBUTING.md)、
 [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) 和 [`SECURITY.md`](SECURITY.md)。
@@ -389,7 +384,7 @@ python -B scripts/verify.py
 
 见 [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md)，其中记录了
 当前支持入口、赞助意向联系路径和未来正式收款渠道的启用闸门。正式付款渠道只会在
-owner 可控且验证通过后加入。
+维护者可控且验证通过后加入。
 
 收款渠道取舍记录在 [`docs/funding-options-matrix.md`](docs/funding-options-matrix.md)，
 其中包含国际渠道、fiscal host 和国内支持方式的评估边界。
@@ -405,34 +400,34 @@ owner 可控且验证通过后加入。
 - [`docs/system-topology.md`](docs/system-topology.md) — 全局图、拓扑和仓库关系索引。
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 公开/私有安全边界。
 - [`docs/shared-governance-baseline.md`](docs/shared-governance-baseline.md) — 仓库家族共享的治理底座。
-- [`docs/mvp-plan-and-acceptance.md`](docs/mvp-plan-and-acceptance.md) — curated
+- [`docs/mvp-plan-and-acceptance.md`](docs/mvp-plan-and-acceptance.md) — 精选
   Skills 末端消费者 MVP 计划与验收标准。
 - [`docs/mvp-global-closeout-verification.md`](docs/mvp-global-closeout-verification.md)
   — MVP 跨仓收官验收与公开文档/宣传刷新检查表。
 - [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)
-  — selected-MVP 证据快照与收官状态；明确不是所有未来工作的终局完成声明。
+  — 已选 MVP 的证据快照与收官状态；明确不是所有未来工作的终局完成声明。
 - [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)
-  — 当前 MVP 状态；记录 selected-MVP 收官后的暂停观察状态与后续仍需授权的 gates。
+  — 当前 MVP 状态；记录已选 MVP 收官后的暂停观察状态与后续仍需授权的闸门。
 - [`docs/mvp-artifact-hygiene-review.md`](docs/mvp-artifact-hygiene-review.md)
-  — Gate 08 过程产物卫生审查；防止草稿、生成产物和宣传材料意外变成真相源。
+  — 第 08 道闸门：过程产物卫生审查；防止草稿、生成产物和宣传材料意外变成真相源。
 - [`docs/mvp-continuous-assurance-review.md`](docs/mvp-continuous-assurance-review.md)
-  — Gate 09 持续保障审查；把绿色检查视为当前快照证据，而不是永久健康证书。
+  — 第 09 道闸门：持续保障审查；把绿色检查视为当前快照证据，而不是永久健康证书。
 - [`docs/mvp-persistence-continuity-review.md`](docs/mvp-persistence-continuity-review.md)
-  — Gate 10 持久化与连续性审查；记录上下文丢失、环境变化、Agent 切换和中断恢复锚点。
+  — 第 10 道闸门：持久化与连续性审查；记录上下文丢失、环境变化、Agent 切换和中断恢复锚点。
 - [`docs/mvp-observability-explainability-review.md`](docs/mvp-observability-explainability-review.md)
-  — Gate 11 可观测与可解释审查；记录自动化、路由、清理、生命周期、发布和公开声明的证据契约。
+  — 第 11 道闸门：可观测与可解释审查；记录自动化、路由、清理、生命周期、发布和公开声明的证据契约。
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前闸门。
-- [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道发布和推广规划 runbook；实际发布仍受闸门约束。
+- [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道发布和推广规划说明；实际发布仍受闸门约束。
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词草案；实际发布仍受闸门约束。
 - [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — 公开安全首发图片素材；实际发布仍受闸门约束。
 - [`docs/bookmark-lane-closeout-2026-06-26.md`](docs/bookmark-lane-closeout-2026-06-26.md)
-  — 书签 lane 拆分、验证和公开/私有收官证据。
+  — 书签链路拆分、验证和公开/私有收官证据。
 - [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md) — 支持入口、
   赞助意向联系路径和资金渠道启用闸门。
 - [`docs/funding-options-matrix.md`](docs/funding-options-matrix.md) — 收款渠道
   评估矩阵与启用检查表。
 - [`docs/future-lane-incubation.md`](docs/future-lane-incubation.md) — 候选未来
-  lane 与晋级规则。
+  链路与晋级规则。
 - [`docs/private-project-consumption-model.md`](docs/private-project-consumption-model.md)
   — 公开安全产物如何服务私有/核心项目，同时不暴露、不直接改写它们。
 - [`docs/contact-and-social.md`](docs/contact-and-social.md) — 公开安全联系路径与未来社媒链接策略。

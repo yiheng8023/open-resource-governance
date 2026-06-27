@@ -7,142 +7,134 @@ English | [简体中文](README.zh-CN.md)
 
 ![Open Resource Governance launch card](docs/assets/launch-video/title-card-16x9.png)
 
-A public-safe starter system for organizing useful resources, research
-bookmarks, AI/agent skills, and portable AI-collaboration configuration without
-leaking private state.
+A public-safe starter system for turning scattered links, tools, agent skills,
+bookmarks, and AI-collaboration configuration into something reusable without
+publishing private state.
 
-If you have ever collected links, tools, prompts, agent skills, templates, and
-automation ideas across many places, this project is about turning that mess
-into a governed, reproducible, public/private-safe system.
+The short version: keep the complete working set private, publish only reviewed
+public outputs, and let GitHub automation regenerate and verify the parts other
+people can reuse.
 
-## In one minute
+## Start here
 
-This project is not a bookmark dump, prompt pack, or private configuration
-backup. It is a pattern for building a small resource-governance ecosystem:
+| If you want to... | Go here | What you get |
+| --- | --- | --- |
+| Import the public bookmark catalog | [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public) | 328 public-safe sources plus generated browser-importable HTML |
+| Try the resource-radar pattern | [`resource-radar-public`](https://github.com/yiheng8023/resource-radar-public) | schema, scoring/lifecycle examples, demo records, and [`outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) |
+| Build a private AI configuration repo | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) or [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | public-safe structure without real memory, credentials, or preferences |
+| Understand the whole system | [`docs/system-topology.md`](docs/system-topology.md) and [`docs/repository-map.md`](docs/repository-map.md) | the repository map, boundaries, and relationship rules |
+| Help improve the project | [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`docs/user-developer-compact.md`](docs/user-developer-compact.md) | contribution scope, user rights, safety expectations, and feedback paths |
+
+You can read and use the public outputs directly on GitHub. A local checkout is
+only needed if you want to run the scripts yourself or submit changes.
+
+## What is this?
+
+This is not a bookmark dump, prompt pack, or private configuration backup. It
+is a small governance pattern:
 
 ```text
 private collection
 -> structured records
--> public-safe projection
--> deterministic generation
--> verification
--> community feedback
--> periodic renewal
+-> public-safe output
+-> generated output
+-> validation
+-> feedback
+-> renewal
 ```
 
-The first working lane is bookmarks:
+The first completed path is the bookmark path:
 
-- a private source repository keeps the complete browser import;
-- a public repository publishes a filtered, structured, browser-importable
-  bookmark catalog;
-- validation scripts check that public output does not accidentally include
-  private-only data;
-- the same pattern can later serve resource discovery, curated skills, and
-  portable AI-collaboration configuration.
+```text
+389 private bookmark entries
+-> filtered public-safe output
+-> 328 public-safe sources
+-> generated browser-importable HTML
+-> verification and user-flow simulation
+```
 
-## System map at a glance
+That proof lives in
+[`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public):
 
-The project is a graph of lanes, not a single monolithic repository. Each
-public repository should explain itself, while the hub keeps the global
-relationship map.
+- [`data/public-sources.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/public-sources.json)
+  stores the structured public catalog.
+- [`exports/research-engineering-bookmarks-public.html`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/exports/research-engineering-bookmarks-public.html)
+  is the generated browser-importable HTML.
+- [`data/projection-report.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/projection-report.json)
+  records the public output counts and evidence.
+
+## Repository navigation
+
+The project is a set of connected workstreams, not one giant repository. Each
+public repository explains its own role; this hub keeps the global map.
+
+| Repository | Role | Visibility |
+| --- | --- | --- |
+| `open-resource-governance` | public hub, navigation, shared rules, launch/readiness docs | public |
+| `research-bookmarks-public` | public bookmark catalog and generated HTML | public |
+| `resource-radar-public` | public resource-radar template and demo reports | public |
+| `codex-user-config-template` | public-safe Codex configuration template | public |
+| `claude-user-config-template` | public-safe Claude Code configuration template | public |
+| `resource-radar`, `research-bookmarks`, user config repos | real imports, review pools, private overlays, memory, preferences, account state | private |
+| `agent-skills-curated` | reviewed Skill governance and release evidence | staged/private until separately released |
+
+<details>
+<summary>Topology snapshot</summary>
 
 ```mermaid
 flowchart LR
-  hub["open-resource-governance<br/>public hub, topology, gates"]
+  hub["open-resource-governance<br/>public hub + navigation"]
   bookmarks["research-bookmarks-public<br/>public bookmark catalog + HTML"]
-  radar["resource-radar-public<br/>resource schema, scoring, lifecycle demo"]
-  templates["config templates<br/>portable AI-collaboration baselines"]
-  private["private overlays<br/>real imports, preferences, account state"]
+  radar["resource-radar-public<br/>resource schema + lifecycle demo"]
+  templates["configuration templates<br/>portable AI-collaboration baselines"]
+  private["private repositories<br/>imports, preferences, account state"]
   skills["agent-skills-curated<br/>reviewed Skill releases"]
 
   hub --> bookmarks
   hub --> radar
   hub --> templates
   hub --> skills
-  private -. "filtered public-safe projection" .-> bookmarks
-  bookmarks -. "can seed discovery" .-> radar
+  private -. "filtered public output" .-> bookmarks
+  bookmarks -. "source seeds" .-> radar
   radar -. "candidate proposals" .-> skills
-  skills -. "reviewed release manifests" .-> private
+  skills -. "reviewed manifests" .-> private
   templates -. "safe starting points" .-> private
 ```
 
-For the full topology and edge meanings, see
+</details>
+
+For edge meanings and the full graph, see
 [`docs/system-topology.md`](docs/system-topology.md). If you enter through a
-sub-repository, look for its "System context" section to see where it sits in
-this graph.
+sub-repository, look for its "System context" section.
 
-## Proof, not just plans
+## Cloud-first renewal
 
-As of 2026-06-26, the first lane is already end-to-end:
+The public workflow is GitHub-native:
 
-```text
-389 private bookmark entries
--> filtered public-safe projection
--> 328 public-safe sources
--> generated browser-importable HTML
--> verification and user-flow simulation
-```
+- public repositories keep source data, generated outputs, policies, and
+  validation scripts together;
+- GitHub Actions runs checks on pull requests and pushes;
+- generated outputs are committed as reviewable artifacts instead of hidden
+  local files;
+- private overlays remain private and are not needed to inspect public output.
 
-The public artifact lives in
-[`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public):
-
-- structured source catalog:
-  [`data/public-sources.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/public-sources.json)
-- generated browser-importable HTML:
-  [`exports/research-engineering-bookmarks-public.html`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/exports/research-engineering-bookmarks-public.html)
-
-That matters because the project is not asking users to trust a diagram. It
-shows a working public/private split with generated output and checks.
-
-## Where are the outputs?
-
-The project is meant to be consumed from GitHub first. You should not need to
-set up a local environment just to inspect the public outputs.
-
-Current public outputs:
-
-| Output | Where to find it | What it is for |
-| --- | --- | --- |
-| Hub map and governance docs | this repository's README and [`docs/`](docs) | Understand the repository family, public/private boundary, MVP state, and contribution path |
-| Public bookmark catalog | [`research-bookmarks-public/data/public-sources.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/public-sources.json) | Structured public-safe source records |
-| Browser-importable bookmark HTML | [`research-bookmarks-public/exports/research-engineering-bookmarks-public.html`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/exports/research-engineering-bookmarks-public.html) | Import or inspect the generated public bookmark projection |
-| Bookmark projection evidence | [`research-bookmarks-public/data/projection-report.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/projection-report.json) | See counts, filtering posture, and projection evidence |
-| Resource-radar demo report | [`resource-radar-public/outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) | See the public-safe scoring/lifecycle report shape |
-| Public configuration templates | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) and [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | Reuse public-safe AI collaboration configuration patterns |
-| Launch and contribution material | [`docs/promotion-kit.md`](docs/promotion-kit.md), [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md), [`docs/user-developer-compact.md`](docs/user-developer-compact.md) | Understand how to explain, support, or contribute safely |
-
-## Cloud-first automation and renewal
-
-The public workflow is GitHub-native and cloud-first:
-
-- public repositories carry their own source data, generated outputs, policies,
-  and validation scripts;
-- GitHub Actions runs validation on pull requests and pushes;
-- generated outputs are committed back as reviewable artifacts rather than
-  hidden local state;
-- local checkout is optional for contributors who want to run scripts before a
-  pull request, but it is not required for ordinary users to consume the public
-  outputs;
-- private overlays stay private and are never required to inspect the public
-  projection.
-
-The system is designed for controlled metabolism, not one-time publication:
+The system is meant to renew itself over time:
 
 ```text
 discover or import
 -> normalize
 -> score and classify
--> generate public-safe outputs
+-> generate public-safe output
 -> verify
--> review gates
+-> review
 -> publish
--> observe decay, duplicates, stale links, and better sources
+-> watch for stale links, duplicates, license drift, and better sources
 -> renew, retire, merge, or reject
 ```
 
-That self-iteration loop is deliberately gated. Automation prepares evidence
-and catches drift; humans keep authority over visibility, funding, promotion,
-private overlays, and high-impact acceptance decisions.
+Automation prepares evidence and catches drift. Human review still controls
+publication, visibility, funding, promotion, private overlays, and high-impact
+acceptance decisions.
 
 ## What problem does this solve?
 
@@ -161,7 +153,7 @@ This project provides a lightweight governance pattern for that problem:
 collect broadly
 -> classify and score
 -> keep private overlays private
--> publish only public-safe projections
+-> publish only public-safe outputs
 -> verify generated artifacts
 -> review high-impact changes before release
 ```
@@ -245,7 +237,7 @@ The evidence ledger is
 The executed release/routing proof is
 [`docs/mvp03-release-routing-closeout-2026-06-27.md`](docs/mvp03-release-routing-closeout-2026-06-27.md).
 
-## What value can you reproduce?
+## What can you reuse?
 
 You can use this project as a reference implementation for:
 
