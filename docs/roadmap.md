@@ -81,10 +81,11 @@ repository truth is:
 - MVP-01 source candidate selection has passed.
 - MVP-02 review, neutralization, and non-runtime adapted draft creation has
   passed.
-- MVP-03 deterministic release / routing review is still waiting for explicit
-  owner approval before candidate-specific release-or-routing review.
+- MVP-03 release/routing candidate review has recorded explicit owner approval
+  and candidate-specific disposition evidence.
 
-Until that approval is recorded, the adapted drafts remain non-runtime evidence:
+Until later, narrower gates are approved, the adapted drafts and MVP-03
+candidate decisions remain non-runtime evidence:
 
 - They are not approved payloads.
 - They are not release-manifest entries.

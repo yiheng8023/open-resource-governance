@@ -134,12 +134,14 @@ Current evidence:
 
 - MVP-01 source candidate selection: passed.
 - MVP-02 review, neutralization, and non-runtime adapted draft creation: passed.
-- MVP-03 deterministic release / routing review: waiting for explicit owner
-  approval before candidate-specific release-or-routing review.
+- MVP-03 release/routing candidate review: approval recorded and
+  candidate-specific disposition evidence exists; later payload, manifest,
+  routing, install, and runtime gates remain separate.
 
 This means the selected Skill candidates have review evidence and non-runtime
-drafts, but they are not approved payloads, not in the release manifest, not
-runtime routes, and not installed into a private environment.
+drafts plus MVP-03 disposition evidence, but they are not approved payloads,
+not in the release manifest, not runtime routes, and not installed into a
+private environment.
 
 The current decision point is recorded in
 [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md).
@@ -368,7 +370,8 @@ international, fiscal-host, and domestic-support considerations.
 - [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)
   — current MVP evidence snapshot; explicitly not a completion claim.
 - [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)
-  — current MVP human gate; records that goal continuation is not approval.
+  — current MVP human gate; records the MVP-03 candidate review decision point
+  and the later gates that still require explicit approval.
 - [`docs/mvp-artifact-hygiene-review.md`](docs/mvp-artifact-hygiene-review.md)
   — Gate 08 process-artifact hygiene review; explicitly keeps drafts,
   generated outputs, and promotion material from becoming accidental truth.
@@ -385,11 +388,11 @@ international, fiscal-host, and domestic-support considerations.
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — gates before
   public release.
 - [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) —
-  free-channel launch and promotion runbook.
+  free-channel launch and promotion planning runbook; publication remains gated.
 - [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — short launch
-  video script, storyboard, and AI video prompt.
+  video script, storyboard, and AI video prompt draft; publication remains gated.
 - [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — prepared
-  public-safe launch image assets.
+  public-safe launch image assets; publication remains gated.
 - [`docs/bookmark-lane-closeout-2026-06-26.md`](docs/bookmark-lane-closeout-2026-06-26.md)
   — bookmark lane split, verification, and public/private closeout evidence.
 - [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md) —

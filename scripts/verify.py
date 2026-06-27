@@ -152,7 +152,7 @@ def verify_topology() -> None:
         fail("topology must include the current MVP decision point gate")
     if mvp_gate.get("kind") != "governance_gate":
         fail("MVP decision point must be modeled as a governance_gate")
-    if mvp_gate.get("state") != "mvp03_preflight_ready_awaiting_owner_approval":
+    if mvp_gate.get("state") != "mvp03_candidate_review_recorded_later_release_gates_pending":
         fail("MVP decision point topology node has stale state")
     if mvp_gate.get("not_release_authority") is not True:
         fail("MVP decision point topology node must not be release authority")
@@ -185,8 +185,8 @@ def verify_topology() -> None:
     for phrase in [
         "current MVP gate node",
         "not release authority",
-        "MVP-03 gate: awaiting owner approval",
-        "gates release/routing review",
+        "MVP-03 gate: candidate review recorded",
+        "records release/routing review",
         "prevents unapproved runtime consumption",
     ]:
         if phrase not in system_topology:
@@ -271,7 +271,7 @@ def verify_current_public_private_status() -> None:
         "Current MVP gate",
         "MVP-01 source candidate selection has passed",
         "MVP-02 review, neutralization, and non-runtime adapted draft creation has",
-        "MVP-03 deterministic release / routing review is still waiting for explicit",
+        "MVP-03 release/routing candidate review has recorded explicit owner approval",
         "not approved payloads",
         "not release-manifest entries",
         "not generated routing projections",
@@ -462,8 +462,8 @@ def verify_mvp_acceptance_map() -> None:
         "small batch",
         "Global closeout",
         "Current stage note",
-        "MVP-03 release-or-routing candidate review is still waiting for explicit owner",
-        "Goal continuation keeps this MVP active, but it does not authorize",
+        "MVP-03 release-or-routing candidate review has recorded explicit owner approval",
+        "active, but it still does not authorize",
         "mvp-current-decision-point.md",
         "roadmap.md",
         "Evidence from MVP-01, MVP-02, MVP-03, MVP-04, MVP-06",
@@ -561,7 +561,7 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         "Current MVP status",
         "MVP-01 source candidate selection: passed",
         "MVP-02 review, neutralization, and non-runtime adapted draft creation: passed",
-        "MVP-03 deterministic release / routing review",
+        "MVP-03 release/routing candidate review",
         "not approved payloads",
     ]:
         if phrase not in readme:
@@ -571,7 +571,7 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         "当前 MVP 状态",
         "MVP-01 来源候选选择：已通过",
         "MVP-02 审查、中立化和非运行时适配草案创建：已通过",
-        "MVP-03 确定性发布 / 路由审查",
+        "MVP-03 release/routing 候选审查",
         "不是 approved payload",
     ]:
         if phrase not in readme_zh:
@@ -590,8 +590,8 @@ def verify_mvp_current_decision_point() -> None:
         fail("mvp-current-decision-point.json schema_version must be 1")
     if decision.get("mvp_name") != ledger.get("mvp_name"):
         fail("MVP current decision point must reference the active MVP")
-    if decision.get("status") != "mvp03_preflight_ready_awaiting_owner_approval":
-        fail("MVP current decision point must record MVP-03 preflight state awaiting owner approval")
+    if decision.get("status") != "mvp03_candidate_review_recorded_later_release_gates_pending":
+        fail("MVP current decision point must record MVP-03 candidate review state")
     if decision.get("not_completion_claim") is not True:
         fail("MVP current decision point must explicitly avoid completion claims")
     if decision.get("not_approval") is not True:
@@ -621,10 +621,10 @@ def verify_mvp_current_decision_point() -> None:
     ]
     if decision.get("safe_approval_phrases") != expected_phrases:
         fail("MVP current decision point safe approval phrases changed")
-    if decision.get("last_approval_event_recorded") != "mvp02-owner-approval-2026-06-27-adapted-draft":
-        fail("MVP current decision point must record the consumed MVP-02 approval event")
+    if decision.get("last_approval_event_recorded") != "mvp03-owner-approval-2026-06-27-release-or-routing-candidate-review":
+        fail("MVP current decision point must record the consumed MVP-03 approval event")
     for key, value in decision.get("current_permissions", {}).items():
-        expected = key == "release_review_scaffolding_allowed"
+        expected = key == "candidate_review_recorded"
         if value is not expected:
             fail(f"MVP current decision point permission mismatch: {key}")
     required_disallowed = {
@@ -638,9 +638,9 @@ def verify_mvp_current_decision_point() -> None:
     if set(decision.get("still_disallowed", [])) != required_disallowed:
         fail("MVP current decision point still_disallowed changed")
     required_reasons = {
-        "MVP-03 preflight evidence is not release approval",
-        "candidate material remains non-executable, non-release, and non-runtime",
-        "the next action is still a separate human authorization gate, not an automation step",
+        "MVP-03 candidate review evidence is not release approval",
+        "candidate decisions remain non-executable, non-release, and non-runtime",
+        "later manifest, routing, payload, install, and runtime gates remain separate human authorization boundaries",
         "public closeout claims remain unproven until later MVP workstreams pass",
     }
     if set(decision.get("why_this_matters", [])) != required_reasons:
@@ -650,7 +650,7 @@ def verify_mvp_current_decision_point() -> None:
         "not a completion claim and not release approval",
         "Goal continuation is not approval",
         "do not edit `skills/`",
-        "release_or_routing_candidate_review",
+        "later_narrow_release_or_routing_diff_gate",
         "Approve MVP-03 release-or-routing candidate review only",
         "批准进入 MVP-03 release/routing 候选审查阶段",
     ]:
@@ -1049,6 +1049,69 @@ def verify_support_entry() -> None:
         fail("README.md must link the funding options matrix")
 
 
+def verify_promotion_publication_boundary() -> None:
+    promotion = (ROOT / "docs" / "promotion-kit.md").read_text(encoding="utf-8")
+    brief = (ROOT / "docs" / "launch-video-brief.md").read_text(encoding="utf-8")
+    assets = (ROOT / "docs" / "launch-video-assets.md").read_text(encoding="utf-8")
+    playbook = (ROOT / "docs" / "free-promotion-playbook.md").read_text(encoding="utf-8")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme_zh = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+    required_by_file = {
+        "promotion-kit.md": (
+            promotion,
+            [
+                "planning references",
+                "preparation only",
+                "not proof of MVP completion",
+                "owner-controlled gate",
+            ],
+        ),
+        "launch-video-brief.md": (
+            brief,
+            [
+                "prepared draft, not a release approval",
+                "MVP global closeout",
+                "owner-controlled gate",
+                "Do not use this brief to claim that the Skills MVP is complete",
+            ],
+        ),
+        "launch-video-assets.md": (
+            assets,
+            [
+                "prepared material only",
+                "not proof of completion",
+                "instruction to publish",
+            ],
+        ),
+        "free-promotion-playbook.md": (
+            playbook,
+            [
+                "broad social or video refresh",
+                "current MVP",
+                "MVP global",
+                "closeout",
+                "low-claim update",
+            ],
+        ),
+        "README.md": (
+            readme,
+            [
+                "publication remains gated",
+            ],
+        ),
+        "README.zh-CN.md": (
+            readme_zh,
+            [
+                "实际发布仍受闸门约束",
+            ],
+        ),
+    }
+    for name, (text, phrases) in required_by_file.items():
+        for phrase in phrases:
+            if phrase not in text:
+                fail(f"{name} missing promotion publication boundary phrase: {phrase}")
+
+
 def verify_no_obvious_private_payloads() -> None:
     for path in ROOT.rglob("*"):
         if ".git" in path.parts or not path.is_file():
@@ -1097,6 +1160,7 @@ def main() -> None:
     verify_mvp_persistence_continuity_review()
     verify_mvp_observability_explainability_review()
     verify_support_entry()
+    verify_promotion_publication_boundary()
     verify_no_obvious_private_payloads()
     verify_no_stale_stage_phrases()
     print("open-resource-governance verification passed")

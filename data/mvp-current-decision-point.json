@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "mvp03_preflight_ready_awaiting_owner_approval",
+  "status": "mvp03_candidate_review_recorded_later_release_gates_pending",
   "not_completion_claim": true,
   "not_approval": true,
   "date": "2026-06-27",
-  "purpose": "Record the current MVP decision point so continuation can resume from repository truth without mistaking MVP-03 preflight evidence for release, routing, manifest, or runtime approval.",
+  "purpose": "Record the current MVP decision point so continuation can resume from repository truth without mistaking MVP-03 candidate review evidence for release, routing, manifest, or runtime approval.",
   "current_workstream": "mvp-03-release-manifest",
   "current_gate": "mvp03-release-or-routing-candidate-review",
   "source_repository": "agent-skills-curated",
-  "source_head": "c7a263fb297ed6cacd1f175fcb96a0cf94bb062b",
+  "source_head": "82a4bf8612061c11c19c5f9f373c582e25ffb23a",
   "source_records": [
     "registry/mvp-approval-requests.json",
     "registry/mvp02-preflight-readiness.json",
@@ -28,15 +28,18 @@
     "registry/mvp03-release-or-routing-review-template.json",
     "docs/mvp03-release-or-routing-review-template.md",
     "registry/mvp03-release-or-routing-approval-request.json",
-    "docs/mvp03-release-or-routing-approval-request.md"
+    "docs/mvp03-release-or-routing-approval-request.md",
+    "registry/mvp03-approval-events.json",
+    "registry/mvp03-release-or-routing-candidate-review.json",
+    "docs/mvp03-release-or-routing-candidate-review.md"
   ],
   "candidate_ids": [
     "spec-driven-development",
     "documentation-and-adrs",
     "code-review-and-quality"
   ],
-  "decision_needed": "Whether the owner approves entering MVP-03 release-or-routing candidate review for the three adapted drafts; no release, routing projection, approved payload, live install, publication, or source redistribution is approved yet.",
-  "last_approval_event_recorded": "mvp02-owner-approval-2026-06-27-adapted-draft",
+  "decision_needed": "Which later, narrower gate should be approved after MVP-03 candidate review: routing projection proposal, merge into existing approved Skill, approved-payload diff, release-manifest change, consumer install, runtime proof, or no further action. No release, routing projection, approved payload, live install, publication, or source redistribution is approved yet.",
+  "last_approval_event_recorded": "mvp03-owner-approval-2026-06-27-release-or-routing-candidate-review",
   "safe_approval_phrases": [
     "批准进入 MVP-03 release/routing 候选审查阶段",
     "Approve MVP-03 release-or-routing candidate review only"
@@ -49,7 +52,7 @@
     "record a preflight or authorization request that does not approve candidate payload"
   ],
   "current_permissions": {
-    "release_review_scaffolding_allowed": true,
+    "candidate_review_recorded": true,
     "approved_payload_allowed": false,
     "release_manifest_allowed": false,
     "routing_projection_allowed": false,
@@ -65,16 +68,17 @@
     "redistribute upstream source text as approved curated payload"
   ],
   "why_this_matters": [
-    "MVP-03 preflight evidence is not release approval",
-    "candidate material remains non-executable, non-release, and non-runtime",
-    "the next action is still a separate human authorization gate, not an automation step",
+    "MVP-03 candidate review evidence is not release approval",
+    "candidate decisions remain non-executable, non-release, and non-runtime",
+    "later manifest, routing, payload, install, and runtime gates remain separate human authorization boundaries",
     "public closeout claims remain unproven until later MVP workstreams pass"
   ],
-  "next_state_if_approved": "release_or_routing_candidate_review",
+  "next_state_if_approved": "later_narrow_release_or_routing_diff_gate",
   "next_required_evidence_if_approved": [
-    "release-or-routing gate approval record",
-    "decision per draft: release payload, recipe/routing change, reference-only, or reject",
-    "manifest or routing diff if separately approved",
+    "specific next-gate approval record",
+    "routing projection proposal for spec-driven-development if that lane proceeds",
+    "merge proposal for documentation-and-adrs or code-review-and-quality if those lanes proceed",
+    "manifest, approved-payload, or routing diff only if separately approved",
     "verification command results",
     "explicit record that live install and publication remain unchanged unless separately approved"
   ]

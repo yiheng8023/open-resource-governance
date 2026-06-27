@@ -60,10 +60,11 @@ This MVP does not:
 
 As of the current decision point, MVP-01 source candidate selection and MVP-02
 review, neutralization, and non-runtime adapted draft creation have passed.
-MVP-03 release-or-routing candidate review is still waiting for explicit owner
-approval. Goal continuation keeps this MVP active, but it does not authorize
-release, routing, installation, publication, source redistribution, or manifest
-changes.
+MVP-03 release-or-routing candidate review has recorded explicit owner approval
+and candidate-specific disposition evidence. Goal continuation keeps this MVP
+active, but it still does not authorize release, routing projection changes,
+installation, publication, source redistribution, approved-payload diffs, or
+manifest changes.
 
 The active gate is recorded in
 [`mvp-current-decision-point.md`](mvp-current-decision-point.md). The public

@@ -5,6 +5,10 @@ Prepared public-safe image assets for the first
 project name are provisional; assets should not imply that the current name is
 final.
 
+These are prepared material only. They are not proof of completion and not an
+instruction to publish. Use them after MVP closeout or for an explicitly
+owner-approved low-claim preview.
+
 ## Asset list
 
 | File | Format | Use |

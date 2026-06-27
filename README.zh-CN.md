@@ -116,10 +116,11 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 
 - MVP-01 来源候选选择：已通过。
 - MVP-02 审查、中立化和非运行时适配草案创建：已通过。
-- MVP-03 确定性发布 / 路由审查：仍在等待 owner 明确批准，之后才可进入逐候选 release-or-routing 审查。
+- MVP-03 release/routing 候选审查：已记录 owner 授权和逐候选处置证据；后续
+  payload、manifest、routing、install、runtime 闸门仍需分别批准。
 
-这意味着已选 Skill 候选已经有审查证据和非运行时草案，但它们不是 approved payload，
-不在 release manifest 中，不是运行时路由，也没有安装进私有环境。
+这意味着已选 Skill 候选已经有审查证据、非运行时草案和 MVP-03 处置证据，但它们
+不是 approved payload，不在 release manifest 中，不是运行时路由，也没有安装进私有环境。
 
 当前决策点记录在
 [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)。
@@ -328,9 +329,9 @@ owner 可控且验证通过后加入。
 - [`docs/mvp-observability-explainability-review.md`](docs/mvp-observability-explainability-review.md)
   — Gate 11 可观测与可解释审查；记录自动化、路由、清理、生命周期、发布和公开声明的证据契约。
 - [`docs/public-launch-gates.md`](docs/public-launch-gates.md) — 公开发布前闸门。
-- [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道发布和推广 runbook。
-- [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词。
-- [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — 公开安全首发图片素材。
+- [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md) — 免费渠道发布和推广规划 runbook；实际发布仍受闸门约束。
+- [`docs/launch-video-brief.md`](docs/launch-video-brief.md) — 首发短视频脚本、分镜和 AI 视频提示词草案；实际发布仍受闸门约束。
+- [`docs/launch-video-assets.md`](docs/launch-video-assets.md) — 公开安全首发图片素材；实际发布仍受闸门约束。
 - [`docs/bookmark-lane-closeout-2026-06-26.md`](docs/bookmark-lane-closeout-2026-06-26.md)
   — 书签 lane 拆分、验证和公开/私有收官证据。
 - [`docs/support-and-sponsorship.md`](docs/support-and-sponsorship.md) — 支持入口、

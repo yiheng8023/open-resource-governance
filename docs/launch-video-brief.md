@@ -5,6 +5,18 @@ This brief supports a lightweight first announcement video for
 temporary project name. It is intentionally simple, public-safe, and usable with
 video-generation tools, manual screen recording, or a basic slide editor.
 
+## Current use boundary
+
+This is a prepared draft, not a release approval and not a publication
+instruction. Before MVP global closeout, use it only for internal planning,
+prompt refinement, or an owner-approved low-claim preview. Broad social/video
+publication remains a separate owner-controlled gate after evidence-backed
+public refresh.
+
+Do not use this brief to claim that the Skills MVP is complete, that
+release/routing is approved, or that downstream repositories are generally
+available.
+
 ## Goal
 
 Explain the project in plain language:
@@ -132,7 +144,8 @@ Create a clean 30-second technical launch video for an open-source GitHub
 project currently using the temporary name "Open Resource Governance". Make it
 clear that the name is provisional and may change after public naming feedback.
 
-Use case: public launch announcement for GitHub, X, Weibo, and YouTube Shorts.
+Use case: public-safe explainer draft and announcement candidate for GitHub, X,
+Weibo, and YouTube Shorts.
 Scene/background: minimal dark-mode developer workspace with abstract repository
 cards, diagrams, and public/private boundary lines. No real people.
 Subject: a modular open-source governance hub that connects resource discovery,
