@@ -72,3 +72,24 @@ launch. The current visible map is:
 Future releases should still pass per-repository public/private boundary
 review. A public template or projection does not make the paired private source
 public, and a private source does not make the public projection incomplete.
+
+## Current MVP gate
+
+The active MVP is the curated Skills terminal-consumer loop. The current
+repository truth is:
+
+- MVP-01 source candidate selection has passed.
+- MVP-02 review, neutralization, and non-runtime adapted draft creation has
+  passed.
+- MVP-03 deterministic release / routing review is still waiting for explicit
+  owner approval before candidate-specific release-or-routing review.
+
+Until that approval is recorded, the adapted drafts remain non-runtime evidence:
+
+- They are not approved payloads.
+- They are not release-manifest entries.
+- They are not generated routing projections.
+- They are not live Agent installs.
+
+Safe work may continue on verification, evidence freshness, public-safe
+explanations, and template-only review scaffolding.

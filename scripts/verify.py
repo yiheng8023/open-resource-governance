@@ -225,6 +225,14 @@ def verify_current_public_private_status() -> None:
         "codex-user-config` and `claude-user-config` are private",
         "codex-user-config-template` and `claude-user-config-template` are public",
         "does not make the paired private source",
+        "Current MVP gate",
+        "MVP-01 source candidate selection has passed",
+        "MVP-02 review, neutralization, and non-runtime adapted draft creation has",
+        "MVP-03 deterministic release / routing review is still waiting for explicit",
+        "not approved payloads",
+        "not release-manifest entries",
+        "not generated routing projections",
+        "not live Agent installs",
     ]
     for phrase in required_roadmap_phrases:
         if phrase not in roadmap:
