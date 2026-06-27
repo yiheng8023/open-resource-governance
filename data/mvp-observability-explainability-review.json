@@ -124,7 +124,7 @@
         "artifact_cleanup",
         "public_refresh"
       ],
-      "known_gap": "Final closeout decisions cannot be fully explained until MVP-02 through MVP-06 produce release, runtime, feedback, and lifecycle evidence."
+      "known_gap": "Final closeout decisions cannot be fully explained until MVP-03 through MVP-06 produce release, runtime, feedback, and lifecycle evidence."
     },
     {
       "repository": "agent-skills-curated",
@@ -269,7 +269,7 @@
       "known explanation gaps are recorded instead of hidden"
     ],
     "remaining_before_gate_pass": [
-      "record release, install, routing, feedback, and lifecycle decisions after MVP-02 through MVP-06 exist",
+      "record release, install, routing, feedback, and lifecycle decisions after MVP-03 through MVP-06 exist",
       "run final explainability review against actual terminal-consumer evidence",
       "ensure public closeout claims point to evidence instead of prose-only assertions"
     ]

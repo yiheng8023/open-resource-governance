@@ -85,6 +85,13 @@ PRIVATE_ONLY_TERMS = [
     "private key",
 ]
 
+STALE_STAGE_PHRASES = [
+    "MVP-02 through MVP-06",
+    "MVP-02 still has an approval gate",
+    "MVP-02 approval request is not approval",
+    "approve adapted Skill for curated release",
+]
+
 
 def fail(message: str) -> None:
     raise SystemExit(f"verify failed: {message}")
@@ -989,6 +996,22 @@ def verify_no_obvious_private_payloads() -> None:
                 fail(f"private-only term found in {rel}: {term}")
 
 
+def verify_no_stale_stage_phrases() -> None:
+    checked_suffixes = {".md", ".json", ".py", ".yml", ".yaml"}
+    for path in ROOT.rglob("*"):
+        if ".git" in path.parts or not path.is_file():
+            continue
+        if path.suffix.lower() not in checked_suffixes:
+            continue
+        rel = path.relative_to(ROOT).as_posix()
+        if rel == "scripts/verify.py":
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for phrase in STALE_STAGE_PHRASES:
+            if phrase in text:
+                fail(f"stale stage phrase found in {rel}: {phrase}")
+
+
 def main() -> None:
     verify_required_files()
     verify_repository_map()
@@ -1007,6 +1030,7 @@ def main() -> None:
     verify_mvp_observability_explainability_review()
     verify_support_entry()
     verify_no_obvious_private_payloads()
+    verify_no_stale_stage_phrases()
     print("open-resource-governance verification passed")
 
 

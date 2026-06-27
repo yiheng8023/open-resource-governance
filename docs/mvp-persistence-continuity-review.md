@@ -82,6 +82,5 @@ validation.
 
 Gate 10 still cannot pass until later MVP evidence exists and a final
 continuity drill confirms the system can resume from current repository truth
-after MVP-02 through MVP-06 have produced real release, consumption, runtime,
+after MVP-03 through MVP-06 have produced real release, consumption, runtime,
 and feedback evidence.
-

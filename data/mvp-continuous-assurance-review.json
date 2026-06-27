@@ -294,7 +294,7 @@
     ],
     "remaining_before_gate_pass": [
       "turn cadence hints into per-lane recurring or event-driven check records where needed",
-      "run final cross-repository assurance review after MVP-02 through MVP-06 evidence exists",
+      "run final cross-repository assurance review after MVP-03 through MVP-06 evidence exists",
       "record any accepted stale-risk exceptions or retire stale artifacts before global closeout"
     ]
   }

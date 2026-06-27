@@ -62,7 +62,7 @@
         "repository_split_or_projection"
       ],
       "verify_command": "python -B scripts/verify.py",
-      "known_gap": "Final MVP closeout report does not exist yet because MVP-02 through MVP-06 are not complete."
+      "known_gap": "Final MVP closeout report does not exist yet because MVP-03 through MVP-06 are not complete."
     },
     {
       "repository": "agent-skills-curated",
@@ -243,7 +243,7 @@
       "known recovery gaps are explicit instead of hidden"
     ],
     "remaining_before_gate_pass": [
-      "run final continuity drill after MVP-02 through MVP-06 evidence exists",
+      "run final continuity drill after MVP-03 through MVP-06 evidence exists",
       "confirm current recovery anchors still match each repository's latest README and verify commands",
       "record final closeout continuation decision for the next Skills iteration, pause, or another terminal consumer"
     ]
