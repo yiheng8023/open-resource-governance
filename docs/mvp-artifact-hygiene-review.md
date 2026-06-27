@@ -36,10 +36,9 @@ fragments can become hidden second truth sources.
 ## Current repository posture
 
 The current pass records repository-level posture rather than final file-by-file
-closeout. That is intentional: MVP-02 non-runtime adapted draft creation is now
-recorded, while the active gate is MVP-03 release-or-routing candidate review.
-Later release, runtime, feedback, and closeout evidence may still create new
-review artifacts.
+closeout. That is intentional: MVP-02 adaptation and MVP-03 release/routing
+execution are now recorded, while lifecycle feedback and global closeout may
+still create new review artifacts.
 
 Important current interpretations:
 
@@ -49,7 +48,8 @@ Important current interpretations:
   after proof.
 - `agent-skills-curated` owns candidate, review, transition-gate, checklist,
   approval-request, manifest, and release evidence. Candidate Skills are review
-  material only until approved.
+  material only until approved; the current small batch crossed that boundary
+  only after explicit follow-up approval.
 - `codex-user-config` and `claude-user-config` are private source repositories.
   Their real memory, preferences, commands, hooks, local state, credentials,
   and account state are not public truth.
@@ -71,13 +71,14 @@ HTML export, topology projection, routing index, or media asset must point back
 to the data, script, or review process that produced it. It must not become a
 hand-edited second authority.
 
-## MVP-03 approval request is not release or routing approval
+## MVP-03 follow-up approval is batch-limited
 
 The consumed MVP-02 approval authorized only non-runtime adapted draft
-creation. The active MVP-03 approval request records the smallest next
-authorization needed for release-or-routing candidate review. It does not
-approve `skills/` edits, release-manifest changes, runtime installation,
-routing projection changes, source redistribution, or public promotion.
+creation. The later MVP-03 follow-up approval authorized release/routing,
+approved-payload diff, manifest change, and runtime install proof only for the
+selected small batch. It does not approve new sources, official/runtime Skill
+vendoring, unrelated `skills/` edits, unrelated manifest changes, source
+redistribution beyond reviewed adapted payload, or public promotion.
 
 ## Gate 08 result
 
@@ -85,7 +86,7 @@ Gate 08 is now stronger than before because the classification vocabulary and
 repository-level artifact posture are explicit and checked by repository
 validation.
 
-Gate 08 still cannot pass until later MVP evidence exists and the final residue
-sweep confirms that stale drafts, obsolete reports, temporary scaffolds, raw
-experiments, and promotion material have been promoted, archived, deleted, or
-marked non-authoritative.
+Gate 08 still cannot pass until lifecycle/global-closeout evidence exists and
+the final residue sweep confirms that stale drafts, obsolete reports, temporary
+scaffolds, raw experiments, and promotion material have been promoted,
+archived, deleted, or marked non-authoritative.

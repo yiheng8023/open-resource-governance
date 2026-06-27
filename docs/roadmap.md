@@ -81,16 +81,22 @@ repository truth is:
 - MVP-01 source candidate selection has passed.
 - MVP-02 review, neutralization, and non-runtime adapted draft creation has
   passed.
-- MVP-03 release/routing candidate review has recorded explicit owner approval
-  and candidate-specific disposition evidence.
+- MVP-03 release/routing follow-up execution has passed for the selected small
+  batch after explicit owner approval.
+- Private consumer install and routing verification have passed for
+  `agent-skills-curated` `e80d497...` consumed by `codex-user-config`
+  `a89b617...`.
 
-Until later, narrower gates are approved, the adapted drafts and MVP-03
-candidate decisions remain non-runtime evidence:
+For this selected batch, the adapted drafts and MVP-03 candidate decisions have
+crossed into approved, verified release/routing/install evidence:
 
-- They are not approved payloads.
-- They are not release-manifest entries.
-- They are not generated routing projections.
-- They are not live Agent installs.
+- `spec-driven-development` is represented as a recipe/routing projection.
+- `documentation-and-adrs` is merged into `grill-with-docs`.
+- `code-review-and-quality` is merged into `review`.
+- `release-manifest.json` remains schema 1 with 19 curated Skills and 41 files.
+- private install verified 19 curated Skills and replaced the routing index.
 
-Safe work may continue on verification, evidence freshness, public-safe
-explanations, and template-only review scaffolding.
+This does not approve new source discovery, official/runtime Skill vendoring,
+unrelated payloads, broad public promotion, or unrelated private runtime
+changes. Safe work may continue on lifecycle feedback, evidence freshness,
+public-safe explanations, and global closeout.

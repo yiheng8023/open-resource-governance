@@ -58,13 +58,16 @@ This MVP does not:
 
 ## Current stage note
 
-As of the current decision point, MVP-01 source candidate selection and MVP-02
-review, neutralization, and non-runtime adapted draft creation have passed.
-MVP-03 release-or-routing candidate review has recorded explicit owner approval
-and candidate-specific disposition evidence. Goal continuation keeps this MVP
-active, but it still does not authorize release, routing projection changes,
-installation, publication, source redistribution, approved-payload diffs, or
-manifest changes.
+As of the current decision point, MVP-01 source candidate selection, MVP-02
+review/adaptation, MVP-03 release/manifest execution, MVP-04 private consumer
+install, and MVP-05 routing verification have passed for the selected small
+batch. Goal continuation keeps this MVP active because lifecycle feedback,
+global closeout, public promotion decisions, and next-lane decisions remain
+separate.
+
+This proof does not authorize new source discovery, official/runtime Skill
+vendoring, unrelated payloads, broad public promotion, or unrelated private
+runtime changes.
 
 The active gate is recorded in
 [`mvp-current-decision-point.md`](mvp-current-decision-point.md). The public

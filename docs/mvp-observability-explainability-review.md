@@ -82,8 +82,7 @@ Gate 11 is now stronger because the explanation contract, decision event
 classes, repository-level observable surfaces, and known explanation gaps are
 explicit and checked by repository validation.
 
-Gate 11 still cannot pass until later MVP evidence exists and the final
-explainability review confirms that release, install, routing, runtime
-feedback, lifecycle, cleanup, assurance, continuity, and public closeout claims
-all point to concrete evidence rather than prose-only assertions.
-
+Gate 11 still cannot pass until lifecycle/global-closeout evidence exists and
+the final explainability review confirms that release, install, routing,
+runtime feedback, lifecycle, cleanup, assurance, continuity, and public closeout
+claims all point to concrete evidence rather than prose-only assertions.

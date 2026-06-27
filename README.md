@@ -127,26 +127,37 @@ state, or pre-public automation work.
 
 ## Current MVP status
 
-The current MVP is the curated Skills terminal-consumer loop. It is active and
-not complete yet.
+The current MVP is the curated Skills terminal-consumer loop. The first small
+batch has now passed the release/routing/install proof path, while lifecycle
+feedback and global closeout remain active work.
 
 Current evidence:
 
 - MVP-01 source candidate selection: passed.
 - MVP-02 review, neutralization, and non-runtime adapted draft creation: passed.
-- MVP-03 release/routing candidate review: approval recorded and
-  candidate-specific disposition evidence exists; later payload, manifest,
-  routing, install, and runtime gates remain separate.
+- MVP-03 release/routing follow-up execution: passed for the selected small
+  batch after explicit owner approval.
+- Private consumer install and routing verification: passed for
+  `agent-skills-curated` release `e80d497...` consumed by
+  `codex-user-config` at `a89b617...`.
 
-This means the selected Skill candidates have review evidence and non-runtime
-drafts plus MVP-03 disposition evidence, but they are not approved payloads,
-not in the release manifest, not runtime routes, and not installed into a
-private environment.
+This means the selected batch is no longer merely candidate evidence:
+`spec-driven-development` became a recipe/routing projection, while
+`documentation-and-adrs` and `code-review-and-quality` were merged into
+existing approved Skills. The release manifest remains schema 1 with 19 curated
+Skills and 41 files; only the approved `grill-with-docs` and `review` payload
+files changed.
+
+This does not approve broad new source discovery, official/runtime Skill
+vendoring, public promotion, video launch claims, or unrelated private-runtime
+changes.
 
 The current decision point is recorded in
 [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md).
 The evidence ledger is
 [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md).
+The executed release/routing proof is
+[`docs/mvp03-release-routing-closeout-2026-06-27.md`](docs/mvp03-release-routing-closeout-2026-06-27.md).
 
 ## What value can you reproduce?
 

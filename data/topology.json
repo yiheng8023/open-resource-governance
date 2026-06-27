@@ -58,8 +58,8 @@
       "visibility": "public-safe-record",
       "lane": "curated_skills_mvp",
       "neutrality": "generic",
-      "state": "mvp03_candidate_review_recorded_later_release_gates_pending",
-      "authority": "later_owner_approval_required",
+      "state": "mvp03_release_routing_install_proof_recorded_feedback_pending",
+      "authority": "evidence_index_only_not_release_authority",
       "not_release_authority": true
     },
     {
@@ -167,13 +167,13 @@
     {
       "from": "mvp-current-decision-point",
       "to": "agent-skills-curated",
-      "relation": "gates-release-or-routing-candidate-review",
+      "relation": "indexes-release-routing-install-proof",
       "write_permission": false
     },
     {
       "from": "mvp-current-decision-point",
       "to": "codex-user-config",
-      "relation": "prevents-unapproved-runtime-consumption",
+      "relation": "indexes-private-runtime-install-proof",
       "write_permission": false
     },
     {

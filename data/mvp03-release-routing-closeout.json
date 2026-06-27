@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "record_id": "mvp03-release-routing-closeout-2026-06-27",
+  "mvp_name": "curated-skills-terminal-consumer-mvp",
+  "status": "release_routing_manifest_install_proof_recorded",
+  "not_completion_claim": true,
+  "not_public_launch_approval": true,
+  "date": "2026-06-27",
+  "owner_approval_consumed": "routing projection proposal、merge proposal、approved payload diff、manifest change 或 runtime install proof全部批准。",
+  "candidate_ids": [
+    "spec-driven-development",
+    "documentation-and-adrs",
+    "code-review-and-quality"
+  ],
+  "source_repository": "agent-skills-curated",
+  "source_head": "e80d49733192bfa41c894a72da63def4801691f4",
+  "consumer_repository": "codex-user-config",
+  "consumer_head": "a89b61737f066118b13264510cb4dbe5566e2269",
+  "executed_outcomes": [
+    {
+      "candidate_id": "spec-driven-development",
+      "decision": "recipe-routing-projection",
+      "payload_effect": "no standalone Skill directory",
+      "routing_effect": "spec-driven lifecycle recipe and routing scenarios added"
+    },
+    {
+      "candidate_id": "documentation-and-adrs",
+      "decision": "merge-into-existing-approved-skill",
+      "payload_effect": "merged into grill-with-docs",
+      "routing_effect": "ADR and documentation-authority triggers merged into existing route"
+    },
+    {
+      "candidate_id": "code-review-and-quality",
+      "decision": "merge-into-existing-approved-skill",
+      "payload_effect": "merged into review",
+      "routing_effect": "risk-proportionate review-depth triggers merged into existing route"
+    }
+  ],
+  "manifest": {
+    "schema_version": 1,
+    "skill_count": 19,
+    "file_count": 41,
+    "changed_payloads": [
+      "skills/grill-with-docs/SKILL.md",
+      "skills/review/SKILL.md"
+    ],
+    "unchanged_boundary": [
+      "no official/runtime-owned Skill vendoring",
+      "no new third-party source pull",
+      "no generated/registry/policies payload confusion"
+    ]
+  },
+  "runtime_install_proof": {
+    "installed_curated_skills": 19,
+    "plan": {
+      "add": 0,
+      "unchanged": 17,
+      "replace": 2,
+      "retire": 0
+    },
+    "replaced": [
+      "grill-with-docs",
+      "review"
+    ],
+    "routing_index": "replaced and verified",
+    "transaction": "~/.agents/curated-skills-transaction.json",
+    "private_runtime_details": "private"
+  },
+  "verification": {
+    "agent_skills_curated": [
+      "python -B scripts/build_topology.py -> passed",
+      "python -B scripts/build_release_manifest.py -> passed",
+      "python -B scripts/simulate_routing.py --report generated\\routing-simulation-report.json -> passed",
+      "python -B scripts/verify.py -> passed",
+      "python -B scripts/build_topology.py --check -> passed",
+      "python -B scripts/build_release_manifest.py --check -> passed",
+      "python -B scripts/simulate_routing.py --all -> 104 passed, 0 failed",
+      "python -B -m unittest discover -s tests -v -> 182 passed",
+      "git diff --check -> passed"
+    ],
+    "codex_user_config": [
+      "python -B scripts/skills.py plan -> 0 add, 17 unchanged, 2 replace, 0 retire",
+      "python -B scripts/skills.py install --apply -> installed and verified 19 curated Skills",
+      "python -B scripts/skills.py verify -> passed",
+      "python -B scripts/verify_capability_router.py -> passed",
+      "python -B scripts/verify_skills_install.py -> passed",
+      "python -B scripts/verify.py -> passed"
+    ],
+    "open_resource_governance": [
+      "python -B scripts/verify.py -> passed",
+      "python -B scripts/verify_local_evidence_freshness.py --repo-root open-resource-governance=C:\\tmp\\open-resource-governance --repo-root agent-skills-curated=C:\\tmp\\agent-skills-curated-work --repo-root codex-user-config=C:\\Projects\\codex-user-config -> passed"
+    ]
+  },
+  "boundaries_preserved": [
+    "no memory update",
+    "no Hook enablement",
+    "no MCP/App/Plugin install state change",
+    "no public promotion approval",
+    "no new source discovery",
+    "no official/runtime-owned Skill vendoring",
+    "hub remains index and evidence surface, not downstream release authority"
+  ],
+  "next_state": "lifecycle_feedback_and_global_closeout_pending",
+  "next_decisions": [
+    "iterate another curated Skills batch",
+    "pause and observe",
+    "incubate another terminal consumer after a separate graduation gate"
+  ]
+}

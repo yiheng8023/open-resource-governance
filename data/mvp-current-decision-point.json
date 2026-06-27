@@ -1,15 +1,17 @@
 {
   "schema_version": 1,
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "mvp03_candidate_review_recorded_later_release_gates_pending",
+  "status": "mvp03_release_routing_install_proof_recorded_feedback_pending",
   "not_completion_claim": true,
-  "not_approval": true,
+  "not_public_launch_approval": true,
   "date": "2026-06-27",
-  "purpose": "Record the current MVP decision point so continuation can resume from repository truth without mistaking MVP-03 candidate review evidence for release, routing, manifest, or runtime approval.",
-  "current_workstream": "mvp-03-release-manifest",
-  "current_gate": "mvp03-release-or-routing-candidate-review",
+  "purpose": "Record the current MVP decision point so continuation can resume from repository truth after MVP-03 release/routing/install proof without mistaking it for public launch approval or unrelated source approval.",
+  "current_workstream": "mvp-06-feedback-retirement",
+  "current_gate": "lifecycle-feedback-and-global-closeout",
   "source_repository": "agent-skills-curated",
-  "source_head": "82a4bf8612061c11c19c5f9f373c582e25ffb23a",
+  "source_head": "e80d49733192bfa41c894a72da63def4801691f4",
+  "consumer_repository": "codex-user-config",
+  "consumer_head": "a89b61737f066118b13264510cb4dbe5566e2269",
   "source_records": [
     "registry/mvp-approval-requests.json",
     "registry/mvp02-preflight-readiness.json",
@@ -31,55 +33,62 @@
     "docs/mvp03-release-or-routing-approval-request.md",
     "registry/mvp03-approval-events.json",
     "registry/mvp03-release-or-routing-candidate-review.json",
-    "docs/mvp03-release-or-routing-candidate-review.md"
+    "docs/mvp03-release-or-routing-candidate-review.md",
+    "registry/mvp03-release-routing-execution.json",
+    "docs/mvp03-release-routing-execution.md",
+    "release-manifest.json",
+    "generated/routing-index.json"
   ],
   "candidate_ids": [
     "spec-driven-development",
     "documentation-and-adrs",
     "code-review-and-quality"
   ],
-  "decision_needed": "Which later, narrower gate should be approved after MVP-03 candidate review: routing projection proposal, merge into existing approved Skill, approved-payload diff, release-manifest change, consumer install, runtime proof, or no further action. No release, routing projection, approved payload, live install, publication, or source redistribution is approved yet.",
-  "last_approval_event_recorded": "mvp03-owner-approval-2026-06-27-release-or-routing-candidate-review",
+  "decision_needed": "Decide whether to iterate another curated Skills batch, pause and observe the current runtime evidence, or incubate another terminal consumer after a separate graduation gate. Do not treat this proof as public promotion approval or approval for unrelated sources.",
+  "last_approval_event_recorded": "mvp03-followup-owner-approval-2026-06-27-release-routing-manifest-install-proof",
   "safe_approval_phrases": [
     "批准进入 MVP-03 release/routing 候选审查阶段",
-    "Approve MVP-03 release-or-routing candidate review only"
+    "Approve MVP-03 release-or-routing candidate review only",
+    "routing projection proposal、merge proposal、approved payload diff、manifest change 或 runtime install proof全部批准。"
   ],
   "allowed_without_approval": [
     "run read-only verification",
     "refresh evidence ledgers and public-safe explanations",
     "check repository freshness and CI status",
-    "prepare release-or-routing review scaffolding and templates that do not edit skills, manifest, generated routing, or live environments",
-    "record a preflight or authorization request that does not approve candidate payload"
+    "summarize public-safe runtime install proof",
+    "prepare lifecycle feedback and closeout scaffolding",
+    "record next-iteration decision options without adding new sources"
   ],
   "current_permissions": {
     "candidate_review_recorded": true,
-    "approved_payload_allowed": false,
-    "release_manifest_allowed": false,
-    "routing_projection_allowed": false,
-    "live_install_allowed": false,
+    "approved_payload_executed_for_selected_batch": true,
+    "release_manifest_executed_for_selected_batch": true,
+    "routing_projection_executed_for_selected_batch": true,
+    "live_install_executed_for_selected_batch": true,
     "source_text_redistribution_allowed": false
   },
   "still_disallowed": [
-    "edit skills/",
-    "update release-manifest.json",
-    "update generated routing projections",
-    "install or sync live Agent environments",
-    "approve, release, or publish any candidate payload",
-    "redistribute upstream source text as approved curated payload"
+    "pull or import new sources without a new intake gate",
+    "vendor official/runtime-owned Skill text",
+    "approve unrelated candidate payload",
+    "publish broad launch or promotion claims",
+    "update unrelated release-manifest entries",
+    "install unrelated live Agent runtime changes",
+    "redistribute upstream source text beyond reviewed adapted payload"
   ],
   "why_this_matters": [
-    "MVP-03 candidate review evidence is not release approval",
-    "candidate decisions remain non-executable, non-release, and non-runtime",
-    "later manifest, routing, payload, install, and runtime gates remain separate human authorization boundaries",
-    "public closeout claims remain unproven until later MVP workstreams pass"
+    "MVP-03 follow-up approval has been consumed for this small batch only",
+    "the selected changes are approved release/routing/install evidence, not open-ended source approval",
+    "public promotion and next-lane graduation remain separate human authorization boundaries",
+    "lifecycle feedback and global closeout still need evidence before final MVP closeout"
   ],
-  "next_state_if_approved": "later_narrow_release_or_routing_diff_gate",
-  "next_required_evidence_if_approved": [
-    "specific next-gate approval record",
-    "routing projection proposal for spec-driven-development if that lane proceeds",
-    "merge proposal for documentation-and-adrs or code-review-and-quality if those lanes proceed",
-    "manifest, approved-payload, or routing diff only if separately approved",
-    "verification command results",
-    "explicit record that live install and publication remain unchanged unless separately approved"
+  "next_state": "lifecycle_feedback_and_global_closeout_pending",
+  "next_required_evidence": [
+    "public-safe lifecycle feedback for the installed small batch",
+    "decision to iterate Skills, pause, or incubate another terminal consumer",
+    "owner-local evidence freshness check",
+    "final artifact hygiene and stale-process cleanup pass",
+    "global closeout verification across affected repositories",
+    "explicit public promotion decision if broad promotion resumes"
   ]
 }

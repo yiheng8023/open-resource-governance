@@ -57,14 +57,14 @@ machine-readable index at [`data/topology.json`](../data/topology.json).
 The topology also indexes
 [`mvp-current-decision-point.md`](mvp-current-decision-point.md) as a
 governance gate rather than a repository. That node records that the curated
-Skills MVP has recorded explicit owner approval for MVP-03 candidate review and
-candidate-specific release-or-routing disposition evidence, while later
-manifest, generated routing, approved-payload, runtime installation, and public
-promotion gates remain separate.
+Skills MVP has consumed explicit owner approval for the MVP-03 follow-up gates
+and produced release/routing/manifest/install proof for the selected small
+batch. Lifecycle feedback, broad public promotion, and next-lane graduation
+remain separate.
 
 This gate is intentionally narrow:
 
 - It is not release authority.
-- It is not manifest approval.
-- It is not generated routing approval.
-- It is not permission for private runtime installation.
+- It is not authority to approve unrelated manifests.
+- It is not authority to add unrelated generated routing.
+- It is not permission for unrelated private runtime installation.

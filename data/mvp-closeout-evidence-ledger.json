@@ -4,7 +4,7 @@
   "status": "active_in_progress",
   "not_completion_claim": true,
   "evidence_snapshot_date": "2026-06-27",
-  "purpose": "Track current evidence against the MVP workstreams and closeout gates without claiming the MVP is complete.",
+  "purpose": "Track current evidence against the MVP workstreams and closeout gates. The selected small batch has passed release/routing/install proof, while lifecycle feedback and global closeout remain incomplete.",
   "verified_surfaces": [
     {
       "repository": "open-resource-governance",
@@ -16,16 +16,16 @@
     {
       "repository": "agent-skills-curated",
       "visibility": "private-pre-public",
-      "head": "82a4bf8612061c11c19c5f9f373c582e25ffb23a",
-      "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, scripts/build_release_manifest.py --check, scripts/simulate_routing.py --all, and python -B -m unittest discover -s tests -v -> passed; 102 routing scenarios and 182 tests OK",
-      "remote_ci": "validate pending or latest validate workflow should be checked for 82a4bf8; local verification passed before this ledger update"
+      "head": "e80d49733192bfa41c894a72da63def4801691f4",
+      "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, scripts/build_release_manifest.py --check, scripts/simulate_routing.py --all, and python -B -m unittest discover -s tests -v -> passed; 104 routing scenarios and 182 tests OK",
+      "remote_ci": "validate should be checked for e80d497; local verification passed before this ledger update"
     },
     {
       "repository": "codex-user-config",
       "visibility": "private",
-      "head": "4c887aeb77108f20acf4ff551be844b3cdbc1824",
-      "local_verification": "scripts/verify.py, verify_capability_router.py, and verify_skills_install.py -> passed",
-      "remote_ci": "Validate success, run 28253330174"
+      "head": "a89b61737f066118b13264510cb4dbe5566e2269",
+      "local_verification": "scripts/skills.py plan, install --apply, verify, verify_capability_router.py, verify_skills_install.py, and scripts/verify.py -> passed; 19 curated Skills verified after replacing grill-with-docs, review, and routing index",
+      "remote_ci": "Validate should be checked for a89b617; local verification passed before this ledger update"
     },
     {
       "repository": "resource-radar",
@@ -87,31 +87,31 @@
     {
       "id": "mvp-02-review-adapt",
       "status": "passed",
-      "evidence": "Pre-adaptation review, the MVP-02 transition gate, checklist template, bounded approval request, preflight record, post-approval execution plan, approval event, adapted draft review evidence, MVP-03 preflight, MVP-03 review template, MVP-03 formal approval request, MVP-03 approval event, and MVP-03 candidate review evidence are recorded in agent-skills-curated at 82a4bf8612061c11c19c5f9f373c582e25ffb23a. Non-runtime drafts exist under drafts/mvp02-adaptation/ for spec-driven-development, documentation-and-adrs, and code-review-and-quality. The record explicitly keeps candidates out of skills/, release-manifest.json, generated routing projections, live Agent environments, and source-text redistribution.",
-      "next_required_evidence": "Separate later gate approval for any recipe/routing proposal, merge into an existing approved Skill, approved-payload diff, release-manifest update, consumer install, runtime proof, or publication."
+      "evidence": "Pre-adaptation review, the MVP-02 transition gate, checklist template, bounded approval request, preflight record, post-approval execution plan, approval event, adapted draft review evidence, MVP-03 preflight, MVP-03 review template, MVP-03 formal approval request, MVP-03 approval event, candidate review evidence, and follow-up execution evidence are recorded in agent-skills-curated through e80d49733192bfa41c894a72da63def4801691f4.",
+      "next_required_evidence": "None for MVP-02 acceptance. Later lifecycle and global closeout evidence are still needed."
     },
     {
       "id": "mvp-03-release-manifest",
-      "status": "partial",
-      "evidence": "agent-skills-curated records MVP-03 release-or-routing preflight, template-only review contract, formal owner approval request, owner approval event, and candidate-specific release/routing disposition evidence at head 82a4bf8612061c11c19c5f9f373c582e25ffb23a. The review records spec-driven-development as a recipe-routing-proposal candidate and documentation-and-adrs plus code-review-and-quality as merge-into-existing-approved-skill candidates. It still excludes candidates from skills/, release-manifest.json, registry/routing.json, generated/routing-index.json, and live Agent environments.",
-      "next_required_evidence": "Separate approval and evidence for any routing projection proposal, approved-payload or documentation merge diff, release-manifest update, private consumer install, runtime routing proof, or publication."
+      "status": "passed",
+      "evidence": "agent-skills-curated executed the approved MVP-03 follow-up at e80d49733192bfa41c894a72da63def4801691f4: spec-driven-development became a recipe/routing projection, documentation-and-adrs merged into grill-with-docs, code-review-and-quality merged into review, release-manifest.json stayed schema 1, and the manifest remained 19 Skills / 41 files with only two approved payload files changed.",
+      "next_required_evidence": "None for this small-batch release/manifest acceptance. Future batches require their own intake, review, approval, and manifest evidence."
     },
     {
       "id": "mvp-04-consumer-install",
-      "status": "baseline_ready",
-      "evidence": "codex-user-config verification and curated Skills installer verification pass at head 4c887aeb77108f20acf4ff551be844b3cdbc1824.",
-      "next_required_evidence": "Pinned consumer install or dry-run evidence for the selected curated release plus backup/rollback proof."
+      "status": "passed",
+      "evidence": "codex-user-config pinned and consumed agent-skills-curated e80d497 at head a89b61737f066118b13264510cb4dbe5566e2269. The install plan found 0 adds, 17 unchanged, 2 replacements, and 0 retires; install --apply replaced grill-with-docs, review, and the routing index; verify confirmed 19 curated Skills.",
+      "next_required_evidence": "Future curated releases require fresh install or dry-run evidence plus rollback posture."
     },
     {
       "id": "mvp-05-routing-runtime",
-      "status": "baseline_ready",
-      "evidence": "capability-router and skills installer verification pass in codex-user-config.",
-      "next_required_evidence": "Representative runtime routing scenarios for the selected batch, including no-skill/native fallback and high-risk confirmation behavior."
+      "status": "passed",
+      "evidence": "agent-skills-curated routing simulation passed 104/104 scenarios and codex-user-config capability-router verification passed after the live routing index was replaced.",
+      "next_required_evidence": "Runtime feedback from actual use should be summarized into lifecycle decisions before final closeout."
     },
     {
       "id": "mvp-06-feedback-retirement",
       "status": "pending",
-      "evidence": "Resource radar and public radar validation pass, but no runtime feedback from the next Skill batch has been fed back yet.",
+      "evidence": "The selected small batch has release/routing/install proof, but no public-safe lifecycle decision has yet been recorded from runtime observation.",
       "next_required_evidence": "Accepted/rejected/deprecated/retired lifecycle decision records and safe dedupe feedback metadata."
     },
     {
@@ -124,18 +124,18 @@
   "closeout_gate_status": [
     {
       "id": "gate-01-chain-complete",
-      "status": "partial",
-      "evidence": "Base chain is verified and the next candidate batch is selected, pinned, pre-reviewed, adapted into non-runtime drafts, and reviewed through MVP-03 candidate disposition; it has not yet traversed release, private consumption, and runtime use."
+      "status": "passed",
+      "evidence": "The selected small batch traversed candidate selection, review/adaptation, release/routing execution, deterministic manifest, private consumer install, and routing verification."
     },
     {
       "id": "gate-02-boundaries-held",
-      "status": "partial",
-      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, preflight readiness record, post-approval execution plan, approval event, adapted draft review, MVP-03 preflight, MVP-03 review template, MVP-03 approval request, MVP-03 approval event, and MVP-03 candidate review are recorded as not approved payload, not releasable, not routable, not installable, and not source-redistributed."
+      "status": "passed",
+      "evidence": "Current repositories validate public/private and candidate/approved boundaries. The selected batch crossed into approved release/routing/install state only after explicit follow-up approval; unrelated candidates, official/runtime Skill text, public promotion, and broad runtime changes remain disallowed."
     },
     {
       "id": "gate-03-runtime-useful",
-      "status": "partial",
-      "evidence": "Routing and installer verification pass; representative runtime use for the next batch is pending."
+      "status": "passed",
+      "evidence": "Routing simulation passed 104/104 scenarios and the private consumer verified the installed routing index and 19 curated Skills."
     },
     {
       "id": "gate-04-feedback-loop",
@@ -179,12 +179,8 @@
     }
   ],
   "next_actions": [
-    "obtain separate owner approval for the next narrower MVP-03 follow-up gate, such as routing projection proposal, merge diff, approved-payload diff, or no further action",
-    "prepare only reviewable proposal diffs for the recorded candidate decisions; do not mutate skills/, manifest, generated routing, or live environments without that later approval",
-    "produce release-candidate manifest evidence",
-    "consume the release from the private configuration workflow or an authorized dry run",
-    "run representative routing/runtime scenarios",
-    "feed lifecycle outcomes back into the governance loop",
+    "record public-safe lifecycle feedback for the installed small batch",
+    "decide whether to iterate another curated Skills batch, pause, or incubate another terminal consumer",
     "complete the final residue sweep after later MVP evidence exists, using the artifact hygiene review as the Gate 08 control surface",
     "complete final cross-repository assurance after later MVP evidence exists, using the continuous assurance review as the Gate 09 control surface",
     "complete final continuity drill after later MVP evidence exists, using the persistence and continuity review as the Gate 10 control surface",

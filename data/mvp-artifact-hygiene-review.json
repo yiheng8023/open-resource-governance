@@ -11,7 +11,7 @@
     "Generated artifacts are derived projections, not hand-maintained truth.",
     "Promotion material is downstream of proof.",
     "Private-source repositories remain private source truth; public repositories expose only public-safe projections, templates, or evidence.",
-    "The MVP-03 approval request is not release, routing, or execution approval."
+    "The MVP-03 follow-up approval is batch-limited and does not authorize unrelated source, runtime, or public-promotion expansion."
   ],
   "artifact_classes": [
     {
@@ -93,7 +93,8 @@
         "adaptation review checklist",
         "bounded owner approval request",
         "MVP-02 approval event and non-runtime adapted draft review",
-        "MVP-03 approval request"
+        "MVP-03 approval request",
+        "MVP-03 release/routing execution evidence"
       ],
       "archived_context": [],
       "generated_derived": [
@@ -103,7 +104,7 @@
       "ignored_non_authority": [
         "candidate Skills remain review material until approved"
       ],
-      "next_review": "After explicit MVP-03 approval, classify release-or-routing candidate decisions separately from approved release payload."
+      "next_review": "After lifecycle feedback, classify retained execution evidence, stale drafts, and closeout artifacts so they do not become hidden second truth sources."
     },
     {
       "repository": "codex-user-config",
@@ -124,7 +125,7 @@
       "ignored_non_authority": [
         "local app/plugin/account state remains outside public evidence"
       ],
-      "next_review": "Before MVP-04, verify the selected curated release pin, install plan, backup, rollback, and private runtime boundary."
+      "next_review": "For future releases, verify the selected curated release pin, install plan, backup, rollback, and private runtime boundary."
     },
     {
       "repository": "claude-user-config",
@@ -279,7 +280,7 @@
       "private-source repositories are not treated as public truth"
     ],
     "remaining_before_gate_pass": [
-      "run final residue sweep after MVP-03 disposition and later runtime evidence exist",
+      "run final residue sweep after lifecycle feedback and global closeout evidence exist",
       "delete or archive any stale draft that conflicts with current evidence",
       "refresh public docs only where the final evidence supports new claims"
     ]

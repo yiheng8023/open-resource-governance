@@ -53,9 +53,10 @@ candidate; only reviewed skill candidates should enter the curated Skills lane.
 ## Current graph
 
 The graph also includes a current MVP gate node. It is not a repository and not
-release authority. It records that the curated Skills MVP has recorded MVP-03
-candidate review evidence while later manifest, routing, payload, install, and
-runtime gates remain pending.
+release authority. It records that the curated Skills MVP has consumed the
+MVP-03 follow-up approval and produced release/routing/manifest/install proof
+for the selected small batch, while lifecycle feedback and global closeout
+remain pending.
 
 ```mermaid
 flowchart TD
@@ -68,7 +69,7 @@ flowchart TD
   bookmarksPublic["research-bookmarks-public<br/>public bookmark projection"]
 
   skills["agent-skills-curated<br/>reviewed skill governance"]
-  mvpGate["mvp-current-decision-point<br/>MVP-03 gate: candidate review recorded"]
+  mvpGate["mvp-current-decision-point<br/>MVP-03 proof: release/routing/install recorded"]
 
   codexTemplate["codex-user-config-template<br/>public Codex template"]
   codexPrivate["codex-user-config<br/>private Codex config"]
@@ -90,8 +91,8 @@ flowchart TD
   radarPrivate -. "candidate proposals only" .-> skills
   skills -. "review decisions for dedupe" .-> radarPrivate
   skills -. "release manifest consumed by" .-> codexPrivate
-  mvpGate -. "records release/routing review" .-> skills
-  mvpGate -. "prevents unapproved runtime consumption" .-> codexPrivate
+  mvpGate -. "indexes release/routing/install proof" .-> skills
+  mvpGate -. "indexes private runtime install proof" .-> codexPrivate
 
   codexTemplate -. "guides private overlay" .-> codexPrivate
   codexPrivate -. "public-safe patterns only" .-> codexTemplate
@@ -117,13 +118,14 @@ Edges in the graph are governance relationships, not automatic write access.
   already accepted or rejected candidates.
 - `indexes-current-mvp-gate`: the hub points to the current MVP authorization
   boundary without turning it into release authority.
-- `gates-release-or-routing-candidate-review`: the current decision point
-  records that adapted drafts entered MVP-03 release-or-routing candidate
-  review after explicit owner approval; later release, manifest, routing, and
-  runtime gates remain separate.
-- `prevents-unapproved-runtime-consumption`: private configuration repositories
-  must not install or route candidate drafts before approved release evidence
-  exists.
+- `indexes-release-routing-install-proof`: the current decision point records
+  that the selected MVP batch passed the release/routing/manifest/install proof
+  path after explicit owner approval; it remains evidence indexing, not
+  downstream release authority.
+- `indexes-private-runtime-install-proof`: the current decision point links to
+  public-safe proof that the private configuration lane consumed and verified
+  the selected curated Skills release, while private runtime details remain
+  private.
 - `may-contribute-public-safe-patterns-to`: private practice can improve a
   public template only after review and declassification.
 

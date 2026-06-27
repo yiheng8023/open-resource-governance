@@ -62,7 +62,7 @@
         "repository_split_or_projection"
       ],
       "verify_command": "python -B scripts/verify.py",
-      "known_gap": "Final MVP closeout report does not exist yet because MVP-03 through MVP-06 are not complete."
+      "known_gap": "Final MVP closeout report does not exist yet because lifecycle feedback and global closeout are not complete."
     },
     {
       "repository": "agent-skills-curated",
@@ -83,7 +83,7 @@
         "automation_failure"
       ],
       "verify_command": "python -B scripts/verify.py && python -B scripts/build_topology.py --check && python -B -m unittest discover -s tests -v",
-      "known_gap": "Adapted output exists only as non-runtime drafts; release-candidate manifest, routing disposition, runtime consumption, and lifecycle disposition cannot exist before MVP-03 and later gates."
+      "known_gap": "Release/routing/install proof exists for the selected small batch; lifecycle disposition and final closeout evidence remain pending."
     },
     {
       "repository": "codex-user-config",
@@ -243,7 +243,7 @@
       "known recovery gaps are explicit instead of hidden"
     ],
     "remaining_before_gate_pass": [
-      "run final continuity drill after MVP-03 through MVP-06 evidence exists",
+      "run final continuity drill after lifecycle feedback and global closeout evidence exists",
       "confirm current recovery anchors still match each repository's latest README and verify commands",
       "record final closeout continuation decision for the next Skills iteration, pause, or another terminal consumer"
     ]

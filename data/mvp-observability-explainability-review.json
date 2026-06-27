@@ -124,7 +124,7 @@
         "artifact_cleanup",
         "public_refresh"
       ],
-      "known_gap": "Final closeout decisions cannot be fully explained until MVP-03 through MVP-06 produce release, runtime, feedback, and lifecycle evidence."
+      "known_gap": "Final closeout decisions cannot be fully explained until lifecycle feedback and global closeout evidence exist."
     },
     {
       "repository": "agent-skills-curated",
@@ -144,7 +144,7 @@
         "candidate_review",
         "release_manifest"
       ],
-      "known_gap": "Non-runtime adapted output now exists; release-candidate manifest, routing disposition, runtime consumption, and lifecycle disposition remain intentionally absent until later human gates advance."
+      "known_gap": "Release/routing/install proof exists for the selected small batch; lifecycle disposition and final closeout evidence remain pending."
     },
     {
       "repository": "codex-user-config",
@@ -269,7 +269,7 @@
       "known explanation gaps are recorded instead of hidden"
     ],
     "remaining_before_gate_pass": [
-      "record release, install, routing, feedback, and lifecycle decisions after MVP-03 through MVP-06 exist",
+      "record feedback, lifecycle, cleanup, and final closeout decisions after current runtime proof has enough observation evidence",
       "run final explainability review against actual terminal-consumer evidence",
       "ensure public closeout claims point to evidence instead of prose-only assertions"
     ]

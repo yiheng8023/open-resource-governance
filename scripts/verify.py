@@ -35,6 +35,7 @@ REQUIRED_FILES = [
     "docs/mvp-global-closeout-verification.md",
     "docs/mvp-closeout-evidence-ledger.md",
     "docs/mvp-current-decision-point.md",
+    "docs/mvp03-release-routing-closeout-2026-06-27.md",
     "docs/mvp-artifact-hygiene-review.md",
     "docs/mvp-continuous-assurance-review.md",
     "docs/mvp-persistence-continuity-review.md",
@@ -72,6 +73,7 @@ REQUIRED_FILES = [
     "data/mvp-acceptance-map.json",
     "data/mvp-closeout-evidence-ledger.json",
     "data/mvp-current-decision-point.json",
+    "data/mvp03-release-routing-closeout.json",
     "data/mvp-artifact-hygiene-review.json",
     "data/mvp-continuous-assurance-review.json",
     "data/mvp-persistence-continuity-review.json",
@@ -90,6 +92,8 @@ STALE_STAGE_PHRASES = [
     "MVP-02 still has an approval gate",
     "MVP-02 approval request is not approval",
     "approve adapted Skill for curated release",
+    "mvp03_candidate_review_recorded_later_release_gates_pending",
+    "no payload, manifest, routing projection, or live install has been approved",
 ]
 
 
@@ -152,7 +156,7 @@ def verify_topology() -> None:
         fail("topology must include the current MVP decision point gate")
     if mvp_gate.get("kind") != "governance_gate":
         fail("MVP decision point must be modeled as a governance_gate")
-    if mvp_gate.get("state") != "mvp03_candidate_review_recorded_later_release_gates_pending":
+    if mvp_gate.get("state") != "mvp03_release_routing_install_proof_recorded_feedback_pending":
         fail("MVP decision point topology node has stale state")
     if mvp_gate.get("not_release_authority") is not True:
         fail("MVP decision point topology node must not be release authority")
@@ -162,8 +166,8 @@ def verify_topology() -> None:
     }
     required_edges = {
         ("open-resource-governance", "mvp-current-decision-point", "indexes-current-mvp-gate"),
-        ("mvp-current-decision-point", "agent-skills-curated", "gates-release-or-routing-candidate-review"),
-        ("mvp-current-decision-point", "codex-user-config", "prevents-unapproved-runtime-consumption"),
+        ("mvp-current-decision-point", "agent-skills-curated", "indexes-release-routing-install-proof"),
+        ("mvp-current-decision-point", "codex-user-config", "indexes-private-runtime-install-proof"),
     }
     missing_edges = required_edges - edge_keys
     if missing_edges:
@@ -185,9 +189,9 @@ def verify_topology() -> None:
     for phrase in [
         "current MVP gate node",
         "not release authority",
-        "MVP-03 gate: candidate review recorded",
-        "records release/routing review",
-        "prevents unapproved runtime consumption",
+        "MVP-03 proof: release/routing/install recorded",
+        "indexes release/routing/install proof",
+        "indexes private runtime install proof",
     ]:
         if phrase not in system_topology:
             fail(f"system topology missing MVP gate phrase: {phrase}")
@@ -195,9 +199,9 @@ def verify_topology() -> None:
         "Current MVP gate",
         "governance gate rather than a repository",
         "not release authority",
-        "not manifest approval",
-        "not generated routing approval",
-        "not permission for private runtime installation",
+        "not authority to approve unrelated manifests",
+        "not authority to add unrelated generated routing",
+        "not permission for unrelated private runtime installation",
     ]:
         if phrase not in repository_map:
             fail(f"repository map missing MVP gate phrase: {phrase}")
@@ -271,11 +275,11 @@ def verify_current_public_private_status() -> None:
         "Current MVP gate",
         "MVP-01 source candidate selection has passed",
         "MVP-02 review, neutralization, and non-runtime adapted draft creation has",
-        "MVP-03 release/routing candidate review has recorded explicit owner approval",
-        "not approved payloads",
-        "not release-manifest entries",
-        "not generated routing projections",
-        "not live Agent installs",
+        "MVP-03 release/routing follow-up execution has passed",
+        "Private consumer install and routing verification have passed",
+        "spec-driven-development` is represented as a recipe/routing projection",
+        "release-manifest.json` remains schema 1 with 19 curated Skills and 41 files",
+        "does not approve new source discovery",
     ]
     for phrase in required_roadmap_phrases:
         if phrase not in roadmap:
@@ -462,8 +466,8 @@ def verify_mvp_acceptance_map() -> None:
         "small batch",
         "Global closeout",
         "Current stage note",
-        "MVP-03 release-or-routing candidate review has recorded explicit owner approval",
-        "active, but it still does not authorize",
+        "MVP-03 release/manifest execution",
+        "lifecycle feedback",
         "mvp-current-decision-point.md",
         "roadmap.md",
         "Evidence from MVP-01, MVP-02, MVP-03, MVP-04, MVP-06",
@@ -534,7 +538,9 @@ def verify_mvp_closeout_evidence_ledger() -> None:
     expected_stage_status = {
         "mvp-01-source-candidate": "passed",
         "mvp-02-review-adapt": "passed",
-        "mvp-03-release-manifest": "partial",
+        "mvp-03-release-manifest": "passed",
+        "mvp-04-consumer-install": "passed",
+        "mvp-05-routing-runtime": "passed",
     }
     for workstream_id, expected_status in expected_stage_status.items():
         if workstream_status.get(workstream_id) != expected_status:
@@ -544,7 +550,7 @@ def verify_mvp_closeout_evidence_ledger() -> None:
     doc = (ROOT / "docs" / "mvp-closeout-evidence-ledger.md").read_text(encoding="utf-8")
     for phrase in [
         "not a completion claim",
-        "baseline-ready",
+        "Lifecycle feedback and global closeout are still pending",
         "Verified surfaces",
         "Workstream status",
         "Gate status",
@@ -561,8 +567,8 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         "Current MVP status",
         "MVP-01 source candidate selection: passed",
         "MVP-02 review, neutralization, and non-runtime adapted draft creation: passed",
-        "MVP-03 release/routing candidate review",
-        "not approved payloads",
+        "MVP-03 release/routing follow-up execution: passed",
+        "Private consumer install and routing verification: passed",
     ]:
         if phrase not in readme:
             fail(f"README.md missing current MVP status phrase: {phrase}")
@@ -571,8 +577,8 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         "当前 MVP 状态",
         "MVP-01 来源候选选择：已通过",
         "MVP-02 审查、中立化和非运行时适配草案创建：已通过",
-        "MVP-03 release/routing 候选审查",
-        "不是 approved payload",
+        "MVP-03 release/routing 后续执行",
+        "私有消费者安装与路由验证",
     ]:
         if phrase not in readme_zh:
             fail(f"README.zh-CN.md missing current MVP status phrase: {phrase}")
@@ -590,14 +596,14 @@ def verify_mvp_current_decision_point() -> None:
         fail("mvp-current-decision-point.json schema_version must be 1")
     if decision.get("mvp_name") != ledger.get("mvp_name"):
         fail("MVP current decision point must reference the active MVP")
-    if decision.get("status") != "mvp03_candidate_review_recorded_later_release_gates_pending":
-        fail("MVP current decision point must record MVP-03 candidate review state")
+    if decision.get("status") != "mvp03_release_routing_install_proof_recorded_feedback_pending":
+        fail("MVP current decision point must record MVP-03 proof state")
     if decision.get("not_completion_claim") is not True:
         fail("MVP current decision point must explicitly avoid completion claims")
-    if decision.get("not_approval") is not True:
-        fail("MVP current decision point must explicitly avoid approval")
-    if decision.get("current_workstream") != "mvp-03-release-manifest":
-        fail("MVP current decision point must point to MVP-03")
+    if decision.get("not_public_launch_approval") is not True:
+        fail("MVP current decision point must explicitly avoid public launch approval")
+    if decision.get("current_workstream") != "mvp-06-feedback-retirement":
+        fail("MVP current decision point must point to lifecycle feedback")
     if decision.get("source_repository") != "agent-skills-curated":
         fail("MVP current decision point must source the Skills lane")
     skills_surface = next(
@@ -608,6 +614,14 @@ def verify_mvp_current_decision_point() -> None:
         fail("MVP ledger missing agent-skills-curated surface")
     if decision.get("source_head") != skills_surface.get("head"):
         fail("MVP current decision point source_head must match ledger Skills head")
+    config_surface = next(
+        (surface for surface in ledger.get("verified_surfaces", []) if surface.get("repository") == "codex-user-config"),
+        None,
+    )
+    if not config_surface:
+        fail("MVP ledger missing codex-user-config surface")
+    if decision.get("consumer_head") != config_surface.get("head"):
+        fail("MVP current decision point consumer_head must match ledger config head")
     expected_candidates = [
         "spec-driven-development",
         "documentation-and-adrs",
@@ -618,41 +632,49 @@ def verify_mvp_current_decision_point() -> None:
     expected_phrases = [
         "批准进入 MVP-03 release/routing 候选审查阶段",
         "Approve MVP-03 release-or-routing candidate review only",
+        "routing projection proposal、merge proposal、approved payload diff、manifest change 或 runtime install proof全部批准。",
     ]
     if decision.get("safe_approval_phrases") != expected_phrases:
         fail("MVP current decision point safe approval phrases changed")
-    if decision.get("last_approval_event_recorded") != "mvp03-owner-approval-2026-06-27-release-or-routing-candidate-review":
-        fail("MVP current decision point must record the consumed MVP-03 approval event")
-    for key, value in decision.get("current_permissions", {}).items():
-        expected = key == "candidate_review_recorded"
-        if value is not expected:
-            fail(f"MVP current decision point permission mismatch: {key}")
+    if decision.get("last_approval_event_recorded") != "mvp03-followup-owner-approval-2026-06-27-release-routing-manifest-install-proof":
+        fail("MVP current decision point must record the consumed MVP-03 follow-up approval event")
+    expected_permissions = {
+        "candidate_review_recorded": True,
+        "approved_payload_executed_for_selected_batch": True,
+        "release_manifest_executed_for_selected_batch": True,
+        "routing_projection_executed_for_selected_batch": True,
+        "live_install_executed_for_selected_batch": True,
+        "source_text_redistribution_allowed": False,
+    }
+    if decision.get("current_permissions") != expected_permissions:
+        fail("MVP current decision point permission/proof state mismatch")
     required_disallowed = {
-        "edit skills/",
-        "update release-manifest.json",
-        "update generated routing projections",
-        "install or sync live Agent environments",
-        "approve, release, or publish any candidate payload",
-        "redistribute upstream source text as approved curated payload",
+        "pull or import new sources without a new intake gate",
+        "vendor official/runtime-owned Skill text",
+        "approve unrelated candidate payload",
+        "publish broad launch or promotion claims",
+        "update unrelated release-manifest entries",
+        "install unrelated live Agent runtime changes",
+        "redistribute upstream source text beyond reviewed adapted payload",
     }
     if set(decision.get("still_disallowed", [])) != required_disallowed:
         fail("MVP current decision point still_disallowed changed")
     required_reasons = {
-        "MVP-03 candidate review evidence is not release approval",
-        "candidate decisions remain non-executable, non-release, and non-runtime",
-        "later manifest, routing, payload, install, and runtime gates remain separate human authorization boundaries",
-        "public closeout claims remain unproven until later MVP workstreams pass",
+        "MVP-03 follow-up approval has been consumed for this small batch only",
+        "the selected changes are approved release/routing/install evidence, not open-ended source approval",
+        "public promotion and next-lane graduation remain separate human authorization boundaries",
+        "lifecycle feedback and global closeout still need evidence before final MVP closeout",
     }
     if set(decision.get("why_this_matters", [])) != required_reasons:
         fail("MVP current decision point why_this_matters changed")
     doc = (ROOT / "docs" / "mvp-current-decision-point.md").read_text(encoding="utf-8")
     for phrase in [
-        "not a completion claim and not release approval",
-        "Goal continuation is not approval",
-        "do not edit `skills/`",
-        "later_narrow_release_or_routing_diff_gate",
+        "not a completion claim and not public launch approval",
+        "MVP-03 follow-up approval has been consumed",
+        "lifecycle_feedback_and_global_closeout_pending",
         "Approve MVP-03 release-or-routing candidate review only",
         "批准进入 MVP-03 release/routing 候选审查阶段",
+        "routing projection proposal、merge proposal、approved payload diff、manifest change 或 runtime install proof全部批准。",
     ]:
         if phrase not in doc:
             fail(f"MVP current decision point doc missing phrase: {phrase}")
@@ -670,6 +692,75 @@ def verify_mvp_current_decision_point() -> None:
         fail("MVP ledger doc must link MVP current decision point")
 
 
+def verify_mvp03_release_routing_closeout() -> None:
+    data = json.loads((ROOT / "data" / "mvp03-release-routing-closeout.json").read_text(encoding="utf-8"))
+    ledger = json.loads((ROOT / "data" / "mvp-closeout-evidence-ledger.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("mvp03-release-routing-closeout.json schema_version must be 1")
+    if data.get("mvp_name") != ledger.get("mvp_name"):
+        fail("MVP-03 closeout record must reference the active MVP")
+    if data.get("status") != "release_routing_manifest_install_proof_recorded":
+        fail("MVP-03 closeout record has stale status")
+    if data.get("not_completion_claim") is not True:
+        fail("MVP-03 closeout record must avoid completion claims")
+    if data.get("not_public_launch_approval") is not True:
+        fail("MVP-03 closeout record must avoid public launch approval")
+    skills_surface = next(
+        (surface for surface in ledger.get("verified_surfaces", []) if surface.get("repository") == "agent-skills-curated"),
+        None,
+    )
+    config_surface = next(
+        (surface for surface in ledger.get("verified_surfaces", []) if surface.get("repository") == "codex-user-config"),
+        None,
+    )
+    if not skills_surface or not config_surface:
+        fail("MVP-03 closeout needs Skills and config ledger surfaces")
+    if data.get("source_head") != skills_surface.get("head"):
+        fail("MVP-03 closeout source_head must match ledger")
+    if data.get("consumer_head") != config_surface.get("head"):
+        fail("MVP-03 closeout consumer_head must match ledger")
+    manifest = data.get("manifest", {})
+    if manifest.get("schema_version") != 1:
+        fail("MVP-03 closeout manifest schema must remain 1")
+    if manifest.get("skill_count") != 19 or manifest.get("file_count") != 41:
+        fail("MVP-03 closeout manifest counts changed unexpectedly")
+    runtime = data.get("runtime_install_proof", {})
+    plan = runtime.get("plan", {})
+    if runtime.get("installed_curated_skills") != 19:
+        fail("MVP-03 closeout runtime install proof must verify 19 Skills")
+    if plan != {"add": 0, "unchanged": 17, "replace": 2, "retire": 0}:
+        fail("MVP-03 closeout install plan counts changed")
+    expected_boundaries = {
+        "no memory update",
+        "no Hook enablement",
+        "no MCP/App/Plugin install state change",
+        "no public promotion approval",
+        "no new source discovery",
+        "no official/runtime-owned Skill vendoring",
+        "hub remains index and evidence surface, not downstream release authority",
+    }
+    if set(data.get("boundaries_preserved", [])) != expected_boundaries:
+        fail("MVP-03 closeout boundaries changed")
+    doc = (ROOT / "docs" / "mvp03-release-routing-closeout-2026-06-27.md").read_text(encoding="utf-8")
+    for phrase in [
+        "Owner approval consumed",
+        "release-manifest.json` stayed at schema 1",
+        "104 routing scenarios passed",
+        "182 unit tests passed",
+        "19 curated Skills",
+        "Boundaries preserved",
+        "lifecycle feedback",
+    ]:
+        if phrase not in doc:
+            fail(f"MVP-03 closeout doc missing phrase: {phrase}")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme_zh = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+    if "docs/mvp03-release-routing-closeout-2026-06-27.md" not in readme:
+        fail("README.md must link MVP-03 release/routing closeout")
+    if "docs/mvp03-release-routing-closeout-2026-06-27.md" not in readme_zh:
+        fail("README.zh-CN.md must link MVP-03 release/routing closeout")
+
+
 def verify_mvp_artifact_hygiene_review() -> None:
     data = json.loads((ROOT / "data" / "mvp-artifact-hygiene-review.json").read_text(encoding="utf-8"))
     if data.get("schema_version") != 1:
@@ -684,7 +775,7 @@ def verify_mvp_artifact_hygiene_review() -> None:
         "No process artifact is authority by accident.",
         "Generated artifacts are derived projections, not hand-maintained truth.",
         "Promotion material is downstream of proof.",
-        "The MVP-03 approval request is not release, routing, or execution approval.",
+        "The MVP-03 follow-up approval is batch-limited and does not authorize unrelated source, runtime, or public-promotion expansion.",
     ]
     for phrase in required_principles:
         if phrase not in data.get("principles", []):
@@ -735,7 +826,7 @@ def verify_mvp_artifact_hygiene_review() -> None:
         "deleted residue",
         "ignored non-authority",
         "Generated artifacts are derived",
-        "MVP-03 approval request is not release or routing approval",
+        "MVP-03 follow-up approval is batch-limited",
         "Gate 08 still cannot pass",
     ]:
         if phrase not in doc:
@@ -1155,6 +1246,7 @@ def main() -> None:
     verify_mvp_acceptance_map()
     verify_mvp_closeout_evidence_ledger()
     verify_mvp_current_decision_point()
+    verify_mvp03_release_routing_closeout()
     verify_mvp_artifact_hygiene_review()
     verify_mvp_continuous_assurance_review()
     verify_mvp_persistence_continuity_review()

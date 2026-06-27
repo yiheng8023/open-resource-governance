@@ -4,7 +4,7 @@ This ledger is the current evidence snapshot for the curated Skills
 terminal-consumer MVP.
 
 It is not a completion claim. It records what is already proven, what is only
-baseline-ready, what is partial, and what still needs work before MVP closeout.
+in progress, and what still needs work before MVP closeout.
 
 Machine-readable ledger:
 [`data/mvp-closeout-evidence-ledger.json`](../data/mvp-closeout-evidence-ledger.json).
@@ -54,13 +54,17 @@ candidate batch
 -> global closeout
 ```
 
+The selected small batch has now traversed the loop through release/routing,
+deterministic manifest, private consumer install, and routing verification.
+Lifecycle feedback and global closeout are still pending.
+
 ## Verified surfaces in this snapshot
 
 | Repository | Visibility | Current evidence |
 | --- | --- | --- |
 | `open-resource-governance` | public | self-referential ledger: local verification passed; check the latest `validate` workflow for the current repository head |
-| `agent-skills-curated` | private-pre-public | MVP candidate batch, MVP-02 adaptation evidence, MVP-03 approval event, and candidate-specific release/routing disposition evidence at `82a4bf8...`; validation, topology, release-manifest check, 102 routing scenarios, and 182-test suite passed locally; remote `validate` should be checked for the latest pushed head |
-| `codex-user-config` | private | validation, capability-router, and curated Skills installer checks passed; remote `Validate` success at `4c887aeb...` |
+| `agent-skills-curated` | private-pre-public | MVP candidate batch, MVP-02 adaptation evidence, MVP-03 approval event, release/routing execution evidence, schema-1 manifest evidence, 104 routing scenarios, and 182-test suite passed locally at `e80d497...`; remote `validate` should be checked for the latest pushed head |
+| `codex-user-config` | private | pinned and consumed `agent-skills-curated` `e80d497...`; install replaced `grill-with-docs`, `review`, and routing index; 19 curated Skills verified at `a89b617...`; remote `Validate` should be checked for the latest pushed head |
 | `resource-radar` | private | local verification passed; remote `validate` success at `f5a36fda...` |
 | `resource-radar-public` | public | local verification passed; remote `Validate` success at `a6adf587...` |
 | `research-bookmarks` | private | private bookmark baseline verification passed; remote `validate` success at `1f71fcb7...` |
@@ -74,10 +78,10 @@ candidate batch
 | Workstream | Status | Meaning |
 | --- | --- | --- |
 | MVP-01 source candidate selection | passed | first candidate batch selected, pinned, rationalized, and kept non-executable; later release/runtime gates remain separate workstreams |
-| MVP-02 review, neutralize, and adapt | passed | pre-adaptation review evidence, bounded approval, non-runtime adapted drafts, checklist-based draft review evidence, MVP-03 preflight, a template-only review contract, formal MVP-03 approval request, MVP-03 approval event, and MVP-03 candidate review exist; release payload, routing projection, runtime install, publication, and lifecycle feedback are still pending |
-| MVP-03 deterministic release manifest | partial | release-or-routing candidate review is recorded: `spec-driven-development` is a recipe/routing proposal candidate, while `documentation-and-adrs` and `code-review-and-quality` are merge-into-existing-approved-Skill candidates; no payload, manifest, routing projection, or live install has been approved |
-| MVP-04 private consumer install | baseline-ready | consumer installer verification passes; batch-specific install or dry-run evidence is pending |
-| MVP-05 routing and runtime use | baseline-ready | capability-router verification passes; representative batch routing scenarios are pending |
+| MVP-02 review, neutralize, and adapt | passed | review, neutralization, adaptation, candidate disposition, and follow-up execution evidence exist for the selected small batch |
+| MVP-03 deterministic release manifest | passed | approved payload/routing changes were executed; manifest remains schema 1 with 19 curated Skills and 41 files |
+| MVP-04 private consumer install | passed | private consumer pinned and installed the selected curated release; 19 curated Skills verified |
+| MVP-05 routing and runtime use | passed | 104 routing scenarios passed and the private capability-router verification passed after routing index replacement |
 | MVP-06 feedback, lifecycle, and retirement | pending | runtime feedback and lifecycle decisions for the next batch are pending |
 | MVP-07 global closeout and public refresh | in progress | this ledger starts the cross-repository evidence trail |
 
@@ -85,9 +89,9 @@ candidate batch
 
 | Gate | Status | Current interpretation |
 | --- | --- | --- |
-| Gate 01 chain complete | partial | base chain is verified and the next candidate batch is selected, pre-reviewed, adapted into non-runtime drafts, and reviewed through MVP-03 candidate disposition; it has not traversed release, private consumption, and runtime use |
-| Gate 02 boundaries held | partial | current validators pass; selected candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, preflight readiness record, post-approval execution plan, approval event, adapted draft review, MVP-03 preflight, MVP-03 review template, MVP-03 approval request, MVP-03 approval event, and MVP-03 candidate review are explicitly not approved payload, not releasable, not routable, not installable, and not source-redistributed |
-| Gate 03 runtime useful | partial | router/installer verification passes; representative runtime proof is pending |
+| Gate 01 chain complete | passed | selected batch traversed candidate selection, review/adaptation, release/routing execution, deterministic manifest, private consumer install, and routing verification |
+| Gate 02 boundaries held | passed | selected batch crossed into approved release/routing/install state only after explicit follow-up approval; unrelated candidates, official/runtime Skill text, public promotion, and broad runtime changes remain disallowed |
+| Gate 03 runtime useful | passed | 104 routing scenarios passed and private consumer verification passed after routing index replacement |
 | Gate 04 feedback loop | pending | no new batch feedback has been recorded |
 | Gate 05 next lane ready | pending | no final closeout decision exists |
 | Gate 06 global verification | in progress | verified surfaces are captured above |
@@ -119,25 +123,18 @@ maintainer explicitly supplies them.
 
 ## Next evidence required
 
-1. Confirm a separate, narrower MVP-03 follow-up gate if any recorded candidate
-   decision may advance beyond review evidence.
-2. Prepare only reviewable proposal diffs for the recorded decisions: routing
-   proposal for `spec-driven-development`, merge proposal for
-   `documentation-and-adrs`, and merge proposal for `code-review-and-quality`.
-3. Produce release-candidate manifest evidence only if separately approved.
-4. Consume the release from the private configuration workflow or an authorized
-   dry run.
-5. Run representative routing/runtime scenarios.
-6. Feed lifecycle outcomes back into the governance loop.
-7. Complete the final residue sweep after later MVP evidence exists, using the
+1. Record public-safe lifecycle feedback for the installed small batch.
+2. Decide whether to iterate another curated Skills batch, pause, or incubate
+   another terminal consumer.
+3. Complete the final residue sweep after later MVP evidence exists, using the
    artifact hygiene review as the Gate 08 control surface.
-8. Complete final cross-repository assurance after later MVP evidence exists,
+4. Complete final cross-repository assurance after later MVP evidence exists,
    using the continuous assurance review as the Gate 09 control surface.
-9. Complete final continuity drill after later MVP evidence exists, using the
+5. Complete final continuity drill after later MVP evidence exists, using the
    persistence and continuity review as the Gate 10 control surface.
-10. Complete final explainability review after later MVP evidence exists, using
+6. Complete final explainability review after later MVP evidence exists, using
     the observability and explainability review as the Gate 11 control surface.
-11. Run the owner-local evidence freshness check before closeout so local
+7. Run the owner-local evidence freshness check before closeout so local
     repository heads and ledger heads do not silently drift apart.
 
 Until those steps are complete, the MVP remains active and in progress.

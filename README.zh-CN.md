@@ -110,22 +110,32 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 
 ## 当前 MVP 状态
 
-当前 MVP 是 curated Skills 末端消费者闭环。它正在推进，但还没有完成。
+当前 MVP 是 curated Skills 末端消费者闭环。第一批小样本已经跑通
+release/routing/install proof 路径；生命周期反馈和全局收官仍在推进。
 
 当前证据：
 
 - MVP-01 来源候选选择：已通过。
 - MVP-02 审查、中立化和非运行时适配草案创建：已通过。
-- MVP-03 release/routing 候选审查：已记录 owner 授权和逐候选处置证据；后续
-  payload、manifest、routing、install、runtime 闸门仍需分别批准。
+- MVP-03 release/routing 后续执行：已在 owner 明确授权后对选定小批次通过。
+- 私有消费者安装与路由验证：`agent-skills-curated` 的 `e80d497...`
+  release 已由 `codex-user-config` 在 `a89b617...` 消费并验证。
 
-这意味着已选 Skill 候选已经有审查证据、非运行时草案和 MVP-03 处置证据，但它们
-不是 approved payload，不在 release manifest 中，不是运行时路由，也没有安装进私有环境。
+这意味着选定批次不再只是候选证据：`spec-driven-development` 进入
+recipe/routing projection，`documentation-and-adrs` 与
+`code-review-and-quality` 已合并进现有 approved Skills。release manifest
+仍保持 schema 1，包含 19 个 curated Skills 和 41 个文件；只有已批准的
+`grill-with-docs` 与 `review` payload 文件发生变化。
+
+这并不授权广泛新来源发现、官方 / runtime Skill 正文 vendoring、公开宣传、
+视频发布宣称或无关私有运行时变更。
 
 当前决策点记录在
 [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)。
 证据账本记录在
 [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)。
+已执行的 release/routing proof 记录在
+[`docs/mvp03-release-routing-closeout-2026-06-27.md`](docs/mvp03-release-routing-closeout-2026-06-27.md)。
 
 ## 你能复刻什么价值？
 

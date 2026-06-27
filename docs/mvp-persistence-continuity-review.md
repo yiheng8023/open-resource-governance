@@ -80,7 +80,7 @@ Gate 10 is now stronger because continuity scenarios, recovery anchors,
 verification commands, and known gaps are explicit and checked by repository
 validation.
 
-Gate 10 still cannot pass until later MVP evidence exists and a final
-continuity drill confirms the system can resume from current repository truth
-after MVP-03 through MVP-06 have produced real release, consumption, runtime,
-and feedback evidence.
+Gate 10 still cannot pass until lifecycle/global-closeout evidence exists and a
+final continuity drill confirms the system can resume from current repository
+truth after release, consumption, routing, feedback, and next-step decisions
+are all represented by durable evidence.
