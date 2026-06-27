@@ -56,6 +56,20 @@ This MVP does not:
 | MVP-06 | Feedback, lifecycle, and retirement | Feed evidence back without direct private-project mutation | Approve public promotion of generalizable lessons |
 | MVP-07 | Global closeout and public refresh | Verify the MVP across the repository family and update public surfaces only where evidence supports it | Approve public closeout claims and any promotion refresh |
 
+## Current stage note
+
+As of the current decision point, MVP-01 source candidate selection and MVP-02
+review, neutralization, and non-runtime adapted draft creation have passed.
+MVP-03 release-or-routing candidate review is still waiting for explicit owner
+approval. Goal continuation keeps this MVP active, but it does not authorize
+release, routing, installation, publication, source redistribution, or manifest
+changes.
+
+The active gate is recorded in
+[`mvp-current-decision-point.md`](mvp-current-decision-point.md). The public
+roadmap mirrors the same boundary in
+[`roadmap.md`](roadmap.md).
+
 ## Acceptance criteria
 
 ### MVP-01: Source candidate selection
@@ -128,7 +142,7 @@ This MVP does not:
 | Gate | Meaning | Required evidence |
 | --- | --- | --- |
 | Gate 01: chain complete | Candidate to private runtime consumption is proven | Workstreams MVP-01 through MVP-05 pass |
-| Gate 02: boundaries held | Public/private, candidate/approved, automation/human boundaries held | Evidence from MVP-01, MVP-03, MVP-04, MVP-06 |
+| Gate 02: boundaries held | Public/private, candidate/approved, automation/human boundaries held | Evidence from MVP-01, MVP-02, MVP-03, MVP-04, MVP-06 |
 | Gate 03: runtime useful | Skills improve real work without over-triggering | Routing and runtime evidence from MVP-05 |
 | Gate 04: feedback loop | Runtime evidence can update governance safely | Lifecycle evidence from MVP-06 |
 | Gate 05: next lane ready | Another terminal consumer can be evaluated | Closeout summary explains whether to incubate another lane |

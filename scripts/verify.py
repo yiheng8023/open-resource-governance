@@ -395,6 +395,17 @@ def verify_mvp_acceptance_map() -> None:
     gates = data.get("closeout_gates", [])
     if len(gates) != 11:
         fail("MVP must define eleven closeout gates")
+    gate_map = {gate.get("id"): gate for gate in gates}
+    gate_02_workstreams = set(gate_map.get("gate-02-boundaries-held", {}).get("mapped_workstreams", []))
+    for required_workstream in [
+        "mvp-01-source-candidate",
+        "mvp-02-review-adapt",
+        "mvp-03-release-manifest",
+        "mvp-04-consumer-install",
+        "mvp-06-feedback-retirement",
+    ]:
+        if required_workstream not in gate_02_workstreams:
+            fail(f"Gate 02 must map boundary evidence from {required_workstream}")
     doc = (ROOT / "docs" / "mvp-plan-and-acceptance.md").read_text(encoding="utf-8")
     required_doc_phrases = [
         "curated Skills lane",
@@ -407,6 +418,12 @@ def verify_mvp_acceptance_map() -> None:
         "Stage exit",
         "small batch",
         "Global closeout",
+        "Current stage note",
+        "MVP-03 release-or-routing candidate review is still waiting for explicit owner",
+        "Goal continuation keeps this MVP active, but it does not authorize",
+        "mvp-current-decision-point.md",
+        "roadmap.md",
+        "Evidence from MVP-01, MVP-02, MVP-03, MVP-04, MVP-06",
         "artifact hygiene",
         "continuous assurance",
         "persistence and continuity",

@@ -131,6 +131,7 @@
       "description": "Public/private, candidate/approved, and automation/human-gate boundaries are preserved.",
       "mapped_workstreams": [
         "mvp-01-source-candidate",
+        "mvp-02-review-adapt",
         "mvp-03-release-manifest",
         "mvp-04-consumer-install",
         "mvp-06-feedback-retirement"
