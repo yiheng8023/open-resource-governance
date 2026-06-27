@@ -482,6 +482,25 @@ def verify_mvp_closeout_evidence_ledger() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     if "docs/mvp-closeout-evidence-ledger.md" not in readme:
         fail("README.md must link MVP closeout evidence ledger")
+    for phrase in [
+        "Current MVP status",
+        "MVP-01 source candidate selection: passed",
+        "MVP-02 review, neutralization, and non-runtime adapted draft creation: passed",
+        "MVP-03 deterministic release / routing review",
+        "not approved payloads",
+    ]:
+        if phrase not in readme:
+            fail(f"README.md missing current MVP status phrase: {phrase}")
+    readme_zh = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+    for phrase in [
+        "当前 MVP 状态",
+        "MVP-01 来源候选选择：已通过",
+        "MVP-02 审查、中立化和非运行时适配草案创建：已通过",
+        "MVP-03 确定性发布 / 路由审查",
+        "不是 approved payload",
+    ]:
+        if phrase not in readme_zh:
+            fail(f"README.zh-CN.md missing current MVP status phrase: {phrase}")
     closeout_doc = (ROOT / "docs" / "mvp-global-closeout-verification.md").read_text(encoding="utf-8")
     if "mvp-closeout-evidence-ledger.md" not in closeout_doc:
         fail("global closeout doc must link MVP closeout evidence ledger")

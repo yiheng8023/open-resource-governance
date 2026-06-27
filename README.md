@@ -125,6 +125,27 @@ Some lanes are intentionally private until they are ready to be released or
 generalized. Private lanes may contain personal imports, review evidence, local
 state, or pre-public automation work.
 
+## Current MVP status
+
+The current MVP is the curated Skills terminal-consumer loop. It is active and
+not complete yet.
+
+Current evidence:
+
+- MVP-01 source candidate selection: passed.
+- MVP-02 review, neutralization, and non-runtime adapted draft creation: passed.
+- MVP-03 deterministic release / routing review: waiting for explicit owner
+  approval before candidate-specific release-or-routing review.
+
+This means the selected Skill candidates have review evidence and non-runtime
+drafts, but they are not approved payloads, not in the release manifest, not
+runtime routes, and not installed into a private environment.
+
+The current decision point is recorded in
+[`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md).
+The evidence ledger is
+[`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md).
+
 ## What value can you reproduce?
 
 You can use this project as a reference implementation for:

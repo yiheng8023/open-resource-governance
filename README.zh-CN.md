@@ -108,6 +108,24 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 
 有些 lane 暂时保持私有，是因为它们还包含个人导入、审查证据、本地状态或公开前自动化工作。
 
+## 当前 MVP 状态
+
+当前 MVP 是 curated Skills 末端消费者闭环。它正在推进，但还没有完成。
+
+当前证据：
+
+- MVP-01 来源候选选择：已通过。
+- MVP-02 审查、中立化和非运行时适配草案创建：已通过。
+- MVP-03 确定性发布 / 路由审查：仍在等待 owner 明确批准，之后才可进入逐候选 release-or-routing 审查。
+
+这意味着已选 Skill 候选已经有审查证据和非运行时草案，但它们不是 approved payload，
+不在 release manifest 中，不是运行时路由，也没有安装进私有环境。
+
+当前决策点记录在
+[`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)。
+证据账本记录在
+[`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)。
+
 ## 你能复刻什么价值？
 
 你可以把这个项目当成以下能力的参考实现：
