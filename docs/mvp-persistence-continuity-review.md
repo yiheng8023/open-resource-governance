@@ -3,7 +3,8 @@
 Machine-readable review:
 [`data/mvp-persistence-continuity-review.json`](../data/mvp-persistence-continuity-review.json).
 
-This review supports MVP Gate 10. It is not a completion claim.
+This review supports MVP Gate 10. It is not a universal completion claim; it
+passes the selected Skills MVP closeout and remains subject to future review.
 
 ## Review status
 
@@ -76,11 +77,11 @@ owner's backup.
 
 ## Gate 10 result
 
-Gate 10 is now stronger because continuity scenarios, recovery anchors,
-verification commands, and known gaps are explicit and checked by repository
+Gate 10 passes for selected MVP closeout because continuity scenarios,
+recovery anchors, verification commands, known gaps, lifecycle evidence, and
+the pause-and-observe next state are explicit and checked by repository
 validation.
 
-Gate 10 still cannot pass until lifecycle/global-closeout evidence exists and a
-final continuity drill confirms the system can resume from current repository
-truth after release, consumption, routing, feedback, and next-step decisions
-are all represented by durable evidence.
+This is not a permanent certificate. Repeat the continuity drill before any new
+candidate batch, terminal consumer, public launch refresh, repository
+visibility change, or major recovery-anchor change.

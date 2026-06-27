@@ -2,9 +2,9 @@
   "schema_version": 1,
   "review_id": "mvp-observability-explainability-review-2026-06-27",
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "active_in_progress",
+  "status": "passed_for_selected_mvp_closeout",
   "not_completion_claim": true,
-  "purpose": "Record the current observability and explainability posture for MVP Gate 11 without pretending every future decision is already fully instrumented.",
+  "purpose": "Record the observability and explainability posture that passes MVP Gate 11 for the selected Skills MVP closeout without pretending every future decision is already fully instrumented.",
   "review_date": "2026-06-27",
   "principles": [
     "Important decisions should be explainable from public-safe evidence.",
@@ -260,18 +260,19 @@
     }
   ],
   "current_result": {
-    "gate_11_status": "in_progress_with_review_surface",
+    "gate_11_status": "passed_for_selected_mvp_closeout",
     "completed_this_review": [
       "explanation contract is explicit",
       "decision event classes are explicit",
       "repository-level observable surfaces are recorded",
       "public/private limits on explainability are explicit",
-      "known explanation gaps are recorded instead of hidden"
+      "known explanation gaps are recorded instead of hidden",
+      "selected-MVP release, install, routing, feedback, lifecycle, and next-state decisions point to public-safe evidence"
     ],
-    "remaining_before_gate_pass": [
-      "record feedback, lifecycle, cleanup, and final closeout decisions after current runtime proof has enough observation evidence",
-      "run final explainability review against actual terminal-consumer evidence",
-      "ensure public closeout claims point to evidence instead of prose-only assertions"
+    "post_closeout_follow_up": [
+      "repeat explainability review before any new candidate batch, terminal consumer, public launch refresh, or repository visibility change",
+      "ensure future public claims point to evidence instead of prose-only assertions",
+      "keep private evidence summarized without exposing private payloads"
     ]
   }
 }

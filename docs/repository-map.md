@@ -59,8 +59,9 @@ The topology also indexes
 governance gate rather than a repository. That node records that the curated
 Skills MVP has consumed explicit owner approval for the MVP-03 follow-up gates
 and produced release/routing/manifest/install proof for the selected small
-batch. Lifecycle feedback, broad public promotion, and next-lane graduation
-remain separate.
+batch. MVP-06 lifecycle feedback is now recorded and the selected MVP is closed
+with a pause-and-observe next state. Broad public promotion and next-lane
+graduation remain separate gates.
 
 This gate is intentionally narrow:
 

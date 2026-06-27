@@ -128,8 +128,9 @@ state, or pre-public automation work.
 ## Current MVP status
 
 The current MVP is the curated Skills terminal-consumer loop. The first small
-batch has now passed the release/routing/install proof path, while lifecycle
-feedback and global closeout remain active work.
+batch has now passed the release/routing/install/lifecycle/global-closeout path
+for this MVP scope. The next state is pause and observe before another gated
+batch, terminal consumer, or broad public-promotion refresh.
 
 Current evidence:
 
@@ -140,6 +141,10 @@ Current evidence:
 - Private consumer install and routing verification: passed for
   `agent-skills-curated` release `e80d497...` consumed by
   `codex-user-config` at `a89b617...`.
+- MVP-06 lifecycle feedback and radar dedupe metadata: passed in
+  `agent-skills-curated` at `74c8c17...`.
+- MVP-07 selected-MVP global closeout: passed; this is not a universal
+  completion claim.
 
 This means the selected batch is no longer merely candidate evidence:
 `spec-driven-development` became a recipe/routing projection, while
@@ -379,10 +384,11 @@ international, fiscal-host, and domestic-support considerations.
 - [`docs/mvp-global-closeout-verification.md`](docs/mvp-global-closeout-verification.md)
   — cross-repository MVP closeout and public-refresh checklist.
 - [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)
-  — current MVP evidence snapshot; explicitly not a completion claim.
+  — selected-MVP evidence snapshot and closeout status; explicitly not a
+  universal completion claim.
 - [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)
-  — current MVP human gate; records the MVP-03 candidate review decision point
-  and the later gates that still require explicit approval.
+  — current MVP state; records pause-and-observe after selected-MVP closeout
+  and the future gates that still require explicit approval.
 - [`docs/mvp-artifact-hygiene-review.md`](docs/mvp-artifact-hygiene-review.md)
   — Gate 08 process-artifact hygiene review; explicitly keeps drafts,
   generated outputs, and promotion material from becoming accidental truth.

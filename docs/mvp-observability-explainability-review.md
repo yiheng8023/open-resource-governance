@@ -3,7 +3,8 @@
 Machine-readable review:
 [`data/mvp-observability-explainability-review.json`](../data/mvp-observability-explainability-review.json).
 
-This review supports MVP Gate 11. It is not a completion claim.
+This review supports MVP Gate 11. It is not a universal completion claim; it
+passes the selected Skills MVP closeout and remains subject to future review.
 
 ## Review status
 
@@ -78,11 +79,11 @@ imports, raw candidate pools, personal preferences, or private project details.
 
 ## Gate 11 result
 
-Gate 11 is now stronger because the explanation contract, decision event
-classes, repository-level observable surfaces, and known explanation gaps are
-explicit and checked by repository validation.
+Gate 11 passes for selected MVP closeout because the explanation contract,
+decision event classes, repository-level observable surfaces, known gaps,
+lifecycle feedback, and final closeout claims all point to concrete public-safe
+evidence rather than prose-only assertions.
 
-Gate 11 still cannot pass until lifecycle/global-closeout evidence exists and
-the final explainability review confirms that release, install, routing,
-runtime feedback, lifecycle, cleanup, assurance, continuity, and public closeout
-claims all point to concrete evidence rather than prose-only assertions.
+This is not a permanent certificate. Repeat explainability review before any
+new candidate batch, terminal consumer, public launch refresh, repository
+visibility change, or meaningful scoring/routing/promotion rule change.

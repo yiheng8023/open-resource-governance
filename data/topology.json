@@ -58,7 +58,7 @@
       "visibility": "public-safe-record",
       "lane": "curated_skills_mvp",
       "neutrality": "generic",
-      "state": "mvp03_release_routing_install_proof_recorded_feedback_pending",
+      "state": "selected_mvp_closed_pause_observe",
       "authority": "evidence_index_only_not_release_authority",
       "not_release_authority": true
     },

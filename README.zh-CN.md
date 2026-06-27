@@ -111,7 +111,9 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 ## 当前 MVP 状态
 
 当前 MVP 是 curated Skills 末端消费者闭环。第一批小样本已经跑通
-release/routing/install proof 路径；生命周期反馈和全局收官仍在推进。
+release/routing/install/lifecycle/global-closeout 路径；这是本次 MVP 范围内的
+阶段性收官。下一状态是暂停观察，之后若开启新批次、新末端消费者或大范围公开宣传刷新，
+都需要新的 gate。
 
 当前证据：
 
@@ -120,6 +122,9 @@ release/routing/install proof 路径；生命周期反馈和全局收官仍在�
 - MVP-03 release/routing 后续执行：已在 owner 明确授权后对选定小批次通过。
 - 私有消费者安装与路由验证：`agent-skills-curated` 的 `e80d497...`
   release 已由 `codex-user-config` 在 `a89b617...` 消费并验证。
+- MVP-06 生命周期反馈与资源雷达去重元数据：已在 `agent-skills-curated`
+  `74c8c17...` 记录并验证。
+- MVP-07 selected-MVP 全局收官：已通过；这不是所有未来工作的终局完成声明。
 
 这意味着选定批次不再只是候选证据：`spec-driven-development` 进入
 recipe/routing projection，`documentation-and-adrs` 与
@@ -327,9 +332,9 @@ owner 可控且验证通过后加入。
 - [`docs/mvp-global-closeout-verification.md`](docs/mvp-global-closeout-verification.md)
   — MVP 跨仓收官验收与公开文档/宣传刷新检查表。
 - [`docs/mvp-closeout-evidence-ledger.md`](docs/mvp-closeout-evidence-ledger.md)
-  — 当前 MVP 证据快照；明确不是完成声明。
+  — selected-MVP 证据快照与收官状态；明确不是所有未来工作的终局完成声明。
 - [`docs/mvp-current-decision-point.md`](docs/mvp-current-decision-point.md)
-  — 当前 MVP 人工闸门；记录“目标继续”不等于“批准执行”。
+  — 当前 MVP 状态；记录 selected-MVP 收官后的暂停观察状态与后续仍需授权的 gates。
 - [`docs/mvp-artifact-hygiene-review.md`](docs/mvp-artifact-hygiene-review.md)
   — Gate 08 过程产物卫生审查；防止草稿、生成产物和宣传材料意外变成真相源。
 - [`docs/mvp-continuous-assurance-review.md`](docs/mvp-continuous-assurance-review.md)

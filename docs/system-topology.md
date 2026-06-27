@@ -55,8 +55,8 @@ candidate; only reviewed skill candidates should enter the curated Skills lane.
 The graph also includes a current MVP gate node. It is not a repository and not
 release authority. It records that the curated Skills MVP has consumed the
 MVP-03 follow-up approval and produced release/routing/manifest/install proof
-for the selected small batch, while lifecycle feedback and global closeout
-remain pending.
+for the selected small batch. MVP-06 lifecycle feedback is now recorded, and
+the selected small-batch MVP is closed with a pause-and-observe next state.
 
 ```mermaid
 flowchart TD
@@ -69,7 +69,7 @@ flowchart TD
   bookmarksPublic["research-bookmarks-public<br/>public bookmark projection"]
 
   skills["agent-skills-curated<br/>reviewed skill governance"]
-  mvpGate["mvp-current-decision-point<br/>MVP-03 proof: release/routing/install recorded"]
+  mvpGate["mvp-current-decision-point<br/>selected MVP closed: pause/observe"]
 
   codexTemplate["codex-user-config-template<br/>public Codex template"]
   codexPrivate["codex-user-config<br/>private Codex config"]

@@ -3,32 +3,36 @@
 Machine-readable decision record:
 [`data/mvp-current-decision-point.json`](../data/mvp-current-decision-point.json).
 
-This is not a completion claim and not public launch approval.
+This is not a universal completion claim and not public launch approval.
 
 ## Current state
 
 ```text
-status: mvp03_release_routing_install_proof_recorded_feedback_pending
-current workstream: mvp-06-feedback-retirement
+status: selected_mvp_closed_pause_observe
+current workstream: mvp-07-global-closeout
 candidate review recorded: true
 ```
 
-The MVP is active. The selected batch has moved beyond non-runtime candidate
-evidence: the owner approved the MVP-03 follow-up gates, the Skills lane
-executed the release/routing/manifest update, and the private configuration
-lane consumed the release and verified runtime install proof.
+The selected small-batch MVP is closed with a pause-and-observe decision. The
+owner approved the MVP-03 follow-up gates, the Skills lane executed the
+release/routing/manifest update, the private configuration lane consumed the
+release and verified runtime install proof, and the curated Skills lane
+recorded public-safe lifecycle feedback.
 
-This record now protects the next boundary: do not turn the completed small
-batch proof into approval for unrelated sources, official/runtime Skill
-vendoring, public promotion, or future lane graduation.
+This record protects the next boundary: do not turn the completed small-batch
+proof into approval for unrelated sources, official/runtime Skill vendoring,
+public promotion, or future lane graduation.
 
-## Decision needed
+## Current decision
 
-The owner must decide what happens after this small-batch proof:
+The decision is:
 
-- iterate another curated Skills batch;
-- pause and observe the current installed proof;
-- incubate another terminal consumer only after a separate graduation gate.
+```text
+pause and observe before the next gated batch
+```
+
+A future curated Skills batch, another terminal consumer, or a broad public
+promotion refresh requires a fresh gate.
 
 The consumed candidate decisions were:
 
@@ -43,6 +47,8 @@ Those decisions did mutate only the approved small-batch surfaces:
 - `code-review-and-quality` merged into `review`;
 - `release-manifest.json` stayed schema 1;
 - `codex-user-config` consumed the release and verified 19 curated Skills.
+- `agent-skills-curated` recorded MVP-06 lifecycle feedback and resource-radar
+  dedupe metadata.
 
 This covers exactly:
 
@@ -86,8 +92,8 @@ The following work can continue safely before the next narrower gate:
 - refresh evidence ledgers and public-safe explanations;
 - check repository freshness and CI status;
 - summarize public-safe runtime install proof;
-- prepare lifecycle feedback and closeout scaffolding;
-- record next-iteration decision options without adding new sources.
+- summarize selected-MVP closeout evidence;
+- record next-iteration options without adding new sources.
 
 ## Still disallowed
 
@@ -106,17 +112,17 @@ After this proof, still do not:
 The next state is:
 
 ```text
-lifecycle_feedback_and_global_closeout_pending
+pause_and_observe_before_next_gated_batch
 ```
 
 The next evidence should include:
 
-1. public-safe lifecycle feedback for the installed small batch;
-2. decision to iterate Skills, pause, or incubate another terminal consumer;
-3. owner-local evidence freshness check;
-4. final artifact hygiene and stale-process cleanup pass;
-5. global closeout verification across affected repositories;
-6. explicit public promotion decision if broad promotion resumes.
+1. fresh intake/review/approval/release/install/lifecycle evidence for any new
+   curated Skills batch;
+2. a separate graduation gate for any new terminal consumer;
+3. a fresh public refresh gate if broad promotion resumes;
+4. event-driven artifact hygiene, assurance, continuity, and explainability
+   review before material topology expansion.
 
 ## Why this record exists
 

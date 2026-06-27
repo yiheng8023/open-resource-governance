@@ -13,9 +13,10 @@
     "code-review-and-quality"
   ],
   "source_repository": "agent-skills-curated",
-  "source_head": "e80d49733192bfa41c894a72da63def4801691f4",
+  "source_head": "74c8c176a5ad2cbeda0b3fb3feee47d9b74a3651",
   "consumer_repository": "codex-user-config",
-  "consumer_head": "a89b61737f066118b13264510cb4dbe5566e2269",
+  "consumer_head": "09979511a5fe04feffaba7959b3c22483b21ce77",
+  "consumer_install_proof_head": "a89b61737f066118b13264510cb4dbe5566e2269",
   "executed_outcomes": [
     {
       "candidate_id": "spec-driven-development",

@@ -3,7 +3,8 @@
 Machine-readable review:
 [`data/mvp-continuous-assurance-review.json`](../data/mvp-continuous-assurance-review.json).
 
-This review supports MVP Gate 09. It is not a completion claim.
+This review supports MVP Gate 09. It is not a universal completion claim; it
+passes the selected Skills MVP closeout and remains subject to future review.
 
 ## Review status
 
@@ -73,11 +74,10 @@ meaningful events:
 
 ## Gate 09 result
 
-Gate 09 is now stronger because the assurance dimensions and repository-level
-watch points are explicit and checked by repository validation.
+Gate 09 passes for selected MVP closeout because assurance dimensions,
+repository-level watch points, lifecycle evidence, and current validation
+results are explicit and checked by repository validation.
 
-Gate 09 still cannot pass until later MVP evidence exists and a final
-cross-repository assurance review confirms that retained artifacts have current
-quality, health, security, compliance, freshness, reproducibility,
-public/private-boundary, and runtime-authority posture.
-
+This is not a permanent certificate. Repeat cross-repository assurance before
+any new candidate batch, terminal consumer, public launch refresh, repository
+visibility change, or accepted stale-risk exception.

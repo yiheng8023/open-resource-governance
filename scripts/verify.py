@@ -156,7 +156,7 @@ def verify_topology() -> None:
         fail("topology must include the current MVP decision point gate")
     if mvp_gate.get("kind") != "governance_gate":
         fail("MVP decision point must be modeled as a governance_gate")
-    if mvp_gate.get("state") != "mvp03_release_routing_install_proof_recorded_feedback_pending":
+    if mvp_gate.get("state") != "selected_mvp_closed_pause_observe":
         fail("MVP decision point topology node has stale state")
     if mvp_gate.get("not_release_authority") is not True:
         fail("MVP decision point topology node must not be release authority")
@@ -189,7 +189,7 @@ def verify_topology() -> None:
     for phrase in [
         "current MVP gate node",
         "not release authority",
-        "MVP-03 proof: release/routing/install recorded",
+        "selected MVP closed: pause/observe",
         "indexes release/routing/install proof",
         "indexes private runtime install proof",
     ]:
@@ -418,8 +418,8 @@ def verify_mvp_acceptance_map() -> None:
     data = json.loads((ROOT / "data" / "mvp-acceptance-map.json").read_text(encoding="utf-8"))
     if data.get("schema_version") != 1:
         fail("mvp-acceptance-map.json schema_version must be 1")
-    if data.get("status") != "active_in_progress":
-        fail("MVP plan should remain active_in_progress while execution is underway")
+    if data.get("status") != "selected_mvp_closed_pause_observe":
+        fail("MVP plan should record the selected MVP closeout state")
     if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
         fail("unexpected MVP name")
     if data.get("known_baselines") != [
@@ -508,8 +508,8 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         fail("mvp-closeout-evidence-ledger.json schema_version must be 1")
     if ledger.get("mvp_name") != acceptance.get("mvp_name"):
         fail("MVP closeout ledger must reference the active MVP")
-    if ledger.get("status") != "active_in_progress":
-        fail("MVP closeout ledger should remain active_in_progress until closeout")
+    if ledger.get("status") != "selected_mvp_closed_pause_observe":
+        fail("MVP closeout ledger should record selected MVP closeout")
     if ledger.get("not_completion_claim") is not True:
         fail("MVP closeout ledger must explicitly avoid completion claims")
     surfaces = ledger.get("verified_surfaces", [])
@@ -541,6 +541,8 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         "mvp-03-release-manifest": "passed",
         "mvp-04-consumer-install": "passed",
         "mvp-05-routing-runtime": "passed",
+        "mvp-06-feedback-retirement": "passed",
+        "mvp-07-global-closeout": "passed",
     }
     for workstream_id, expected_status in expected_stage_status.items():
         if workstream_status.get(workstream_id) != expected_status:
@@ -549,12 +551,13 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         fail("MVP closeout ledger must record next actions")
     doc = (ROOT / "docs" / "mvp-closeout-evidence-ledger.md").read_text(encoding="utf-8")
     for phrase in [
-        "not a completion claim",
-        "Lifecycle feedback and global closeout are still pending",
+        "not a universal completion claim",
+        "selected_mvp_closed_pause_observe",
         "Verified surfaces",
         "Workstream status",
         "Gate status",
-        "Next evidence required",
+        "Next gated work",
+        "pause and observe",
         "Owner-local evidence freshness check",
         "verify_local_evidence_freshness.py",
     ]:
@@ -569,6 +572,8 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         "MVP-02 review, neutralization, and non-runtime adapted draft creation: passed",
         "MVP-03 release/routing follow-up execution: passed",
         "Private consumer install and routing verification: passed",
+        "MVP-06 lifecycle feedback and radar dedupe metadata: passed",
+        "MVP-07 selected-MVP global closeout: passed",
     ]:
         if phrase not in readme:
             fail(f"README.md missing current MVP status phrase: {phrase}")
@@ -579,6 +584,8 @@ def verify_mvp_closeout_evidence_ledger() -> None:
         "MVP-02 审查、中立化和非运行时适配草案创建：已通过",
         "MVP-03 release/routing 后续执行",
         "私有消费者安装与路由验证",
+        "MVP-06 生命周期反馈与资源雷达去重元数据",
+        "MVP-07 selected-MVP 全局收官",
     ]:
         if phrase not in readme_zh:
             fail(f"README.zh-CN.md missing current MVP status phrase: {phrase}")
@@ -596,14 +603,14 @@ def verify_mvp_current_decision_point() -> None:
         fail("mvp-current-decision-point.json schema_version must be 1")
     if decision.get("mvp_name") != ledger.get("mvp_name"):
         fail("MVP current decision point must reference the active MVP")
-    if decision.get("status") != "mvp03_release_routing_install_proof_recorded_feedback_pending":
-        fail("MVP current decision point must record MVP-03 proof state")
+    if decision.get("status") != "selected_mvp_closed_pause_observe":
+        fail("MVP current decision point must record selected MVP closeout state")
     if decision.get("not_completion_claim") is not True:
         fail("MVP current decision point must explicitly avoid completion claims")
     if decision.get("not_public_launch_approval") is not True:
         fail("MVP current decision point must explicitly avoid public launch approval")
-    if decision.get("current_workstream") != "mvp-06-feedback-retirement":
-        fail("MVP current decision point must point to lifecycle feedback")
+    if decision.get("current_workstream") != "mvp-07-global-closeout":
+        fail("MVP current decision point must point to selected MVP closeout")
     if decision.get("source_repository") != "agent-skills-curated":
         fail("MVP current decision point must source the Skills lane")
     skills_surface = next(
@@ -663,15 +670,15 @@ def verify_mvp_current_decision_point() -> None:
         "MVP-03 follow-up approval has been consumed for this small batch only",
         "the selected changes are approved release/routing/install evidence, not open-ended source approval",
         "public promotion and next-lane graduation remain separate human authorization boundaries",
-        "lifecycle feedback and global closeout still need evidence before final MVP closeout",
+        "selected small-batch MVP closeout is complete, but future batches and public promotion remain separate gates",
     }
     if set(decision.get("why_this_matters", [])) != required_reasons:
         fail("MVP current decision point why_this_matters changed")
     doc = (ROOT / "docs" / "mvp-current-decision-point.md").read_text(encoding="utf-8")
     for phrase in [
-        "not a completion claim and not public launch approval",
+        "not a universal completion claim and not public launch approval",
         "MVP-03 follow-up approval has been consumed",
-        "lifecycle_feedback_and_global_closeout_pending",
+        "pause_and_observe_before_next_gated_batch",
         "Approve MVP-03 release-or-routing candidate review only",
         "批准进入 MVP-03 release/routing 候选审查阶段",
         "routing projection proposal、merge proposal、approved payload diff、manifest change 或 runtime install proof全部批准。",
@@ -767,8 +774,8 @@ def verify_mvp_artifact_hygiene_review() -> None:
         fail("mvp-artifact-hygiene-review.json schema_version must be 1")
     if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
         fail("artifact hygiene review must reference the active MVP")
-    if data.get("status") != "active_in_progress":
-        fail("artifact hygiene review must remain active_in_progress until Gate 08 passes")
+    if data.get("status") != "passed_for_selected_mvp_closeout":
+        fail("artifact hygiene review must pass for selected MVP closeout")
     if data.get("not_completion_claim") is not True:
         fail("artifact hygiene review must explicitly avoid completion claims")
     required_principles = [
@@ -814,10 +821,10 @@ def verify_mvp_artifact_hygiene_review() -> None:
         if posture["repository"] not in repo_names:
             fail(f"artifact hygiene posture references unknown repository: {posture['repository']}")
     result = data.get("current_result", {})
-    if result.get("gate_08_status") != "in_progress_with_review_surface":
-        fail("artifact hygiene review must keep Gate 08 in progress")
-    if not result.get("remaining_before_gate_pass"):
-        fail("artifact hygiene review must record remaining work before Gate 08 can pass")
+    if result.get("gate_08_status") != "passed_for_selected_mvp_closeout":
+        fail("artifact hygiene review must record Gate 08 selected-MVP pass")
+    if not result.get("post_closeout_follow_up"):
+        fail("artifact hygiene review must record post-closeout follow-up")
     doc = (ROOT / "docs" / "mvp-artifact-hygiene-review.md").read_text(encoding="utf-8")
     for phrase in [
         "No process artifact is authority by accident",
@@ -827,7 +834,7 @@ def verify_mvp_artifact_hygiene_review() -> None:
         "ignored non-authority",
         "Generated artifacts are derived",
         "MVP-03 follow-up approval is batch-limited",
-        "Gate 08 still cannot pass",
+        "Gate 08 passes for selected MVP closeout",
     ]:
         if phrase not in doc:
             fail(f"artifact hygiene review doc missing phrase: {phrase}")
@@ -845,8 +852,8 @@ def verify_mvp_continuous_assurance_review() -> None:
         fail("mvp-continuous-assurance-review.json schema_version must be 1")
     if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
         fail("continuous assurance review must reference the active MVP")
-    if data.get("status") != "active_in_progress":
-        fail("continuous assurance review must remain active_in_progress until Gate 09 passes")
+    if data.get("status") != "passed_for_selected_mvp_closeout":
+        fail("continuous assurance review must pass for selected MVP closeout")
     if data.get("not_completion_claim") is not True:
         fail("continuous assurance review must explicitly avoid completion claims")
     required_principles = [
@@ -894,10 +901,10 @@ def verify_mvp_continuous_assurance_review() -> None:
         if unknown_dimensions:
             fail(f"continuous assurance item has unknown dimensions: {item['repository']}")
     result = data.get("current_result", {})
-    if result.get("gate_09_status") != "in_progress_with_review_surface":
-        fail("continuous assurance review must keep Gate 09 in progress")
-    if not result.get("remaining_before_gate_pass"):
-        fail("continuous assurance review must record remaining work before Gate 09 can pass")
+    if result.get("gate_09_status") != "passed_for_selected_mvp_closeout":
+        fail("continuous assurance review must record Gate 09 selected-MVP pass")
+    if not result.get("post_closeout_follow_up"):
+        fail("continuous assurance review must record post-closeout follow-up")
     doc = (ROOT / "docs" / "mvp-continuous-assurance-review.md").read_text(encoding="utf-8")
     for phrase in [
         "A green CI run is snapshot evidence",
@@ -911,7 +918,7 @@ def verify_mvp_continuous_assurance_review() -> None:
         "public/private boundary",
         "runtime authority",
         "Event-driven cadence",
-        "Gate 09 still cannot pass",
+        "Gate 09 passes for selected MVP closeout",
     ]:
         if phrase not in doc:
             fail(f"continuous assurance review doc missing phrase: {phrase}")
@@ -929,8 +936,8 @@ def verify_mvp_persistence_continuity_review() -> None:
         fail("mvp-persistence-continuity-review.json schema_version must be 1")
     if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
         fail("persistence continuity review must reference the active MVP")
-    if data.get("status") != "active_in_progress":
-        fail("persistence continuity review must remain active_in_progress until Gate 10 passes")
+    if data.get("status") != "passed_for_selected_mvp_closeout":
+        fail("persistence continuity review must pass for selected MVP closeout")
     if data.get("not_completion_claim") is not True:
         fail("persistence continuity review must explicitly avoid completion claims")
     required_principles = [
@@ -978,10 +985,10 @@ def verify_mvp_persistence_continuity_review() -> None:
         if not item["anchors"]:
             fail(f"persistence continuity item must list recovery anchors: {item['repository']}")
     result = data.get("current_result", {})
-    if result.get("gate_10_status") != "in_progress_with_review_surface":
-        fail("persistence continuity review must keep Gate 10 in progress")
-    if not result.get("remaining_before_gate_pass"):
-        fail("persistence continuity review must record remaining work before Gate 10 can pass")
+    if result.get("gate_10_status") != "passed_for_selected_mvp_closeout":
+        fail("persistence continuity review must record Gate 10 selected-MVP pass")
+    if not result.get("post_closeout_follow_up"):
+        fail("persistence continuity review must record post-closeout follow-up")
     doc = (ROOT / "docs" / "mvp-persistence-continuity-review.md").read_text(encoding="utf-8")
     for phrase in [
         "Repository truth beats chat memory",
@@ -994,7 +1001,7 @@ def verify_mvp_persistence_continuity_review() -> None:
         "automation failure",
         "Current recovery anchors",
         "Public/private continuity boundary",
-        "Gate 10 still cannot pass",
+        "Gate 10 passes for selected MVP closeout",
     ]:
         if phrase not in doc:
             fail(f"persistence continuity review doc missing phrase: {phrase}")
@@ -1012,8 +1019,8 @@ def verify_mvp_observability_explainability_review() -> None:
         fail("mvp-observability-explainability-review.json schema_version must be 1")
     if data.get("mvp_name") != "curated-skills-terminal-consumer-mvp":
         fail("observability explainability review must reference the active MVP")
-    if data.get("status") != "active_in_progress":
-        fail("observability explainability review must remain active_in_progress until Gate 11 passes")
+    if data.get("status") != "passed_for_selected_mvp_closeout":
+        fail("observability explainability review must pass for selected MVP closeout")
     if data.get("not_completion_claim") is not True:
         fail("observability explainability review must explicitly avoid completion claims")
     required_principles = [
@@ -1076,10 +1083,10 @@ def verify_mvp_observability_explainability_review() -> None:
         if not item["observable_surfaces"]:
             fail(f"observability explainability item must list observable surfaces: {item['repository']}")
     result = data.get("current_result", {})
-    if result.get("gate_11_status") != "in_progress_with_review_surface":
-        fail("observability explainability review must keep Gate 11 in progress")
-    if not result.get("remaining_before_gate_pass"):
-        fail("observability explainability review must record remaining work before Gate 11 can pass")
+    if result.get("gate_11_status") != "passed_for_selected_mvp_closeout":
+        fail("observability explainability review must record Gate 11 selected-MVP pass")
+    if not result.get("post_closeout_follow_up"):
+        fail("observability explainability review must record post-closeout follow-up")
     doc = (ROOT / "docs" / "mvp-observability-explainability-review.md").read_text(encoding="utf-8")
     for phrase in [
         "Important decisions should be explainable",
@@ -1093,7 +1100,7 @@ def verify_mvp_observability_explainability_review() -> None:
         "public refresh",
         "Current observable surfaces",
         "Public/private explainability boundary",
-        "Gate 11 still cannot pass",
+        "Gate 11 passes for selected MVP closeout",
     ]:
         if phrase not in doc:
             fail(f"observability explainability review doc missing phrase: {phrase}")

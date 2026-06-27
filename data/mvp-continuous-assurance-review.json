@@ -2,9 +2,9 @@
   "schema_version": 1,
   "review_id": "mvp-continuous-assurance-review-2026-06-27",
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "active_in_progress",
+  "status": "passed_for_selected_mvp_closeout",
   "not_completion_claim": true,
-  "purpose": "Record the current continuous-assurance posture for MVP Gate 09 without treating a green validation run as permanent health.",
+  "purpose": "Record the continuous-assurance posture that passes MVP Gate 09 for the selected Skills MVP closeout without treating a green validation run as permanent health.",
   "review_date": "2026-06-27",
   "principles": [
     "A green CI run is snapshot evidence, not a permanent certificate.",
@@ -284,18 +284,19 @@
     }
   ],
   "current_result": {
-    "gate_09_status": "in_progress_with_review_surface",
+    "gate_09_status": "passed_for_selected_mvp_closeout",
     "completed_this_review": [
       "continuous-assurance dimensions are explicit",
       "repository-level assurance posture is recorded",
       "green CI is explicitly downgraded from permanent proof to snapshot evidence",
       "public/private boundary drift is treated as an assurance dimension",
-      "runtime authority drift is treated as an assurance dimension"
+      "runtime authority drift is treated as an assurance dimension",
+      "selected-MVP assurance evidence is recorded in the global evidence ledger"
     ],
-    "remaining_before_gate_pass": [
+    "post_closeout_follow_up": [
       "turn cadence hints into per-lane recurring or event-driven check records where needed",
-      "run final cross-repository assurance review after MVP-03 through MVP-06 evidence exists",
-      "record any accepted stale-risk exceptions or retire stale artifacts before global closeout"
+      "rerun cross-repository assurance before any new candidate batch, terminal consumer, public launch refresh, or repository visibility change",
+      "record accepted stale-risk exceptions or retire stale artifacts when evidence decays"
     ]
   }
 }

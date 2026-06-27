@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "active_in_progress",
+  "status": "selected_mvp_closed_pause_observe",
   "purpose": "Prove the governance loop with the curated Skills lane before expanding to more terminal consumers.",
   "known_baselines": [
     "the private user-configuration to agent-skills-curated base logic chain has already been verified",

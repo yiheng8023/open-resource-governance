@@ -2,9 +2,9 @@
   "schema_version": 1,
   "review_id": "mvp-persistence-continuity-review-2026-06-27",
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "active_in_progress",
+  "status": "passed_for_selected_mvp_closeout",
   "not_completion_claim": true,
-  "purpose": "Record the current persistence and continuity posture for MVP Gate 10 without treating chat history, private memory, or one machine as the only recovery path.",
+  "purpose": "Record the persistence and continuity posture that passes MVP Gate 10 for the selected Skills MVP closeout without treating chat history, private memory, or one machine as the only recovery path.",
   "review_date": "2026-06-27",
   "principles": [
     "Repository truth beats chat memory for continuation.",
@@ -234,18 +234,19 @@
     }
   ],
   "current_result": {
-    "gate_10_status": "in_progress_with_review_surface",
+    "gate_10_status": "passed_for_selected_mvp_closeout",
     "completed_this_review": [
       "continuity scenarios are explicit",
       "repository-level recovery anchors are recorded",
       "public/private recovery boundaries are documented",
       "verification commands are recorded for each lane",
-      "known recovery gaps are explicit instead of hidden"
+      "known recovery gaps are explicit instead of hidden",
+      "selected-MVP next state is pause and observe before the next gated batch"
     ],
-    "remaining_before_gate_pass": [
-      "run final continuity drill after lifecycle feedback and global closeout evidence exists",
-      "confirm current recovery anchors still match each repository's latest README and verify commands",
-      "record final closeout continuation decision for the next Skills iteration, pause, or another terminal consumer"
+    "post_closeout_follow_up": [
+      "repeat continuity drill before any new candidate batch, terminal consumer, public launch refresh, or repository visibility change",
+      "confirm recovery anchors still match each repository's latest README and verify commands",
+      "record the next gated continuation decision before resuming Skills iteration or adding another terminal consumer"
     ]
   }
 }

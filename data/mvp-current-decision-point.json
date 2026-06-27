@@ -1,17 +1,18 @@
 {
   "schema_version": 1,
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "mvp03_release_routing_install_proof_recorded_feedback_pending",
+  "status": "selected_mvp_closed_pause_observe",
   "not_completion_claim": true,
   "not_public_launch_approval": true,
   "date": "2026-06-27",
-  "purpose": "Record the current MVP decision point so continuation can resume from repository truth after MVP-03 release/routing/install proof without mistaking it for public launch approval or unrelated source approval.",
-  "current_workstream": "mvp-06-feedback-retirement",
-  "current_gate": "lifecycle-feedback-and-global-closeout",
+  "purpose": "Record the current MVP decision point so continuation can resume from repository truth after selected small-batch MVP closeout without mistaking it for public launch approval or unrelated source approval.",
+  "current_workstream": "mvp-07-global-closeout",
+  "current_gate": "selected-mvp-closeout-pause-observe",
   "source_repository": "agent-skills-curated",
-  "source_head": "e80d49733192bfa41c894a72da63def4801691f4",
+  "source_head": "74c8c176a5ad2cbeda0b3fb3feee47d9b74a3651",
   "consumer_repository": "codex-user-config",
-  "consumer_head": "a89b61737f066118b13264510cb4dbe5566e2269",
+  "consumer_head": "09979511a5fe04feffaba7959b3c22483b21ce77",
+  "consumer_install_proof_head": "a89b61737f066118b13264510cb4dbe5566e2269",
   "source_records": [
     "registry/mvp-approval-requests.json",
     "registry/mvp02-preflight-readiness.json",
@@ -36,6 +37,8 @@
     "docs/mvp03-release-or-routing-candidate-review.md",
     "registry/mvp03-release-routing-execution.json",
     "docs/mvp03-release-routing-execution.md",
+    "registry/mvp06-lifecycle-feedback.json",
+    "docs/mvp06-lifecycle-feedback.md",
     "release-manifest.json",
     "generated/routing-index.json"
   ],
@@ -44,7 +47,7 @@
     "documentation-and-adrs",
     "code-review-and-quality"
   ],
-  "decision_needed": "Decide whether to iterate another curated Skills batch, pause and observe the current runtime evidence, or incubate another terminal consumer after a separate graduation gate. Do not treat this proof as public promotion approval or approval for unrelated sources.",
+  "decision_needed": "No immediate action is required. The selected small-batch MVP is closed with a pause-and-observe decision. Any new curated Skills batch, terminal consumer, or broad public promotion refresh requires a fresh gate.",
   "last_approval_event_recorded": "mvp03-followup-owner-approval-2026-06-27-release-routing-manifest-install-proof",
   "safe_approval_phrases": [
     "批准进入 MVP-03 release/routing 候选审查阶段",
@@ -56,8 +59,8 @@
     "refresh evidence ledgers and public-safe explanations",
     "check repository freshness and CI status",
     "summarize public-safe runtime install proof",
-    "prepare lifecycle feedback and closeout scaffolding",
-    "record next-iteration decision options without adding new sources"
+    "summarize selected-MVP closeout evidence",
+    "record next-iteration options without adding new sources"
   ],
   "current_permissions": {
     "candidate_review_recorded": true,
@@ -80,15 +83,13 @@
     "MVP-03 follow-up approval has been consumed for this small batch only",
     "the selected changes are approved release/routing/install evidence, not open-ended source approval",
     "public promotion and next-lane graduation remain separate human authorization boundaries",
-    "lifecycle feedback and global closeout still need evidence before final MVP closeout"
+    "selected small-batch MVP closeout is complete, but future batches and public promotion remain separate gates"
   ],
-  "next_state": "lifecycle_feedback_and_global_closeout_pending",
+  "next_state": "pause_and_observe_before_next_gated_batch",
   "next_required_evidence": [
-    "public-safe lifecycle feedback for the installed small batch",
-    "decision to iterate Skills, pause, or incubate another terminal consumer",
-    "owner-local evidence freshness check",
-    "final artifact hygiene and stale-process cleanup pass",
-    "global closeout verification across affected repositories",
-    "explicit public promotion decision if broad promotion resumes"
+    "fresh intake/review/approval/release/install/lifecycle evidence for any new curated Skills batch",
+    "separate graduation gate for any new terminal consumer",
+    "fresh public refresh gate if broad promotion resumes",
+    "event-driven artifact hygiene, assurance, continuity, and explainability review before material topology expansion"
   ]
 }

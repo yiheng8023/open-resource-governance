@@ -3,7 +3,8 @@
 Machine-readable review:
 [`data/mvp-artifact-hygiene-review.json`](../data/mvp-artifact-hygiene-review.json).
 
-This review supports MVP Gate 08. It is not a completion claim.
+This review supports MVP Gate 08. It is not a universal completion claim; it
+passes the selected Skills MVP closeout and remains subject to future review.
 
 ## Review status
 
@@ -82,11 +83,10 @@ redistribution beyond reviewed adapted payload, or public promotion.
 
 ## Gate 08 result
 
-Gate 08 is now stronger than before because the classification vocabulary and
-repository-level artifact posture are explicit and checked by repository
-validation.
+Gate 08 passes for selected MVP closeout because the classification vocabulary,
+repository-level artifact posture, lifecycle feedback, and global evidence
+ledger are explicit and checked by repository validation.
 
-Gate 08 still cannot pass until lifecycle/global-closeout evidence exists and
-the final residue sweep confirms that stale drafts, obsolete reports, temporary
-scaffolds, raw experiments, and promotion material have been promoted,
-archived, deleted, or marked non-authoritative.
+This is not a permanent certificate. Repeat the residue review before any new
+candidate batch, terminal consumer, public launch refresh, repository
+visibility change, or materially new generated artifact.

@@ -2,9 +2,9 @@
   "schema_version": 1,
   "review_id": "mvp-artifact-hygiene-review-2026-06-27",
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "active_in_progress",
+  "status": "passed_for_selected_mvp_closeout",
   "not_completion_claim": true,
-  "purpose": "Record the current process-artifact hygiene posture for MVP Gate 08 without pretending final global closeout is complete.",
+  "purpose": "Record the process-artifact hygiene posture that passes MVP Gate 08 for the selected Skills MVP closeout without pretending the posture is a permanent certificate.",
   "review_date": "2026-06-27",
   "principles": [
     "No process artifact is authority by accident.",
@@ -271,18 +271,19 @@
     }
   ],
   "current_result": {
-    "gate_08_status": "in_progress_with_review_surface",
+    "gate_08_status": "passed_for_selected_mvp_closeout",
     "completed_this_review": [
       "classification vocabulary is explicit",
       "repository-level process-artifact posture is recorded",
       "promotion material is kept non-authoritative before proof",
       "generated artifacts are explicitly derived",
-      "private-source repositories are not treated as public truth"
+      "private-source repositories are not treated as public truth",
+      "final selected-MVP residue posture is recorded in the global evidence ledger"
     ],
-    "remaining_before_gate_pass": [
-      "run final residue sweep after lifecycle feedback and global closeout evidence exist",
-      "delete or archive any stale draft that conflicts with current evidence",
-      "refresh public docs only where the final evidence supports new claims"
+    "post_closeout_follow_up": [
+      "repeat residue review before any new candidate batch, terminal consumer, public launch refresh, or repository visibility change",
+      "delete, archive, or mark non-authoritative any future draft that conflicts with current evidence",
+      "refresh public docs only where new evidence supports new claims"
     ]
   }
 }

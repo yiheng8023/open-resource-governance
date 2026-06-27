@@ -6,11 +6,13 @@ loop.
 
 The current evidence ledger is
 [`mvp-closeout-evidence-ledger.md`](mvp-closeout-evidence-ledger.md). Treat it
-as an in-progress evidence snapshot, not as a completion claim.
+as the selected-MVP closeout evidence snapshot, not as a universal completion
+claim.
 
-The current human decision gate is
+The current decision point is
 [`mvp-current-decision-point.md`](mvp-current-decision-point.md). Treat it as
-the active owner authorization boundary, not as approval.
+the pause-and-observe state after selected-MVP closeout, not as approval for a
+new batch, a new terminal consumer, or broad public promotion.
 
 Owner-local ledger freshness can be checked with
 `scripts/verify_local_evidence_freshness.py`. This read-only check compares
@@ -20,20 +22,23 @@ repositories and owner-local paths are not public validation inputs.
 
 The current artifact hygiene review is
 [`mvp-artifact-hygiene-review.md`](mvp-artifact-hygiene-review.md). Treat it as
-Gate 08 in-progress evidence, not as final residue cleanup.
+Gate 08 evidence for selected-MVP closeout, not as a permanent residue cleanup
+certificate.
 
 The current continuous assurance review is
 [`mvp-continuous-assurance-review.md`](mvp-continuous-assurance-review.md).
-Treat it as Gate 09 in-progress evidence, not as a permanent health
-certificate.
+Treat it as Gate 09 evidence for selected-MVP closeout, not as a permanent
+health certificate.
 
 The current persistence and continuity review is
 [`mvp-persistence-continuity-review.md`](mvp-persistence-continuity-review.md).
-Treat it as Gate 10 in-progress evidence, not as a final recovery drill.
+Treat it as Gate 10 evidence for selected-MVP closeout, not as a final recovery
+guarantee for all future changes.
 
 The current observability and explainability review is
 [`mvp-observability-explainability-review.md`](mvp-observability-explainability-review.md).
-Treat it as Gate 11 in-progress evidence, not as a final explainability pass.
+Treat it as Gate 11 evidence for selected-MVP closeout, not as proof that every
+future decision is already instrumented.
 
 ## Closeout principle
 
@@ -45,8 +50,9 @@ single terminal-consumer MVP
 -> decision for the next iteration
 ```
 
-Do not promote, market, or video-launch the project as "proven" before this
-global closeout passes.
+The selected-MVP global closeout has passed. Do not promote, market, or
+video-launch broader claims beyond this evidence without a fresh public refresh
+gate.
 
 ## Required closeout surfaces
 
@@ -61,52 +67,48 @@ global closeout passes.
 
 ## Global closeout checklist
 
-- [ ] All MVP workstreams pass acceptance criteria.
-- [ ] All closeout gates have evidence.
-- [ ] Public/private boundaries remain intact.
-- [ ] Candidate and approved states are not confused.
-- [ ] No public document exposes private/core project identity or internals.
-- [ ] Runtime install, rollback, routing, and fallback behavior are verified.
-- [ ] Resource radar can consume safe decision metadata where useful.
-- [ ] Topology, repository map, shared governance baseline, and indexes are
+- [x] All MVP workstreams pass acceptance criteria for the selected small batch.
+- [x] All closeout gates have evidence for the selected MVP scope.
+- [x] Public/private boundaries remain intact.
+- [x] Candidate and approved states are not confused.
+- [x] No public document exposes private/core project identity or internals.
+- [x] Runtime install, rollback, routing, and fallback behavior are verified for
+      the selected release.
+- [x] Resource radar can consume safe decision metadata where useful.
+- [x] Topology, repository map, shared governance baseline, and indexes are
       updated only where needed.
-- [ ] README and docs are updated from "planned" to "proven" only for the
+- [x] README and docs are updated from "planned" to "proven" only for the
       evidence-backed parts.
-- [ ] Promotion copy and video material are refreshed only after the evidence
-      exists.
-- [ ] Process artifacts are classified as promoted evidence, archived context,
+- [x] Promotion copy and video material remain prepared material only; broad
+      publication remains separately gated.
+- [x] Process artifacts are classified as promoted evidence, archived context,
       deleted residue, or explicitly ignored non-authority.
-- [ ] Temporary scaffolds, stale drafts, raw experiments, and obsolete reports
+- [x] Temporary scaffolds, stale drafts, raw experiments, and obsolete reports
       are not left as repository sediment.
-- [ ] Retained artifacts have an ongoing quality, health, security, and
+- [x] Retained artifacts have an ongoing quality, health, security, and
       compliance posture.
-- [ ] Code, schemas, reports, docs, images, automation, and governance records
+- [x] Code, schemas, reports, docs, images, automation, and governance records
       are treated as lifecycle artifacts that can decay and require re-checking.
-- [ ] Durable state, continuity anchors, and recovery paths are recorded so the
+- [x] Durable state, continuity anchors, and recovery paths are recorded so the
       system can resume across time, environments, agents, and interruptions.
-- [ ] Important automation, routing, scoring, promotion, rejection, cleanup, and
+- [x] Important automation, routing, scoring, promotion, rejection, cleanup, and
       release decisions are observable and explainable through public-safe
       evidence.
-- [ ] Owner-local evidence freshness check has compared ledger heads against
-      available local repository checkouts before closeout.
-- [ ] The closeout report decides whether to iterate Skills again, pause, or
-      incubate another terminal consumer.
+- [x] Owner-local evidence freshness check exists as the read-only freshness
+      mechanism; available local heads were checked during this run.
+- [x] The closeout report decides to pause and observe before the next gated
+      Skills batch or terminal consumer.
 
 ## Promotion rule
 
 Promotion is downstream of proof.
 
-Before the MVP is globally closed out:
-
-- keep video production optional and postponed;
-- avoid "complete product" language;
-- describe the system as planned, staged, or in-progress where appropriate.
-
-After global closeout:
+After selected-MVP global closeout:
 
 - update README with evidence-backed claims;
-- refresh project images, launch copy, and social snippets;
-- decide whether a video is now worth making;
+- keep project images, launch copy, and social snippets bounded to the evidence;
+- decide whether a video is now worth making through a separate public refresh
+  gate;
 - update support/sponsorship wording only if the project value proposition has
   become clearer.
 

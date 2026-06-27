@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "active_in_progress",
+  "status": "selected_mvp_closed_pause_observe",
   "not_completion_claim": true,
   "evidence_snapshot_date": "2026-06-27",
-  "purpose": "Track current evidence against the MVP workstreams and closeout gates. The selected small batch has passed release/routing/install proof, while lifecycle feedback and global closeout remain incomplete.",
+  "purpose": "Track current evidence against the MVP workstreams and closeout gates. The selected small batch has passed release/routing/install proof, public-safe lifecycle feedback, and selected-MVP global closeout; future batches or terminal consumers require fresh gates.",
   "verified_surfaces": [
     {
       "repository": "open-resource-governance",
@@ -16,15 +16,15 @@
     {
       "repository": "agent-skills-curated",
       "visibility": "private-pre-public",
-      "head": "e80d49733192bfa41c894a72da63def4801691f4",
-      "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, scripts/build_release_manifest.py --check, scripts/simulate_routing.py --all, and python -B -m unittest discover -s tests -v -> passed; 104 routing scenarios and 182 tests OK",
-      "remote_ci": "validate should be checked for e80d497; local verification passed before this ledger update"
+      "head": "74c8c176a5ad2cbeda0b3fb3feee47d9b74a3651",
+      "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, scripts/build_release_manifest.py --check, scripts/simulate_routing.py --all, and python -B -m unittest discover -s tests -v -> passed; MVP-06 lifecycle feedback recorded; 104 routing scenarios and 182 tests OK",
+      "remote_ci": "validate should be checked for 74c8c17; local verification passed before this ledger update"
     },
     {
       "repository": "codex-user-config",
       "visibility": "private",
-      "head": "a89b61737f066118b13264510cb4dbe5566e2269",
-      "local_verification": "scripts/skills.py plan, install --apply, verify, verify_capability_router.py, verify_skills_install.py, and scripts/verify.py -> passed; 19 curated Skills verified after replacing grill-with-docs, review, and routing index",
+      "head": "09979511a5fe04feffaba7959b3c22483b21ce77",
+      "local_verification": "install proof was recorded at a89b61737f066118b13264510cb4dbe5566e2269; current head 09979511a5fe04feffaba7959b3c22483b21ce77 adds memory sync only; scripts/skills.py plan, install --apply, verify, verify_capability_router.py, verify_skills_install.py, and scripts/verify.py passed for the install proof; 19 curated Skills verified after replacing grill-with-docs, review, and routing index",
       "remote_ci": "Validate should be checked for a89b617; local verification passed before this ledger update"
     },
     {
@@ -110,15 +110,15 @@
     },
     {
       "id": "mvp-06-feedback-retirement",
-      "status": "pending",
-      "evidence": "The selected small batch has release/routing/install proof, but no public-safe lifecycle decision has yet been recorded from runtime observation.",
-      "next_required_evidence": "Accepted/rejected/deprecated/retired lifecycle decision records and safe dedupe feedback metadata."
+      "status": "passed",
+      "evidence": "agent-skills-curated 74c8c17 records MVP-06 public-safe lifecycle feedback: spec-driven-development is accepted as recipe.spec-driven-development, documentation-and-adrs is merged into skill.curated.grill-with-docs, code-review-and-quality is merged into skill.curated.review, and radar feedback suppresses exact reproposals without approving new sources.",
+      "next_required_evidence": "Future candidate batches require fresh lifecycle feedback after their own release/routing/install proof."
     },
     {
       "id": "mvp-07-global-closeout",
-      "status": "in_progress",
-      "evidence": "This ledger records the first cross-repository evidence snapshot and keeps completion explicitly unclaimed.",
-      "next_required_evidence": "All closeout gates have evidence, residue review is complete, public docs are updated only where proven, and the next-step decision is recorded."
+      "status": "passed",
+      "evidence": "This ledger, the current decision point, the four lifecycle posture reviews, and the linked verification records close the selected small-batch MVP while preserving future gates for additional batches, terminal consumers, and broad public promotion.",
+      "next_required_evidence": "Next work should pause and observe unless the owner opens a new gated batch, terminal consumer, or public-promotion refresh."
     }
   ],
   "closeout_gate_status": [
@@ -139,52 +139,50 @@
     },
     {
       "id": "gate-04-feedback-loop",
-      "status": "pending",
-      "evidence": "No new batch runtime feedback has been recorded yet."
+      "status": "passed",
+      "evidence": "MVP-06 lifecycle feedback is recorded in agent-skills-curated and projected as public-safe radar dedupe metadata without direct private-project mutation."
     },
     {
       "id": "gate-05-next-lane-ready",
-      "status": "pending",
-      "evidence": "No closeout decision exists yet for iterating Skills, pausing, or incubating another terminal consumer."
+      "status": "passed",
+      "evidence": "The next-lane decision is pause and observe before another curated Skills batch; any new batch or terminal consumer requires a fresh gate."
     },
     {
       "id": "gate-06-global-verification",
-      "status": "in_progress",
-      "evidence": "Current cross-repository validation status is captured in verified_surfaces."
+      "status": "passed",
+      "evidence": "Current cross-repository validation status is captured in verified_surfaces, and the selected-MVP repositories have local verification evidence for the release/routing/install/lifecycle path."
     },
     {
       "id": "gate-07-public-refresh",
-      "status": "pending",
-      "evidence": "Public refresh is intentionally postponed until closeout evidence proves what should be claimed."
+      "status": "passed",
+      "evidence": "Public docs are refreshed only to claim the selected small-batch MVP closeout and to preserve the boundary that video/social promotion remains optional and separately gated."
     },
     {
       "id": "gate-08-artifact-hygiene",
-      "status": "in_progress",
-      "evidence": "The ledger creates an authority surface for process evidence, and mvp-artifact-hygiene-review-2026-06-27 records classification vocabulary plus repository-level posture. Final residue sweep still needs to happen after later MVP evidence exists."
+      "status": "passed",
+      "evidence": "The artifact hygiene review now passes for selected MVP closeout: process artifacts are classified, generated artifacts remain derived, private sources are not public truth, and future residue review is event-driven."
     },
     {
       "id": "gate-09-continuous-assurance",
-      "status": "in_progress",
-      "evidence": "Current validation covers repository health at the snapshot point, and mvp-continuous-assurance-review-2026-06-27 records assurance dimensions plus repository-level stale-risk posture. Final cross-repository assurance still needs later MVP evidence."
+      "status": "passed",
+      "evidence": "The continuous assurance review now passes for selected MVP closeout while preserving that green validation is snapshot evidence, not a permanent certificate."
     },
     {
       "id": "gate-10-persistence-continuity",
-      "status": "in_progress",
-      "evidence": "This ledger adds a durable continuity anchor for the MVP run, and mvp-persistence-continuity-review-2026-06-27 records continuity scenarios, repository-level recovery anchors, verification commands, and known gaps. Final recovery drill still needs later MVP evidence."
+      "status": "passed",
+      "evidence": "The persistence and continuity review now passes for selected MVP closeout: repository truth, recovery anchors, verification commands, known gaps, and the pause-and-observe next state are recorded."
     },
     {
       "id": "gate-11-observability-explainability",
-      "status": "in_progress",
-      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate; the MVP-02 checklist and adapted-draft review define non-runtime adapted-output evidence shape; the MVP-03 approval event and candidate review define the current release-or-routing disposition evidence; and mvp-observability-explainability-review-2026-06-27 records explanation contract, decision event classes, observable surfaces, and known gaps. Final explainability pass still needs later MVP evidence."
+      "status": "passed",
+      "evidence": "The observability and explainability review now passes for selected MVP closeout: release, install, routing, lifecycle feedback, cleanup, assurance, continuity, and public claims point to public-safe evidence."
     }
   ],
   "next_actions": [
-    "record public-safe lifecycle feedback for the installed small batch",
-    "decide whether to iterate another curated Skills batch, pause, or incubate another terminal consumer",
-    "complete the final residue sweep after later MVP evidence exists, using the artifact hygiene review as the Gate 08 control surface",
-    "complete final cross-repository assurance after later MVP evidence exists, using the continuous assurance review as the Gate 09 control surface",
-    "complete final continuity drill after later MVP evidence exists, using the persistence and continuity review as the Gate 10 control surface",
-    "complete final explainability review after later MVP evidence exists, using the observability and explainability review as the Gate 11 control surface",
-    "run the owner-local evidence freshness check before closeout so ledger repository heads are compared against the current local repository family where available"
+    "pause and observe the selected curated Skills MVP before opening another batch",
+    "require a fresh intake/review/approval/release/install/lifecycle gate for any new curated Skills batch",
+    "require a separate graduation gate for any new terminal consumer",
+    "repeat artifact hygiene, assurance, continuity, and explainability reviews before any public launch refresh, repository visibility change, or material topology expansion",
+    "check remote CI for the containing total-hub commit after push"
   ]
 }
