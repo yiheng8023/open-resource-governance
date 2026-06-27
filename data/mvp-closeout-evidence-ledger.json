@@ -16,9 +16,9 @@
     {
       "repository": "agent-skills-curated",
       "visibility": "private-pre-public",
-      "head": "4d37eb11461d394377a5373d728c753cc2f3df6d",
+      "head": "d351893339a3ce128134194d9c6f3c8b8bb5ff99",
       "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, and python -B -m unittest discover -s tests -v -> passed; 182 tests OK",
-      "remote_ci": "validate success, run 28261127411"
+      "remote_ci": "validate success, run 28272556923"
     },
     {
       "repository": "codex-user-config",
@@ -87,8 +87,8 @@
     {
       "id": "mvp-02-review-adapt",
       "status": "partial",
-      "evidence": "Pre-adaptation candidate-specific review evidence, a non-executable MVP-02 adaptation transition gate, a template-only adapted-output review checklist, a bounded owner approval request, an MVP-02 preflight readiness record, and a non-executable post-approval execution plan are recorded in agent-skills-curated at 4d37eb11461d394377a5373d728c753cc2f3df6d. The approval request, preflight record, and post-approval execution plan are explicitly pending, record no approval, create no adapted output, and narrow the possible next authorization to non-runtime adapted draft creation plus checklist-based review only. They continue to disallow approval, release manifest changes, routing projection changes, runtime installation, live sync, and source redistribution.",
-      "next_required_evidence": "Explicit owner approval using the bounded approval request, followed by actual adapted draft material in the checklist-defined non-runtime review surface plus focused security, portability, overlap, attribution, validation, and final disposition evidence."
+      "evidence": "Pre-adaptation review, the MVP-02 transition gate, checklist template, bounded approval request, preflight record, post-approval execution plan, approval event, and adapted draft review evidence are recorded in agent-skills-curated at d351893339a3ce128134194d9c6f3c8b8bb5ff99. Non-runtime drafts exist under drafts/mvp02-adaptation/ for spec-driven-development, documentation-and-adrs, and code-review-and-quality. The record explicitly keeps candidates out of skills/, release-manifest.json, generated routing projections, live Agent environments, and source-text redistribution.",
+      "next_required_evidence": "Separate owner approval for the release-or-routing candidate review gate, followed by a decision per draft: release payload, recipe/routing change, reference-only, or reject."
     },
     {
       "id": "mvp-03-release-manifest",
@@ -125,12 +125,12 @@
     {
       "id": "gate-01-chain-complete",
       "status": "partial",
-      "evidence": "Base chain is verified and the next candidate batch is selected, pinned, and pre-reviewed; it has not yet traversed adaptation, release, private consumption, and runtime use."
+      "evidence": "Base chain is verified and the next candidate batch is selected, pinned, pre-reviewed, and adapted into non-runtime drafts; it has not yet traversed release, private consumption, and runtime use."
     },
     {
       "id": "gate-02-boundaries-held",
       "status": "partial",
-      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, preflight readiness record, and post-approval execution plan are recorded as pending owner decision, not adapted, not approved, not releasable, not routable, not installable, and not source-redistributed."
+      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, preflight readiness record, post-approval execution plan, approval event, and adapted draft review are recorded as draft-only, not approved payload, not releasable, not routable, not installable, and not source-redistributed."
     },
     {
       "id": "gate-03-runtime-useful",
@@ -179,8 +179,8 @@
     }
   ],
   "next_actions": [
-    "obtain explicit owner approval through the bounded MVP-02 adaptation approval request",
-    "run focused adapted-output review for security, portability, overlap, attribution, and validation",
+    "obtain separate owner approval for the release-or-routing candidate review gate",
+    "decide per adapted draft whether it becomes release payload, recipe/routing change, reference-only evidence, or rejection",
     "produce release-candidate manifest evidence",
     "consume the release from the private configuration workflow or an authorized dry run",
     "run representative routing/runtime scenarios",

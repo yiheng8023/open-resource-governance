@@ -59,7 +59,7 @@ candidate batch
 | Repository | Visibility | Current evidence |
 | --- | --- | --- |
 | `open-resource-governance` | public | self-referential ledger: local verification passed; check the latest `validate` workflow for the current repository head |
-| `agent-skills-curated` | private-pre-public | MVP candidate batch, pre-adaptation review, non-executable MVP-02 transition gate, template-only adapted-output review checklist, bounded owner approval request, MVP-02 preflight readiness record, and non-executable post-approval execution plan at `4d37eb1...`; validation, topology, and 182-test suite passed; remote `validate` success at `4d37eb1...`, run `28261127411` |
+| `agent-skills-curated` | private-pre-public | MVP candidate batch, pre-adaptation review, MVP-02 transition gate, template-only adapted-output review checklist, bounded owner approval request, preflight record, post-approval execution plan, approval event, and non-runtime adapted draft review at `d351893...`; validation, topology, release-manifest check, 102 routing scenarios, and 182-test suite passed; remote `validate` success at `d351893...`, run `28272556923` |
 | `codex-user-config` | private | validation, capability-router, and curated Skills installer checks passed; remote `Validate` success at `4c887aeb...` |
 | `resource-radar` | private | local verification passed; remote `validate` success at `f5a36fda...` |
 | `resource-radar-public` | public | local verification passed; remote `Validate` success at `a6adf587...` |
@@ -73,8 +73,8 @@ candidate batch
 
 | Workstream | Status | Meaning |
 | --- | --- | --- |
-| MVP-01 source candidate selection | partial | first candidate batch selected, pinned, rationalized, and kept non-executable; human approval is still needed before MVP-02 adaptation |
-| MVP-02 review, neutralize, and adapt | partial | pre-adaptation candidate-specific review evidence, a non-executable adaptation transition gate, a template-only adapted-output review checklist, a bounded owner approval request, a preflight readiness record, and a non-executable post-approval execution plan exist; explicit owner approval, adapted output, review of actual adapted material, and final disposition are still pending |
+| MVP-01 source candidate selection | partial | first candidate batch selected, pinned, rationalized, and kept non-executable; it now also has non-runtime adapted drafts, but has not passed release or runtime gates |
+| MVP-02 review, neutralize, and adapt | partial | pre-adaptation review evidence, bounded approval, non-runtime adapted drafts, and checklist-based draft review evidence exist; release payload, routing projection, runtime install, publication, and lifecycle feedback are still pending |
 | MVP-03 deterministic release manifest | baseline-ready | curated manifest/topology validation passes; batch-specific release evidence is pending |
 | MVP-04 private consumer install | baseline-ready | consumer installer verification passes; batch-specific install or dry-run evidence is pending |
 | MVP-05 routing and runtime use | baseline-ready | capability-router verification passes; representative batch routing scenarios are pending |
@@ -85,8 +85,8 @@ candidate batch
 
 | Gate | Status | Current interpretation |
 | --- | --- | --- |
-| Gate 01 chain complete | partial | base chain is verified and the next candidate batch is selected and pre-reviewed; it has not traversed adaptation, release, private consumption, and runtime use |
-| Gate 02 boundaries held | partial | current validators pass; selected candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, preflight readiness record, and post-approval execution plan are explicitly pending owner decision, not adapted, not approved, not releasable, not routable, not installable, and not source-redistributed |
+| Gate 01 chain complete | partial | base chain is verified and the next candidate batch is selected, pre-reviewed, and adapted into non-runtime drafts; it has not traversed release, private consumption, and runtime use |
+| Gate 02 boundaries held | partial | current validators pass; selected candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, preflight readiness record, post-approval execution plan, approval event, and adapted draft review are explicitly draft-only, not approved payload, not releasable, not routable, not installable, and not source-redistributed |
 | Gate 03 runtime useful | partial | router/installer verification passes; representative runtime proof is pending |
 | Gate 04 feedback loop | pending | no new batch feedback has been recorded |
 | Gate 05 next lane ready | pending | no final closeout decision exists |
@@ -119,12 +119,11 @@ maintainer explicitly supplies them.
 
 ## Next evidence required
 
-1. Confirm the bounded MVP-02 adaptation approval request if the selected Skill
-   candidate batch may leave the transition gate and advance from
-   pre-adaptation review into adapted output.
-2. Run focused adapted-output review for security, portability, overlap,
-   attribution, validation, and final disposition if approved.
-3. Produce release-candidate manifest evidence.
+1. Confirm a separate release-or-routing candidate review gate if the adapted
+   drafts may advance beyond non-runtime evidence.
+2. Decide per adapted draft whether it becomes release payload,
+   recipe/routing change, reference-only evidence, or rejection.
+3. Produce release-candidate manifest evidence only if separately approved.
 4. Consume the release from the private configuration workflow or an authorized
    dry run.
 5. Run representative routing/runtime scenarios.

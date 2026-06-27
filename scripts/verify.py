@@ -487,8 +487,8 @@ def verify_mvp_current_decision_point() -> None:
         fail("mvp-current-decision-point.json schema_version must be 1")
     if decision.get("mvp_name") != ledger.get("mvp_name"):
         fail("MVP current decision point must reference the active MVP")
-    if decision.get("status") != "awaiting_owner_approval":
-        fail("MVP current decision point must remain awaiting_owner_approval")
+    if decision.get("status") != "adapted_draft_recorded_awaiting_next_gate":
+        fail("MVP current decision point must record adapted draft state awaiting next gate")
     if decision.get("not_completion_claim") is not True:
         fail("MVP current decision point must explicitly avoid completion claims")
     if decision.get("not_approval") is not True:
@@ -518,11 +518,13 @@ def verify_mvp_current_decision_point() -> None:
     ]
     if decision.get("safe_approval_phrases") != expected_phrases:
         fail("MVP current decision point safe approval phrases changed")
+    if decision.get("approval_event_recorded") != "mvp02-owner-approval-2026-06-27-adapted-draft":
+        fail("MVP current decision point must record the consumed MVP-02 approval event")
     for key, value in decision.get("current_permissions", {}).items():
-        if value is not False:
-            fail(f"MVP current decision point permission must be false before approval: {key}")
+        expected = key == "adapted_output_allowed"
+        if value is not expected:
+            fail(f"MVP current decision point permission mismatch: {key}")
     required_disallowed = {
-        "create adapted candidate output",
         "edit skills/",
         "update release-manifest.json",
         "update generated routing projections",
@@ -533,18 +535,19 @@ def verify_mvp_current_decision_point() -> None:
     if set(decision.get("still_disallowed", [])) != required_disallowed:
         fail("MVP current decision point still_disallowed changed")
     required_reasons = {
-        "goal continuation is not approval",
-        "candidate material remains non-executable",
-        "the next action is a human authorization gate, not an automation step",
+        "adapted draft evidence is not release approval",
+        "candidate material remains non-executable and non-runtime",
+        "the next action is a separate human authorization gate, not an automation step",
         "public closeout claims remain unproven until later MVP workstreams pass",
     }
     if set(decision.get("why_this_matters", [])) != required_reasons:
         fail("MVP current decision point why_this_matters changed")
     doc = (ROOT / "docs" / "mvp-current-decision-point.md").read_text(encoding="utf-8")
     for phrase in [
-        "not a completion claim and not approval",
+        "not a completion claim and not release approval",
         "Goal continuation is not approval",
-        "do not create adapted candidate output",
+        "do not edit `skills/`",
+        "release_or_routing_candidate_review",
         "Approve MVP-02 adapted draft creation only",
         "批准进入 MVP-02 适配草案阶段",
     ]:
