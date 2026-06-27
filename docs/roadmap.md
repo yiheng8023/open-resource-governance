@@ -10,19 +10,19 @@
 
 ## Stage 2: Public launch
 
-- Make the hub public.
-- Decide which downstream repositories are ready for public visibility.
+- Keep the hub public and verified.
+- Decide which downstream repositories or templates are ready for public visibility.
 - Add repository topics and profile pins.
 - Open Discussions only when moderation capacity exists.
 - Run the public-launch gates for each repository before changing visibility.
-- Use the free-promotion playbook for launch sequencing.
+- Use the free-promotion playbook for launch sequencing and later refreshes.
 
 ## Stage 3: Automation hardening
 
 - Share schemas and validation patterns where useful.
 - Add public-safe release gates.
 - Improve declassification workflows.
-- Keep private overlays private.
+- Keep private state private.
 - Maintain a shared governance baseline so repeated automation logic can be
   reused without flattening lane-specific differences.
 
@@ -54,7 +54,7 @@ launch. The current visible map is:
 
 - `open-resource-governance` is public and pinned on the owner's GitHub profile.
 - `research-bookmarks` is private and owns complete bookmark imports, private
-  overlays, audits, and declassification inputs.
+  content, audits, and declassification inputs.
 - `research-bookmarks-public` is public and owns the generated public-safe
   bookmark projection.
 - `resource-radar` is private and owns the real candidate pool, review notes,

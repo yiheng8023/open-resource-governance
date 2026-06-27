@@ -30,14 +30,14 @@ Short version:
 ```text
 Building a modular open-resource governance stack: resource radar, curated agent skills,
 public/private configuration templates, and official-source bookmark taxonomies.
-Public core, private overlays, verifiable automation.
+Public core, private state, verifiable automation.
 ```
 
 Chinese version:
 
 ```text
 正在搭建一套模块化开放资源治理体系：资源雷达、精选 agent skills、公开/私有配置模板、
-官方来源书签分类。公开核心，私有 overlay，可验证自动化。
+官方来源书签分类。公开核心，私有状态，可验证自动化。
 ```
 
 ## Pinned repository order
@@ -45,10 +45,13 @@ Chinese version:
 Recommended pins:
 
 1. `open-resource-governance`
-2. `resource-radar`, after its own public gate passes
-3. `agent-skills-curated`, after third-party redistribution boundaries are confirmed
-4. `codex-user-config-template`, after template review passes
-5. `research-bookmarks-public`, after source-policy review passes
+2. `research-bookmarks-public`
+3. `resource-radar-public`
+4. `codex-user-config-template`
+5. `claude-user-config-template`
+
+Keep `resource-radar`, `agent-skills-curated`, and private user-configuration
+repositories unpinned unless they later pass their own public gate.
 
 Do not pin a private or not-yet-public repository as if it were available.
 
@@ -64,7 +67,7 @@ I am building an open, modular resource-governance stack:
 - keep AI collaboration configuration portable without exposing private state
 - maintain public-safe bookmark taxonomies
 
-Principle: public core, private overlay, verifiable automation.
+Principle: public core, private state, verifiable automation.
 ```
 
 Chinese:
@@ -77,7 +80,7 @@ Chinese:
 - 让 AI 协作配置可迁移但不暴露私人状态
 - 维护公开安全的书签分类
 
-原则：公开核心，私有 overlay，可验证自动化。
+原则：公开核心，私有状态，可验证自动化。
 ```
 
 ## Follow-up cadence
@@ -109,7 +112,7 @@ usage evidence or a clear reason.
 Emphasize:
 
 - public-safe structure;
-- private overlays;
+- private state;
 - human approval gates;
 - evidence-backed automation;
 - modular reuse.
@@ -128,7 +131,7 @@ For early feedback, ask:
 
 1. Is the public/private boundary understandable?
 2. Is the repository map clear?
-3. Which lane is most useful: radar, skills, config template, or bookmarks?
+3. Which part is most useful: radar, skills, config template, or bookmarks?
 4. What would make contribution safe and low-friction?
 5. Which validation evidence is missing?
 

@@ -75,7 +75,7 @@ public repository explains its own role; this hub keeps the global map.
 | `resource-radar-public` | public resource-radar template and demo reports | public |
 | `codex-user-config-template` | public-safe Codex configuration template | public |
 | `claude-user-config-template` | public-safe Claude Code configuration template | public |
-| `resource-radar`, `research-bookmarks`, user config repos | real imports, review pools, private overlays, memory, preferences, account state | private |
+| `resource-radar`, `research-bookmarks`, user config repos | real imports, review pools, private state, memory, preferences, account state | private |
 | `agent-skills-curated` | reviewed Skill governance and release evidence | staged/private until separately released |
 
 <details>
@@ -116,7 +116,7 @@ The public workflow is GitHub-native:
 - GitHub Actions runs checks on pull requests and pushes;
 - generated outputs are committed as reviewable artifacts instead of hidden
   local files;
-- private overlays remain private and are not needed to inspect public output.
+- private state remains private and is not needed to inspect public output.
 
 The system is meant to renew itself over time:
 
@@ -133,7 +133,7 @@ discover or import
 ```
 
 Automation prepares evidence and catches drift. Human review still controls
-publication, visibility, funding, promotion, private overlays, and high-impact
+publication, visibility, funding, promotion, private state, and high-impact
 acceptance decisions.
 
 ## What problem does this solve?
@@ -152,7 +152,7 @@ This project provides a lightweight governance pattern for that problem:
 ```text
 collect broadly
 -> classify and score
--> keep private overlays private
+-> keep private state private
 -> publish only public-safe outputs
 -> verify generated artifacts
 -> review high-impact changes before release
@@ -299,7 +299,7 @@ claude-user-config
 The core rule is:
 
 ```text
-public core + private overlays
+public core + private state
 ```
 
 Public repositories should contain reusable structure, rules, schemas,

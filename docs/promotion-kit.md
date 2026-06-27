@@ -21,11 +21,11 @@ Do not promote only the idea. Point people to the outputs.
   sources, license drift, archived repositories, and better alternatives should
   be detected, reviewed, and updated, merged, retired, or rejected.
 - Human gates remain for publication, visibility, funding, promotion, private
-  overlays, and high-impact acceptance decisions.
+  state, and high-impact acceptance decisions.
 
 ## Short GitHub profile blurb
 
-Building a modular open-resource governance stack, currently under the temporary name Open Resource Governance: resource radar, curated agent skills, public/private configuration templates, and official-source bookmark taxonomies. Public core, private overlays, verifiable automation.
+Building a modular open-resource governance stack, currently under the temporary name Open Resource Governance: resource radar, curated agent skills, public/private configuration templates, and official-source bookmark taxonomies. Public core, private state, verifiable automation.
 
 ## Repository topics
 
@@ -52,7 +52,7 @@ I am building an open, modular resource-governance stack:
   setup;
 - keep resources fresh through a controlled renewal loop.
 
-The principle is simple: public core, private overlay, cloud-first verifiable
+The principle is simple: public core, private state, cloud-first verifiable
 automation, and human gates for high-impact decisions.
 
 Name note: Open Resource Governance is a temporary name and may change after public naming feedback.
@@ -70,7 +70,7 @@ GitHub: https://github.com/yiheng8023/open-resource-governance
 - 发布普通用户无需本地环境即可查看的 GitHub 公开产物；
 - 通过受控新陈代谢持续发现坏链、重复、过期和更优来源。
 
-核心原则：公开核心，私有 overlay，云端优先的可验证自动化，高影响决策保留人工闸门。
+核心原则：公开核心，私有状态，云端优先的可验证自动化，高影响决策保留人工闸门。
 
 命名说明：Open Resource Governance 是暂定名，未来可能根据公开征名反馈变更。
 
@@ -106,7 +106,7 @@ Do not claim:
 
 Safe claim:
 
-> This is an early public-safe governance foundation, with private overlays and human approval gates.
+> This is an early public-safe governance foundation, with private state and human approval gates.
 
 ## Public release checklist
 
@@ -115,11 +115,11 @@ GitHub profile, and the selected-MVP global closeout has passed. Social posts
 and downstream repository visibility changes remain separate owner-controlled
 gates.
 
-- [ ] Confirm all public repositories contain no private configuration, memory, bookmarks, credentials, local paths, account state, or personal preference data.
-- [ ] Verify license and third-party provenance.
-- [ ] Run repository validation.
-- [ ] Make the hub public first.
-- [ ] Pin the hub on GitHub profile.
+- [x] Hub is public and pinned on the GitHub profile.
+- [x] Hub validation and GitHub Actions are green for the current public README.
+- [ ] Confirm each additional public repository contains no private configuration, memory, bookmarks, credentials, local paths, account state, or personal preference data.
+- [ ] Verify license and third-party provenance for each additional repository or claim.
+- [ ] Run repository validation for each linked repository before promoting it.
 - [ ] Link downstream repositories only after each one passes its own public-release gate.
 
 See [`public-launch-gates.md`](public-launch-gates.md) for the non-negotiable release gates. Do not publish repository visibility changes or social posts until those gates pass for the specific repository being released.
