@@ -8,21 +8,22 @@ This is not a completion claim and not release approval.
 ## Current state
 
 ```text
-status: adapted_draft_recorded_awaiting_next_gate
-current workstream: mvp-02-review-adapt
-candidate adapted output allowed: true, draft-only
+status: mvp03_preflight_ready_awaiting_owner_approval
+current workstream: mvp-03-release-manifest
+release review scaffolding allowed: true, preflight-only
 ```
 
-The MVP is active, and the selected batch has non-runtime adapted drafts. The
-current terminal consumer is now waiting at the next release-or-routing
-candidate review gate.
+The MVP is active, the selected batch has non-runtime adapted drafts, and the
+Skills lane now has an MVP-03 release-or-routing preflight record. The current
+terminal consumer is still waiting for owner approval before entering the
+release-or-routing candidate review gate.
 
 ## Decision needed
 
-The owner must decide whether the reviewed adapted drafts may enter a separate
-release-or-routing candidate review gate. That future gate may decide whether a
-draft remains reference-only, becomes a recipe/routing proposal, becomes a
-release payload candidate, or is rejected.
+The owner must decide whether the reviewed adapted drafts may enter MVP-03
+release-or-routing candidate review. That future gate may decide whether a
+draft remains reference-only, becomes a recipe/routing proposal, merges into an
+existing approved Skill, becomes a release payload candidate, or is rejected.
 
 This covers exactly:
 
@@ -35,16 +36,16 @@ release manifest, runtime install, routing projection, or publication action.
 
 ## Safe approval phrases
 
-The previous narrow approval used:
+The next narrow approval phrase is:
 
 ```text
-批准进入 MVP-02 适配草案阶段
+批准进入 MVP-03 release/routing 候选审查阶段
 ```
 
 or:
 
 ```text
-Approve MVP-02 adapted draft creation only
+Approve MVP-03 release-or-routing candidate review only
 ```
 
 Goal continuation is not approval. A continuation prompt keeps the MVP
@@ -59,7 +60,9 @@ The following work can continue safely before the next gate:
 - refresh evidence ledgers and public-safe explanations;
 - check repository freshness and CI status;
 - prepare release-or-routing review scaffolding that does not edit `skills/`,
-  manifest, generated routing, or live environments.
+  manifest, generated routing, or live environments;
+- record a preflight or authorization request that does not approve candidate
+  payload.
 
 ## Still disallowed
 
@@ -82,10 +85,10 @@ release_or_routing_candidate_review
 
 The next evidence must include:
 
-1. release-or-routing gate approval record;
+1. MVP-03 release-or-routing gate approval record;
 2. decision per draft: release payload, recipe/routing change, reference-only,
-   or reject;
-3. manifest or routing diff if separately approved;
+   merge into existing approved Skill, or reject;
+3. manifest, approved-payload, or routing diff only if separately approved;
 4. verification command results;
 5. explicit record that live install and publication remain unchanged unless
    separately approved.

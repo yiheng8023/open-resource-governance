@@ -487,14 +487,14 @@ def verify_mvp_current_decision_point() -> None:
         fail("mvp-current-decision-point.json schema_version must be 1")
     if decision.get("mvp_name") != ledger.get("mvp_name"):
         fail("MVP current decision point must reference the active MVP")
-    if decision.get("status") != "adapted_draft_recorded_awaiting_next_gate":
-        fail("MVP current decision point must record adapted draft state awaiting next gate")
+    if decision.get("status") != "mvp03_preflight_ready_awaiting_owner_approval":
+        fail("MVP current decision point must record MVP-03 preflight state awaiting owner approval")
     if decision.get("not_completion_claim") is not True:
         fail("MVP current decision point must explicitly avoid completion claims")
     if decision.get("not_approval") is not True:
         fail("MVP current decision point must explicitly avoid approval")
-    if decision.get("current_workstream") != "mvp-02-review-adapt":
-        fail("MVP current decision point must point to MVP-02")
+    if decision.get("current_workstream") != "mvp-03-release-manifest":
+        fail("MVP current decision point must point to MVP-03")
     if decision.get("source_repository") != "agent-skills-curated":
         fail("MVP current decision point must source the Skills lane")
     skills_surface = next(
@@ -513,15 +513,15 @@ def verify_mvp_current_decision_point() -> None:
     if decision.get("candidate_ids") != expected_candidates:
         fail("MVP current decision point candidate_ids changed")
     expected_phrases = [
-        "批准进入 MVP-02 适配草案阶段",
-        "Approve MVP-02 adapted draft creation only",
+        "批准进入 MVP-03 release/routing 候选审查阶段",
+        "Approve MVP-03 release-or-routing candidate review only",
     ]
     if decision.get("safe_approval_phrases") != expected_phrases:
         fail("MVP current decision point safe approval phrases changed")
-    if decision.get("approval_event_recorded") != "mvp02-owner-approval-2026-06-27-adapted-draft":
+    if decision.get("last_approval_event_recorded") != "mvp02-owner-approval-2026-06-27-adapted-draft":
         fail("MVP current decision point must record the consumed MVP-02 approval event")
     for key, value in decision.get("current_permissions", {}).items():
-        expected = key == "adapted_output_allowed"
+        expected = key == "release_review_scaffolding_allowed"
         if value is not expected:
             fail(f"MVP current decision point permission mismatch: {key}")
     required_disallowed = {
@@ -535,9 +535,9 @@ def verify_mvp_current_decision_point() -> None:
     if set(decision.get("still_disallowed", [])) != required_disallowed:
         fail("MVP current decision point still_disallowed changed")
     required_reasons = {
-        "adapted draft evidence is not release approval",
-        "candidate material remains non-executable and non-runtime",
-        "the next action is a separate human authorization gate, not an automation step",
+        "MVP-03 preflight evidence is not release approval",
+        "candidate material remains non-executable, non-release, and non-runtime",
+        "the next action is still a separate human authorization gate, not an automation step",
         "public closeout claims remain unproven until later MVP workstreams pass",
     }
     if set(decision.get("why_this_matters", [])) != required_reasons:
@@ -548,8 +548,8 @@ def verify_mvp_current_decision_point() -> None:
         "Goal continuation is not approval",
         "do not edit `skills/`",
         "release_or_routing_candidate_review",
-        "Approve MVP-02 adapted draft creation only",
-        "批准进入 MVP-02 适配草案阶段",
+        "Approve MVP-03 release-or-routing candidate review only",
+        "批准进入 MVP-03 release/routing 候选审查阶段",
     ]:
         if phrase not in doc:
             fail(f"MVP current decision point doc missing phrase: {phrase}")

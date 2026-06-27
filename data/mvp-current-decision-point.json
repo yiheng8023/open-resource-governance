@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "mvp_name": "curated-skills-terminal-consumer-mvp",
-  "status": "adapted_draft_recorded_awaiting_next_gate",
+  "status": "mvp03_preflight_ready_awaiting_owner_approval",
   "not_completion_claim": true,
   "not_approval": true,
   "date": "2026-06-27",
-  "purpose": "Record the current MVP decision point so continuation can resume from repository truth without mistaking adapted draft evidence for release, routing, or runtime approval.",
-  "current_workstream": "mvp-02-review-adapt",
+  "purpose": "Record the current MVP decision point so continuation can resume from repository truth without mistaking MVP-03 preflight evidence for release, routing, manifest, or runtime approval.",
+  "current_workstream": "mvp-03-release-manifest",
   "current_gate": "mvp03-release-or-routing-candidate-review",
   "source_repository": "agent-skills-curated",
-  "source_head": "d351893339a3ce128134194d9c6f3c8b8bb5ff99",
+  "source_head": "ebb914a2a1d904cee596dc9c9c2bf57f1e03ae4e",
   "source_records": [
     "registry/mvp-approval-requests.json",
     "registry/mvp02-preflight-readiness.json",
@@ -22,28 +22,30 @@
     "docs/mvp02-adapted-draft-review.md",
     "drafts/mvp02-adaptation/spec-driven-development/DRAFT.md",
     "drafts/mvp02-adaptation/documentation-and-adrs/DRAFT.md",
-    "drafts/mvp02-adaptation/code-review-and-quality/DRAFT.md"
+    "drafts/mvp02-adaptation/code-review-and-quality/DRAFT.md",
+    "registry/mvp03-release-or-routing-preflight.json",
+    "docs/mvp03-release-or-routing-preflight.md"
   ],
   "candidate_ids": [
     "spec-driven-development",
     "documentation-and-adrs",
     "code-review-and-quality"
   ],
-  "decision_needed": "Whether the reviewed adapted drafts should proceed into a separate release-or-routing candidate review gate; no release, routing projection, approved payload, live install, or publication is approved yet.",
-  "approval_event_recorded": "mvp02-owner-approval-2026-06-27-adapted-draft",
+  "decision_needed": "Whether the owner approves entering MVP-03 release-or-routing candidate review for the three adapted drafts; no release, routing projection, approved payload, live install, publication, or source redistribution is approved yet.",
+  "last_approval_event_recorded": "mvp02-owner-approval-2026-06-27-adapted-draft",
   "safe_approval_phrases": [
-    "批准进入 MVP-02 适配草案阶段",
-    "Approve MVP-02 adapted draft creation only"
+    "批准进入 MVP-03 release/routing 候选审查阶段",
+    "Approve MVP-03 release-or-routing candidate review only"
   ],
   "allowed_without_approval": [
     "run read-only verification",
     "refresh evidence ledgers and public-safe explanations",
     "check repository freshness and CI status",
-    "prepare review scaffolding that does not create adapted candidate output",
-    "record a non-executable post-approval execution plan"
+    "prepare release-or-routing review scaffolding that does not edit skills, manifest, generated routing, or live environments",
+    "record a preflight or authorization request that does not approve candidate payload"
   ],
   "current_permissions": {
-    "adapted_output_allowed": true,
+    "release_review_scaffolding_allowed": true,
     "approved_payload_allowed": false,
     "release_manifest_allowed": false,
     "routing_projection_allowed": false,
@@ -59,9 +61,9 @@
     "redistribute upstream source text as approved curated payload"
   ],
   "why_this_matters": [
-    "adapted draft evidence is not release approval",
-    "candidate material remains non-executable and non-runtime",
-    "the next action is a separate human authorization gate, not an automation step",
+    "MVP-03 preflight evidence is not release approval",
+    "candidate material remains non-executable, non-release, and non-runtime",
+    "the next action is still a separate human authorization gate, not an automation step",
     "public closeout claims remain unproven until later MVP workstreams pass"
   ],
   "next_state_if_approved": "release_or_routing_candidate_review",
