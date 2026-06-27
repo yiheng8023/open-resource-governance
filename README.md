@@ -343,7 +343,8 @@ Good first contributions include:
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md),
 [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), and
-[`SECURITY.md`](SECURITY.md).
+[`SECURITY.md`](SECURITY.md). The user/developer compact is recorded in
+[`docs/user-developer-compact.md`](docs/user-developer-compact.md).
 
 ## Sustainability
 
@@ -369,6 +370,8 @@ international, fiscal-host, and domestic-support considerations.
 
 - [`docs/project-design.md`](docs/project-design.md) — external-user design
   rationale, value loops, user journeys, and contribution surface.
+- [`docs/user-developer-compact.md`](docs/user-developer-compact.md) — user
+  sovereignty, developer expectations, participation value, and limits.
 - [`docs/public-project-positioning-benchmark.md`](docs/public-project-positioning-benchmark.md)
   — public README and sustainability positioning benchmark.
 - [`docs/repository-map.md`](docs/repository-map.md) — repository roles and

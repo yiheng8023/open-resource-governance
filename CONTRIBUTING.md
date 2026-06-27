@@ -4,6 +4,10 @@ Contributions should improve the public-safe system map, documentation,
 validation, repository relationship model, launch gates, community feedback
 model, or promotion material.
 
+Before contributing, read `docs/user-developer-compact.md`. It explains user
+sovereignty, developer expectations, participation value, and the limits of the
+current selected-MVP closeout.
+
 Do not contribute private configuration, memory, bookmarks, browsing history,
 account state, credentials, local paths, private notes, or personal preferences.
 

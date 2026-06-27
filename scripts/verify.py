@@ -27,6 +27,7 @@ REQUIRED_FILES = [
     "data/repositories.json",
     "docs/license-policy.md",
     "docs/project-design.md",
+    "docs/user-developer-compact.md",
     "docs/public-project-positioning-benchmark.md",
     "docs/community-feedback-model.md",
     "docs/public-private-boundary.md",
@@ -439,6 +440,12 @@ def verify_mvp_acceptance_map() -> None:
             fail(f"MVP workstream missing acceptance criteria: {item.get('id')}")
         if not item.get("human_gate"):
             fail(f"MVP workstream missing human gate: {item.get('id')}")
+    mvp_07 = next((item for item in workstreams if item.get("id") == "mvp-07-global-closeout"), None)
+    mvp_07_acceptance = " ".join(mvp_07.get("acceptance", [])) if mvp_07 else ""
+    if "owner-approved drafts after selected-MVP closeout" not in mvp_07_acceptance:
+        fail("MVP-07 acceptance must reflect post-closeout promotion material status")
+    if "publication remains owner-gated and claim-gated" not in mvp_07_acceptance:
+        fail("MVP-07 acceptance must keep publication owner-gated and claim-gated")
     gates = data.get("closeout_gates", [])
     if len(gates) != 11:
         fail("MVP must define eleven closeout gates")
@@ -501,6 +508,35 @@ def verify_mvp_acceptance_map() -> None:
         fail("README.md must link MVP global closeout verification")
 
 
+def verify_user_developer_compact() -> None:
+    compact = (ROOT / "docs" / "user-developer-compact.md").read_text(encoding="utf-8")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme_zh = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+    contributing = (ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
+    required_compact_phrases = [
+        "User sovereignty",
+        "Developers and contributors should have enough information",
+        "Participation value",
+        "Private overlays remain optional and owner-controlled",
+        "No automation should install, publish, pay, connect accounts, change visibility, or mutate private state without explicit authorization",
+        "Funding, sponsorship, and promotion should not buy approval",
+        "The selected-MVP closeout proves one terminal-consumer loop",
+        "用户始终拥有自己的私有配置",
+        "任何安装、发布、付款、账号连接、可见性变更或私有状态变更，都需要明确授权",
+        "共建的价值不是把私人材料倒进公开仓库",
+    ]
+    for phrase in required_compact_phrases:
+        if phrase not in compact:
+            fail(f"user/developer compact missing phrase: {phrase}")
+    for name, text in {
+        "README.md": readme,
+        "README.zh-CN.md": readme_zh,
+        "CONTRIBUTING.md": contributing,
+    }.items():
+        if "docs/user-developer-compact.md" not in text:
+            fail(f"{name} must link user/developer compact")
+
+
 def verify_mvp_closeout_evidence_ledger() -> None:
     acceptance = json.loads((ROOT / "data" / "mvp-acceptance-map.json").read_text(encoding="utf-8"))
     ledger = json.loads((ROOT / "data" / "mvp-closeout-evidence-ledger.json").read_text(encoding="utf-8"))
@@ -534,6 +570,16 @@ def verify_mvp_closeout_evidence_ledger() -> None:
                 fail(f"MVP closeout ledger has unexpected status in {section_name}: {item}")
             if not item.get("evidence"):
                 fail(f"MVP closeout ledger item missing evidence: {item}")
+    stale_next_evidence_phrases = [
+        "Later workstreams still need release",
+        "Later lifecycle and global closeout evidence are still needed",
+        "before final closeout",
+    ]
+    for item in ledger.get("workstream_status", []):
+        next_evidence = item.get("next_required_evidence", "")
+        for phrase in stale_next_evidence_phrases:
+            if phrase in next_evidence:
+                fail(f"MVP ledger contains stale next-required evidence for {item.get('id')}: {phrase}")
     workstream_status = {item.get("id"): item.get("status") for item in ledger.get("workstream_status", [])}
     expected_stage_status = {
         "mvp-01-source-candidate": "passed",
@@ -1270,6 +1316,7 @@ def main() -> None:
     verify_future_lane_incubation()
     verify_shared_governance_baseline()
     verify_mvp_acceptance_map()
+    verify_user_developer_compact()
     verify_mvp_closeout_evidence_ledger()
     verify_mvp_current_decision_point()
     verify_mvp03_release_routing_closeout()

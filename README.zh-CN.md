@@ -300,6 +300,8 @@ python -B scripts/verify.py
 
 请参考 [`CONTRIBUTING.md`](CONTRIBUTING.md)、
 [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) 和 [`SECURITY.md`](SECURITY.md)。
+用户/开发者权益与共建承诺记录在
+[`docs/user-developer-compact.md`](docs/user-developer-compact.md)。
 
 ## 可持续性
 
@@ -321,6 +323,8 @@ owner 可控且验证通过后加入。
 ## 文档索引
 
 - [`docs/project-design.md`](docs/project-design.md) — 面向外部用户的设计依据、价值闭环、用户路径和共建入口。
+- [`docs/user-developer-compact.md`](docs/user-developer-compact.md) — 用户主权、
+  开发者预期、参与共建价值与边界。
 - [`docs/public-project-positioning-benchmark.md`](docs/public-project-positioning-benchmark.md)
   — 公开 README 与可持续性表达的外部对标依据。
 - [`docs/repository-map.md`](docs/repository-map.md) — 仓库角色与关系。

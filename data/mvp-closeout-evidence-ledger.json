@@ -82,13 +82,13 @@
       "id": "mvp-01-source-candidate",
       "status": "passed",
       "evidence": "MVP candidate batch mvp-skills-batch-2026-06-27-spec-doc-review is recorded in agent-skills-curated at a6e194c47f0848c1665ecf81ce34cac822fb4fa9. It selects spec-driven-development, documentation-and-adrs, and code-review-and-quality from pinned source github:addyosmani/agent-skills at 17214a29c429a19f7a9607f2c06f9d650ea87eb0. The batch is explicitly not approved, not executable, not in the release manifest, not in routing projection, and not installed.",
-      "next_required_evidence": "None for MVP-01 acceptance. Later workstreams still need release, private-consumer, runtime, and lifecycle evidence."
+      "next_required_evidence": "None for MVP-01 acceptance. The selected-MVP release, private-consumer, runtime, lifecycle, and global-closeout evidence is now recorded; future candidate batches need their own evidence."
     },
     {
       "id": "mvp-02-review-adapt",
       "status": "passed",
       "evidence": "Pre-adaptation review, the MVP-02 transition gate, checklist template, bounded approval request, preflight record, post-approval execution plan, approval event, adapted draft review evidence, MVP-03 preflight, MVP-03 review template, MVP-03 formal approval request, MVP-03 approval event, candidate review evidence, and follow-up execution evidence are recorded in agent-skills-curated through e80d49733192bfa41c894a72da63def4801691f4.",
-      "next_required_evidence": "None for MVP-02 acceptance. Later lifecycle and global closeout evidence are still needed."
+      "next_required_evidence": "None for MVP-02 acceptance. The selected-MVP lifecycle and global-closeout evidence is now recorded; future adaptations need their own review and lifecycle evidence."
     },
     {
       "id": "mvp-03-release-manifest",
@@ -106,7 +106,7 @@
       "id": "mvp-05-routing-runtime",
       "status": "passed",
       "evidence": "agent-skills-curated routing simulation passed 104/104 scenarios and codex-user-config capability-router verification passed after the live routing index was replaced.",
-      "next_required_evidence": "Runtime feedback from actual use should be summarized into lifecycle decisions before final closeout."
+      "next_required_evidence": "Selected-MVP runtime feedback has been summarized into lifecycle decisions. Future runtime feedback should be summarized before any new batch or terminal-consumer closeout."
     },
     {
       "id": "mvp-06-feedback-retirement",
