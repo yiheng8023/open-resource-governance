@@ -144,7 +144,7 @@
         "candidate_review",
         "release_manifest"
       ],
-      "known_gap": "Actual adapted output, release-candidate manifest, and lifecycle disposition are intentionally absent until the human gate advances."
+      "known_gap": "Non-runtime adapted output now exists; release-candidate manifest, routing disposition, runtime consumption, and lifecycle disposition remain intentionally absent until later human gates advance."
     },
     {
       "repository": "codex-user-config",

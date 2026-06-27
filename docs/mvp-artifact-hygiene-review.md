@@ -36,8 +36,10 @@ fragments can become hidden second truth sources.
 ## Current repository posture
 
 The current pass records repository-level posture rather than final file-by-file
-closeout. That is intentional: MVP-02 still has an approval gate, and new
-adapted-output evidence may create new review artifacts.
+closeout. That is intentional: MVP-02 non-runtime adapted draft creation is now
+recorded, while the active gate is MVP-03 release-or-routing candidate review.
+Later release, runtime, feedback, and closeout evidence may still create new
+review artifacts.
 
 Important current interpretations:
 
@@ -69,12 +71,13 @@ HTML export, topology projection, routing index, or media asset must point back
 to the data, script, or review process that produced it. It must not become a
 hand-edited second authority.
 
-## MVP-02 approval request is not approval
+## MVP-03 approval request is not release or routing approval
 
-The MVP-02 approval request records the smallest next authorization needed for
-adapted draft creation. It does not approve adapted output, release-manifest
-changes, runtime installation, routing projection changes, source
-redistribution, or public promotion.
+The consumed MVP-02 approval authorized only non-runtime adapted draft
+creation. The active MVP-03 approval request records the smallest next
+authorization needed for release-or-routing candidate review. It does not
+approve `skills/` edits, release-manifest changes, runtime installation,
+routing projection changes, source redistribution, or public promotion.
 
 ## Gate 08 result
 
@@ -86,4 +89,3 @@ Gate 08 still cannot pass until later MVP evidence exists and the final residue
 sweep confirms that stale drafts, obsolete reports, temporary scaffolds, raw
 experiments, and promotion material have been promoted, archived, deleted, or
 marked non-authoritative.
-

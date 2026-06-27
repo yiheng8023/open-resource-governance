@@ -83,7 +83,7 @@
         "automation_failure"
       ],
       "verify_command": "python -B scripts/verify.py && python -B scripts/build_topology.py --check && python -B -m unittest discover -s tests -v",
-      "known_gap": "Adapted output, release-candidate manifest, and lifecycle disposition cannot exist before MVP-02 approval and later gates."
+      "known_gap": "Adapted output exists only as non-runtime drafts; release-candidate manifest, routing disposition, runtime consumption, and lifecycle disposition cannot exist before MVP-03 and later gates."
     },
     {
       "repository": "codex-user-config",

@@ -80,13 +80,13 @@
   "workstream_status": [
     {
       "id": "mvp-01-source-candidate",
-      "status": "partial",
+      "status": "passed",
       "evidence": "MVP candidate batch mvp-skills-batch-2026-06-27-spec-doc-review is recorded in agent-skills-curated at a6e194c47f0848c1665ecf81ce34cac822fb4fa9. It selects spec-driven-development, documentation-and-adrs, and code-review-and-quality from pinned source github:addyosmani/agent-skills at 17214a29c429a19f7a9607f2c06f9d650ea87eb0. The batch is explicitly not approved, not executable, not in the release manifest, not in routing projection, and not installed.",
-      "next_required_evidence": "Human approval to enter MVP-02, followed by candidate-specific provenance, security, portability, overlap, neutralization, and adaptation evidence."
+      "next_required_evidence": "None for MVP-01 acceptance. Later workstreams still need release, private-consumer, runtime, and lifecycle evidence."
     },
     {
       "id": "mvp-02-review-adapt",
-      "status": "partial",
+      "status": "passed",
       "evidence": "Pre-adaptation review, the MVP-02 transition gate, checklist template, bounded approval request, preflight record, post-approval execution plan, approval event, adapted draft review evidence, MVP-03 preflight, MVP-03 review template, and MVP-03 formal approval request are recorded in agent-skills-curated at c7a263fb297ed6cacd1f175fcb96a0cf94bb062b. Non-runtime drafts exist under drafts/mvp02-adaptation/ for spec-driven-development, documentation-and-adrs, and code-review-and-quality. The record explicitly keeps candidates out of skills/, release-manifest.json, generated routing projections, live Agent environments, and source-text redistribution.",
       "next_required_evidence": "Owner approval to enter MVP-03 release-or-routing candidate review, followed by a decision per draft: release payload candidate, recipe/routing proposal, merge into existing approved Skill, reference-only, or reject."
     },
@@ -175,7 +175,7 @@
     {
       "id": "gate-11-observability-explainability",
       "status": "in_progress",
-      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate; the MVP-02 checklist defines future adapted-output evidence shape; the approval request defines the exact owner decision needed before adaptation; and mvp-observability-explainability-review-2026-06-27 records explanation contract, decision event classes, observable surfaces, and known gaps. Final explainability pass still needs later MVP evidence."
+      "evidence": "The ledger explains current evidence, status, and next required proof for each workstream and gate; the MVP-02 checklist and adapted-draft review define non-runtime adapted-output evidence shape; the MVP-03 approval request defines the exact owner decision needed before release-or-routing candidate review; and mvp-observability-explainability-review-2026-06-27 records explanation contract, decision event classes, observable surfaces, and known gaps. Final explainability pass still needs later MVP evidence."
     }
   ],
   "next_actions": [

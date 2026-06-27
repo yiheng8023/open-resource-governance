@@ -42,7 +42,7 @@
         "overlap and conflict review is recorded",
         "adaptation keeps source attribution and license boundaries"
       ],
-      "human_gate": "approve adapted Skill for curated release"
+      "human_gate": "approve non-runtime adapted draft creation; MVP-03 release-or-routing review requires separate approval"
     },
     {
       "id": "mvp-03-release-manifest",

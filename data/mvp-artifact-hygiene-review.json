@@ -11,7 +11,7 @@
     "Generated artifacts are derived projections, not hand-maintained truth.",
     "Promotion material is downstream of proof.",
     "Private-source repositories remain private source truth; public repositories expose only public-safe projections, templates, or evidence.",
-    "The MVP-02 approval request is not approval."
+    "The MVP-03 approval request is not release, routing, or execution approval."
   ],
   "artifact_classes": [
     {
@@ -91,7 +91,9 @@
         "pre-adaptation review",
         "MVP-02 transition gate",
         "adaptation review checklist",
-        "bounded owner approval request"
+        "bounded owner approval request",
+        "MVP-02 approval event and non-runtime adapted draft review",
+        "MVP-03 approval request"
       ],
       "archived_context": [],
       "generated_derived": [
@@ -101,7 +103,7 @@
       "ignored_non_authority": [
         "candidate Skills remain review material until approved"
       ],
-      "next_review": "After explicit MVP-02 approval, classify adapted draft evidence separately from approved release payload."
+      "next_review": "After explicit MVP-03 approval, classify release-or-routing candidate decisions separately from approved release payload."
     },
     {
       "repository": "codex-user-config",
@@ -277,7 +279,7 @@
       "private-source repositories are not treated as public truth"
     ],
     "remaining_before_gate_pass": [
-      "run final residue sweep after MVP-02 adapted output exists",
+      "run final residue sweep after MVP-03 disposition and later runtime evidence exist",
       "delete or archive any stale draft that conflicts with current evidence",
       "refresh public docs only where the final evidence supports new claims"
     ]

@@ -49,7 +49,7 @@ This MVP does not:
 | ID | Workstream | Goal | Human gate |
 | --- | --- | --- | --- |
 | MVP-01 | Source candidate selection | Select a small high-value Skill candidate set | Approve candidate batch before adaptation |
-| MVP-02 | Review, neutralize, and adapt | Produce public-safe, agent-neutral, portable Skill material | Approve adapted Skill for curated release |
+| MVP-02 | Review, neutralize, and adapt | Produce public-safe, agent-neutral, portable Skill material | Approve non-runtime adapted draft creation; MVP-03 release-or-routing review requires separate approval |
 | MVP-03 | Deterministic release manifest | Publish only approved Skill payloads through manifest evidence | Approve release candidate before consumer install |
 | MVP-04 | Private consumer install and verification | Consume the curated release from a private configuration repository | Authorize install or restore in private runtime context |
 | MVP-05 | Routing and runtime use | Verify routed use without forcing Skills for every task | Confirm high-risk or ambiguous routes |

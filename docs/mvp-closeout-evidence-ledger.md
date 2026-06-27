@@ -73,8 +73,8 @@ candidate batch
 
 | Workstream | Status | Meaning |
 | --- | --- | --- |
-| MVP-01 source candidate selection | partial | first candidate batch selected, pinned, rationalized, and kept non-executable; it now also has non-runtime adapted drafts, but has not passed release or runtime gates |
-| MVP-02 review, neutralize, and adapt | partial | pre-adaptation review evidence, bounded approval, non-runtime adapted drafts, checklist-based draft review evidence, MVP-03 preflight, a template-only review contract, and formal MVP-03 approval request exist; release payload, routing projection, runtime install, publication, and lifecycle feedback are still pending |
+| MVP-01 source candidate selection | passed | first candidate batch selected, pinned, rationalized, and kept non-executable; later release/runtime gates remain separate workstreams |
+| MVP-02 review, neutralize, and adapt | passed | pre-adaptation review evidence, bounded approval, non-runtime adapted drafts, checklist-based draft review evidence, MVP-03 preflight, a template-only review contract, and formal MVP-03 approval request exist; release payload, routing projection, runtime install, publication, and lifecycle feedback are still pending |
 | MVP-03 deterministic release manifest | partial | release-or-routing preflight, review template, and approval request exist, but owner approval and candidate-specific release/routing disposition are pending |
 | MVP-04 private consumer install | baseline-ready | consumer installer verification passes; batch-specific install or dry-run evidence is pending |
 | MVP-05 routing and runtime use | baseline-ready | capability-router verification passes; representative batch routing scenarios are pending |

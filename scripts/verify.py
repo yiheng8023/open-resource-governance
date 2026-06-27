@@ -448,13 +448,22 @@ def verify_mvp_closeout_evidence_ledger() -> None:
     actual_gates = {item.get("id") for item in ledger.get("closeout_gate_status", [])}
     if actual_gates != expected_gates:
         fail("MVP closeout ledger gates must match acceptance map")
-    allowed_statuses = {"pending", "partial", "baseline_ready", "in_progress"}
+    allowed_statuses = {"pending", "partial", "baseline_ready", "in_progress", "passed"}
     for section_name in ("workstream_status", "closeout_gate_status"):
         for item in ledger.get(section_name, []):
             if item.get("status") not in allowed_statuses:
                 fail(f"MVP closeout ledger has unexpected status in {section_name}: {item}")
             if not item.get("evidence"):
                 fail(f"MVP closeout ledger item missing evidence: {item}")
+    workstream_status = {item.get("id"): item.get("status") for item in ledger.get("workstream_status", [])}
+    expected_stage_status = {
+        "mvp-01-source-candidate": "passed",
+        "mvp-02-review-adapt": "passed",
+        "mvp-03-release-manifest": "partial",
+    }
+    for workstream_id, expected_status in expected_stage_status.items():
+        if workstream_status.get(workstream_id) != expected_status:
+            fail(f"MVP closeout ledger has stale stage status for {workstream_id}")
     if not ledger.get("next_actions"):
         fail("MVP closeout ledger must record next actions")
     doc = (ROOT / "docs" / "mvp-closeout-evidence-ledger.md").read_text(encoding="utf-8")
@@ -581,7 +590,7 @@ def verify_mvp_artifact_hygiene_review() -> None:
         "No process artifact is authority by accident.",
         "Generated artifacts are derived projections, not hand-maintained truth.",
         "Promotion material is downstream of proof.",
-        "The MVP-02 approval request is not approval.",
+        "The MVP-03 approval request is not release, routing, or execution approval.",
     ]
     for phrase in required_principles:
         if phrase not in data.get("principles", []):
@@ -632,7 +641,7 @@ def verify_mvp_artifact_hygiene_review() -> None:
         "deleted residue",
         "ignored non-authority",
         "Generated artifacts are derived",
-        "MVP-02 approval request is not approval",
+        "MVP-03 approval request is not release or routing approval",
         "Gate 08 still cannot pass",
     ]:
         if phrase not in doc:
