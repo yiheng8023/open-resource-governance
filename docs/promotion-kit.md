@@ -6,6 +6,23 @@ Use free channels first: GitHub profile, pinned repositories, repository topics,
 
 Open Resource Governance (temporary name) is a modular, public-safe system for discovering useful resources, curating agent skills, maintaining portable AI-collaboration configuration, and managing bookmark taxonomies without leaking private state.
 
+## Core message
+
+Do not promote only the idea. Point people to the outputs.
+
+- Public outputs are visible on GitHub: hub docs, bookmark catalog, generated
+  bookmark HTML, projection evidence, resource-radar demo reports, and public
+  configuration templates.
+- Ordinary users can inspect the public outputs without setting up a local
+  environment.
+- GitHub-native automation generates or validates the public artifacts through
+  repository scripts and GitHub Actions.
+- The system is meant to renew itself over time: stale links, duplicate
+  sources, license drift, archived repositories, and better alternatives should
+  be detected, reviewed, and updated, merged, retired, or rejected.
+- Human gates remain for publication, visibility, funding, promotion, private
+  overlays, and high-impact acceptance decisions.
+
 ## Short GitHub profile blurb
 
 Building a modular open-resource governance stack, currently under the temporary name Open Resource Governance: resource radar, curated agent skills, public/private configuration templates, and official-source bookmark taxonomies. Public core, private overlays, verifiable automation.
@@ -30,9 +47,13 @@ I am building an open, modular resource-governance stack:
 - discover and score useful public resources;
 - curate agent skills with license and safety review;
 - keep AI collaboration configuration portable without exposing private state;
-- maintain public-safe bookmark taxonomies.
+- maintain public-safe bookmark taxonomies;
+- publish GitHub-visible outputs that ordinary users can inspect without local
+  setup;
+- keep resources fresh through a controlled renewal loop.
 
-The principle is simple: public core, private overlay, verifiable automation.
+The principle is simple: public core, private overlay, cloud-first verifiable
+automation, and human gates for high-impact decisions.
 
 Name note: Open Resource Governance is a temporary name and may change after public naming feedback.
 
@@ -45,9 +66,11 @@ GitHub: https://github.com/yiheng8023/open-resource-governance
 - 发现和筛选高质量公开资源；
 - 对 agent skills 做来源、许可、安全和适配治理；
 - 让 AI 协作配置可迁移，但不暴露私人状态；
-- 用公开安全的官方来源目录管理书签分类。
+- 用公开安全的官方来源目录管理书签分类；
+- 发布普通用户无需本地环境即可查看的 GitHub 公开产物；
+- 通过受控新陈代谢持续发现坏链、重复、过期和更优来源。
 
-核心原则：公开核心，私有 overlay，可验证自动化。
+核心原则：公开核心，私有 overlay，云端优先的可验证自动化，高影响决策保留人工闸门。
 
 命名说明：Open Resource Governance 是暂定名，未来可能根据公开征名反馈变更。
 

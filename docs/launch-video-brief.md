@@ -25,6 +25,11 @@ Explain the project in plain language:
 > agent skills, portable AI-collaboration configuration, and bookmark
 > taxonomies, while keeping private state private.
 
+The video should also make the practical value visible: public outputs live on
+GitHub, ordinary users can inspect them without a local setup, GitHub-native
+automation validates the artifacts, and the system has a controlled renewal
+loop for stale, duplicated, or superseded resources.
+
 ## Naming note
 
 The repository slug is governance-accurate but abstract. For public messaging,
@@ -45,6 +50,8 @@ change after public naming feedback.
 - Style: calm technical walkthrough, not hype.
 - Visual source: GitHub repository page, README sections, repository map, and
   public/private boundary diagrams.
+- Must show or mention: where public outputs live, GitHub Actions validation,
+  cloud-first automation, and controlled renewal.
 - Avoid: real people, private paths, credentials, browser history, private
   bookmarks, account state, paid-feature claims, production-grade claims, or
   certification claims.
@@ -101,11 +108,15 @@ it in generated assets.
 
 3. **System map, 10-20s**  
    Show the hub, resource radar, curated skills governance, configuration
-   template, bookmark taxonomy, and private overlays as separate lanes.
+   template, bookmark taxonomy, and private overlays as separate lanes. Point to
+   GitHub-visible outputs such as bookmark HTML, projection reports, demo radar
+   reports, and public templates.
 
 4. **Safety, 20-25s**  
    Release gates, validation, security policy, contribution rules, and
-   public/private boundaries protect the system.
+   public/private boundaries protect the system. Mention that GitHub Actions
+   validates artifacts and that stale or superseded resources can be renewed,
+   merged, retired, or rejected.
 
 5. **Call to action, 25-30s**  
    Visit the repository, read the map, and suggest public-safe improvements.
@@ -118,11 +129,18 @@ useful resources, agent skills, AI collaboration configuration, and bookmark
 taxonomies should be reusable without leaking private state.
 
 The model is simple: public core, private overlays, clear release gates, and
-verifiable automation.
+cloud-first verifiable automation.
+
+Public outputs are visible on GitHub, from generated bookmark HTML to
+resource-radar demo reports and public configuration templates. Ordinary users
+can inspect them without a local setup.
+
+The system is designed to keep renewing itself: detect stale links, duplicates,
+license drift, and better sources; then update, merge, retire, or reject through
+review gates.
 
 This repository maps the lanes, explains the boundaries, and gives contributors
-a safe place to improve the system. The name may change after public naming
-feedback.
+a safe place to improve the system. The name may change after public naming feedback.
 ```
 
 ## Chinese voiceover draft
@@ -132,7 +150,12 @@ Open Resource Governance 是这个项目的暂定名。它是一个公开安全�
 有价值的资源、agent skills、AI 协作配置和书签分类，应该可以复用，
 但不能泄露私人状态。
 
-核心模型很简单：公开核心，私有 overlay，清晰发布闸门，可验证自动化。
+核心模型很简单：公开核心，私有 overlay，清晰发布闸门，云端优先的可验证自动化。
+
+公开产物可以直接在 GitHub 上查看，包括生成的书签 HTML、资源雷达 demo 报告和公开配置模板。
+普通用户不需要本地环境也能检查这些结果。
+
+系统还要持续新陈代谢：发现坏链、重复、许可漂移和更优来源，再通过审查闸门更新、合并、退役或拒绝。
 
 这个仓库负责解释各条链路、边界和贡献方式，让后续协作更安全。名称未来可能根据公开征名反馈变更。
 ```
@@ -153,7 +176,9 @@ curated agent skills, portable AI collaboration configuration, and bookmark
 taxonomy.
 Action: show messy resources becoming organized into separate public-safe lanes:
 hub, resource radar, curated skills governance, config template, bookmark
-taxonomy, and private overlays.
+taxonomy, and private overlays. Show GitHub-visible outputs, GitHub Actions
+validation, and a renewal loop that updates, merges, retires, or rejects stale
+resources.
 Camera: smooth screen-recording inspired motion, slow zooms, simple diagram
 transitions.
 Lighting/mood: calm, trustworthy, technical, low-hype.
@@ -168,6 +193,8 @@ Text:
 "Private overlays"
 "Release gates"
 "Verifiable automation"
+"GitHub outputs"
+"Renew stale resources"
 "Open Resource Governance (temporary name)"
 Constraints: no real people, no private data, no credentials, no account pages,
 no browser history, no exaggerated claims, no security certification claims, no
@@ -185,6 +212,8 @@ a public-safe hub for resource discovery, curated agent skills, portable AI
 collaboration configuration, and bookmark taxonomy.
 
 Principle: public core, private overlays, release gates, verifiable automation.
+Public outputs live on GitHub, and ordinary users can inspect them without local
+setup. The goal is controlled renewal, not a one-time resource dump.
 The name may change after public naming feedback.
 ```
 
@@ -207,6 +236,8 @@ Chinese:
 一个公开安全的总入口，用来治理资源发现、精选 agent skills、AI 协作配置模板和书签分类。
 
 原则：公开核心，私有 overlay，发布闸门，可验证自动化。
+公开产物在 GitHub 上可直接查看，普通用户不需要本地环境。
+目标不是一次性资源堆砌，而是受控新陈代谢。
 名称未来可能根据公开征名反馈变更。
 ```
 

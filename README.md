@@ -63,6 +63,56 @@ The public artifact lives in
 That matters because the project is not asking users to trust a diagram. It
 shows a working public/private split with generated output and checks.
 
+## Where are the outputs?
+
+The project is meant to be consumed from GitHub first. You should not need to
+set up a local environment just to inspect the public outputs.
+
+Current public outputs:
+
+| Output | Where to find it | What it is for |
+| --- | --- | --- |
+| Hub map and governance docs | this repository's README and [`docs/`](docs) | Understand the repository family, public/private boundary, MVP state, and contribution path |
+| Public bookmark catalog | [`research-bookmarks-public/data/public-sources.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/public-sources.json) | Structured public-safe source records |
+| Browser-importable bookmark HTML | [`research-bookmarks-public/exports/research-engineering-bookmarks-public.html`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/exports/research-engineering-bookmarks-public.html) | Import or inspect the generated public bookmark projection |
+| Bookmark projection evidence | [`research-bookmarks-public/data/projection-report.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/projection-report.json) | See counts, filtering posture, and projection evidence |
+| Resource-radar demo report | [`resource-radar-public/outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) | See the public-safe scoring/lifecycle report shape |
+| Public configuration templates | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) and [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | Reuse public-safe AI collaboration configuration patterns |
+| Launch and contribution material | [`docs/promotion-kit.md`](docs/promotion-kit.md), [`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md), [`docs/user-developer-compact.md`](docs/user-developer-compact.md) | Understand how to explain, support, or contribute safely |
+
+## Cloud-first automation and renewal
+
+The public workflow is GitHub-native and cloud-first:
+
+- public repositories carry their own source data, generated outputs, policies,
+  and validation scripts;
+- GitHub Actions runs validation on pull requests and pushes;
+- generated outputs are committed back as reviewable artifacts rather than
+  hidden local state;
+- local checkout is optional for contributors who want to run scripts before a
+  pull request, but it is not required for ordinary users to consume the public
+  outputs;
+- private overlays stay private and are never required to inspect the public
+  projection.
+
+The system is designed for controlled metabolism, not one-time publication:
+
+```text
+discover or import
+-> normalize
+-> score and classify
+-> generate public-safe outputs
+-> verify
+-> review gates
+-> publish
+-> observe decay, duplicates, stale links, and better sources
+-> renew, retire, merge, or reject
+```
+
+That self-iteration loop is deliberately gated. Automation prepares evidence
+and catches drift; humans keep authority over visibility, funding, promotion,
+private overlays, and high-impact acceptance decisions.
+
 ## What problem does this solve?
 
 Useful resources usually decay in four ways:

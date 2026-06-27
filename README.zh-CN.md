@@ -59,6 +59,50 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 这很关键：项目不是让用户相信一张架构图，而是已经展示了一个有生成产物、
 有公开/私有拆分、有验证检查的工作闭环。
 
+## 产出在哪里？
+
+这个项目优先面向 GitHub 直接消费。普通用户只是查看公开产物，不应该需要
+先搭建本地环境。
+
+当前公开产出：
+
+| 产出 | 位置 | 用途 |
+| --- | --- | --- |
+| 总仓地图与治理文档 | 本仓 README 和 [`docs/`](docs) | 理解仓库家族、公开/私有边界、MVP 状态和共建路径 |
+| 公开书签目录 | [`research-bookmarks-public/data/public-sources.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/public-sources.json) | 结构化公开安全来源记录 |
+| 可导入浏览器的书签 HTML | [`research-bookmarks-public/exports/research-engineering-bookmarks-public.html`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/exports/research-engineering-bookmarks-public.html) | 导入或检查生成后的公开书签投影 |
+| 书签投影证据 | [`research-bookmarks-public/data/projection-report.json`](https://github.com/yiheng8023/research-bookmarks-public/blob/main/data/projection-report.json) | 查看数量、过滤状态和投影证据 |
+| 资源雷达 demo 报告 | [`resource-radar-public/outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) | 查看公开安全评分/生命周期报告形态 |
+| 公开配置模板 | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) 和 [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | 复用公开安全的 AI 协作配置模式 |
+| 发布与共建材料 | [`docs/promotion-kit.md`](docs/promotion-kit.md)、[`docs/free-promotion-playbook.md`](docs/free-promotion-playbook.md)、[`docs/user-developer-compact.md`](docs/user-developer-compact.md) | 理解如何安全解释、支持或参与共建 |
+
+## 云端优先自动化与新陈代谢
+
+公开工作流是 GitHub 原生、云端优先的：
+
+- 公开仓库保存自己的源数据、生成产物、策略和验证脚本；
+- GitHub Actions 在 pull request 和 push 时运行验证；
+- 生成产物会作为可审查 artifact 提交，而不是藏在本地状态里；
+- 本地 checkout 只是贡献者提交前自测的可选路径，普通用户消费公开产物不依赖本地环境；
+- 私有 overlay 留在私有仓，查看公开投影不需要访问私有内容。
+
+这套系统不是一次性发布，而是有受控新陈代谢和自我迭代能力：
+
+```text
+发现或导入
+-> 归一化
+-> 评分和分类
+-> 生成公开安全产物
+-> 验证
+-> 审查闸门
+-> 发布
+-> 观察过期、重复、坏链和更优来源
+-> 更新、合并、退役或拒绝
+```
+
+这个自我迭代链路是有闸门的。自动化负责准备证据和发现漂移；可见性、
+收款、推广、私有 overlay 和高影响准入决策仍由人类 owner 控制。
+
 ## 它解决什么问题？
 
 有价值的资源通常会这样失控：

@@ -23,9 +23,9 @@
     {
       "repository": "codex-user-config",
       "visibility": "private",
-      "head": "09979511a5fe04feffaba7959b3c22483b21ce77",
-      "local_verification": "install proof was recorded at a89b61737f066118b13264510cb4dbe5566e2269; current head 09979511a5fe04feffaba7959b3c22483b21ce77 adds memory sync only; scripts/skills.py plan, install --apply, verify, verify_capability_router.py, verify_skills_install.py, and scripts/verify.py passed for the install proof; 19 curated Skills verified after replacing grill-with-docs, review, and routing index",
-      "remote_ci": "Validate should be checked for a89b617; local verification passed before this ledger update"
+      "head": "f6b5e5feeeb577f9e6d768044882e7a7930079c7",
+      "local_verification": "install proof was recorded at a89b61737f066118b13264510cb4dbe5566e2269; current head f6b5e5feeeb577f9e6d768044882e7a7930079c7 adds reviewed Codex memory sync only; scripts/verify.py and scripts/memory.py verify passed locally at f6b5e5f; install proof commands passed for the install proof; 19 curated Skills verified after replacing grill-with-docs, review, and routing index",
+      "remote_ci": "Validate run 28286557860 did not start because GitHub reported recent account payments failed or the spending limit needs to be increased; no repository validation failure was available in logs"
     },
     {
       "repository": "resource-radar",

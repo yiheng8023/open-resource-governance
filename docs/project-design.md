@@ -50,6 +50,81 @@ role boundaries, public/private separation, deterministic or reviewable
 outputs, verification, human gates for high-impact promotion, and lifecycle
 renewal. The implementation remains lane-specific.
 
+## Output and automation model
+
+The public project is designed to be consumed from GitHub, not from one
+maintainer's local machine.
+
+Public outputs should be easy to find:
+
+- hub maps, topology, governance docs, and launch materials live in this
+  repository;
+- public bookmark outputs live in `research-bookmarks-public`, including
+  `data/public-sources.json`, `data/projection-report.json`, and
+  `exports/research-engineering-bookmarks-public.html`;
+- public resource-radar examples live in `resource-radar-public`, including
+  schemas, policies, demo resources, and `outputs/demo-report.md`;
+- public AI-collaboration configuration patterns live in public template
+  repositories;
+- private overlays, full imports, account state, personal preferences, and
+  subjective review pools remain outside the public output surface.
+
+The public automation path is cloud-first:
+
+```text
+repository source data
+-> generated outputs
+-> GitHub Actions validation
+-> reviewable pull request or commit
+-> public artifact
+```
+
+A local checkout is useful for contributors who want to run scripts before a
+pull request, but it must not be the only way to understand or consume the
+public project.
+
+## Metabolism and self-iteration
+
+The system should evolve like a maintained catalog, not a static dump.
+
+Resource quality changes over time: repositories are renamed, archived,
+transferred, relicensed, duplicated, superseded, or replaced by better sources.
+Bookmarks become stale. Skills overlap or become native capabilities. Promotion
+claims drift as evidence changes.
+
+The renewal loop is:
+
+```text
+observe
+-> detect drift, duplication, decay, or better alternatives
+-> update lifecycle state
+-> regenerate public-safe outputs
+-> verify
+-> route high-impact changes through human gates
+-> publish or defer
+```
+
+Self-iteration is therefore evidence-driven and bounded. Automation can detect
+and prepare; it should not silently approve, promote, monetize, install, or
+mutate private overlays.
+
+## Public expression consistency
+
+External-facing explanations, README sections, promotion drafts, and video
+briefs should use the same concrete message:
+
+1. what the user can use today;
+2. where the public outputs live;
+3. why ordinary inspection does not require a local environment;
+4. how GitHub-native automation generates and verifies public artifacts;
+5. how the renewal loop updates, merges, retires, or rejects stale material;
+6. which decisions still require human gates.
+
+Promotion should point to evidence-backed outputs, not only to architecture
+ideas. If a claim cannot be mapped to a public artifact, validation result,
+repository boundary, or owner-controlled future gate, it should be softened or
+removed.
+
 ### 1. Public/private resource loop
 
 ```text

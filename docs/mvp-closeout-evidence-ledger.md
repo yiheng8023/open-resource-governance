@@ -64,7 +64,7 @@ next state is **pause and observe before the next gated batch**.
 | --- | --- | --- |
 | `open-resource-governance` | public | self-referential ledger: local verification passed before commit; check the latest `validate` workflow for the containing head |
 | `agent-skills-curated` | private-pre-public | MVP candidate batch, MVP-02 adaptation evidence, MVP-03 release/routing execution, schema-1 manifest evidence, MVP-06 lifecycle feedback, 104 routing scenarios, and 182-test suite passed locally at `74c8c17...`; remote `validate` should be checked for the latest pushed head |
-| `codex-user-config` | private | pinned and consumed `agent-skills-curated` `e80d497...`; install replaced `grill-with-docs`, `review`, and routing index; 19 curated Skills verified at `a89b617...`; remote `Validate` should be checked for the latest pushed head |
+| `codex-user-config` | private | pinned and consumed `agent-skills-curated` `e80d497...`; install replaced `grill-with-docs`, `review`, and routing index; 19 curated Skills verified at `a89b617...`; current pushed head `f6b5e5f...` adds reviewed Codex memory sync only; local `scripts/verify.py` and `scripts/memory.py verify` passed; remote `Validate` run `28286557860` was blocked before job start by GitHub billing/spending-limit status |
 | `resource-radar` | private | local verification passed; remote `validate` success at `f5a36fda...` |
 | `resource-radar-public` | public | local verification passed; remote `Validate` success at `a6adf587...` |
 | `research-bookmarks` | private | private bookmark baseline verification passed; remote `validate` success at `1f71fcb7...` |
