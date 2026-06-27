@@ -51,3 +51,18 @@ projections, or review-gated promotion paths, not as ownership transfer.
 
 For the full graph, see [`docs/system-topology.md`](system-topology.md) and the
 machine-readable index at [`data/topology.json`](../data/topology.json).
+
+## Current MVP gate
+
+The topology also indexes
+[`mvp-current-decision-point.md`](mvp-current-decision-point.md) as a
+governance gate rather than a repository. That node records that the curated
+Skills MVP is waiting for explicit owner approval before MVP-03
+release-or-routing candidate review.
+
+This gate is intentionally narrow:
+
+- It is not release authority.
+- It is not manifest approval.
+- It is not generated routing approval.
+- It is not permission for private runtime installation.

@@ -53,6 +53,16 @@
       "neutrality": "agent-neutral"
     },
     {
+      "id": "mvp-current-decision-point",
+      "kind": "governance_gate",
+      "visibility": "public-safe-record",
+      "lane": "curated_skills_mvp",
+      "neutrality": "generic",
+      "state": "mvp03_preflight_ready_awaiting_owner_approval",
+      "authority": "owner_approval_required",
+      "not_release_authority": true
+    },
+    {
       "id": "codex-user-config-template",
       "kind": "public_template",
       "visibility": "public",
@@ -107,6 +117,12 @@
       "write_permission": false
     },
     {
+      "from": "open-resource-governance",
+      "to": "mvp-current-decision-point",
+      "relation": "indexes-current-mvp-gate",
+      "write_permission": false
+    },
+    {
       "from": "resource-radar-public",
       "to": "resource-radar",
       "relation": "public-template-for-private-source",
@@ -146,6 +162,18 @@
       "from": "agent-skills-curated",
       "to": "codex-user-config",
       "relation": "releases-may-be-consumed-by",
+      "write_permission": false
+    },
+    {
+      "from": "mvp-current-decision-point",
+      "to": "agent-skills-curated",
+      "relation": "gates-release-or-routing-candidate-review",
+      "write_permission": false
+    },
+    {
+      "from": "mvp-current-decision-point",
+      "to": "codex-user-config",
+      "relation": "prevents-unapproved-runtime-consumption",
       "write_permission": false
     },
     {

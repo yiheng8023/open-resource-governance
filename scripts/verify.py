@@ -146,6 +146,28 @@ def verify_topology() -> None:
     node_ids = {node.get("id") for node in data.get("nodes", [])}
     if not repo_names <= node_ids:
         fail(f"topology missing nodes: {', '.join(sorted(repo_names - node_ids))}")
+    node_map = {node.get("id"): node for node in data.get("nodes", [])}
+    mvp_gate = node_map.get("mvp-current-decision-point")
+    if not mvp_gate:
+        fail("topology must include the current MVP decision point gate")
+    if mvp_gate.get("kind") != "governance_gate":
+        fail("MVP decision point must be modeled as a governance_gate")
+    if mvp_gate.get("state") != "mvp03_preflight_ready_awaiting_owner_approval":
+        fail("MVP decision point topology node has stale state")
+    if mvp_gate.get("not_release_authority") is not True:
+        fail("MVP decision point topology node must not be release authority")
+    edge_keys = {
+        (edge.get("from"), edge.get("to"), edge.get("relation"))
+        for edge in data.get("edges", [])
+    }
+    required_edges = {
+        ("open-resource-governance", "mvp-current-decision-point", "indexes-current-mvp-gate"),
+        ("mvp-current-decision-point", "agent-skills-curated", "gates-release-or-routing-candidate-review"),
+        ("mvp-current-decision-point", "codex-user-config", "prevents-unapproved-runtime-consumption"),
+    }
+    missing_edges = required_edges - edge_keys
+    if missing_edges:
+        fail(f"topology missing MVP gate edges: {sorted(missing_edges)}")
     for edge in data.get("edges", []):
         if edge.get("from") not in node_ids or edge.get("to") not in node_ids:
             fail(f"topology edge references unknown node: {edge}")
@@ -158,6 +180,27 @@ def verify_topology() -> None:
         fail("topology must state graph-not-linear relationship model")
     if "terminal reviewed consumer for executable Skill artifacts" not in principles:
         fail("topology must state curated Skills terminal-consumer boundary")
+    system_topology = (ROOT / "docs" / "system-topology.md").read_text(encoding="utf-8")
+    repository_map = (ROOT / "docs" / "repository-map.md").read_text(encoding="utf-8")
+    for phrase in [
+        "current MVP gate node",
+        "not release authority",
+        "MVP-03 gate: awaiting owner approval",
+        "gates release/routing review",
+        "prevents unapproved runtime consumption",
+    ]:
+        if phrase not in system_topology:
+            fail(f"system topology missing MVP gate phrase: {phrase}")
+    for phrase in [
+        "Current MVP gate",
+        "governance gate rather than a repository",
+        "not release authority",
+        "not manifest approval",
+        "not generated routing approval",
+        "not permission for private runtime installation",
+    ]:
+        if phrase not in repository_map:
+            fail(f"repository map missing MVP gate phrase: {phrase}")
 
 
 def verify_language_links() -> None:

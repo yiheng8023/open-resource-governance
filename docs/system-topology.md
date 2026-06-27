@@ -52,6 +52,10 @@ candidate; only reviewed skill candidates should enter the curated Skills lane.
 
 ## Current graph
 
+The graph also includes a current MVP gate node. It is not a repository and not
+release authority. It records that the curated Skills MVP is waiting for owner
+approval before MVP-03 release-or-routing candidate review.
+
 ```mermaid
 flowchart TD
   hub["open-resource-governance<br/>public hub + global index"]
@@ -63,6 +67,7 @@ flowchart TD
   bookmarksPublic["research-bookmarks-public<br/>public bookmark projection"]
 
   skills["agent-skills-curated<br/>reviewed skill governance"]
+  mvpGate["mvp-current-decision-point<br/>MVP-03 gate: awaiting owner approval"]
 
   codexTemplate["codex-user-config-template<br/>public Codex template"]
   codexPrivate["codex-user-config<br/>private Codex config"]
@@ -73,6 +78,7 @@ flowchart TD
   hub --> bookmarksPublic
   hub --> codexTemplate
   hub --> claudeTemplate
+  hub --> mvpGate
 
   radarPublic -. "template for" .-> radarPrivate
   radarPrivate -. "review-gated public-safe patterns" .-> radarPublic
@@ -83,6 +89,8 @@ flowchart TD
   radarPrivate -. "candidate proposals only" .-> skills
   skills -. "review decisions for dedupe" .-> radarPrivate
   skills -. "release manifest consumed by" .-> codexPrivate
+  mvpGate -. "gates release/routing review" .-> skills
+  mvpGate -. "prevents unapproved runtime consumption" .-> codexPrivate
 
   codexTemplate -. "guides private overlay" .-> codexPrivate
   codexPrivate -. "public-safe patterns only" .-> codexTemplate
@@ -106,6 +114,14 @@ Edges in the graph are governance relationships, not automatic write access.
 - `may-expose-reviewed-decisions-for-deduplication`: a reviewed downstream lane
   can publish safe decision metadata so discovery does not keep resurfacing
   already accepted or rejected candidates.
+- `indexes-current-mvp-gate`: the hub points to the current MVP authorization
+  boundary without turning it into release authority.
+- `gates-release-or-routing-candidate-review`: the current decision point must
+  be crossed before adapted drafts can enter MVP-03 release-or-routing
+  candidate review.
+- `prevents-unapproved-runtime-consumption`: private configuration repositories
+  must not install or route candidate drafts before approved release evidence
+  exists.
 - `may-contribute-public-safe-patterns-to`: private practice can improve a
   public template only after review and declassification.
 
