@@ -26,14 +26,23 @@ their own lanes unless explicitly reviewed as Skill material.
 
 ## Configuration lane
 
-Configuration follows the same private-source / public-template rule as bookmarks:
+Configuration follows the same private-source / public-template rule as
+bookmarks. The purpose is generic: help users migrate, back up, cloud-sync,
+restore, verify, roll back, and operate an AI/agent working environment without
+publishing private state. Concrete templates can be runtime-specific because
+each agent stores different files, memory, hooks, tools, MCPs, plugins,
+permissions, and account state.
 
-| Agent | Private source | Public template | Boundary |
+| Current implementation | Private source | Public template | Boundary |
 | --- | --- | --- | --- |
 | Codex | `codex-user-config` | `codex-user-config-template` | private memory, preferences, live install state, credentials, local paths stay private |
 | Claude Code | `claude-user-config` | `claude-user-config-template` | private memory, commands, hooks, account state, credentials, local paths stay private |
 
-Public templates provide structure, placeholder examples, docs, and validation. Private sources own the real user environment.
+Codex and Claude Code are current examples, not the limit of the model. Future
+agents or toolchains can add their own public template and private overlay once
+their runtime behavior has been mapped. Public templates provide structure,
+placeholder examples, docs, and validation. Private sources own the real user
+environment.
 
 ## Bookmark lane
 

@@ -34,16 +34,24 @@ the rules, not the lane-specific payloads.
 
 ## Neutrality rule
 
-User-configuration lanes may be agent-specific because they represent real
-private environments:
+User-configuration lanes are generic in purpose but runtime-specific in
+implementation. They are about agent-environment migration, cloud sync/backup,
+restore, verification, rollback, and runtime integration. Concrete
+implementations may be agent-specific because they represent real private
+environments:
 
 - `codex-user-config` / `codex-user-config-template`
 - `claude-user-config` / `claude-user-config-template`
 
+Codex and Claude are current characterized examples, not the boundary of the
+model. Future agent or toolchain templates can be added after their runtime
+files, settings, memory surfaces, hooks, tools, MCPs, plugins, permissions, and
+account state have been mapped.
+
 All other lanes should remain agent-neutral, tool-neutral, reusable, and
-portable. Resource discovery, bookmarks, curated skills, public templates,
-validation policies, topology, and launch governance should not be framed as
-Codex-only or Claude-only.
+portable. Resource discovery, bookmarks, curated skills, validation policies,
+topology, and launch governance should not be framed as Codex-only or
+Claude-only.
 
 `agent-skills-curated` is downstream only for executable Skill artifacts. It is
 not the destination for every useful resource. A resource may be a bookmark
@@ -71,10 +79,10 @@ flowchart TD
   skills["agent-skills-curated<br/>reviewed skill governance"]
   mvpGate["mvp-current-decision-point<br/>selected MVP closed: pause/observe"]
 
-  codexTemplate["codex-user-config-template<br/>public Codex template"]
-  codexPrivate["codex-user-config<br/>private Codex config"]
-  claudeTemplate["claude-user-config-template<br/>public Claude template"]
-  claudePrivate["claude-user-config<br/>private Claude config"]
+  codexTemplate["codex-user-config-template<br/>Codex-specific public template"]
+  codexPrivate["codex-user-config<br/>private Codex environment"]
+  claudeTemplate["claude-user-config-template<br/>Claude-specific public template"]
+  claudePrivate["claude-user-config<br/>private Claude environment"]
 
   hub --> radarPublic
   hub --> bookmarksPublic

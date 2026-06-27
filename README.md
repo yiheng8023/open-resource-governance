@@ -21,7 +21,7 @@ people can reuse.
 | --- | --- | --- |
 | Import the public bookmark catalog | [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public) | 328 public-safe sources plus generated browser-importable HTML |
 | Try the resource-radar pattern | [`resource-radar-public`](https://github.com/yiheng8023/resource-radar-public) | schema, scoring/lifecycle examples, demo records, and [`outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) |
-| Build a private AI configuration repo | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) or [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | public-safe structure without real memory, credentials, or preferences |
+| Build a private agent-environment repo | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) or [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | current public-safe examples of a broader migration, cloud sync/backup, verification, and restore pattern |
 | Understand the whole system | [`docs/system-topology.md`](docs/system-topology.md) and [`docs/repository-map.md`](docs/repository-map.md) | the repository map, boundaries, and relationship rules |
 | Help improve the project | [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`docs/user-developer-compact.md`](docs/user-developer-compact.md) | contribution scope, user rights, safety expectations, and feedback paths |
 
@@ -73,8 +73,8 @@ public repository explains its own role; this hub keeps the global map.
 | `open-resource-governance` | public hub, navigation, shared rules, launch/readiness docs | public |
 | `research-bookmarks-public` | public bookmark catalog and generated HTML | public |
 | `resource-radar-public` | public resource-radar template and demo reports | public |
-| `codex-user-config-template` | public-safe Codex configuration template | public |
-| `claude-user-config-template` | public-safe Claude Code configuration template | public |
+| `codex-user-config-template` | Codex-specific public example of the portable agent-environment template pattern | public |
+| `claude-user-config-template` | Claude Code-specific public example of the portable agent-environment template pattern | public |
 | `resource-radar`, `research-bookmarks`, user config repos | real imports, review pools, private state, memory, preferences, account state | private |
 | `agent-skills-curated` | reviewed Skill governance and release evidence | public |
 
@@ -86,7 +86,7 @@ flowchart LR
   hub["open-resource-governance<br/>public hub + navigation"]
   bookmarks["research-bookmarks-public<br/>public bookmark catalog + HTML"]
   radar["resource-radar-public<br/>resource schema + lifecycle demo"]
-  templates["configuration templates<br/>portable AI-collaboration baselines"]
+  templates["configuration templates<br/>portable agent-environment baselines"]
   private["private repositories<br/>imports, preferences, account state"]
   skills["agent-skills-curated<br/>reviewed Skill releases"]
 
@@ -249,7 +249,7 @@ You can use this project as a reference implementation for:
 | Turn browser bookmarks into a maintainable catalog | Structured source records plus generated importable HTML |
 | Keep broad resource discovery from becoming noise | A public resource-radar template plus a private radar lane for scoring, lifecycle, deduplication, and human gates |
 | Share AI/agent skills across environments safely | A curated-skills lane with provenance, safety review, topology, conflict handling, and release manifests |
-| Make AI collaboration portable | Codex and Claude configuration-template lanes that separate reusable structure from private preferences |
+| Make AI collaboration portable | Agent-environment template lanes that separate reusable structure from private preferences; Codex and Claude are the current examples |
 | Let other people improve the system | Contribution, issue, security, conduct, naming, and launch docs |
 
 The important idea is not any single script. The value is the closed loop:
@@ -286,16 +286,16 @@ agent-skills-curated
   reviewed third-party Skill content, provenance, topology, conflicts, releases
 
 codex-user-config-template
-  public-safe Codex configuration template
+  Codex-specific public implementation of the broader agent-environment template pattern
 
 codex-user-config
-  private Codex configuration source and memory carrier
+  private Codex environment source and memory carrier
 
 claude-user-config-template
-  public-safe Claude Code configuration template
+  Claude Code-specific public implementation of the broader agent-environment template pattern
 
 claude-user-config
-  private Claude Code configuration source, memory, commands, and hooks
+  private Claude Code environment source, memory, commands, and hooks
 ```
 
 The core rule is:
@@ -310,9 +310,12 @@ artifacts that have passed checks. Private repositories can keep personal
 bookmarks, configuration, memory, preferences, account state, local paths, and
 work-in-progress decisions.
 
-The exception is the user-configuration lane: configuration repositories can be
-Codex-specific or Claude-specific because they model real private user
-environments. The other lanes should stay agent-neutral, tool-neutral, and
+The user-configuration lane is generic in purpose but runtime-specific in
+implementation. Its purpose is agent-environment migration, cloud sync/backup,
+restore, verification, rollback, and runtime integration. Concrete templates
+can be Codex-specific, Claude-specific, or future-agent-specific because real
+agents store different files, memory, hooks, tools, MCPs, plugins, permissions,
+and account state. Other lanes should stay agent-neutral, tool-neutral, and
 generically reusable.
 
 ## Quick start

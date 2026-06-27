@@ -20,7 +20,7 @@ AI 协作配置整理成可复用的公共产物，同时把个人记忆、账�
 | --- | --- | --- |
 | 直接使用公开书签目录 | [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public) | 328 条公开安全来源，以及可导入浏览器的 HTML |
 | 了解资源雷达怎么做 | [`resource-radar-public`](https://github.com/yiheng8023/resource-radar-public) | 资源记录结构、评分/生命周期示例、demo 数据和 [`outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) |
-| 搭建自己的私有 AI 配置仓 | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) 或 [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | 不含真实记忆、凭据和偏好的公开安全模板 |
+| 搭建自己的私有 agent 环境仓 | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) 或 [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | 当前两个公开安全示例，展示更通用的迁移、云端同步/备份、验证和恢复模式 |
 | 理解整套仓库关系 | [`docs/system-topology.md`](docs/system-topology.md) 和 [`docs/repository-map.md`](docs/repository-map.md) | 仓库地图、公开/私有边界和关系规则 |
 | 参与共建 | [`CONTRIBUTING.md`](CONTRIBUTING.md) 和 [`docs/user-developer-compact.md`](docs/user-developer-compact.md) | 贡献范围、用户权益、安全要求和反馈方式 |
 
@@ -68,8 +68,8 @@ AI 协作配置整理成可复用的公共产物，同时把个人记忆、账�
 | `open-resource-governance` | 公开总入口、导航、共享规则、发布准备文档 | 公开 |
 | `research-bookmarks-public` | 公开书签目录和生成 HTML | 公开 |
 | `resource-radar-public` | 资源雷达模板和示例报告 | 公开 |
-| `codex-user-config-template` | Codex 配置的公开安全模板 | 公开 |
-| `claude-user-config-template` | Claude Code 配置的公开安全模板 | 公开 |
+| `codex-user-config-template` | 可迁移 agent 环境模板模式的 Codex 专用公开示例 | 公开 |
+| `claude-user-config-template` | 可迁移 agent 环境模板模式的 Claude Code 专用公开示例 | 公开 |
 | `resource-radar`、`research-bookmarks`、用户配置仓 | 真实导入、审查池、私有层、记忆、偏好、账号状态 | 私有 |
 | `agent-skills-curated` | 已审查技能的治理和发布证据 | 公开 |
 
@@ -81,7 +81,7 @@ flowchart LR
   hub["open-resource-governance<br/>公开总入口 + 导航"]
   bookmarks["research-bookmarks-public<br/>公开书签目录 + HTML"]
   radar["resource-radar-public<br/>资源结构 + 生命周期示例"]
-  templates["配置模板<br/>可迁移 AI 协作基线"]
+  templates["配置模板<br/>可迁移 agent 环境基线"]
   private["私有仓库<br/>导入、偏好、账号状态"]
   skills["agent-skills-curated<br/>已审查技能发布"]
 
@@ -258,16 +258,16 @@ agent-skills-curated
   已审查第三方 Skill 正文、来源、拓扑、冲突和发布清单
 
 codex-user-config-template
-  公开安全 Codex 配置模板
+  通用 agent 环境模板模式的 Codex 专用公开实现
 
 codex-user-config
-  私有 Codex 配置真源与记忆载体
+  私有 Codex 环境真源与记忆载体
 
 claude-user-config-template
-  公开安全 Claude Code 配置模板
+  通用 agent 环境模板模式的 Claude Code 专用公开实现
 
 claude-user-config
-  私有 Claude Code 配置真源、记忆、commands 与 hooks
+  私有 Claude Code 环境真源、记忆、commands 与 hooks
 ```
 
 核心规则是：
@@ -279,8 +279,10 @@ claude-user-config
 公开仓承载可复用结构、规则、数据格式、文档、示例、官方/公开安全来源，以及通过验证的生成产物。
 私有仓保留个人书签、配置、记忆、偏好、账号状态、本机路径和未公开决策。
 
-例外是用户配置链路：配置仓可以明确区分 Codex 或 Claude，因为它们对应真实的私有用户环境。
-其它链路应保持 Agent 中立、工具中立、通用和可复用。
+用户配置链路的目的也是通用的，只是具体实现会因运行时而异。它解决的是 agent 环境迁移、
+云端同步/备份、恢复、验证、回滚和运行时集成；具体模板可以是 Codex 专用、Claude Code
+专用，未来也可以是其它 agent 专用，因为不同 agent 保存的文件、记忆、hooks、工具、MCP、
+插件、权限和账号状态并不相同。其它链路应保持 Agent 中立、工具中立、通用和可复用。
 
 ## 快速开始
 

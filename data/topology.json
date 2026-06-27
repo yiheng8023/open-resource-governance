@@ -3,7 +3,7 @@
   "principles": [
     "open-resource-governance is the public entry and global index, not a giant monorepo.",
     "The ecosystem is a graph of lanes, projections, review gates, and feedback loops, not a simple upstream/downstream chain.",
-    "User-configuration lanes may be agent-specific because they model real private user environments.",
+    "User-configuration lanes are generic in purpose but runtime-specific in implementation: migration, cloud sync/backup, restore, verification, rollback, and runtime integration may require agent-specific templates.",
     "All non-user-configuration lanes should remain agent-neutral, tool-neutral, reusable, and broadly applicable.",
     "agent-skills-curated is the terminal reviewed consumer for executable Skill artifacts, not the destination for every useful resource.",
     "Private sources own real private state; public projections and templates own reusable public-safe structure.",
@@ -67,28 +67,28 @@
       "kind": "public_template",
       "visibility": "public",
       "lane": "user_configuration",
-      "neutrality": "agent-specific-template"
+      "neutrality": "runtime-specific implementation of generic agent-environment portability pattern"
     },
     {
       "id": "codex-user-config",
       "kind": "private_source",
       "visibility": "private",
       "lane": "user_configuration",
-      "neutrality": "agent-specific-private"
+      "neutrality": "runtime-specific private implementation of generic agent-environment portability pattern"
     },
     {
       "id": "claude-user-config-template",
       "kind": "public_template",
       "visibility": "public",
       "lane": "user_configuration",
-      "neutrality": "agent-specific-template"
+      "neutrality": "runtime-specific implementation of generic agent-environment portability pattern"
     },
     {
       "id": "claude-user-config",
       "kind": "private_source",
       "visibility": "private",
       "lane": "user_configuration",
-      "neutrality": "agent-specific-private"
+      "neutrality": "runtime-specific private implementation of generic agent-environment portability pattern"
     }
   ],
   "edges": [

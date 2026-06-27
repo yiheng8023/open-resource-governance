@@ -25,16 +25,16 @@
     {
       "name": "agent-skills-curated",
       "role": "curated-skills-governance",
-      "visibility_stage": "private-pre-public",
-      "public_safe": "repo-dependent",
+      "visibility_stage": "public",
+      "public_safe": true,
       "owns": ["reviewed Skill content", "provenance", "topology", "conflicts", "release manifests"]
     },
     {
       "name": "codex-user-config-template",
-      "role": "configuration-template",
+      "role": "agent-environment-configuration-template",
       "visibility_stage": "public",
       "public_safe": true,
-      "owns": ["public-safe Codex configuration template", "placeholder examples", "private setup guidance"]
+      "owns": ["Codex-specific public implementation of the generic agent-environment portability pattern", "placeholder examples", "private setup guidance"]
     },
     {
       "name": "codex-user-config",
@@ -45,10 +45,10 @@
     },
     {
       "name": "claude-user-config-template",
-      "role": "configuration-template",
+      "role": "agent-environment-configuration-template",
       "visibility_stage": "public",
       "public_safe": true,
-      "owns": ["public-safe Claude Code configuration template", "placeholder examples", "private setup guidance"]
+      "owns": ["Claude Code-specific public implementation of the generic agent-environment portability pattern", "placeholder examples", "private setup guidance"]
     },
     {
       "name": "claude-user-config",
