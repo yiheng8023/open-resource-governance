@@ -40,6 +40,37 @@ The first working lane is bookmarks:
 - the same pattern can later serve resource discovery, curated skills, and
   portable AI-collaboration configuration.
 
+## System map at a glance
+
+The project is a graph of lanes, not a single monolithic repository. Each
+public repository should explain itself, while the hub keeps the global
+relationship map.
+
+```mermaid
+flowchart LR
+  hub["open-resource-governance<br/>public hub, topology, gates"]
+  bookmarks["research-bookmarks-public<br/>public bookmark catalog + HTML"]
+  radar["resource-radar-public<br/>resource schema, scoring, lifecycle demo"]
+  templates["config templates<br/>portable AI-collaboration baselines"]
+  private["private overlays<br/>real imports, preferences, account state"]
+  skills["agent-skills-curated<br/>reviewed Skill releases"]
+
+  hub --> bookmarks
+  hub --> radar
+  hub --> templates
+  hub --> skills
+  private -. "filtered public-safe projection" .-> bookmarks
+  bookmarks -. "can seed discovery" .-> radar
+  radar -. "candidate proposals" .-> skills
+  skills -. "reviewed release manifests" .-> private
+  templates -. "safe starting points" .-> private
+```
+
+For the full topology and edge meanings, see
+[`docs/system-topology.md`](docs/system-topology.md). If you enter through a
+sub-repository, look for its "System context" section to see where it sits in
+this graph.
+
 ## Proof, not just plans
 
 As of 2026-06-26, the first lane is already end-to-end:

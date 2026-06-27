@@ -36,6 +36,36 @@ Agent skills、可迁移 AI 协作配置，同时避免把私有状态泄露到�
 - 验证脚本检查公开产物不会误带私有数据；
 - 同样的模式后续可以服务资源发现、curated skills 和可迁移 AI 协作配置。
 
+## 全局关系速览
+
+这个项目是一组 lane 组成的图，不是一个巨型单仓。每个公开子仓都应该能
+自我解释；总仓负责保存全局关系地图。
+
+```mermaid
+flowchart LR
+  hub["open-resource-governance<br/>公开总入口、拓扑、闸门"]
+  bookmarks["research-bookmarks-public<br/>公开书签目录 + HTML"]
+  radar["resource-radar-public<br/>资源 schema、评分、生命周期 demo"]
+  templates["配置模板<br/>可迁移 AI 协作基线"]
+  private["私有 overlay<br/>真实导入、偏好、账号状态"]
+  skills["agent-skills-curated<br/>已审查 Skill release"]
+
+  hub --> bookmarks
+  hub --> radar
+  hub --> templates
+  hub --> skills
+  private -. "过滤后的公开安全投影" .-> bookmarks
+  bookmarks -. "可作为发现种子" .-> radar
+  radar -. "候选提案" .-> skills
+  skills -. "已审查 release manifest" .-> private
+  templates -. "安全起点" .-> private
+```
+
+完整拓扑和边含义见
+[`docs/system-topology.md`](docs/system-topology.md)。如果你是从某个子仓
+进入，请先看它的 “System context / 系统位置” 小节，了解它在整套系统中
+承担哪一段。
+
 ## 不是只画饼，已有跑通证据
 
 截至 2026-06-26，第一条 lane 已经端到端跑通：
