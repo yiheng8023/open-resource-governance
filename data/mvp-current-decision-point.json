@@ -9,7 +9,7 @@
   "current_workstream": "mvp-03-release-manifest",
   "current_gate": "mvp03-release-or-routing-candidate-review",
   "source_repository": "agent-skills-curated",
-  "source_head": "94cdedc6756fadcd4008149a90875b03f0f611a9",
+  "source_head": "c7a263fb297ed6cacd1f175fcb96a0cf94bb062b",
   "source_records": [
     "registry/mvp-approval-requests.json",
     "registry/mvp02-preflight-readiness.json",
@@ -26,7 +26,9 @@
     "registry/mvp03-release-or-routing-preflight.json",
     "docs/mvp03-release-or-routing-preflight.md",
     "registry/mvp03-release-or-routing-review-template.json",
-    "docs/mvp03-release-or-routing-review-template.md"
+    "docs/mvp03-release-or-routing-review-template.md",
+    "registry/mvp03-release-or-routing-approval-request.json",
+    "docs/mvp03-release-or-routing-approval-request.md"
   ],
   "candidate_ids": [
     "spec-driven-development",

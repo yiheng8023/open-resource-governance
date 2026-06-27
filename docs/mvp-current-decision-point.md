@@ -14,10 +14,10 @@ release review scaffolding allowed: true, preflight-only
 ```
 
 The MVP is active, the selected batch has non-runtime adapted drafts, and the
-Skills lane now has an MVP-03 release-or-routing preflight record plus a
-template-only review contract. The current terminal consumer is still waiting
-for owner approval before entering the release-or-routing candidate review
-gate.
+Skills lane now has an MVP-03 release-or-routing preflight record, a
+template-only review contract, and a formal approval request. The current
+terminal consumer is still waiting for owner approval before entering the
+release-or-routing candidate review gate.
 
 ## Decision needed
 
