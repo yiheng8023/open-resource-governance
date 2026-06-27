@@ -16,9 +16,9 @@
     {
       "repository": "agent-skills-curated",
       "visibility": "private-pre-public",
-      "head": "ebb914a2a1d904cee596dc9c9c2bf57f1e03ae4e",
+      "head": "94cdedc6756fadcd4008149a90875b03f0f611a9",
       "local_verification": "python -B scripts/verify.py, scripts/build_topology.py --check, scripts/build_release_manifest.py --check, scripts/simulate_routing.py --all, and python -B -m unittest discover -s tests -v -> passed; 102 routing scenarios and 182 tests OK",
-      "remote_ci": "validate success, run 28272983350"
+      "remote_ci": "validate success, run 28273302892"
     },
     {
       "repository": "codex-user-config",
@@ -87,13 +87,13 @@
     {
       "id": "mvp-02-review-adapt",
       "status": "partial",
-      "evidence": "Pre-adaptation review, the MVP-02 transition gate, checklist template, bounded approval request, preflight record, post-approval execution plan, approval event, adapted draft review evidence, and MVP-03 preflight are recorded in agent-skills-curated at ebb914a2a1d904cee596dc9c9c2bf57f1e03ae4e. Non-runtime drafts exist under drafts/mvp02-adaptation/ for spec-driven-development, documentation-and-adrs, and code-review-and-quality. The record explicitly keeps candidates out of skills/, release-manifest.json, generated routing projections, live Agent environments, and source-text redistribution.",
+      "evidence": "Pre-adaptation review, the MVP-02 transition gate, checklist template, bounded approval request, preflight record, post-approval execution plan, approval event, adapted draft review evidence, MVP-03 preflight, and MVP-03 review template are recorded in agent-skills-curated at 94cdedc6756fadcd4008149a90875b03f0f611a9. Non-runtime drafts exist under drafts/mvp02-adaptation/ for spec-driven-development, documentation-and-adrs, and code-review-and-quality. The record explicitly keeps candidates out of skills/, release-manifest.json, generated routing projections, live Agent environments, and source-text redistribution.",
       "next_required_evidence": "Owner approval to enter MVP-03 release-or-routing candidate review, followed by a decision per draft: release payload candidate, recipe/routing proposal, merge into existing approved Skill, reference-only, or reject."
     },
     {
       "id": "mvp-03-release-manifest",
       "status": "partial",
-      "evidence": "agent-skills-curated records MVP-03 release-or-routing preflight at head ebb914a2a1d904cee596dc9c9c2bf57f1e03ae4e. The preflight proves the three adapted drafts are reviewable and still excluded from skills/, release-manifest.json, registry/routing.json, generated/routing-index.json, and live Agent environments.",
+      "evidence": "agent-skills-curated records MVP-03 release-or-routing preflight and template-only review contract at head 94cdedc6756fadcd4008149a90875b03f0f611a9. The preflight proves the three adapted drafts are reviewable and still excluded from skills/, release-manifest.json, registry/routing.json, generated/routing-index.json, and live Agent environments. The template defines future review sections, allowed decisions, fail-closed conditions, and output contract without making candidate decisions.",
       "next_required_evidence": "Owner approval to enter release-or-routing candidate review, then candidate-specific disposition evidence before any manifest, routing, or approved-payload diff."
     },
     {
@@ -130,7 +130,7 @@
     {
       "id": "gate-02-boundaries-held",
       "status": "partial",
-      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, preflight readiness record, post-approval execution plan, approval event, adapted draft review, and MVP-03 preflight are recorded as not approved payload, not releasable, not routable, not installable, and not source-redistributed."
+      "evidence": "Current repositories validate public/private and candidate/approved boundaries; the selected MVP candidate batch, pre-adaptation review, MVP-02 transition gate, checklist, approval request, preflight readiness record, post-approval execution plan, approval event, adapted draft review, MVP-03 preflight, and MVP-03 review template are recorded as not approved payload, not releasable, not routable, not installable, and not source-redistributed."
     },
     {
       "id": "gate-03-runtime-useful",

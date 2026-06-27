@@ -14,9 +14,10 @@ release review scaffolding allowed: true, preflight-only
 ```
 
 The MVP is active, the selected batch has non-runtime adapted drafts, and the
-Skills lane now has an MVP-03 release-or-routing preflight record. The current
-terminal consumer is still waiting for owner approval before entering the
-release-or-routing candidate review gate.
+Skills lane now has an MVP-03 release-or-routing preflight record plus a
+template-only review contract. The current terminal consumer is still waiting
+for owner approval before entering the release-or-routing candidate review
+gate.
 
 ## Decision needed
 
@@ -59,8 +60,8 @@ The following work can continue safely before the next gate:
 - run read-only verification;
 - refresh evidence ledgers and public-safe explanations;
 - check repository freshness and CI status;
-- prepare release-or-routing review scaffolding that does not edit `skills/`,
-  manifest, generated routing, or live environments;
+- prepare release-or-routing review scaffolding and templates that do not edit
+  `skills/`, manifest, generated routing, or live environments;
 - record a preflight or authorization request that does not approve candidate
   payload.
 

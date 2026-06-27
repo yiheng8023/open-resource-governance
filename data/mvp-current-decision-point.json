@@ -9,7 +9,7 @@
   "current_workstream": "mvp-03-release-manifest",
   "current_gate": "mvp03-release-or-routing-candidate-review",
   "source_repository": "agent-skills-curated",
-  "source_head": "ebb914a2a1d904cee596dc9c9c2bf57f1e03ae4e",
+  "source_head": "94cdedc6756fadcd4008149a90875b03f0f611a9",
   "source_records": [
     "registry/mvp-approval-requests.json",
     "registry/mvp02-preflight-readiness.json",
@@ -24,7 +24,9 @@
     "drafts/mvp02-adaptation/documentation-and-adrs/DRAFT.md",
     "drafts/mvp02-adaptation/code-review-and-quality/DRAFT.md",
     "registry/mvp03-release-or-routing-preflight.json",
-    "docs/mvp03-release-or-routing-preflight.md"
+    "docs/mvp03-release-or-routing-preflight.md",
+    "registry/mvp03-release-or-routing-review-template.json",
+    "docs/mvp03-release-or-routing-review-template.md"
   ],
   "candidate_ids": [
     "spec-driven-development",
@@ -41,7 +43,7 @@
     "run read-only verification",
     "refresh evidence ledgers and public-safe explanations",
     "check repository freshness and CI status",
-    "prepare release-or-routing review scaffolding that does not edit skills, manifest, generated routing, or live environments",
+    "prepare release-or-routing review scaffolding and templates that do not edit skills, manifest, generated routing, or live environments",
     "record a preflight or authorization request that does not approve candidate payload"
   ],
   "current_permissions": {
