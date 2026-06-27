@@ -37,9 +37,9 @@
     {
       "repository": "resource-radar-public",
       "visibility": "public",
-      "head": "a6adf587380d29d2dc7b9480a42c9b2baa3c42f7",
-      "local_verification": "python -B scripts/verify.py -> resource-radar-public verification passed",
-      "remote_ci": "Validate success, run 28247154942"
+      "head": "085347860e7170fb2534d1cb8c1643c42214af93",
+      "local_verification": "python -B scripts/verify.py -> resource-radar-public verification passed after adding System context to README",
+      "remote_ci": "Validate success, run 28287000049"
     },
     {
       "repository": "research-bookmarks",
@@ -51,23 +51,23 @@
     {
       "repository": "research-bookmarks-public",
       "visibility": "public",
-      "head": "1ed429106b37535a1c0b708cab8ebaf57e486e97",
-      "local_verification": "python -B scripts/verify.py -> research-bookmarks-public verification passed",
-      "remote_ci": "validate success, run 28248727829"
+      "head": "ab1eaf629f4e5491a161ffcf4e9866324a323fd8",
+      "local_verification": "python -B scripts/verify.py -> research-bookmarks-public verification passed after adding System context to README",
+      "remote_ci": "validate success, run 28287000226"
     },
     {
       "repository": "codex-user-config-template",
       "visibility": "public",
-      "head": "f1c3e7f989fe3d3ae0f037ee86e39e679343b12b",
-      "local_verification": "python -B scripts/verify.py -> codex-user-config-template verification passed",
-      "remote_ci": "validate success, run 28221183576"
+      "head": "1dd900ee3dc28740409b7a79e70a6f056e06ff52",
+      "local_verification": "python -B scripts/verify.py -> codex-user-config-template verification passed after adding System context to README",
+      "remote_ci": "validate success, run 28287000414"
     },
     {
       "repository": "claude-user-config-template",
       "visibility": "public",
-      "head": "bcf2778ba0dd030b8c131a0613cdecfde314d13e",
-      "local_verification": "not re-run in this snapshot",
-      "remote_ci": "validate success, run 28243639711"
+      "head": "0d3d96dfd22250f1df3bd6df858e8683a84c2091",
+      "local_verification": "python -B scripts/verify.py -> claude-user-config-template verification passed after adding System context to README",
+      "remote_ci": "validate success, run 28287007351"
     },
     {
       "repository": "claude-user-config",

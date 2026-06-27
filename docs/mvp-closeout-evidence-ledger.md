@@ -66,11 +66,11 @@ next state is **pause and observe before the next gated batch**.
 | `agent-skills-curated` | private-pre-public | MVP candidate batch, MVP-02 adaptation evidence, MVP-03 release/routing execution, schema-1 manifest evidence, MVP-06 lifecycle feedback, 104 routing scenarios, and 182-test suite passed locally at `74c8c17...`; remote `validate` should be checked for the latest pushed head |
 | `codex-user-config` | private | pinned and consumed `agent-skills-curated` `e80d497...`; install replaced `grill-with-docs`, `review`, and routing index; 19 curated Skills verified at `a89b617...`; current pushed head `f6b5e5f...` adds reviewed Codex memory sync only; local `scripts/verify.py` and `scripts/memory.py verify` passed; remote `Validate` run `28286557860` was blocked before job start by GitHub billing/spending-limit status |
 | `resource-radar` | private | local verification passed; remote `validate` success at `f5a36fda...` |
-| `resource-radar-public` | public | local verification passed; remote `Validate` success at `a6adf587...` |
+| `resource-radar-public` | public | local verification passed after adding README System context; remote `Validate` success at `08534786...` |
 | `research-bookmarks` | private | private bookmark baseline verification passed; remote `validate` success at `1f71fcb7...` |
-| `research-bookmarks-public` | public | local verification passed; remote `validate` success at `1ed42910...` |
-| `codex-user-config-template` | public | local verification passed; remote `validate` success at `f1c3e7f9...` |
-| `claude-user-config-template` | public | remote `validate` success at `bcf2778b...`; local verification not re-run in this snapshot |
+| `research-bookmarks-public` | public | local verification passed after adding README System context; remote `validate` success at `ab1eaf62...` |
+| `codex-user-config-template` | public | local verification passed after adding README System context; remote `validate` success at `1dd900ee...` |
+| `claude-user-config-template` | public | local verification passed after adding README System context; remote `validate` success at `0d3d96df...` |
 | `claude-user-config` | private | remote `validate` success at `9dd7d668...`; local verification not re-run in this snapshot |
 
 ## Workstream status
