@@ -1,7 +1,7 @@
 # Contact And Social Links
 
-This page provides public-safe contact routes for
-`open-resource-governance`.
+This page provides public-safe contact routes for YIYUAN Meridian. The current
+GitHub repository slug is `open-resource-governance`.
 
 ## Maintainer
 
@@ -67,8 +67,8 @@ https://github.com/yiheng8023/open-resource-governance
 Recommended profile wording:
 
 ```text
-Building Open Resource Governance: public core, private overlays,
-release gates, verifiable automation.
+Building YIYUAN Meridian: public core, private overlays, release gates,
+verifiable automation.
 ```
 
 For platforms with limited profile space, prefer the GitHub repository link over

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "principles": [
-    "open-resource-governance is the public entry and global index, not a giant monorepo.",
+    "YIYUAN Meridian is the public entry and global index; open-resource-governance remains the current repository slug, not a giant monorepo.",
     "The ecosystem is a graph of lanes, projections, review gates, and feedback loops, not a simple upstream/downstream chain.",
     "User-configuration lanes are generic in purpose but runtime-specific in implementation: migration, cloud sync/backup, restore, verification, rollback, and runtime integration may require agent-specific templates.",
     "All non-user-configuration lanes should remain agent-neutral, tool-neutral, reusable, and broadly applicable.",

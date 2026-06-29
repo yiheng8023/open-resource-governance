@@ -14,8 +14,8 @@ Useful feedback should improve:
 - launch gates;
 - validation;
 - promotion material;
-- naming clarity while `open-resource-governance` remains a temporary project
-  name;
+- naming clarity while YIYUAN Meridian uses the `open-resource-governance`
+  repository slug;
 - contribution safety.
 
 ## Feedback channels

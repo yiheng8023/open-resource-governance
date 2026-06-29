@@ -1,14 +1,15 @@
 # Naming Campaign
 
-`open-resource-governance` is a provisional repository slug and temporary
-project name. It is accurate for governance work, but it may be too abstract
-for developers and users encountering the project for the first time.
+The current public project name is **YIYUAN Meridian**. Its Chinese name is
+**易元经纬**. The current GitHub repository slug remains
+`open-resource-governance` for link stability.
 
-The project may be renamed after public feedback.
+The repository slug may still be renamed later after link, search,
+pronunciation, and migration checks.
 
 ## Goal
 
-Find a name that is:
+Keep or refine a name that is:
 
 - easy to understand without internal context;
 - broad enough for resource discovery, Skills governance, bookmark taxonomy,
@@ -59,16 +60,17 @@ Possible outcomes:
 - keep `open-resource-governance` for now;
 - keep the repository slug but use a clearer public subtitle;
 - rename the repository;
-- create a new public-facing brand while preserving this repository as a
-  governance hub;
+- keep YIYUAN Meridian as the public-facing brand while preserving this
+  repository as the governance hub;
 - defer the decision until the downstream repositories are more mature.
 
 ## Current public wording
 
-Until renamed, refer to the project as:
+Current public wording:
 
 ```text
-Open Resource Governance (temporary name)
+YIYUAN Meridian
+易元经纬
 ```
 
 Use the repository URL as the stable discovery path:
@@ -76,3 +78,29 @@ Use the repository URL as the stable discovery path:
 ```text
 https://github.com/yiheng8023/open-resource-governance
 ```
+
+## Decision note
+
+`YIYUAN Nexus` is excluded because `Nexus` is reserved for the enterprise or
+organization identity and should not be reused as this repository-family
+project name.
+
+The current working name is:
+
+```text
+YIYUAN Meridian / 易元经纬
+```
+
+Rationale:
+
+- "Meridian" suggests coordinates, routes, maps, long-term orientation, and
+  circulation without locking the project to Skills, bookmarks, Codex, Claude,
+  or a single resource type.
+- It can describe a GitHub-native external collaboration map while remaining
+  broad enough for future terminal consumers.
+- It pairs well with the current repository role: this repository can remain
+  the governance hub while the public-facing project name becomes clearer.
+
+Before changing the GitHub repository slug or treating the name as a broader
+brand asset, run the usual collision, trademark, searchability, pronunciation,
+URL, and community-feedback checks.

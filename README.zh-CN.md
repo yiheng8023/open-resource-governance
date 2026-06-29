@@ -1,13 +1,12 @@
-# open-resource-governance
+# YIYUAN Meridian（易元经纬）
 
 [English](README.md) | 简体中文
 
-> `open-resource-governance` 只是临时项目名和暂定仓库 slug。
-> 未来可能根据公开征名反馈变更。
+> 当前项目名：**YIYUAN Meridian（易元经纬）**。
+> 当前 GitHub 仓库 slug：`open-resource-governance`。
+> 仓库 slug 未来可在完成链接、搜索和迁移检查后再决定是否调整。
 
-![Open Resource Governance launch card](docs/assets/launch-video/title-card-16x9.png)
-
-这是一个公开安全的起步系统，用来把分散的链接、工具、Agent 技能、书签和
+YIYUAN Meridian（易元经纬）是一个公开安全的起步系统，用来把分散的链接、工具、Agent 技能、书签和
 AI 协作配置整理成可复用的公共产物，同时把个人记忆、账号状态、本机路径和
 私人偏好留在私有仓库里。
 
@@ -21,6 +20,7 @@ AI 协作配置整理成可复用的公共产物，同时把个人记忆、账�
 | 直接使用公开书签目录 | [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public) | 328 条公开安全来源，以及可导入浏览器的 HTML |
 | 了解资源雷达怎么做 | [`resource-radar-public`](https://github.com/yiheng8023/resource-radar-public) | 资源记录结构、评分/生命周期示例、demo 数据和 [`outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) |
 | 搭建自己的私有 agent 环境仓 | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) 或 [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | 当前两个公开安全示例，展示更通用的迁移、云端同步/备份、验证和恢复模式 |
+| 理解可迁移的意图与路由链路 | [`docs/intent-contract-portability.md`](docs/intent-contract-portability.md) | 持续意图契约和能力路由如何适配不同 Agent 运行时 |
 | 理解整套仓库关系 | [`docs/system-topology.md`](docs/system-topology.md) 和 [`docs/repository-map.md`](docs/repository-map.md) | 仓库地图、公开/私有边界和关系规则 |
 | 参与共建 | [`CONTRIBUTING.md`](CONTRIBUTING.md) 和 [`docs/user-developer-compact.md`](docs/user-developer-compact.md) | 贡献范围、用户权益、安全要求和反馈方式 |
 
@@ -65,7 +65,7 @@ AI 协作配置整理成可复用的公共产物，同时把个人记忆、账�
 
 | 仓库 | 作用 | 可见性 |
 | --- | --- | --- |
-| `open-resource-governance` | 公开总入口、导航、共享规则、发布准备文档 | 公开 |
+| `open-resource-governance` | YIYUAN Meridian（易元经纬）公开总入口、导航、共享规则、发布准备文档 | 公开 |
 | `research-bookmarks-public` | 公开书签目录和生成 HTML | 公开 |
 | `resource-radar-public` | 资源雷达模板和示例报告 | 公开 |
 | `codex-user-config-template` | 可迁移 agent 环境模板模式的 Codex 专用公开示例 | 公开 |
@@ -78,7 +78,7 @@ AI 协作配置整理成可复用的公共产物，同时把个人记忆、账�
 
 ```mermaid
 flowchart LR
-  hub["open-resource-governance<br/>公开总入口 + 导航"]
+  hub["YIYUAN Meridian（易元经纬）<br/>公开总入口 + 导航<br/>(open-resource-governance slug)"]
   bookmarks["research-bookmarks-public<br/>公开书签目录 + HTML"]
   radar["resource-radar-public<br/>资源结构 + 生命周期示例"]
   templates["配置模板<br/>可迁移 agent 环境基线"]
@@ -224,6 +224,7 @@ flowchart LR
 | 避免广义资源发现变成噪音 | 公开资源雷达模板 + 私有雷达链路：评分、生命周期、去重、人工闸门 |
 | 在不同环境安全共享 AI/Agent skills | 精选技能链路：来源、安全审查、拓扑、冲突、发布清单 |
 | 让 AI 协作配置可迁移 | Codex 与 Claude 配置模板：把可复用结构和私人偏好分开 |
+| 跨 Agent 保留意图和能力边界 | 一份可迁移的意图契约适配矩阵：Codex 是第一个验证实现，不是唯一实现 |
 | 让别人参与共建 | 贡献、issue、安全、行为准则、命名和发布文档 |
 
 关键不在某个单独脚本，而在这个闭环：
@@ -239,7 +240,7 @@ flowchart LR
 设计上采用模块化，而不是把所有东西塞进一个巨型仓库。每条链路只负责一件相对清晰的事：
 
 ```text
-open-resource-governance
+YIYUAN Meridian / open-resource-governance
   公开总入口、文档、仓库地图、发布素材、共享安全规则
 
 resource-radar
@@ -327,7 +328,7 @@ python -B scripts/verify.py
 先从小而清晰的改动开始：
 
 - 改进一个分类名称；
-- 给临时项目名提建议；
+- 给项目名或命名表达提建议；
 - 增加一个更安全的验证检查；
 - 建议一个公开安全资源类别；
 - 帮第一次来的用户把文档写得更清楚。
@@ -367,7 +368,7 @@ python -B scripts/verify.py
 - 让外部用户更容易看懂的表达；
 - 分类和仓库地图改进；
 - 更安全的公开/私有边界示例；
-- 针对临时项目名的命名建议；
+- 针对项目名或命名表达的建议；
 - 防止误泄露私有数据的验证检查；
 - 对书签和资源发现链路的真实使用反馈。
 
@@ -404,6 +405,8 @@ python -B scripts/verify.py
 - [`docs/system-topology.md`](docs/system-topology.md) — 全局图、拓扑和仓库关系索引。
 - [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 公开/私有安全边界。
 - [`docs/shared-governance-baseline.md`](docs/shared-governance-baseline.md) — 仓库家族共享的治理底座。
+- [`docs/intent-contract-portability.md`](docs/intent-contract-portability.md)
+  — 持续意图契约的不变量和 Agent 适配矩阵。
 - [`docs/mvp-plan-and-acceptance.md`](docs/mvp-plan-and-acceptance.md) — 精选
   Skills 末端消费者 MVP 计划与验收标准。
 - [`docs/mvp-global-closeout-verification.md`](docs/mvp-global-closeout-verification.md)

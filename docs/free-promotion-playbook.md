@@ -28,7 +28,7 @@ requires a fresh public-refresh gate.
 Short version:
 
 ```text
-Building a modular open-resource governance stack: resource radar, curated agent skills,
+Building YIYUAN Meridian: a modular resource-governance stack for resource radar, curated agent skills,
 public/private configuration templates, and official-source bookmark taxonomies.
 Public core, private state, verifiable automation.
 ```
@@ -36,7 +36,7 @@ Public core, private state, verifiable automation.
 Chinese version:
 
 ```text
-正在搭建一套模块化开放资源治理体系：资源雷达、精选 agent skills、公开/私有配置模板、
+正在搭建 YIYUAN Meridian（易元经纬）：资源雷达、精选 agent skills、公开/私有配置模板、
 官方来源书签分类。公开核心，私有状态，可验证自动化。
 ```
 

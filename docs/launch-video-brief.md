@@ -1,9 +1,9 @@
 # Launch Video Brief
 
-This brief supports a lightweight first announcement video for
-`open-resource-governance`, which is a provisional repository slug and
-temporary project name. It is intentionally simple, public-safe, and usable with
-video-generation tools, manual screen recording, or a basic slide editor.
+This brief supports a lightweight first announcement video for YIYUAN Meridian.
+The current GitHub repository slug remains `open-resource-governance`. The brief
+is intentionally simple, public-safe, and usable with video-generation tools,
+manual screen recording, or a basic slide editor.
 
 ## Current use boundary
 
@@ -33,14 +33,14 @@ loop for stale, duplicated, or superseded resources.
 ## Naming note
 
 The repository slug is governance-accurate but abstract. For public messaging,
-lead with a plain subtitle before the formal name:
+lead with the project name and a plain subtitle:
 
-> A public-safe map for useful resources, agent skills, AI collaboration
-> configuration, and bookmark taxonomies.
+> YIYUAN Meridian: a public-safe map for useful resources, agent skills, AI
+> collaboration configuration, and bookmark taxonomies.
 
-Then name the repository as `open-resource-governance` for people who want to
-find or star it on GitHub. State clearly that the name is temporary and may
-change after public naming feedback.
+Then name the repository slug as `open-resource-governance` for people who want
+to find or star it on GitHub. Do not imply that the GitHub slug has already been
+renamed.
 
 ## Recommended format
 
@@ -68,7 +68,7 @@ Prepare only public-safe assets:
 - screenshot or simple slide for `Public core -> Private overlays`;
 - screenshot of the GitHub Actions verification success, with no private tabs,
   tokens, local paths, or account-sensitive browser state visible;
-- optional square project card with the title `Open Resource Governance` and
+- optional square project card with the title `YIYUAN Meridian` and
   the subtitle `Public core. Private overlays. Verifiable automation.`;
 - optional 16:9 and 9:16 title cards for social reposting.
 
@@ -92,7 +92,7 @@ Music is optional. If used, prefer low-volume royalty-free ambient, soft lo-fi,
 or light documentary synth with no vocals. Avoid copyrighted tracks and keep
 the license/source note with the final export.
 
-Use the temporary project name as a text wordmark. Do not use `®` or imply
+Use `YIYUAN Meridian` as a text wordmark. Do not use `®` or imply
 registered trademark status unless registration is complete. If a project logo
 is added later, confirm it is intended for public project use before including
 it in generated assets.
@@ -124,7 +124,7 @@ it in generated assets.
 ## Voiceover draft
 
 ```text
-Open Resource Governance is the temporary name for a small public-safe hub for a bigger idea:
+YIYUAN Meridian is a small public-safe hub for a bigger idea:
 useful resources, agent skills, AI collaboration configuration, and bookmark
 taxonomies should be reusable without leaking private state.
 
@@ -140,13 +140,13 @@ license drift, and better sources; then update, merge, retire, or reject through
 review gates.
 
 This repository maps the lanes, explains the boundaries, and gives contributors
-a safe place to improve the system. The name may change after public naming feedback.
+a safe place to improve the system.
 ```
 
 ## Chinese voiceover draft
 
 ```text
-Open Resource Governance 是这个项目的暂定名。它是一个公开安全的总入口，用来承载一个更大的想法：
+YIYUAN Meridian（易元经纬）是一个公开安全的总入口，用来承载一个更大的想法：
 有价值的资源、agent skills、AI 协作配置和书签分类，应该可以复用，
 但不能泄露私人状态。
 
@@ -157,15 +157,15 @@ Open Resource Governance 是这个项目的暂定名。它是一个公开安全�
 
 系统还要持续新陈代谢：发现坏链、重复、许可漂移和更优来源，再通过审查闸门更新、合并、退役或拒绝。
 
-这个仓库负责解释各条链路、边界和贡献方式，让后续协作更安全。名称未来可能根据公开征名反馈变更。
+这个仓库负责解释各条链路、边界和贡献方式，让后续协作更安全。
 ```
 
 ## Video AI prompt
 
 ```text
 Create a clean 30-second technical launch video for an open-source GitHub
-project currently using the temporary name "Open Resource Governance". Make it
-clear that the name is provisional and may change after public naming feedback.
+project named "YIYUAN Meridian" with Chinese name "易元经纬". Make it clear that
+the GitHub repository slug remains "open-resource-governance".
 
 Use case: public-safe explainer draft and announcement candidate for GitHub, X,
 Weibo, and YouTube Shorts.
@@ -195,10 +195,11 @@ Text:
 "Verifiable automation"
 "GitHub outputs"
 "Renew stale resources"
-"Open Resource Governance (temporary name)"
+"YIYUAN Meridian"
+"易元经纬"
 Constraints: no real people, no private data, no credentials, no account pages,
 no browser history, no exaggerated claims, no security certification claims, no
-claim that the temporary name is final.
+claim that the repository slug has already been renamed.
 Avoid: hype, fake dashboards, noisy cyber visuals, corporate stock footage.
 ```
 
@@ -207,14 +208,13 @@ Avoid: hype, fake dashboards, noisy cyber visuals, corporate stock footage.
 English:
 
 ```text
-I just opened Open Resource Governance (temporary name):
+I just opened YIYUAN Meridian:
 a public-safe hub for resource discovery, curated agent skills, portable AI
 collaboration configuration, and bookmark taxonomy.
 
 Principle: public core, private overlays, release gates, verifiable automation.
 Public outputs live on GitHub, and ordinary users can inspect them without local
 setup. The goal is controlled renewal, not a one-time resource dump.
-The name may change after public naming feedback.
 ```
 
 Optional link line:
@@ -232,13 +232,12 @@ Contact: https://github.com/yiheng8023/open-resource-governance/blob/main/docs/c
 Chinese:
 
 ```text
-我刚公开了 Open Resource Governance（暂定名）：
+我刚公开了 YIYUAN Meridian（易元经纬）：
 一个公开安全的总入口，用来治理资源发现、精选 agent skills、AI 协作配置模板和书签分类。
 
 原则：公开核心，私有 overlay，发布闸门，可验证自动化。
 公开产物在 GitHub 上可直接查看，普通用户不需要本地环境。
 目标不是一次性资源堆砌，而是受控新陈代谢。
-名称未来可能根据公开征名反馈变更。
 ```
 
 可选链接行：

@@ -14,7 +14,8 @@
     "process artifacts must not become hidden authority",
     "retained artifacts require ongoing quality, health, security, and compliance posture",
     "maintained lanes need durable state, continuity anchors, and recovery paths",
-    "important decisions should be observable and explainable through public-safe evidence"
+    "important decisions should be observable and explainable through public-safe evidence",
+    "intent and capability routing are portable collaboration invariants, not one agent implementation"
   ],
   "public_repository_expectations": [
     "clear README with language switch",
@@ -67,7 +68,8 @@
     "maintained lanes have continuity anchors",
     "important automation and promotion decisions are explainable",
     "support or funding does not bypass review",
-    "high-impact promotion requires human review"
+    "high-impact promotion requires human review",
+    "runtime adapters preserve intent-contract invariants before claiming portability"
   ],
   "lifecycle_posture": [
     "artifact_hygiene",
@@ -103,6 +105,12 @@
       "candidate-only incubation",
       "graduation rule",
       "small-output-first proof"
+    ],
+    "runtime_collaboration": [
+      "continuous intent contract",
+      "capability routing",
+      "event-driven revalidation",
+      "agent adapter matrix"
     ]
   }
 }

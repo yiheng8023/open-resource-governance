@@ -58,6 +58,29 @@ not the destination for every useful resource. A resource may be a bookmark
 seed, reference, dataset, tool, learning source, workflow, standard, or skill
 candidate; only reviewed skill candidates should enter the curated Skills lane.
 
+## Runtime collaboration pattern
+
+The runtime collaboration pattern is another graph layer. It is not a separate
+repository and not a Codex-only claim:
+
+```text
+project / user instructions
+-> continuous intent contract
+-> capability decision router
+-> selected capability, Skill, tool, workflow, or native reasoning
+-> execution
+-> event-driven revalidation
+-> verification and handoff
+```
+
+Codex currently provides the first validated implementation of this pattern
+through `AGENTS.md`, `intent-contract`, and `capability-router`. Other agents
+should be adapted by preserving the same invariants through their own
+instruction, rule, Skill, hook, prompt, or workflow surfaces.
+
+See [`docs/intent-contract-portability.md`](intent-contract-portability.md) and
+[`data/intent-contract-adapters.json`](../data/intent-contract-adapters.json).
+
 ## Current graph
 
 The graph also includes a current MVP gate node. It is not a repository and not

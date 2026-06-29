@@ -62,6 +62,7 @@ Each lane keeps its own implementation:
 | Curated Skills | source pinning, license/provenance review, safety review, release manifest |
 | User configuration | runtime install policy, memory boundary, backup/restore, local verification |
 | Future lanes | candidate-only incubation, graduation rule, small-output-first proof |
+| Runtime collaboration | continuous intent contract, capability routing, event-driven revalidation |
 
 Do not flatten these differences into one generic repo template. The goal is a
 shared baseline, not a monoculture.
@@ -90,6 +91,26 @@ The concrete implementation differs by lane:
 - configuration templates generate safe scaffolding;
 - private configuration repositories verify real runtime state;
 - future lanes stay candidate-only until they prove value.
+
+## Shared collaboration loop
+
+Runtime collaboration has its own shared loop. It is especially important for
+agent environments, curated Skills, and future terminal consumers:
+
+```text
+instructions
+-> intent contract
+-> capability decision
+-> selected capability or native work
+-> execution
+-> event-driven revalidation
+-> verification
+```
+
+This is a portable invariant, not a Codex-only implementation detail. Codex is
+the first validated adapter, but other agents may carry the same contract in
+their own files, rules, Skills, hooks, prompts, or workflows. See
+[`intent-contract-portability.md`](intent-contract-portability.md).
 
 ## Shared checks
 

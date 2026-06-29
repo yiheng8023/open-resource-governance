@@ -1,9 +1,9 @@
 # Launch Video Asset Pack
 
-Prepared public-safe image assets for the first
-`open-resource-governance` launch video. The repository slug and displayed
-project name are provisional; assets should not imply that the current name is
-final.
+Prepared public-safe image assets for the first YIYUAN Meridian launch video.
+The GitHub repository slug remains `open-resource-governance`. Some existing
+images were prepared before the project-name decision and should be regenerated
+before broad public promotion if they still display the older wording.
 
 These are prepared material only. They are not proof of completion and not an
 instruction to publish. Use them after MVP closeout or for an explicitly
@@ -48,7 +48,7 @@ Suggested call-to-action:
 
 ```text
 GitHub: github.com/yiheng8023/open-resource-governance
-Name note: temporary project name
+Project: YIYUAN Meridian / 易元经纬
 ```
 
 ## Music guidance
@@ -70,22 +70,22 @@ without music.
 
 ## Logo and trademark guidance
 
-The current assets use a text wordmark only and label the name as temporary. Do
-not use `®` or imply registered trademark status unless registration is
-complete. If the owner later provides a project logo, add it only after
-confirming it is intended for public project use.
+The current assets use a text wordmark only. Do not use `®` or imply registered
+trademark status unless registration is complete. If the owner later provides a
+project logo, add it only after confirming it is intended for public project
+use.
 
 Safe wording:
 
 ```text
-Open Resource Governance
-Open Resource Governance (temporary name)
+YIYUAN Meridian
+YIYUAN Meridian / 易元经纬
 ```
 
 Avoid:
 
 ```text
-Open Resource Governance®
+YIYUAN Meridian®
 Official certified platform
 ```
 

@@ -44,6 +44,23 @@ their runtime behavior has been mapped. Public templates provide structure,
 placeholder examples, docs, and validation. Private sources own the real user
 environment.
 
+## Runtime collaboration pattern
+
+`intent-contract` and `capability-router` are currently validated in the Codex
+configuration lane, but the pattern is broader than Codex:
+
+```text
+instructions -> intent contract -> capability decision -> execution -> checkpoint -> verification
+```
+
+The portable rule is to preserve continuous intent calibration, authority
+boundaries, capability selection, event-driven revalidation, and verification.
+Agent-specific repositories or templates may implement that rule through
+`AGENTS.md`, `CLAUDE.md`, rules, Skills, hooks, prompts, workflows, or other
+runtime-specific surfaces.
+
+See [`intent-contract-portability.md`](intent-contract-portability.md).
+
 ## Bookmark lane
 
 - `research-bookmarks`: private source of truth for complete bookmark imports, private overlays, audits, and declassification inputs.

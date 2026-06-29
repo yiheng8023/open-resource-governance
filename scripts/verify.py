@@ -32,6 +32,7 @@ REQUIRED_FILES = [
     "docs/community-feedback-model.md",
     "docs/public-private-boundary.md",
     "docs/shared-governance-baseline.md",
+    "docs/intent-contract-portability.md",
     "docs/mvp-plan-and-acceptance.md",
     "docs/mvp-global-closeout-verification.md",
     "docs/mvp-closeout-evidence-ledger.md",
@@ -71,6 +72,7 @@ REQUIRED_FILES = [
     "data/topology.json",
     "data/future-lanes.json",
     "data/shared-governance-baseline.json",
+    "data/intent-contract-adapters.json",
     "data/mvp-acceptance-map.json",
     "data/mvp-closeout-evidence-ledger.json",
     "data/mvp-current-decision-point.json",
@@ -221,8 +223,8 @@ def verify_external_user_readme() -> None:
     english = (ROOT / "README.md").read_text(encoding="utf-8")
     chinese = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
     required_english = [
-        "temporary project name",
-        "docs/assets/launch-video/title-card-16x9.png",
+        "YIYUAN Meridian",
+        "open-resource-governance",
         "Start here",
         "What is this?",
         "Repository navigation",
@@ -251,8 +253,8 @@ def verify_external_user_readme() -> None:
         "data/projection-report.json",
     ]
     required_chinese = [
-        "临时项目名",
-        "docs/assets/launch-video/title-card-16x9.png",
+        "YIYUAN Meridian（易元经纬）",
+        "open-resource-governance",
         "从这里开始",
         "这是什么？",
         "仓库导航",
@@ -374,7 +376,7 @@ def verify_future_lane_incubation() -> None:
     for phrase in required_phrases:
         if phrase not in public_docs:
             fail(f"future/private project docs missing phrase: {phrase}")
-    forbidden_private_project_terms = ["YIYUAN", "ASSETS"]
+    forbidden_private_project_terms = ["ASSETS"]
     combined = public_docs + json.dumps(data, ensure_ascii=False)
     for term in forbidden_private_project_terms:
         if term.lower() in combined.lower():
@@ -397,6 +399,7 @@ def verify_shared_governance_baseline() -> None:
         "retained artifacts require ongoing quality, health, security, and compliance posture",
         "maintained lanes need durable state, continuity anchors, and recovery paths",
         "important decisions should be observable and explainable through public-safe evidence",
+        "intent and capability routing are portable collaboration invariants, not one agent implementation",
     ]
     principles = data.get("principles", [])
     for phrase in required_principles:
@@ -423,13 +426,14 @@ def verify_shared_governance_baseline() -> None:
     ]:
         fail("shared governance lifecycle posture changed unexpectedly")
     lane_examples = data.get("lane_specific_examples", {})
-    for lane in ["bookmarks", "resource_radar", "curated_skills", "user_configuration", "future_lanes"]:
+    for lane in ["bookmarks", "resource_radar", "curated_skills", "user_configuration", "future_lanes", "runtime_collaboration"]:
         if lane not in lane_examples:
             fail(f"shared governance baseline missing lane examples: {lane}")
     doc = (ROOT / "docs" / "shared-governance-baseline.md").read_text(encoding="utf-8")
     required_doc_phrases = [
         "Consistency does not mean sameness",
         "Shared automation loop",
+        "Shared collaboration loop",
         "Review gates",
         "Lifecycle posture",
         "artifact hygiene",
@@ -438,6 +442,7 @@ def verify_shared_governance_baseline() -> None:
         "observability and explainability",
         "Skills MVP",
         "standardize the rules",
+        "intent-contract-portability.md",
     ]
     for phrase in required_doc_phrases:
         if phrase not in doc:
@@ -445,6 +450,85 @@ def verify_shared_governance_baseline() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     if "docs/shared-governance-baseline.md" not in readme:
         fail("README.md must link shared governance baseline")
+    if "docs/intent-contract-portability.md" not in readme:
+        fail("README.md must link intent contract portability")
+
+
+def verify_intent_contract_portability() -> None:
+    data = json.loads((ROOT / "data" / "intent-contract-adapters.json").read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1:
+        fail("intent-contract-adapters.json schema_version must be 1")
+    if data.get("status") != "reference_matrix":
+        fail("intent contract adapters must remain a reference matrix")
+    if data.get("not_release_authority") is not True:
+        fail("intent contract adapter matrix must not be release authority")
+    required_chain = [
+        "project_or_user_instructions",
+        "intent_contract",
+        "capability_decision",
+        "selected_capability_or_native_work",
+        "execution",
+        "event_driven_intent_revalidation",
+        "event_driven_capability_rerouting_when_needed",
+        "verification_and_handoff",
+    ]
+    if data.get("core_chain") != required_chain:
+        fail("intent contract core chain changed unexpectedly")
+    required_invariants = {
+        "preserve_raw_user_request",
+        "bind_goal_target_mode_scope_authority_output_and_verification",
+        "fast_path_simple_low_risk_clear_requests",
+        "ask_smallest_blocking_question_when_missing_fact_changes_next_safe_action",
+        "do_not_treat_brainstorming_or_future_options_as_execution_authority",
+        "revalidate_at_event_driven_checkpoints",
+        "separate_intent_binding_from_capability_selection",
+        "do_not_use_keyword_matches_alone_as_proof",
+    }
+    actual_invariants = set(data.get("portable_invariants", []))
+    missing_invariants = required_invariants - actual_invariants
+    if missing_invariants:
+        fail(f"intent contract matrix missing invariants: {', '.join(sorted(missing_invariants))}")
+    required_adapters = {
+        "codex",
+        "claude-code",
+        "cursor",
+        "windsurf-cascade",
+        "cline",
+        "roo-code",
+        "github-copilot",
+        "generic-llm-agent",
+    }
+    adapters = data.get("adapters", [])
+    actual_adapters = {adapter.get("environment") for adapter in adapters}
+    missing_adapters = required_adapters - actual_adapters
+    if missing_adapters:
+        fail(f"intent contract matrix missing adapters: {', '.join(sorted(missing_adapters))}")
+    for adapter in adapters:
+        for key in ("environment", "instruction_surfaces", "skill_like_surfaces", "current_status", "adapter_note"):
+            if key not in adapter:
+                fail(f"intent contract adapter missing {key}: {adapter}")
+        if adapter["environment"] != "codex" and adapter["current_status"] == "validated_first_adapter":
+            fail(f"only Codex may be the first validated adapter: {adapter['environment']}")
+    doc = (ROOT / "docs" / "intent-contract-portability.md").read_text(encoding="utf-8")
+    for phrase in [
+        "continuous human-AI collaboration control layer",
+        "not merely an entry prompt",
+        "Portable invariants",
+        "Adapter matrix",
+        "Codex is the first validated adapter",
+        "not a claim that every provider will auto-load",
+        "event-driven checkpoints",
+        "Acceptance criteria for future adapters",
+        "Public/private boundary",
+    ]:
+        if phrase not in doc:
+            fail(f"intent contract portability doc missing phrase: {phrase}")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme_zh = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
+    if "docs/intent-contract-portability.md" not in readme:
+        fail("README.md must link intent contract portability")
+    if "docs/intent-contract-portability.md" not in readme_zh:
+        fail("README.zh-CN.md must link intent contract portability")
 
 
 def verify_mvp_acceptance_map() -> None:
@@ -1370,6 +1454,7 @@ def main() -> None:
     verify_current_public_private_status()
     verify_future_lane_incubation()
     verify_shared_governance_baseline()
+    verify_intent_contract_portability()
     verify_mvp_acceptance_map()
     verify_user_developer_compact()
     verify_mvp_closeout_evidence_ledger()

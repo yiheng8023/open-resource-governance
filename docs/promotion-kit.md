@@ -4,7 +4,7 @@ Use free channels first: GitHub profile, pinned repositories, repository topics,
 
 ## One-line pitch
 
-Open Resource Governance (temporary name) is a modular, public-safe system for discovering useful resources, curating agent skills, maintaining portable AI-collaboration configuration, and managing bookmark taxonomies without leaking private state.
+YIYUAN Meridian is a modular, public-safe system for discovering useful resources, curating agent skills, maintaining portable AI-collaboration configuration, and managing bookmark taxonomies without leaking private state.
 
 ## Core message
 
@@ -25,7 +25,7 @@ Do not promote only the idea. Point people to the outputs.
 
 ## Short GitHub profile blurb
 
-Building a modular open-resource governance stack, currently under the temporary name Open Resource Governance: resource radar, curated agent skills, public/private configuration templates, and official-source bookmark taxonomies. Public core, private state, verifiable automation.
+Building YIYUAN Meridian: a modular, public-safe resource governance stack for resource radar, curated agent skills, public/private configuration templates, and official-source bookmark taxonomies. Public core, private state, verifiable automation.
 
 ## Repository topics
 
@@ -55,7 +55,7 @@ I am building an open, modular resource-governance stack:
 The principle is simple: public core, private state, cloud-first verifiable
 automation, and human gates for high-impact decisions.
 
-Name note: Open Resource Governance is a temporary name and may change after public naming feedback.
+Name note: YIYUAN Meridian is the current public project name. The GitHub repository slug is still `open-resource-governance`.
 
 GitHub: https://github.com/yiheng8023/open-resource-governance
 
@@ -72,7 +72,7 @@ GitHub: https://github.com/yiheng8023/open-resource-governance
 
 核心原则：公开核心，私有状态，云端优先的可验证自动化，高影响决策保留人工闸门。
 
-命名说明：Open Resource Governance 是暂定名，未来可能根据公开征名反馈变更。
+命名说明：YIYUAN Meridian（易元经纬）是当前公开项目名。GitHub 仓库 slug 仍为 `open-resource-governance`。
 
 GitHub: https://github.com/yiheng8023/open-resource-governance
 

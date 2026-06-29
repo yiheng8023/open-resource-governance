@@ -1,10 +1,11 @@
 # Project Design And User Value
 
-`open-resource-governance` is a temporary project name. The name may change
-after public feedback, but the design problem is stable: how can one person or
-small team collect useful resources, keep private state private, publish useful
-public artifacts, and let others improve the system without turning everything
-into an unreviewed pile?
+YIYUAN Meridian, Chinese name 易元经纬, is the current public project name.
+The current repository slug remains `open-resource-governance` for link
+stability. The design problem is stable: how can one person or small team
+collect useful resources, keep private state private, publish useful public
+artifacts, and let others improve the system without turning everything into an
+unreviewed pile?
 
 ## External user perspective
 
@@ -257,7 +258,7 @@ Useful contributions do not need to be huge. Good contributions include:
 - safer examples for public/private splitting;
 - resource-source policy improvements;
 - benchmark ideas for resource quality signals;
-- naming suggestions while the project name is temporary;
+- naming refinements while the repository slug remains `open-resource-governance`;
 - issue templates and review checklists;
 - generated artifact usability improvements.
 

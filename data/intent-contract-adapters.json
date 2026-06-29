@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "status": "reference_matrix",
+  "concept": "continuous-intent-contract",
+  "not_release_authority": true,
+  "core_chain": [
+    "project_or_user_instructions",
+    "intent_contract",
+    "capability_decision",
+    "selected_capability_or_native_work",
+    "execution",
+    "event_driven_intent_revalidation",
+    "event_driven_capability_rerouting_when_needed",
+    "verification_and_handoff"
+  ],
+  "portable_invariants": [
+    "preserve_raw_user_request",
+    "bind_goal_target_mode_scope_authority_output_and_verification",
+    "fast_path_simple_low_risk_clear_requests",
+    "ask_smallest_blocking_question_when_missing_fact_changes_next_safe_action",
+    "do_not_treat_brainstorming_or_future_options_as_execution_authority",
+    "revalidate_at_event_driven_checkpoints",
+    "separate_intent_binding_from_capability_selection",
+    "do_not_use_keyword_matches_alone_as_proof"
+  ],
+  "adapters": [
+    {
+      "environment": "codex",
+      "instruction_surfaces": ["AGENTS.md", "project instructions"],
+      "skill_like_surfaces": ["Skills", "tools", "plugins", "MCP", "apps", "hooks"],
+      "current_status": "validated_first_adapter",
+      "adapter_note": "AGENTS.md -> intent-contract Skill -> capability-router Skill -> tools/Skills/native work -> checkpoints"
+    },
+    {
+      "environment": "claude-code",
+      "instruction_surfaces": ["CLAUDE.md", "imported files", "project memory"],
+      "skill_like_surfaces": ["Skills", "slash commands", "hooks"],
+      "current_status": "design_reference_needs_local_validation",
+      "adapter_note": "Import or mirror the core contract through CLAUDE.md and use Claude Skills/hooks where available."
+    },
+    {
+      "environment": "cursor",
+      "instruction_surfaces": ["project rules", "user rules", "repository instructions"],
+      "skill_like_surfaces": ["rule-triggered workflows", "tool use"],
+      "current_status": "design_reference_needs_local_validation",
+      "adapter_note": "Map core invariants into rules; do not assume a Codex-style Skill loader."
+    },
+    {
+      "environment": "windsurf-cascade",
+      "instruction_surfaces": ["rules", "memories", "workflows"],
+      "skill_like_surfaces": ["workflows", "tool orchestration"],
+      "current_status": "design_reference_needs_local_validation",
+      "adapter_note": "Use rules for persistent invariants and workflows for repeatable execution checks."
+    },
+    {
+      "environment": "cline",
+      "instruction_surfaces": [".clinerules", "compatible rule files", "custom instructions"],
+      "skill_like_surfaces": ["Skills", "plugins", "MCP-style tools"],
+      "current_status": "design_reference_needs_local_validation",
+      "adapter_note": "Keep the contract in rules and use Skills only when the runtime actually supports them."
+    },
+    {
+      "environment": "roo-code",
+      "instruction_surfaces": [".roo/rules", ".roorules", "mode-specific rules"],
+      "skill_like_surfaces": ["modes", "tools"],
+      "current_status": "design_reference_needs_local_validation",
+      "adapter_note": "Keep the contract in global or mode-specific rules; adapt reroute checkpoints per mode."
+    },
+    {
+      "environment": "github-copilot",
+      "instruction_surfaces": ["repository custom instructions", "path-specific instructions", "agent instruction files"],
+      "skill_like_surfaces": ["Copilot coding agent/tooling"],
+      "current_status": "design_reference_needs_local_validation",
+      "adapter_note": "Use repository instructions for the invariant; do not assume explicit Skill selection."
+    },
+    {
+      "environment": "generic-llm-agent",
+      "instruction_surfaces": ["system prompt", "project prompt", "checklist"],
+      "skill_like_surfaces": [],
+      "current_status": "fallback_adapter",
+      "adapter_note": "Make the contract visible for higher-risk work and use a checklist when no Skill mechanism exists."
+    }
+  ]
+}

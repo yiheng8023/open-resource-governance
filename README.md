@@ -1,13 +1,12 @@
-# open-resource-governance
+# YIYUAN Meridian
 
 English | [简体中文](README.zh-CN.md)
 
-> `open-resource-governance` is a temporary project name and repository slug.
-> It may change after public naming feedback.
+> Current project name: **YIYUAN Meridian**.
+> Current GitHub repository slug: `open-resource-governance`.
+> The repository slug may change later after link, search, and migration checks.
 
-![Open Resource Governance launch card](docs/assets/launch-video/title-card-16x9.png)
-
-A public-safe starter system for turning scattered links, tools, agent skills,
+YIYUAN Meridian is a public-safe starter system for turning scattered links, tools, agent skills,
 bookmarks, and AI-collaboration configuration into something reusable without
 publishing private state.
 
@@ -22,6 +21,7 @@ people can reuse.
 | Import the public bookmark catalog | [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public) | 328 public-safe sources plus generated browser-importable HTML |
 | Try the resource-radar pattern | [`resource-radar-public`](https://github.com/yiheng8023/resource-radar-public) | schema, scoring/lifecycle examples, demo records, and [`outputs/demo-report.md`](https://github.com/yiheng8023/resource-radar-public/blob/main/outputs/demo-report.md) |
 | Build a private agent-environment repo | [`codex-user-config-template`](https://github.com/yiheng8023/codex-user-config-template) or [`claude-user-config-template`](https://github.com/yiheng8023/claude-user-config-template) | current public-safe examples of a broader migration, cloud sync/backup, verification, and restore pattern |
+| Understand portable intent and routing | [`docs/intent-contract-portability.md`](docs/intent-contract-portability.md) | how continuous intent contracts and capability routing can adapt across agent runtimes |
 | Understand the whole system | [`docs/system-topology.md`](docs/system-topology.md) and [`docs/repository-map.md`](docs/repository-map.md) | the repository map, boundaries, and relationship rules |
 | Help improve the project | [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`docs/user-developer-compact.md`](docs/user-developer-compact.md) | contribution scope, user rights, safety expectations, and feedback paths |
 
@@ -70,7 +70,7 @@ public repository explains its own role; this hub keeps the global map.
 
 | Repository | Role | Visibility |
 | --- | --- | --- |
-| `open-resource-governance` | public hub, navigation, shared rules, launch/readiness docs | public |
+| `open-resource-governance` | YIYUAN Meridian public hub, navigation, shared rules, launch/readiness docs | public |
 | `research-bookmarks-public` | public bookmark catalog and generated HTML | public |
 | `resource-radar-public` | public resource-radar template and demo reports | public |
 | `codex-user-config-template` | Codex-specific public example of the portable agent-environment template pattern | public |
@@ -83,7 +83,7 @@ public repository explains its own role; this hub keeps the global map.
 
 ```mermaid
 flowchart LR
-  hub["open-resource-governance<br/>public hub + navigation"]
+  hub["YIYUAN Meridian<br/>public hub + navigation<br/>(open-resource-governance slug)"]
   bookmarks["research-bookmarks-public<br/>public bookmark catalog + HTML"]
   radar["resource-radar-public<br/>resource schema + lifecycle demo"]
   templates["configuration templates<br/>portable agent-environment baselines"]
@@ -250,6 +250,7 @@ You can use this project as a reference implementation for:
 | Keep broad resource discovery from becoming noise | A public resource-radar template plus a private radar lane for scoring, lifecycle, deduplication, and human gates |
 | Share AI/agent skills across environments safely | A curated-skills lane with provenance, safety review, topology, conflict handling, and release manifests |
 | Make AI collaboration portable | Agent-environment template lanes that separate reusable structure from private preferences; Codex and Claude are the current examples |
+| Preserve intent and capability boundaries across agents | A portable intent-contract adapter matrix that treats Codex as the first validated implementation, not the only implementation |
 | Let other people improve the system | Contribution, issue, security, conduct, naming, and launch docs |
 
 The important idea is not any single script. The value is the closed loop:
@@ -267,7 +268,7 @@ The design is modular. This hub does not try to become one giant repository.
 Each lane has a narrower responsibility:
 
 ```text
-open-resource-governance
+YIYUAN Meridian / open-resource-governance
   public hub, docs, repository map, launch materials, shared safety rules
 
 resource-radar
@@ -366,7 +367,7 @@ Use the bookmark lane as a model:
 Start with small, reviewable changes:
 
 - improve a taxonomy label;
-- suggest a better temporary project name;
+- suggest a better project name or naming refinement;
 - add a safer validation check;
 - propose a public-safe resource category;
 - clarify the docs for first-time users.
@@ -460,6 +461,8 @@ international, fiscal-host, and domestic-support considerations.
   public/private safety boundary.
 - [`docs/shared-governance-baseline.md`](docs/shared-governance-baseline.md) —
   common governance expectations shared across the repository family.
+- [`docs/intent-contract-portability.md`](docs/intent-contract-portability.md)
+  — portable continuous intent-contract invariants and agent adapter matrix.
 - [`docs/mvp-plan-and-acceptance.md`](docs/mvp-plan-and-acceptance.md) — curated
   Skills terminal-consumer MVP plan and acceptance criteria.
 - [`docs/mvp-global-closeout-verification.md`](docs/mvp-global-closeout-verification.md)
