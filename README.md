@@ -70,7 +70,7 @@ public repository explains its own role; this hub keeps the global map.
 
 | Repository | Role | Visibility |
 | --- | --- | --- |
-| `open-resource-governance` | YIYUAN Meridian public hub, navigation, shared rules, launch/readiness docs | public |
+| `YIYUAN-MERIDIAN` | YIYUAN Meridian public hub, navigation, shared rules, launch/readiness docs | public |
 | `research-bookmarks-public` | public bookmark catalog and generated HTML | public |
 | `resource-radar-public` | public resource-radar template and demo reports | public |
 | `codex-user-config-template` | Codex-specific public example of the portable agent-environment template pattern | public |
@@ -83,7 +83,7 @@ public repository explains its own role; this hub keeps the global map.
 
 ```mermaid
 flowchart LR
-  hub["YIYUAN Meridian<br/>public hub + navigation<br/>(open-resource-governance slug)"]
+  hub["YIYUAN Meridian<br/>public hub + navigation<br/>(YIYUAN-MERIDIAN repository)"]
   bookmarks["research-bookmarks-public<br/>public bookmark catalog + HTML"]
   radar["resource-radar-public<br/>resource schema + lifecycle demo"]
   templates["configuration templates<br/>portable agent-environment baselines"]
@@ -268,7 +268,7 @@ The design is modular. This hub does not try to become one giant repository.
 Each lane has a narrower responsibility:
 
 ```text
-YIYUAN Meridian / open-resource-governance
+YIYUAN-MERIDIAN / YIYUAN Meridian
   public hub, docs, repository map, launch materials, shared safety rules
 
 resource-radar
@@ -324,8 +324,8 @@ generically reusable.
 Clone the hub and run the verification check:
 
 ```bash
-git clone https://github.com/yiheng8023/open-resource-governance.git
-cd open-resource-governance
+git clone https://github.com/yiheng8023/YIYUAN-MERIDIAN.git
+cd YIYUAN-MERIDIAN
 python -B scripts/verify.py
 ```
 
@@ -338,8 +338,8 @@ Then read these in order:
 3. [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — what
    can and cannot be public.
 4. [`docs/roadmap.md`](docs/roadmap.md) — what is planned next.
-5. [`docs/naming-campaign.md`](docs/naming-campaign.md) — how the temporary
-   name may be changed.
+5. [`docs/naming-campaign.md`](docs/naming-campaign.md) — how naming, wording,
+   translation, and discoverability refinements are reviewed.
 
 If you only want the bookmark output, start with
 [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public).
@@ -416,7 +416,7 @@ Good first contributions include:
 - clearer wording for external users;
 - taxonomy and repository-map improvements;
 - safer public/private boundary examples;
-- naming suggestions while the project name is temporary;
+- naming, subtitle, translation, or wording refinements under an owner-controlled gate;
 - validation checks that prevent accidental private data exposure;
 - feedback on the bookmark and resource-discovery lanes.
 

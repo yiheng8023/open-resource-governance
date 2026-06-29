@@ -65,7 +65,7 @@ AI 协作配置整理成可复用的公共产物，同时把个人记忆、账�
 
 | 仓库 | 作用 | 可见性 |
 | --- | --- | --- |
-| `open-resource-governance` | YIYUAN Meridian（易元经纬）公开总入口、导航、共享规则、发布准备文档 | 公开 |
+| `YIYUAN-MERIDIAN` | YIYUAN Meridian（易元经纬）公开总入口、导航、共享规则、发布准备文档 | 公开 |
 | `research-bookmarks-public` | 公开书签目录和生成 HTML | 公开 |
 | `resource-radar-public` | 资源雷达模板和示例报告 | 公开 |
 | `codex-user-config-template` | 可迁移 agent 环境模板模式的 Codex 专用公开示例 | 公开 |
@@ -78,7 +78,7 @@ AI 协作配置整理成可复用的公共产物，同时把个人记忆、账�
 
 ```mermaid
 flowchart LR
-  hub["YIYUAN Meridian（易元经纬）<br/>公开总入口 + 导航<br/>(open-resource-governance slug)"]
+  hub["YIYUAN Meridian（易元经纬）<br/>公开总入口 + 导航<br/>(YIYUAN-MERIDIAN 仓库)"]
   bookmarks["research-bookmarks-public<br/>公开书签目录 + HTML"]
   radar["resource-radar-public<br/>资源结构 + 生命周期示例"]
   templates["配置模板<br/>可迁移 agent 环境基线"]
@@ -240,7 +240,7 @@ flowchart LR
 设计上采用模块化，而不是把所有东西塞进一个巨型仓库。每条链路只负责一件相对清晰的事：
 
 ```text
-YIYUAN Meridian / open-resource-governance
+YIYUAN-MERIDIAN / YIYUAN Meridian
   公开总入口、文档、仓库地图、发布素材、共享安全规则
 
 resource-radar
@@ -290,8 +290,8 @@ claude-user-config
 克隆总入口仓并运行验证：
 
 ```bash
-git clone https://github.com/yiheng8023/open-resource-governance.git
-cd open-resource-governance
+git clone https://github.com/yiheng8023/YIYUAN-MERIDIAN.git
+cd YIYUAN-MERIDIAN
 python -B scripts/verify.py
 ```
 
@@ -301,7 +301,7 @@ python -B scripts/verify.py
 2. [`docs/system-topology.md`](docs/system-topology.md) — 全局图、拓扑和公开/私有关系。
 3. [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — 什么可以公开，什么不能公开。
 4. [`docs/roadmap.md`](docs/roadmap.md) — 后续计划。
-5. [`docs/naming-campaign.md`](docs/naming-campaign.md) — 临时名称未来如何征集和调整。
+5. [`docs/naming-campaign.md`](docs/naming-campaign.md) — 命名、文案、翻译和可发现性如何受控调整。
 
 如果你只关心书签产物，可以直接看
 [`research-bookmarks-public`](https://github.com/yiheng8023/research-bookmarks-public)。
