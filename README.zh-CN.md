@@ -1,10 +1,10 @@
-# YIYUAN Meridian（易元经纬）
+# YIYUAN-MERIDIAN
 
 [English](README.md) | 简体中文
 
-> 当前项目名：**YIYUAN Meridian（易元经纬）**。
-> 当前 GitHub 仓库 slug：`open-resource-governance`。
-> 仓库 slug 未来可在完成链接、搜索和迁移检查后再决定是否调整。
+> 仓库名：**YIYUAN-MERIDIAN**。
+> 公开项目名：**YIYUAN Meridian（易元经纬）**。
+> 当前 GitHub 地址：<https://github.com/yiheng8023/YIYUAN-MERIDIAN>。
 
 YIYUAN Meridian（易元经纬）是一个公开安全的起步系统，用来把分散的链接、工具、Agent 技能、书签和
 AI 协作配置整理成可复用的公共产物，同时把个人记忆、账号状态、本机路径和

@@ -223,8 +223,8 @@ def verify_external_user_readme() -> None:
     english = (ROOT / "README.md").read_text(encoding="utf-8")
     chinese = (ROOT / "README.zh-CN.md").read_text(encoding="utf-8")
     required_english = [
+        "YIYUAN-MERIDIAN",
         "YIYUAN Meridian",
-        "open-resource-governance",
         "Start here",
         "What is this?",
         "Repository navigation",
@@ -253,8 +253,8 @@ def verify_external_user_readme() -> None:
         "data/projection-report.json",
     ]
     required_chinese = [
+        "YIYUAN-MERIDIAN",
         "YIYUAN Meridian（易元经纬）",
-        "open-resource-governance",
         "从这里开始",
         "这是什么？",
         "仓库导航",
@@ -1468,7 +1468,7 @@ def main() -> None:
     verify_promotion_publication_boundary()
     verify_no_obvious_private_payloads()
     verify_no_stale_stage_phrases()
-    print("open-resource-governance verification passed")
+    print("YIYUAN-MERIDIAN verification passed")
 
 
 if __name__ == "__main__":

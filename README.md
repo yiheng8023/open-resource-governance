@@ -1,10 +1,10 @@
-# YIYUAN Meridian
+# YIYUAN-MERIDIAN
 
 English | [简体中文](README.zh-CN.md)
 
-> Current project name: **YIYUAN Meridian**.
-> Current GitHub repository slug: `open-resource-governance`.
-> The repository slug may change later after link, search, and migration checks.
+> Repository: **YIYUAN-MERIDIAN**.
+> Public project name: **YIYUAN Meridian**.
+> Current GitHub URL: <https://github.com/yiheng8023/YIYUAN-MERIDIAN>.
 
 YIYUAN Meridian is a public-safe starter system for turning scattered links, tools, agent skills,
 bookmarks, and AI-collaboration configuration into something reusable without
